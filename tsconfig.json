@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "es2015",
+        "outDir": "js"
+    },
+    "include": [
+        "src"
+    ]
+}
