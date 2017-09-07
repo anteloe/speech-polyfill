@@ -8,5 +8,5 @@ module.exports = {
     resolve: {
         modules: [path.resolve(__dirname, 'js'), 'node_modules']
     },
-    watch: true
+    watch: false
 }
