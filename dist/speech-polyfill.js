@@ -96,8 +96,6 @@ navigator.mediaDevices.getUserMedia = navigator.mediaDevices.getUserMedia || (fu
     window.SpeechRecognition = window.SpeechRecognition || __WEBPACK_IMPORTED_MODULE_0__js_SpeechRecognition__["a" /* SpeechRecognition */]
 })(window.SpeechRecognition || window.webkitSpeechRecognition);
 
-
-
 /***/ }),
 /* 1 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
