@@ -1128,6 +1128,10 @@ micromatch@^2.1.5:
     parse-glob "^3.0.4"
     regex-cache "^0.4.2"
 
+microsoft-speech-browser-sdk@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/microsoft-speech-browser-sdk/-/microsoft-speech-browser-sdk-0.0.4.tgz#cc0b9c77df45e55f106a614cd6693f1b150bb160"
+
 miller-rabin@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/miller-rabin/-/miller-rabin-4.0.0.tgz#4a62fb1d42933c05583982f4c716f6fb9e6c6d3d"

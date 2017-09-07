@@ -23,4 +23,3 @@ navigator.mediaDevices.getUserMedia = navigator.mediaDevices.getUserMedia || (fu
 (function(speechRecognition){
     window.SpeechRecognition = window.SpeechRecognition || SpeechRecognition
 })(window.SpeechRecognition || window.webkitSpeechRecognition);
-
