@@ -69,31 +69,28 @@
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__js_SpeechRecognition__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__js_src_SpeechRecognition__ = __webpack_require__(1);
 
-
-if(Promise === undefined){
+if (Promise === undefined) {
     throw new Error('Promises are not supported in this browser. Use this polyfill: https://www.npmjs.com/package/es6-promise');
 }
 // polyfill mediaDevices.getUserMedia
-navigator.mediaDevices = navigator.mediaDevices || {};
-navigator.mediaDevices.getUserMedia = navigator.mediaDevices.getUserMedia || (function(){
+if (!navigator.mediaDevices) navigator.mediaDevices = {};
+navigator.mediaDevices.getUserMedia = navigator.mediaDevices.getUserMedia || (function () {
     // returns a getUserMedia function
     var getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
-    return function(constraints){
-        if(!getUserMedia){
+    return function (constraints) {
+        if (!getUserMedia) {
             return Promise.reject(new Error('getUserMedia is not implemented in this browser'));
         }
-
-        return new Promise(function(resolve, reject){
+        return new Promise(function (resolve, reject) {
             getUserMedia.call(navigator, constraints, resolve, reject);
         });
-    }
+    };
 })();
-
 // polyfill speechRecognition
-(function(speechRecognition){
-    window.SpeechRecognition = window.SpeechRecognition || __WEBPACK_IMPORTED_MODULE_0__js_SpeechRecognition__["a" /* SpeechRecognition */]
+(function (speechRecognition) {
+    window.SpeechRecognition = window.SpeechRecognition || __WEBPACK_IMPORTED_MODULE_0__js_src_SpeechRecognition__["a" /* SpeechRecognition */];
 })(window.SpeechRecognition || window.webkitSpeechRecognition);
 
 /***/ }),
@@ -102,14 +99,70 @@ navigator.mediaDevices.getUserMedia = navigator.mediaDevices.getUserMedia || (fu
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SpeechRecognition; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_LanguageResolver__ = __webpack_require__(2);
+
+// include the needed parts of the library. webpack will treeshake all unneeded stuff.
+// import {  } from "microsoft-speech-browser-sdk/src/sdk/speech/Exports";
+// import {  } from "microsoft-speech-browser-sdk/src/sdk/speech.browser/Exports";
 var SpeechRecognition = (function () {
-    function SpeechRecognition(apiKey) {
-        this.apiKey = apiKey;
+    function SpeechRecognition() {
+        this.onaudiostart = null;
+        this.onaudioend = null;
+        this.onstart = null;
+        this.onend = null;
+        this.onerror = null;
+        this.onnomatch = null;
+        this.onresult = null;
+        this.lang = Object(__WEBPACK_IMPORTED_MODULE_0__helpers_LanguageResolver__["a" /* resolveLang */])(document.documentElement.lang || navigator.language);
         this.continuous = false;
+        this.interimResults = false;
+        this.maxAlternatives = 1;
+        this.serviceURI = '';
     }
+    SpeechRecognition.prototype.start = function () {
+        throw new Error("Method not implemented.");
+    };
+    SpeechRecognition.prototype.stop = function () {
+        throw new Error("Method not implemented.");
+    };
+    SpeechRecognition.prototype.abort = function () {
+        throw new Error("Method not implemented.");
+    };
     return SpeechRecognition;
 }());
 
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return resolveLang; });
+var supportedDefaults = {
+    ar: 'ar-EG',
+    ca: 'ca-ES',
+    da: 'da-DK',
+    de: 'de-DE',
+    en: 'en-US',
+    es: 'es-ES',
+    fi: 'fi-FI',
+    fr: 'fr-FR',
+    hi: 'hi-IN',
+    it: 'it-IT',
+    ja: 'ja-JP',
+    ko: 'ko-KR',
+    nb: 'nb-NO',
+    nl: 'nl-NL',
+    pl: 'pl-PL',
+    pt: 'pt-PT',
+    ru: 'ru-RU',
+    sv: 'sv-SE',
+    zh: 'zh-CN'
+};
+var resolveLang = function (langHint) {
+    return supportedDefaults[langHint] || langHint;
+};
 
 
 /***/ })
