@@ -2244,11 +2244,11 @@ var SpeechRecognition = (function () {
         this.onerror = null;
         this.onnomatch = null;
         this.onresult = null;
-        this.lang = Object(__WEBPACK_IMPORTED_MODULE_0__helpers_LanguageResolver__["a" /* resolveLang */])(document.documentElement.lang || navigator.language);
+        this.lang = document.documentElement.lang || navigator.language;
         this.continuous = false;
         this.interimResults = false;
         this.maxAlternatives = 1;
-        this.serviceURI = '';
+        this.serviceURI = 'https://api.cognitive.microsoft.com/sts/v1.0';
     }
     SpeechRecognition.prototype.start = function () {
         if (!this.recognizer) {
@@ -2271,7 +2271,13 @@ var SpeechRecognition = (function () {
         }
     };
     SpeechRecognition.prototype.handleEvent = function (event) {
-        console.log('recognition event', event);
+        console.log(event.name + " triggered");
+        if (event.result) {
+            console.log('got result', event);
+        }
+        if (event.error) {
+            console.error(event.error);
+        }
     };
     SpeechRecognition.prototype.recognitionStartSuccess = function (listening) {
         console.log('recognition started');
@@ -2280,9 +2286,15 @@ var SpeechRecognition = (function () {
         console.log('recognition start failed', error);
     };
     SpeechRecognition.prototype.setupRecognizer = function () {
+        // prepare recognizer configuration
         var speechConfig = new __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["h" /* SpeechConfig */](new __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["b" /* Context */](new __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["d" /* OS */]('Speech', 'Speech', null), new __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["c" /* Device */](navigator.userAgent, 'Browser', '1.0.0.0')));
-        var config = new __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["g" /* RecognizerConfig */](speechConfig, __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["e" /* RecognitionMode */].Dictation, Object(__WEBPACK_IMPORTED_MODULE_0__helpers_LanguageResolver__["a" /* resolveLang */])(this.lang), __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["i" /* SpeechResultFormat */].Detailed);
+        var recognitionMode = this.interimResults ? __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["e" /* RecognitionMode */].Conversation : __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["e" /* RecognitionMode */].Dictation;
+        var language = Object(__WEBPACK_IMPORTED_MODULE_0__helpers_LanguageResolver__["a" /* resolveLang */])(this.lang);
+        var resultFormat = __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["i" /* SpeechResultFormat */].Detailed;
+        // configure and authenticate recognizer
+        var config = new __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["g" /* RecognizerConfig */](speechConfig, recognitionMode, language, resultFormat);
         var auth = new __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["a" /* CognitiveSubscriptionKeyAuthentication */](this.apiKey);
+        // create and return recognizer based on the prepared configuration
         return Object(__WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_browser_Exports__["a" /* CreateRecognizer */])(config, auth);
     };
     return SpeechRecognition;

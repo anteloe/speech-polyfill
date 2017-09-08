@@ -13,11 +13,11 @@ var SpeechRecognition = (function () {
         this.onerror = null;
         this.onnomatch = null;
         this.onresult = null;
-        this.lang = resolveLang(document.documentElement.lang || navigator.language);
+        this.lang = document.documentElement.lang || navigator.language;
         this.continuous = false;
         this.interimResults = false;
         this.maxAlternatives = 1;
-        this.serviceURI = '';
+        this.serviceURI = 'https://api.cognitive.microsoft.com/sts/v1.0';
     }
     SpeechRecognition.prototype.start = function () {
         if (!this.recognizer) {
@@ -40,7 +40,13 @@ var SpeechRecognition = (function () {
         }
     };
     SpeechRecognition.prototype.handleEvent = function (event) {
-        console.log('recognition event', event);
+        console.log(event.name + " triggered");
+        if (event.result) {
+            console.log('got result', event);
+        }
+        if (event.error) {
+            console.error(event.error);
+        }
     };
     SpeechRecognition.prototype.recognitionStartSuccess = function (listening) {
         console.log('recognition started');
@@ -49,9 +55,15 @@ var SpeechRecognition = (function () {
         console.log('recognition start failed', error);
     };
     SpeechRecognition.prototype.setupRecognizer = function () {
+        // prepare recognizer configuration
         var speechConfig = new SpeechConfig(new Context(new OS('Speech', 'Speech', null), new Device(navigator.userAgent, 'Browser', '1.0.0.0')));
-        var config = new RecognizerConfig(speechConfig, RecognitionMode.Dictation, resolveLang(this.lang), SpeechResultFormat.Detailed);
+        var recognitionMode = this.interimResults ? RecognitionMode.Conversation : RecognitionMode.Dictation;
+        var language = resolveLang(this.lang);
+        var resultFormat = SpeechResultFormat.Detailed;
+        // configure and authenticate recognizer
+        var config = new RecognizerConfig(speechConfig, recognitionMode, language, resultFormat);
         var auth = new CognitiveSubscriptionKeyAuthentication(this.apiKey);
+        // create and return recognizer based on the prepared configuration
         return CreateRecognizer(config, auth);
     };
     return SpeechRecognition;
