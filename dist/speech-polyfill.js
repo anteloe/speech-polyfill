@@ -2217,7 +2217,7 @@ navigator.mediaDevices.getUserMedia = navigator.mediaDevices.getUserMedia || (fu
 })();
 // polyfill speechRecognition
 (function (speechRecognition) {
-    window.SpeechRecognition = window.SpeechRecognition || __WEBPACK_IMPORTED_MODULE_0__js_src_SpeechRecognition__["a" /* SpeechRecognition */];
+    window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition || __WEBPACK_IMPORTED_MODULE_0__js_src_SpeechRecognition__["a" /* SpeechRecognition */];
 })(window.SpeechRecognition || window.webkitSpeechRecognition);
 
 /***/ }),
