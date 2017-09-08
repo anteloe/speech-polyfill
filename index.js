@@ -18,5 +18,5 @@ navigator.mediaDevices.getUserMedia = navigator.mediaDevices.getUserMedia || (fu
 })();
 // polyfill speechRecognition
 (function (speechRecognition) {
-    window.SpeechRecognition = window.SpeechRecognition || SpeechRecognition;
+    window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition || SpeechRecognition;
 })(window.SpeechRecognition || window.webkitSpeechRecognition);
