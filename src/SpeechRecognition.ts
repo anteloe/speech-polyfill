@@ -43,7 +43,14 @@ export class SpeechRecognition implements ISpeechRecognition{
     }
 
     private handleEvent(event){
-        console.log('recognition event', event);
+        console.log(`${event.name} triggered`);
+        if(event.result){
+            console.log('got result', event);
+        }
+
+        if(event.error){
+            console.error(event.error);
+        }
     }
 
     private recognitionStartSuccess(listening: boolean){
@@ -55,13 +62,20 @@ export class SpeechRecognition implements ISpeechRecognition{
     }
 
     private setupRecognizer(){
+        // prepare recognizer configuration
         const speechConfig = new SpeechConfig(new Context(
             new OS('Speech', 'Speech', null),
             new Device(navigator.userAgent, 'Browser', '1.0.0.0')
         ));
-        const config = new RecognizerConfig(speechConfig, RecognitionMode.Dictation, resolveLang(this.lang), SpeechResultFormat.Detailed);
+        const recognitionMode = this.interimResults ? RecognitionMode.Conversation : RecognitionMode.Dictation;
+        const language = resolveLang(this.lang);
+        const resultFormat = SpeechResultFormat.Detailed;
+
+        // configure and authenticate recognizer
+        const config = new RecognizerConfig(speechConfig, recognitionMode, language, resultFormat);
         const auth = new CognitiveSubscriptionKeyAuthentication(this.apiKey);
 
+        // create and return recognizer based on the prepared configuration
         return CreateRecognizer(config, auth);
     }
 
@@ -74,9 +88,9 @@ export class SpeechRecognition implements ISpeechRecognition{
     onresult: (event: any) => void = null;
 
     grammars: ISpeechGrammarList;
-    lang: string = resolveLang(document.documentElement.lang || navigator.language);
+    lang: string = document.documentElement.lang || navigator.language;
     continuous: boolean = false;
     interimResults: boolean = false;
     maxAlternatives: number = 1;
-    serviceURI: string = '';
+    serviceURI: string = 'https://api.cognitive.microsoft.com/sts/v1.0';
 }
