@@ -11,6 +11,7 @@ import {
     Recognizer,
     RecognizerConfig,
     RecognitionMode,
+    RecognitionStatus,
     SpeechConfig,
     SpeechResultFormat
  } from "microsoft-speech-browser-sdk/src/sdk/speech/Exports";
@@ -28,8 +29,8 @@ export class SpeechRecognition implements ISpeechRecognition{
             }
             this.recognizer = this.setupRecognizer();
         }
-        this.recognizer.Recognize(this.handleEvent)
-            .On(this.recognitionStartSuccess, this.recognitionStartFailed);
+        this.recognizer.Recognize(this.handleEvent.bind(this))
+            .On(this.recognitionStartSuccess.bind(this), this.recognitionStartFailed.bind(this));
     }
     stop(): void {
         if(this.recognizer){
@@ -45,11 +46,39 @@ export class SpeechRecognition implements ISpeechRecognition{
     private handleEvent(event){
         console.log(`${event.name} triggered`);
         if(event.result){
-            console.log('got result', event);
+            this.handleResult(event.result);
         }
 
         if(event.error){
             console.error(event.error);
+        }
+    }
+
+    private handleResult(result){
+        const status = RecognitionStatus[(<string>result.RecognitionStatus)]
+        
+        switch(status){
+            case RecognitionStatus.Success:
+                console.log('got something', result);
+                // call onresult;
+                break;
+            case RecognitionStatus.Error:
+                console.log('error', result);
+                // call onerror;
+                break;
+            case RecognitionStatus.NoMatch:
+                console.log('no match', result);
+                // call onnomatch;
+                break;
+            case RecognitionStatus.InitialSilenceTimeout:
+            case RecognitionStatus.EndOfDictation:
+            case RecognitionStatus.BabbleTimeout:
+                console.log('something happened', result);
+                // call onend;
+                break;
+            default:
+                console.log('falled into default', result);
+                // log unexpected case
         }
     }
 
