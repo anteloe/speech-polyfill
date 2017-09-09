@@ -2226,11 +2226,9 @@ navigator.mediaDevices.getUserMedia = navigator.mediaDevices.getUserMedia || (fu
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SpeechRecognition; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_LanguageResolver__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__SpeechRecognitionEvent__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_microsoft_speech_browser_sdk_src_sdk_speech_browser_Exports__ = __webpack_require__(37);
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_browser_Exports__ = __webpack_require__(37);
 
 // include the needed parts of the library. webpack will treeshake all unneeded stuff.
 
@@ -2282,25 +2280,24 @@ var SpeechRecognition = (function () {
         }
     };
     SpeechRecognition.prototype.handleResult = function (result) {
-        var status = __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */][result.RecognitionStatus];
-        var x = new __WEBPACK_IMPORTED_MODULE_1__SpeechRecognitionEvent__["a" /* SpeechRecognitionEvent */]();
-        console.log('my event', x);
+        var status = __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */][result.RecognitionStatus];
+        // console.log('my event');
         switch (status) {
-            case __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */].Success:
+            case __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */].Success:
                 console.log('got something', result);
                 // call onresult;
                 break;
-            case __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */].Error:
+            case __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */].Error:
                 console.log('error', result);
                 // call onerror;
                 break;
-            case __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */].NoMatch:
+            case __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */].NoMatch:
                 console.log('no match', result);
                 // call onnomatch;
                 break;
-            case __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */].InitialSilenceTimeout:
-            case __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */].EndOfDictation:
-            case __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */].BabbleTimeout:
+            case __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */].InitialSilenceTimeout:
+            case __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */].EndOfDictation:
+            case __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */].BabbleTimeout:
                 console.log('something happened', result);
                 // call onend;
                 break;
@@ -2316,15 +2313,15 @@ var SpeechRecognition = (function () {
     };
     SpeechRecognition.prototype.setupRecognizer = function () {
         // prepare recognizer configuration
-        var speechConfig = new __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["i" /* SpeechConfig */](new __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["b" /* Context */](new __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["d" /* OS */]('Speech', 'Speech', null), new __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["c" /* Device */](navigator.userAgent, 'Browser', '1.0.0.0')));
-        var recognitionMode = this.interimResults ? __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["e" /* RecognitionMode */].Conversation : __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["e" /* RecognitionMode */].Dictation;
-        var language = Object(__WEBPACK_IMPORTED_MODULE_0__helpers_LanguageResolver__["a" /* resolveLang */])(this.lang);
-        var resultFormat = __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["j" /* SpeechResultFormat */].Detailed;
+        var speechConfig = new __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["i" /* SpeechConfig */](new __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["b" /* Context */](new __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["d" /* OS */]('Speech', 'Speech', null), new __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["c" /* Device */](navigator.userAgent, 'Browser', '1.0.0.0')));
+        var recognitionMode = this.interimResults ? __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["e" /* RecognitionMode */].Conversation : __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["e" /* RecognitionMode */].Dictation;
+        var language = Object(__WEBPACK_IMPORTED_MODULE_0__helpers__["a" /* resolveLang */])(this.lang);
+        var resultFormat = __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["j" /* SpeechResultFormat */].Detailed;
         // configure and authenticate recognizer
-        var config = new __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["h" /* RecognizerConfig */](speechConfig, recognitionMode, language, resultFormat);
-        var auth = new __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["a" /* CognitiveSubscriptionKeyAuthentication */](this.apiKey);
+        var config = new __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["h" /* RecognizerConfig */](speechConfig, recognitionMode, language, resultFormat);
+        var auth = new __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["a" /* CognitiveSubscriptionKeyAuthentication */](this.apiKey);
         // create and return recognizer based on the prepared configuration
-        return Object(__WEBPACK_IMPORTED_MODULE_3_microsoft_speech_browser_sdk_src_sdk_speech_browser_Exports__["a" /* CreateRecognizer */])(config, auth);
+        return Object(__WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_browser_Exports__["a" /* CreateRecognizer */])(config, auth);
     };
     return SpeechRecognition;
 }());
@@ -2333,6 +2330,16 @@ var SpeechRecognition = (function () {
 
 /***/ }),
 /* 19 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_LanguageResolver__ = __webpack_require__(20);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__helpers_LanguageResolver__["a"]; });
+
+
+
+/***/ }),
+/* 20 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2361,39 +2368,6 @@ var supportedDefaults = {
 var resolveLang = function (langHint) {
     return supportedDefaults[langHint] || langHint;
 };
-
-
-/***/ }),
-/* 20 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SpeechRecognitionEvent; });
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var SpeechRecognitionEvent = (function (_super) {
-    __extends(SpeechRecognitionEvent, _super);
-    function SpeechRecognitionEvent(typeArg) {
-        if (typeArg === void 0) { typeArg = 'result'; }
-        var _this = _super.call(this, typeArg) || this;
-        return Object.defineProperties(_this, {
-            "emma": { value: null, writable: false },
-            "resultIndex": { value: 0, writable: false },
-            "results": { value: [], writable: false },
-            "interpretation": { value: null, writable: false }
-        });
-    }
-    return SpeechRecognitionEvent;
-}(Event));
-
 
 
 /***/ }),

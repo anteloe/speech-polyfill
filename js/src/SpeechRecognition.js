@@ -1,5 +1,4 @@
-import { resolveLang } from "./helpers/LanguageResolver";
-import { SpeechRecognitionEvent } from "./SpeechRecognitionEvent";
+import { resolveLang } from "./helpers";
 // include the needed parts of the library. webpack will treeshake all unneeded stuff.
 import { CognitiveSubscriptionKeyAuthentication, Context, Device, OS, RecognizerConfig, RecognitionMode, RecognitionStatus, SpeechConfig, SpeechResultFormat } from "microsoft-speech-browser-sdk/src/sdk/speech/Exports";
 import { CreateRecognizer } from "microsoft-speech-browser-sdk/src/sdk/speech.browser/Exports";
@@ -51,8 +50,7 @@ var SpeechRecognition = (function () {
     };
     SpeechRecognition.prototype.handleResult = function (result) {
         var status = RecognitionStatus[result.RecognitionStatus];
-        var x = new SpeechRecognitionEvent();
-        console.log('my event', x);
+        // console.log('my event');
         switch (status) {
             case RecognitionStatus.Success:
                 console.log('got something', result);
