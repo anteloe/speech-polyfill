@@ -1,6 +1,7 @@
 import { resolveLang } from "./helpers/LanguageResolver";
+import { SpeechRecognitionEvent } from "./SpeechRecognitionEvent";
 // include the needed parts of the library. webpack will treeshake all unneeded stuff.
-import { CognitiveSubscriptionKeyAuthentication, Context, Device, OS, RecognizerConfig, RecognitionMode, SpeechConfig, SpeechResultFormat } from "microsoft-speech-browser-sdk/src/sdk/speech/Exports";
+import { CognitiveSubscriptionKeyAuthentication, Context, Device, OS, RecognizerConfig, RecognitionMode, RecognitionStatus, SpeechConfig, SpeechResultFormat } from "microsoft-speech-browser-sdk/src/sdk/speech/Exports";
 import { CreateRecognizer } from "microsoft-speech-browser-sdk/src/sdk/speech.browser/Exports";
 var SpeechRecognition = (function () {
     function SpeechRecognition(apiKey) {
@@ -26,8 +27,8 @@ var SpeechRecognition = (function () {
             }
             this.recognizer = this.setupRecognizer();
         }
-        this.recognizer.Recognize(this.handleEvent)
-            .On(this.recognitionStartSuccess, this.recognitionStartFailed);
+        this.recognizer.Recognize(this.handleEvent.bind(this))
+            .On(this.recognitionStartSuccess.bind(this), this.recognitionStartFailed.bind(this));
     };
     SpeechRecognition.prototype.stop = function () {
         if (this.recognizer) {
@@ -42,10 +43,37 @@ var SpeechRecognition = (function () {
     SpeechRecognition.prototype.handleEvent = function (event) {
         console.log(event.name + " triggered");
         if (event.result) {
-            console.log('got result', event);
+            this.handleResult(event.result);
         }
         if (event.error) {
             console.error(event.error);
+        }
+    };
+    SpeechRecognition.prototype.handleResult = function (result) {
+        var status = RecognitionStatus[result.RecognitionStatus];
+        var x = new SpeechRecognitionEvent();
+        console.log('my event', x);
+        switch (status) {
+            case RecognitionStatus.Success:
+                console.log('got something', result);
+                // call onresult;
+                break;
+            case RecognitionStatus.Error:
+                console.log('error', result);
+                // call onerror;
+                break;
+            case RecognitionStatus.NoMatch:
+                console.log('no match', result);
+                // call onnomatch;
+                break;
+            case RecognitionStatus.InitialSilenceTimeout:
+            case RecognitionStatus.EndOfDictation:
+            case RecognitionStatus.BabbleTimeout:
+                console.log('something happened', result);
+                // call onend;
+                break;
+            default:
+                console.log('falled into default', result);
         }
     };
     SpeechRecognition.prototype.recognitionStartSuccess = function (listening) {

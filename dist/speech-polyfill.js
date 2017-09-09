@@ -68,7 +68,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__AudioSourceEvents__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__AudioSourceEvents__ = __webpack_require__(22);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__AudioSourceEvents__["a"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_0__AudioSourceEvents__["b"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_0__AudioSourceEvents__["c"]; });
@@ -77,7 +77,7 @@
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_0__AudioSourceEvents__["f"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_0__AudioSourceEvents__["g"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "i", function() { return __WEBPACK_IMPORTED_MODULE_0__AudioSourceEvents__["h"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ConnectionEvents__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ConnectionEvents__ = __webpack_require__(23);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "j", function() { return __WEBPACK_IMPORTED_MODULE_1__ConnectionEvents__["a"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "k", function() { return __WEBPACK_IMPORTED_MODULE_1__ConnectionEvents__["b"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "l", function() { return __WEBPACK_IMPORTED_MODULE_1__ConnectionEvents__["c"]; });
@@ -87,17 +87,17 @@
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ConnectionMessage__ = __webpack_require__(7);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "m", function() { return __WEBPACK_IMPORTED_MODULE_2__ConnectionMessage__["a"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "x", function() { return __WEBPACK_IMPORTED_MODULE_2__ConnectionMessage__["b"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ConnectionOpenResponse__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ConnectionOpenResponse__ = __webpack_require__(24);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "p", function() { return __WEBPACK_IMPORTED_MODULE_3__ConnectionOpenResponse__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Error__ = __webpack_require__(1);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_4__Error__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Events__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Events__ = __webpack_require__(25);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "w", function() { return __WEBPACK_IMPORTED_MODULE_5__Events__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__EventSource__ = __webpack_require__(8);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "u", function() { return __WEBPACK_IMPORTED_MODULE_6__EventSource__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Guid__ = __webpack_require__(2);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "s", function() { return __WEBPACK_IMPORTED_MODULE_7__Guid__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__IConnection__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__IConnection__ = __webpack_require__(26);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "r", function() { return __WEBPACK_IMPORTED_MODULE_8__IConnection__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__InMemoryStorage__ = __webpack_require__(9);
 /* unused harmony namespace reexport */
@@ -111,13 +111,13 @@
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "z", function() { return __WEBPACK_IMPORTED_MODULE_12__Promise__["b"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__Queue__ = __webpack_require__(12);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "A", function() { return __WEBPACK_IMPORTED_MODULE_13__Queue__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__RawWebsocketMessage__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__RawWebsocketMessage__ = __webpack_require__(27);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "B", function() { return __WEBPACK_IMPORTED_MODULE_14__RawWebsocketMessage__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__RiffPcmEncoder__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__RiffPcmEncoder__ = __webpack_require__(28);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "C", function() { return __WEBPACK_IMPORTED_MODULE_15__RiffPcmEncoder__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__Storage__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__Storage__ = __webpack_require__(29);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "D", function() { return __WEBPACK_IMPORTED_MODULE_16__Storage__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__Stream__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__Stream__ = __webpack_require__(30);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "E", function() { return __WEBPACK_IMPORTED_MODULE_17__Stream__["a"]; });
 
 
@@ -264,28 +264,28 @@ var CreateNoDashGuid = function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__CognitiveSubscriptionKeyAuthentication__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__CognitiveSubscriptionKeyAuthentication__ = __webpack_require__(21);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__CognitiveSubscriptionKeyAuthentication__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__CognitiveTokenAuthentication__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__CognitiveTokenAuthentication__ = __webpack_require__(31);
 /* unused harmony namespace reexport */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__IAuthentication__ = __webpack_require__(5);
 /* unused harmony namespace reexport */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__RecognitionEvents__ = __webpack_require__(6);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Recognizer__ = __webpack_require__(31);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_4__Recognizer__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Recognizer__ = __webpack_require__(32);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_4__Recognizer__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__RecognizerConfig__ = __webpack_require__(13);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_5__RecognizerConfig__["a"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_5__RecognizerConfig__["b"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_5__RecognizerConfig__["c"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_5__RecognizerConfig__["d"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_5__RecognizerConfig__["e"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_5__RecognizerConfig__["f"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "i", function() { return __WEBPACK_IMPORTED_MODULE_5__RecognizerConfig__["g"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__SpeechResults__ = __webpack_require__(34);
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__WebsocketMessageFormatter__ = __webpack_require__(35);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "j", function() { return __WEBPACK_IMPORTED_MODULE_7__WebsocketMessageFormatter__["a"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_5__RecognizerConfig__["e"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "i", function() { return __WEBPACK_IMPORTED_MODULE_5__RecognizerConfig__["f"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "j", function() { return __WEBPACK_IMPORTED_MODULE_5__RecognizerConfig__["g"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__SpeechResults__ = __webpack_require__(35);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_6__SpeechResults__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__WebsocketMessageFormatter__ = __webpack_require__(36);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "k", function() { return __WEBPACK_IMPORTED_MODULE_7__WebsocketMessageFormatter__["a"]; });
 // IMPORTANT - Dont publish internal modules.
 
 
@@ -1873,21 +1873,21 @@ var Device = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ConsoleLoggingListener__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ConsoleLoggingListener__ = __webpack_require__(39);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__LocalStorage__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__LocalStorage__ = __webpack_require__(40);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__MicAudioSource__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__MicAudioSource__ = __webpack_require__(41);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_2__MicAudioSource__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__OpusRecorder__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__OpusRecorder__ = __webpack_require__(42);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__PCMRecorder__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__PCMRecorder__ = __webpack_require__(43);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_4__PCMRecorder__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__SessionStorage__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__SessionStorage__ = __webpack_require__(44);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Timer__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Timer__ = __webpack_require__(45);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__WebsocketConnection__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__WebsocketConnection__ = __webpack_require__(46);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_7__WebsocketConnection__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__WebsocketMessageAdapter__ = __webpack_require__(15);
 /* unused harmony namespace reexport */
@@ -2137,7 +2137,7 @@ var SpeechConnectionFactory = (function () {
                     break;
             }
             var queryParams = {
-                format: __WEBPACK_IMPORTED_MODULE_2__speech_Exports__["i" /* SpeechResultFormat */][config.Format].toString().toLowerCase(),
+                format: __WEBPACK_IMPORTED_MODULE_2__speech_Exports__["j" /* SpeechResultFormat */][config.Format].toString().toLowerCase(),
                 language: config.Language,
             };
             if (_this.IsDebugModeEnabled) {
@@ -2146,7 +2146,7 @@ var SpeechConnectionFactory = (function () {
             var headers = {};
             headers[authInfo.HeaderName] = authInfo.Token;
             headers[ConnectionIdHeader] = connectionId;
-            return new __WEBPACK_IMPORTED_MODULE_0__common_browser_Exports__["c" /* WebsocketConnection */](endpoint, queryParams, headers, new __WEBPACK_IMPORTED_MODULE_2__speech_Exports__["j" /* WebsocketMessageFormatter */](), connectionId);
+            return new __WEBPACK_IMPORTED_MODULE_0__common_browser_Exports__["c" /* WebsocketConnection */](endpoint, queryParams, headers, new __WEBPACK_IMPORTED_MODULE_2__speech_Exports__["k" /* WebsocketMessageFormatter */](), connectionId);
         };
     }
     Object.defineProperty(SpeechConnectionFactory.prototype, "Host", {
@@ -2227,8 +2227,10 @@ navigator.mediaDevices.getUserMedia = navigator.mediaDevices.getUserMedia || (fu
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SpeechRecognition; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_LanguageResolver__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_browser_Exports__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__SpeechRecognitionEvent__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_microsoft_speech_browser_sdk_src_sdk_speech_browser_Exports__ = __webpack_require__(37);
+
 
 // include the needed parts of the library. webpack will treeshake all unneeded stuff.
 
@@ -2257,8 +2259,8 @@ var SpeechRecognition = (function () {
             }
             this.recognizer = this.setupRecognizer();
         }
-        this.recognizer.Recognize(this.handleEvent)
-            .On(this.recognitionStartSuccess, this.recognitionStartFailed);
+        this.recognizer.Recognize(this.handleEvent.bind(this))
+            .On(this.recognitionStartSuccess.bind(this), this.recognitionStartFailed.bind(this));
     };
     SpeechRecognition.prototype.stop = function () {
         if (this.recognizer) {
@@ -2273,10 +2275,37 @@ var SpeechRecognition = (function () {
     SpeechRecognition.prototype.handleEvent = function (event) {
         console.log(event.name + " triggered");
         if (event.result) {
-            console.log('got result', event);
+            this.handleResult(event.result);
         }
         if (event.error) {
             console.error(event.error);
+        }
+    };
+    SpeechRecognition.prototype.handleResult = function (result) {
+        var status = __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */][result.RecognitionStatus];
+        var x = new __WEBPACK_IMPORTED_MODULE_1__SpeechRecognitionEvent__["a" /* SpeechRecognitionEvent */]();
+        console.log('my event', x);
+        switch (status) {
+            case __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */].Success:
+                console.log('got something', result);
+                // call onresult;
+                break;
+            case __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */].Error:
+                console.log('error', result);
+                // call onerror;
+                break;
+            case __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */].NoMatch:
+                console.log('no match', result);
+                // call onnomatch;
+                break;
+            case __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */].InitialSilenceTimeout:
+            case __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */].EndOfDictation:
+            case __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */].BabbleTimeout:
+                console.log('something happened', result);
+                // call onend;
+                break;
+            default:
+                console.log('falled into default', result);
         }
     };
     SpeechRecognition.prototype.recognitionStartSuccess = function (listening) {
@@ -2287,15 +2316,15 @@ var SpeechRecognition = (function () {
     };
     SpeechRecognition.prototype.setupRecognizer = function () {
         // prepare recognizer configuration
-        var speechConfig = new __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["h" /* SpeechConfig */](new __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["b" /* Context */](new __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["d" /* OS */]('Speech', 'Speech', null), new __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["c" /* Device */](navigator.userAgent, 'Browser', '1.0.0.0')));
-        var recognitionMode = this.interimResults ? __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["e" /* RecognitionMode */].Conversation : __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["e" /* RecognitionMode */].Dictation;
+        var speechConfig = new __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["i" /* SpeechConfig */](new __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["b" /* Context */](new __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["d" /* OS */]('Speech', 'Speech', null), new __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["c" /* Device */](navigator.userAgent, 'Browser', '1.0.0.0')));
+        var recognitionMode = this.interimResults ? __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["e" /* RecognitionMode */].Conversation : __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["e" /* RecognitionMode */].Dictation;
         var language = Object(__WEBPACK_IMPORTED_MODULE_0__helpers_LanguageResolver__["a" /* resolveLang */])(this.lang);
-        var resultFormat = __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["i" /* SpeechResultFormat */].Detailed;
+        var resultFormat = __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["j" /* SpeechResultFormat */].Detailed;
         // configure and authenticate recognizer
-        var config = new __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["g" /* RecognizerConfig */](speechConfig, recognitionMode, language, resultFormat);
-        var auth = new __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["a" /* CognitiveSubscriptionKeyAuthentication */](this.apiKey);
+        var config = new __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["h" /* RecognizerConfig */](speechConfig, recognitionMode, language, resultFormat);
+        var auth = new __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["a" /* CognitiveSubscriptionKeyAuthentication */](this.apiKey);
         // create and return recognizer based on the prepared configuration
-        return Object(__WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_browser_Exports__["a" /* CreateRecognizer */])(config, auth);
+        return Object(__WEBPACK_IMPORTED_MODULE_3_microsoft_speech_browser_sdk_src_sdk_speech_browser_Exports__["a" /* CreateRecognizer */])(config, auth);
     };
     return SpeechRecognition;
 }());
@@ -2339,6 +2368,39 @@ var resolveLang = function (langHint) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SpeechRecognitionEvent; });
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var SpeechRecognitionEvent = (function (_super) {
+    __extends(SpeechRecognitionEvent, _super);
+    function SpeechRecognitionEvent(typeArg) {
+        if (typeArg === void 0) { typeArg = 'result'; }
+        var _this = _super.call(this, typeArg) || this;
+        return Object.defineProperties(_this, {
+            "emma": { value: null, writable: false },
+            "resultIndex": { value: 0, writable: false },
+            "results": { value: [], writable: false },
+            "interpretation": { value: null, writable: false }
+        });
+    }
+    return SpeechRecognitionEvent;
+}(Event));
+
+
+
+/***/ }),
+/* 21 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CognitiveSubscriptionKeyAuthentication; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_Exports__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__IAuthentication__ = __webpack_require__(5);
@@ -2365,7 +2427,7 @@ var CognitiveSubscriptionKeyAuthentication = (function () {
 
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2520,7 +2582,7 @@ var AudioStreamNodeErrorEvent = (function (_super) {
 
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2703,7 +2765,7 @@ var ConnectionMessageSentEvent = (function (_super) {
 
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2733,7 +2795,7 @@ var ConnectionOpenResponse = (function () {
 
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2765,7 +2827,7 @@ var Events = (function () {
 
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2780,7 +2842,7 @@ var ConnectionState;
 
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2854,7 +2916,7 @@ var RawWebsocketMessage = (function () {
 
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2949,7 +3011,7 @@ var RiffPcmEncoder = (function () {
 
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2995,7 +3057,7 @@ var Storage = (function () {
 
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3130,7 +3192,7 @@ var StreamReader = (function () {
 
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3164,7 +3226,7 @@ var CognitiveTokenAuthentication = (function () {
 
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3172,8 +3234,8 @@ var CognitiveTokenAuthentication = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_Exports__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__RecognitionEvents__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__RecognizerConfig__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ServiceTelemetryListener_Internal__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__SpeechConnectionMessage_Internal__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ServiceTelemetryListener_Internal__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__SpeechConnectionMessage_Internal__ = __webpack_require__(34);
 
 
 
@@ -3528,7 +3590,7 @@ var RequestSession = (function () {
 
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3697,7 +3759,7 @@ var ServiceTelemetryListener = (function () {
 
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3817,11 +3879,11 @@ var SpeechConnectionMessage = (function (_super) {
 
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony export RecognitionStatus */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RecognitionStatus; });
 var RecognitionStatus;
 (function (RecognitionStatus) {
     RecognitionStatus[RecognitionStatus["Success"] = 0] = "Success";
@@ -3834,7 +3896,7 @@ var RecognitionStatus;
 
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3967,11 +4029,11 @@ var WebsocketMessageFormatter = (function () {
 
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Recognizer__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Recognizer__ = __webpack_require__(38);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__Recognizer__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__SpeechConnectionFactory__ = __webpack_require__(16);
 /* unused harmony namespace reexport */
@@ -3980,7 +4042,7 @@ var WebsocketMessageFormatter = (function () {
 
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4000,13 +4062,13 @@ var CreateRecognizerWithPcmRecorder = function (recognizerConfig, authentication
     return CreateRecognizerWithCustomAudioSource(recognizerConfig, authentication, new __WEBPACK_IMPORTED_MODULE_0__common_browser_Exports__["a" /* MicAudioSource */](new __WEBPACK_IMPORTED_MODULE_0__common_browser_Exports__["b" /* PcmRecorder */]()));
 };
 var CreateRecognizerWithCustomAudioSource = function (recognizerConfig, authentication, audioSource) {
-    return new __WEBPACK_IMPORTED_MODULE_1__speech_Exports__["f" /* Recognizer */](authentication, new __WEBPACK_IMPORTED_MODULE_2__SpeechConnectionFactory__["a" /* SpeechConnectionFactory */](), audioSource, recognizerConfig);
+    return new __WEBPACK_IMPORTED_MODULE_1__speech_Exports__["g" /* Recognizer */](authentication, new __WEBPACK_IMPORTED_MODULE_2__SpeechConnectionFactory__["a" /* SpeechConnectionFactory */](), audioSource, recognizerConfig);
 };
 
 
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4074,7 +4136,7 @@ var ConsoleLoggingListener = (function () {
 
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4118,7 +4180,7 @@ var LocalStorage = (function () {
 
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4239,7 +4301,7 @@ var MicAudioSource = (function () {
 
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4288,7 +4350,7 @@ declare class MediaRecorder {
 
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4369,7 +4431,7 @@ var PcmRecorder = (function () {
 
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4413,7 +4475,7 @@ var SessionStorage = (function () {
 
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4443,7 +4505,7 @@ var Timer = (function () {
 
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

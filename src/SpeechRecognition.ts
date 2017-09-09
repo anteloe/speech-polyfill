@@ -1,6 +1,6 @@
-import { ISpeechRecognition } from "./contracts/ISpeechRecognition";
-import { ISpeechGrammarList } from "./contracts/ISpeechGrammarList";
-import { resolveLang } from "./helpers/LanguageResolver";
+import { ISpeechRecognition, ISpeechGrammarList } from "./contracts";
+import { SpeechRecognitionEvent } from './entities'
+import { resolveLang } from "./helpers";
 
 // include the needed parts of the library. webpack will treeshake all unneeded stuff.
 import { 
@@ -56,6 +56,8 @@ export class SpeechRecognition implements ISpeechRecognition{
 
     private handleResult(result){
         const status = RecognitionStatus[(<string>result.RecognitionStatus)]
+        const x = new SpeechRecognitionEvent();
+        console.log('my event', x);
         
         switch(status){
             case RecognitionStatus.Success:
@@ -115,6 +117,10 @@ export class SpeechRecognition implements ISpeechRecognition{
     onerror: (event: any) => void = null;
     onnomatch: () => void = null;
     onresult: (event: any) => void = null;
+    onsoundstart: () => void;
+    onsoundend: () => void;
+    onspeechstart: () => void;
+    onspeechend: () => void;
 
     grammars: ISpeechGrammarList;
     lang: string = document.documentElement.lang || navigator.language;
