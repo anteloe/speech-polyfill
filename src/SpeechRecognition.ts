@@ -56,8 +56,7 @@ export class SpeechRecognition implements ISpeechRecognition{
 
     private handleResult(result){
         const status = RecognitionStatus[(<string>result.RecognitionStatus)]
-        const x = new SpeechRecognitionEvent();
-        console.log('my event', x);
+        // console.log('my event');
         
         switch(status){
             case RecognitionStatus.Success:
