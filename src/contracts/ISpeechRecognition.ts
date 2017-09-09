@@ -1,5 +1,5 @@
-import { ISpeechGrammarList } from "./ISpeechGrammarList";
-import { SpeechRecognitionEvent } from "../SpeechRecognitionEvent";
+import { ISpeechGrammarList } from "../contracts";
+import { SpeechRecognitionEvent } from "../entities";
 
 export interface ISpeechRecognition{
     start():void;
