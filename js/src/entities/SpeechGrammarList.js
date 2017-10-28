@@ -8,7 +8,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var SpeechGrammarList = (function (_super) {
+var SpeechGrammarList = /** @class */ (function (_super) {
     __extends(SpeechGrammarList, _super);
     function SpeechGrammarList() {
         return _super !== null && _super.apply(this, arguments) || this;

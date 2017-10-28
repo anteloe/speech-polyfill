@@ -1,9 +1,9 @@
-var SpeechRecognitionResult = (function () {
+var SpeechRecognitionResult = /** @class */ (function () {
     function SpeechRecognitionResult() {
     }
     return SpeechRecognitionResult;
 }());
-var createSpeechRecognitionResult = function (results, maxAlternatives) {
+export var createSpeechRecognitionResult = function (results, maxAlternatives) {
     // create a blank result ()
     var result = new SpeechRecognitionResult();
     // add results on the object and let them be indexable

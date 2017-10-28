@@ -8,18 +8,25 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var SpeechRecognitionEvent = (function (_super) {
+var SpeechRecognitionEvent = /** @class */ (function (_super) {
     __extends(SpeechRecognitionEvent, _super);
     function SpeechRecognitionEvent(typeArg) {
         if (typeArg === void 0) { typeArg = 'result'; }
-        var _this = _super.call(this, typeArg) || this;
-        return Object.defineProperties(_this, {
-            "emma": { value: null, writable: false },
-            "resultIndex": { value: 0, writable: false },
-            "results": { value: [], writable: false },
-            "interpretation": { value: null, writable: false }
-        });
+        return _super.call(this, typeArg) || this;
     }
     return SpeechRecognitionEvent;
 }(Event));
 export { SpeechRecognitionEvent };
+export function createResultEvent(results, resultIndex, interpretation, emma) {
+    if (resultIndex === void 0) { resultIndex = 0; }
+    if (interpretation === void 0) { interpretation = null; }
+    if (emma === void 0) { emma = null; }
+    var event = new SpeechRecognitionEvent();
+    return Object.defineProperties(event, {
+        target: { value: this, writable: false },
+        emma: { value: emma, writable: false },
+        resultIndex: { value: resultIndex, writable: false },
+        results: { value: results, writable: false },
+        interpretation: { value: interpretation, writable: false }
+    });
+}

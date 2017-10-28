@@ -68,7 +68,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__AudioSourceEvents__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__AudioSourceEvents__ = __webpack_require__(25);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__AudioSourceEvents__["a"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_0__AudioSourceEvents__["b"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_0__AudioSourceEvents__["c"]; });
@@ -77,47 +77,47 @@
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_0__AudioSourceEvents__["f"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_0__AudioSourceEvents__["g"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "i", function() { return __WEBPACK_IMPORTED_MODULE_0__AudioSourceEvents__["h"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ConnectionEvents__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ConnectionEvents__ = __webpack_require__(26);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "j", function() { return __WEBPACK_IMPORTED_MODULE_1__ConnectionEvents__["a"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "k", function() { return __WEBPACK_IMPORTED_MODULE_1__ConnectionEvents__["b"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "l", function() { return __WEBPACK_IMPORTED_MODULE_1__ConnectionEvents__["c"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "n", function() { return __WEBPACK_IMPORTED_MODULE_1__ConnectionEvents__["d"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "o", function() { return __WEBPACK_IMPORTED_MODULE_1__ConnectionEvents__["e"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "q", function() { return __WEBPACK_IMPORTED_MODULE_1__ConnectionEvents__["f"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ConnectionMessage__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ConnectionMessage__ = __webpack_require__(8);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "m", function() { return __WEBPACK_IMPORTED_MODULE_2__ConnectionMessage__["a"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "x", function() { return __WEBPACK_IMPORTED_MODULE_2__ConnectionMessage__["b"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ConnectionOpenResponse__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ConnectionOpenResponse__ = __webpack_require__(27);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "p", function() { return __WEBPACK_IMPORTED_MODULE_3__ConnectionOpenResponse__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Error__ = __webpack_require__(1);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_4__Error__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Events__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Events__ = __webpack_require__(28);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "w", function() { return __WEBPACK_IMPORTED_MODULE_5__Events__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__EventSource__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__EventSource__ = __webpack_require__(9);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "u", function() { return __WEBPACK_IMPORTED_MODULE_6__EventSource__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Guid__ = __webpack_require__(2);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "s", function() { return __WEBPACK_IMPORTED_MODULE_7__Guid__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__IConnection__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__IConnection__ = __webpack_require__(29);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "r", function() { return __WEBPACK_IMPORTED_MODULE_8__IConnection__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__InMemoryStorage__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__InMemoryStorage__ = __webpack_require__(10);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__List__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__List__ = __webpack_require__(11);
 /* unused harmony namespace reexport */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__PlatformEvent__ = __webpack_require__(4);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "v", function() { return __WEBPACK_IMPORTED_MODULE_11__PlatformEvent__["a"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "y", function() { return __WEBPACK_IMPORTED_MODULE_11__PlatformEvent__["b"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__Promise__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__Promise__ = __webpack_require__(12);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "t", function() { return __WEBPACK_IMPORTED_MODULE_12__Promise__["a"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "z", function() { return __WEBPACK_IMPORTED_MODULE_12__Promise__["b"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__Queue__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__Queue__ = __webpack_require__(13);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "A", function() { return __WEBPACK_IMPORTED_MODULE_13__Queue__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__RawWebsocketMessage__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__RawWebsocketMessage__ = __webpack_require__(30);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "B", function() { return __WEBPACK_IMPORTED_MODULE_14__RawWebsocketMessage__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__RiffPcmEncoder__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__RiffPcmEncoder__ = __webpack_require__(31);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "C", function() { return __WEBPACK_IMPORTED_MODULE_15__RiffPcmEncoder__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__Storage__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__Storage__ = __webpack_require__(32);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "D", function() { return __WEBPACK_IMPORTED_MODULE_16__Storage__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__Stream__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__Stream__ = __webpack_require__(33);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "E", function() { return __WEBPACK_IMPORTED_MODULE_17__Stream__["a"]; });
 
 
@@ -164,7 +164,7 @@ var __extends = (this && this.__extends) || (function () {
  * @class ArgumentNullError
  * @extends {Error}
  */
-var ArgumentNullError = (function (_super) {
+var ArgumentNullError = /** @class */ (function (_super) {
     __extends(ArgumentNullError, _super);
     /**
      * Creates an instance of ArgumentNullError.
@@ -190,7 +190,7 @@ var ArgumentNullError = (function (_super) {
  * @extends {Error}
  */
 // tslint:disable-next-line:max-classes-per-file
-var InvalidOperationError = (function (_super) {
+var InvalidOperationError = /** @class */ (function (_super) {
     __extends(InvalidOperationError, _super);
     /**
      * Creates an instance of InvalidOperationError.
@@ -216,7 +216,7 @@ var InvalidOperationError = (function (_super) {
  * @extends {Error}
  */
 // tslint:disable-next-line:max-classes-per-file
-var ObjectDisposedError = (function (_super) {
+var ObjectDisposedError = /** @class */ (function (_super) {
     __extends(ObjectDisposedError, _super);
     /**
      * Creates an instance of ObjectDisposedError.
@@ -264,17 +264,17 @@ var CreateNoDashGuid = function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__CognitiveSubscriptionKeyAuthentication__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__CognitiveSubscriptionKeyAuthentication__ = __webpack_require__(24);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__CognitiveSubscriptionKeyAuthentication__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__CognitiveTokenAuthentication__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__CognitiveTokenAuthentication__ = __webpack_require__(34);
 /* unused harmony namespace reexport */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__IAuthentication__ = __webpack_require__(5);
 /* unused harmony namespace reexport */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__RecognitionEvents__ = __webpack_require__(6);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Recognizer__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Recognizer__ = __webpack_require__(35);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_4__Recognizer__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__RecognizerConfig__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__RecognizerConfig__ = __webpack_require__(14);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_5__RecognizerConfig__["a"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_5__RecognizerConfig__["b"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_5__RecognizerConfig__["c"]; });
@@ -282,9 +282,9 @@ var CreateNoDashGuid = function () {
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_5__RecognizerConfig__["e"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "i", function() { return __WEBPACK_IMPORTED_MODULE_5__RecognizerConfig__["f"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "j", function() { return __WEBPACK_IMPORTED_MODULE_5__RecognizerConfig__["g"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__SpeechResults__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__SpeechResults__ = __webpack_require__(38);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_6__SpeechResults__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__WebsocketMessageFormatter__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__WebsocketMessageFormatter__ = __webpack_require__(39);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "k", function() { return __WEBPACK_IMPORTED_MODULE_7__WebsocketMessageFormatter__["a"]; });
 // IMPORTANT - Dont publish internal modules.
 
@@ -313,7 +313,7 @@ var EventType;
     EventType[EventType["Warning"] = 2] = "Warning";
     EventType[EventType["Error"] = 3] = "Error";
 })(EventType || (EventType = {}));
-var PlatformEvent = (function () {
+var PlatformEvent = /** @class */ (function () {
     function PlatformEvent(eventName, eventType) {
         this.name = eventName;
         this.eventId = Object(__WEBPACK_IMPORTED_MODULE_0__Guid__["a" /* CreateNoDashGuid */])();
@@ -367,7 +367,7 @@ var PlatformEvent = (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthInfo; });
-var AuthInfo = (function () {
+var AuthInfo = /** @class */ (function () {
     function AuthInfo(headerName, token) {
         this.headerName = headerName;
         this.token = token;
@@ -402,10 +402,11 @@ var AuthInfo = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return ListeningStartedEvent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConnectingToServiceEvent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return RecognitionStartedEvent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return SpeechStartDetectedEvent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return SpeechHypothesisEvent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return SpeechStartDetectedEvent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return SpeechHypothesisEvent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return SpeechFragmentEvent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return SpeechEndDetectedEvent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return SpeechSimplePhraseEvent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return SpeechSimplePhraseEvent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return SpeechDetailedPhraseEvent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return RecognitionCompletionStatus; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return RecognitionEndedEvent; });
@@ -421,7 +422,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
-var SpeechRecognitionEvent = (function (_super) {
+var SpeechRecognitionEvent = /** @class */ (function (_super) {
     __extends(SpeechRecognitionEvent, _super);
     function SpeechRecognitionEvent(eventName, requestId, eventType) {
         if (eventType === void 0) { eventType = __WEBPACK_IMPORTED_MODULE_0__common_Exports__["v" /* EventType */].Info; }
@@ -440,7 +441,7 @@ var SpeechRecognitionEvent = (function (_super) {
 }(__WEBPACK_IMPORTED_MODULE_0__common_Exports__["y" /* PlatformEvent */]));
 
 // tslint:disable-next-line:max-classes-per-file
-var SpeechRecognitionResultEvent = (function (_super) {
+var SpeechRecognitionResultEvent = /** @class */ (function (_super) {
     __extends(SpeechRecognitionResultEvent, _super);
     function SpeechRecognitionResultEvent(eventName, requestId, result) {
         var _this = _super.call(this, eventName, requestId) || this;
@@ -458,7 +459,7 @@ var SpeechRecognitionResultEvent = (function (_super) {
 }(SpeechRecognitionEvent));
 
 // tslint:disable-next-line:max-classes-per-file
-var RecognitionTriggeredEvent = (function (_super) {
+var RecognitionTriggeredEvent = /** @class */ (function (_super) {
     __extends(RecognitionTriggeredEvent, _super);
     function RecognitionTriggeredEvent(requestId, audioSourceId, audioNodeId) {
         var _this = _super.call(this, "RecognitionTriggeredEvent", requestId) || this;
@@ -484,7 +485,7 @@ var RecognitionTriggeredEvent = (function (_super) {
 }(SpeechRecognitionEvent));
 
 // tslint:disable-next-line:max-classes-per-file
-var ListeningStartedEvent = (function (_super) {
+var ListeningStartedEvent = /** @class */ (function (_super) {
     __extends(ListeningStartedEvent, _super);
     function ListeningStartedEvent(requestId, audioSourceId, audioNodeId) {
         var _this = _super.call(this, "ListeningStartedEvent", requestId) || this;
@@ -510,7 +511,7 @@ var ListeningStartedEvent = (function (_super) {
 }(SpeechRecognitionEvent));
 
 // tslint:disable-next-line:max-classes-per-file
-var ConnectingToServiceEvent = (function (_super) {
+var ConnectingToServiceEvent = /** @class */ (function (_super) {
     __extends(ConnectingToServiceEvent, _super);
     function ConnectingToServiceEvent(requestId, authFetchEventid, connectionId) {
         var _this = _super.call(this, "ConnectingToServiceEvent", requestId) || this;
@@ -536,7 +537,7 @@ var ConnectingToServiceEvent = (function (_super) {
 }(SpeechRecognitionEvent));
 
 // tslint:disable-next-line:max-classes-per-file
-var RecognitionStartedEvent = (function (_super) {
+var RecognitionStartedEvent = /** @class */ (function (_super) {
     __extends(RecognitionStartedEvent, _super);
     function RecognitionStartedEvent(requestId, audioSourceId, audioNodeId, authFetchEventId, connectionId) {
         var _this = _super.call(this, "RecognitionStartedEvent", requestId) || this;
@@ -578,7 +579,7 @@ var RecognitionStartedEvent = (function (_super) {
 }(SpeechRecognitionEvent));
 
 // tslint:disable-next-line:max-classes-per-file
-var SpeechStartDetectedEvent = (function (_super) {
+var SpeechStartDetectedEvent = /** @class */ (function (_super) {
     __extends(SpeechStartDetectedEvent, _super);
     function SpeechStartDetectedEvent(requestId, result) {
         return _super.call(this, "SpeechStartDetectedEvent", requestId, result) || this;
@@ -587,7 +588,7 @@ var SpeechStartDetectedEvent = (function (_super) {
 }(SpeechRecognitionResultEvent));
 
 // tslint:disable-next-line:max-classes-per-file
-var SpeechHypothesisEvent = (function (_super) {
+var SpeechHypothesisEvent = /** @class */ (function (_super) {
     __extends(SpeechHypothesisEvent, _super);
     function SpeechHypothesisEvent(requestId, result) {
         return _super.call(this, "SpeechHypothesisEvent", requestId, result) || this;
@@ -596,7 +597,16 @@ var SpeechHypothesisEvent = (function (_super) {
 }(SpeechRecognitionResultEvent));
 
 // tslint:disable-next-line:max-classes-per-file
-var SpeechEndDetectedEvent = (function (_super) {
+var SpeechFragmentEvent = /** @class */ (function (_super) {
+    __extends(SpeechFragmentEvent, _super);
+    function SpeechFragmentEvent(requestId, result) {
+        return _super.call(this, "SpeechFragmentEvent", requestId, result) || this;
+    }
+    return SpeechFragmentEvent;
+}(SpeechRecognitionResultEvent));
+
+// tslint:disable-next-line:max-classes-per-file
+var SpeechEndDetectedEvent = /** @class */ (function (_super) {
     __extends(SpeechEndDetectedEvent, _super);
     function SpeechEndDetectedEvent(requestId, result) {
         return _super.call(this, "SpeechEndDetectedEvent", requestId, result) || this;
@@ -605,7 +615,7 @@ var SpeechEndDetectedEvent = (function (_super) {
 }(SpeechRecognitionResultEvent));
 
 // tslint:disable-next-line:max-classes-per-file
-var SpeechSimplePhraseEvent = (function (_super) {
+var SpeechSimplePhraseEvent = /** @class */ (function (_super) {
     __extends(SpeechSimplePhraseEvent, _super);
     function SpeechSimplePhraseEvent(requestId, result) {
         return _super.call(this, "SpeechSimplePhraseEvent", requestId, result) || this;
@@ -614,7 +624,7 @@ var SpeechSimplePhraseEvent = (function (_super) {
 }(SpeechRecognitionResultEvent));
 
 // tslint:disable-next-line:max-classes-per-file
-var SpeechDetailedPhraseEvent = (function (_super) {
+var SpeechDetailedPhraseEvent = /** @class */ (function (_super) {
     __extends(SpeechDetailedPhraseEvent, _super);
     function SpeechDetailedPhraseEvent(requestId, result) {
         return _super.call(this, "SpeechDetailedPhraseEvent", requestId, result) || this;
@@ -636,7 +646,7 @@ var RecognitionCompletionStatus;
     RecognitionCompletionStatus[RecognitionCompletionStatus["UnknownError"] = 9] = "UnknownError";
 })(RecognitionCompletionStatus || (RecognitionCompletionStatus = {}));
 // tslint:disable-next-line:max-classes-per-file
-var RecognitionEndedEvent = (function (_super) {
+var RecognitionEndedEvent = /** @class */ (function (_super) {
     __extends(RecognitionEndedEvent, _super);
     function RecognitionEndedEvent(requestId, audioSourceId, audioNodeId, authFetchEventId, connectionId, serviceTag, status, error) {
         var _this = _super.call(this, "RecognitionEndedEvent", requestId, status === RecognitionCompletionStatus.Success ? __WEBPACK_IMPORTED_MODULE_0__common_Exports__["v" /* EventType */].Info : __WEBPACK_IMPORTED_MODULE_0__common_Exports__["v" /* EventType */].Error) || this;
@@ -708,6 +718,43 @@ var RecognitionEndedEvent = (function (_super) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ConsoleLoggingListener__ = __webpack_require__(42);
+/* unused harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__LocalStorage__ = __webpack_require__(43);
+/* unused harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__MicAudioSource__ = __webpack_require__(44);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_2__MicAudioSource__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__FileAudioSource__ = __webpack_require__(45);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_3__FileAudioSource__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__OpusRecorder__ = __webpack_require__(46);
+/* unused harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__PCMRecorder__ = __webpack_require__(47);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_5__PCMRecorder__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__SessionStorage__ = __webpack_require__(48);
+/* unused harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Timer__ = __webpack_require__(49);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_7__Timer__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__WebsocketConnection__ = __webpack_require__(50);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_8__WebsocketConnection__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__WebsocketMessageAdapter__ = __webpack_require__(15);
+/* unused harmony namespace reexport */
+
+
+
+
+
+
+
+
+
+
+
+
+/***/ }),
+/* 8 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return MessageType; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConnectionMessage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Error__ = __webpack_require__(1);
@@ -719,7 +766,7 @@ var MessageType;
     MessageType[MessageType["Text"] = 0] = "Text";
     MessageType[MessageType["Binary"] = 1] = "Binary";
 })(MessageType || (MessageType = {}));
-var ConnectionMessage = (function () {
+var ConnectionMessage = /** @class */ (function () {
     function ConnectionMessage(messageType, body, headers, id) {
         this.body = null;
         if (messageType === MessageType.Text && body && !(typeof (body) === "string")) {
@@ -787,7 +834,7 @@ var ConnectionMessage = (function () {
 
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -796,7 +843,7 @@ var ConnectionMessage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Guid__ = __webpack_require__(2);
 
 
-var EventSource = (function () {
+var EventSource = /** @class */ (function () {
     function EventSource(metadata) {
         var _this = this;
         this.eventListeners = {};
@@ -856,14 +903,14 @@ var EventSource = (function () {
 
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InMemoryStorage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Error__ = __webpack_require__(1);
 
-var InMemoryStorage = (function () {
+var InMemoryStorage = /** @class */ (function () {
     function InMemoryStorage() {
         var _this = this;
         this.store = {};
@@ -903,14 +950,14 @@ var InMemoryStorage = (function () {
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return List; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Error__ = __webpack_require__(1);
 
-var List = (function () {
+var List = /** @class */ (function () {
     function List(list) {
         var _this = this;
         this.subscriptionIdCounter = 0;
@@ -1112,7 +1159,7 @@ var List = (function () {
 
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1131,7 +1178,7 @@ var PromiseState;
     PromiseState[PromiseState["Resolved"] = 1] = "Resolved";
     PromiseState[PromiseState["Rejected"] = 2] = "Rejected";
 })(PromiseState || (PromiseState = {}));
-var PromiseResult = (function () {
+var PromiseResult = /** @class */ (function () {
     function PromiseResult(promiseResultEventSource) {
         var _this = this;
         this.ThrowIfError = function () {
@@ -1185,7 +1232,7 @@ var PromiseResult = (function () {
 }());
 
 // tslint:disable-next-line:max-classes-per-file
-var PromiseResultEventSource = (function () {
+var PromiseResultEventSource = /** @class */ (function () {
     function PromiseResultEventSource() {
         var _this = this;
         this.SetResult = function (result) {
@@ -1203,7 +1250,7 @@ var PromiseResultEventSource = (function () {
 }());
 
 // tslint:disable-next-line:max-classes-per-file
-var PromiseHelper = (function () {
+var PromiseHelper = /** @class */ (function () {
     function PromiseHelper() {
     }
     PromiseHelper.WhenAll = function (promises) {
@@ -1249,7 +1296,7 @@ var PromiseHelper = (function () {
 }());
 
 // tslint:disable-next-line:max-classes-per-file
-var Promise = (function () {
+var Promise = /** @class */ (function () {
     function Promise(sink) {
         var _this = this;
         this.Result = function () {
@@ -1262,16 +1309,16 @@ var Promise = (function () {
             var continuationDeferral = new Deferred();
             _this.sink.on(function (r) {
                 try {
-                    var coninuationResult = continuationCallback(_this.sink.Result);
-                    continuationDeferral.Resolve(coninuationResult);
+                    var continuationResult = continuationCallback(_this.sink.Result);
+                    continuationDeferral.Resolve(continuationResult);
                 }
                 catch (e) {
                     continuationDeferral.Reject("'Unhandled callback error: " + e + "'");
                 }
             }, function (error) {
                 try {
-                    var coninuationResult = continuationCallback(_this.sink.Result);
-                    continuationDeferral.Resolve(coninuationResult);
+                    var continuationResult = continuationCallback(_this.sink.Result);
+                    continuationDeferral.Resolve(continuationResult);
                 }
                 catch (e) {
                     continuationDeferral.Reject("'Unhandled callback error: " + e + ". InnerError: " + error + "'");
@@ -1286,8 +1333,8 @@ var Promise = (function () {
             var continuationDeferral = new Deferred();
             _this.sink.on(function (r) {
                 try {
-                    var coninuationResult = continuationCallback(r);
-                    continuationDeferral.Resolve(coninuationResult);
+                    var continuationResult = continuationCallback(r);
+                    continuationDeferral.Resolve(continuationResult);
                 }
                 catch (e) {
                     continuationDeferral.Reject("'Unhandled callback error: " + e + "'");
@@ -1306,10 +1353,10 @@ var Promise = (function () {
                 try {
                     var continuationPromise = continuationCallback(_this.sink.Result);
                     if (!continuationPromise) {
-                        throw new Error("'Contuniation callback did not return promise'");
+                        throw new Error("'Continuation callback did not return promise'");
                     }
-                    continuationPromise.On(function (coninuationResult) {
-                        continuationDeferral.Resolve(coninuationResult);
+                    continuationPromise.On(function (continuationResult) {
+                        continuationDeferral.Resolve(continuationResult);
                     }, function (e) {
                         continuationDeferral.Reject(e);
                     });
@@ -1321,10 +1368,10 @@ var Promise = (function () {
                 try {
                     var continuationPromise = continuationCallback(_this.sink.Result);
                     if (!continuationPromise) {
-                        throw new Error("Contuniation callback did not return promise");
+                        throw new Error("Continuation callback did not return promise");
                     }
-                    continuationPromise.On(function (coninuationResult) {
-                        continuationDeferral.Resolve(coninuationResult);
+                    continuationPromise.On(function (continuationResult) {
+                        continuationDeferral.Resolve(continuationResult);
                     }, function (e) {
                         continuationDeferral.Reject(e);
                     });
@@ -1344,10 +1391,10 @@ var Promise = (function () {
                 try {
                     var continuationPromise = continuationCallback(r);
                     if (!continuationPromise) {
-                        throw new Error("Contuniation callback did not return promise");
+                        throw new Error("Continuation callback did not return promise");
                     }
-                    continuationPromise.On(function (coninuationResult) {
-                        continuationDeferral.Resolve(coninuationResult);
+                    continuationPromise.On(function (continuationResult) {
+                        continuationDeferral.Resolve(continuationResult);
                     }, function (e) {
                         continuationDeferral.Reject(e);
                     });
@@ -1385,7 +1432,7 @@ var Promise = (function () {
 }());
 
 // tslint:disable-next-line:max-classes-per-file
-var Deferred = (function () {
+var Deferred = /** @class */ (function () {
     function Deferred() {
         var _this = this;
         this.State = function () {
@@ -1409,7 +1456,7 @@ var Deferred = (function () {
 }());
 
 // tslint:disable-next-line:max-classes-per-file
-var Sink = (function () {
+var Sink = /** @class */ (function () {
     function Sink() {
         var _this = this;
         this.state = PromiseState.None;
@@ -1506,14 +1553,14 @@ var Sink = (function () {
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Queue; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Error__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__List__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Promise__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__List__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Promise__ = __webpack_require__(12);
 
 
 
@@ -1522,7 +1569,7 @@ var SubscriberType;
     SubscriberType[SubscriberType["Dequeue"] = 0] = "Dequeue";
     SubscriberType[SubscriberType["Peek"] = 1] = "Peek";
 })(SubscriberType || (SubscriberType = {}));
-var Queue = (function () {
+var Queue = /** @class */ (function () {
     function Queue(list) {
         var _this = this;
         this.promiseStore = new __WEBPACK_IMPORTED_MODULE_1__List__["a" /* List */]();
@@ -1646,7 +1693,7 @@ var Queue = (function () {
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1669,7 +1716,7 @@ var SpeechResultFormat;
     SpeechResultFormat[SpeechResultFormat["Simple"] = 0] = "Simple";
     SpeechResultFormat[SpeechResultFormat["Detailed"] = 1] = "Detailed";
 })(SpeechResultFormat || (SpeechResultFormat = {}));
-var RecognizerConfig = (function () {
+var RecognizerConfig = /** @class */ (function () {
     function RecognizerConfig(platformConfig, recognitionMode, language, format) {
         if (recognitionMode === void 0) { recognitionMode = RecognitionMode.Interactive; }
         if (language === void 0) { language = "en-us"; }
@@ -1727,7 +1774,7 @@ var RecognizerConfig = (function () {
 }());
 
 // tslint:disable-next-line:max-classes-per-file
-var SpeechConfig = (function () {
+var SpeechConfig = /** @class */ (function () {
     function SpeechConfig(context) {
         var _this = this;
         this.Serialize = function () {
@@ -1757,7 +1804,7 @@ var SpeechConfig = (function () {
 }());
 
 // tslint:disable-next-line:max-classes-per-file
-var Context = (function () {
+var Context = /** @class */ (function () {
     function Context(os, device) {
         this.system = new System();
         this.os = os;
@@ -1788,7 +1835,7 @@ var Context = (function () {
 }());
 
 // tslint:disable-next-line:max-classes-per-file
-var System = (function () {
+var System = /** @class */ (function () {
     function System() {
         // TODO: Tie this with the sdk Version somehow
         this.version = "1.0.00000";
@@ -1805,7 +1852,7 @@ var System = (function () {
 }());
 
 // tslint:disable-next-line:max-classes-per-file
-var OS = (function () {
+var OS = /** @class */ (function () {
     function OS(platform, name, version) {
         this.platform = platform;
         this.name = name;
@@ -1836,7 +1883,7 @@ var OS = (function () {
 }());
 
 // tslint:disable-next-line:max-classes-per-file
-var Device = (function () {
+var Device = /** @class */ (function () {
     function Device(manufacturer, model, version) {
         this.manufacturer = manufacturer;
         this.model = model;
@@ -1869,40 +1916,6 @@ var Device = (function () {
 
 
 /***/ }),
-/* 14 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ConsoleLoggingListener__ = __webpack_require__(39);
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__LocalStorage__ = __webpack_require__(40);
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__MicAudioSource__ = __webpack_require__(41);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_2__MicAudioSource__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__OpusRecorder__ = __webpack_require__(42);
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__PCMRecorder__ = __webpack_require__(43);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_4__PCMRecorder__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__SessionStorage__ = __webpack_require__(44);
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Timer__ = __webpack_require__(45);
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__WebsocketConnection__ = __webpack_require__(46);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_7__WebsocketConnection__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__WebsocketMessageAdapter__ = __webpack_require__(15);
-/* unused harmony namespace reexport */
-
-
-
-
-
-
-
-
-
-
-
-/***/ }),
 /* 15 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1910,7 +1923,7 @@ var Device = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WebsocketMessageAdapter; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_Exports__ = __webpack_require__(0);
 
-var WebsocketMessageAdapter = (function () {
+var WebsocketMessageAdapter = /** @class */ (function () {
     function WebsocketMessageAdapter(uri, connectionId, messageFormatter) {
         var _this = this;
         this.Open = function () {
@@ -2112,7 +2125,7 @@ var WebsocketMessageAdapter = (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SpeechConnectionFactory; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_browser_Exports__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_browser_Exports__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__common_Exports__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__speech_Exports__ = __webpack_require__(3);
 
@@ -2120,7 +2133,7 @@ var WebsocketMessageAdapter = (function () {
 
 var TestHooksParamName = "testhooks";
 var ConnectionIdHeader = "X-ConnectionId";
-var SpeechConnectionFactory = (function () {
+var SpeechConnectionFactory = /** @class */ (function () {
     function SpeechConnectionFactory() {
         var _this = this;
         this.Create = function (config, authInfo, connectionId) {
@@ -2146,7 +2159,7 @@ var SpeechConnectionFactory = (function () {
             var headers = {};
             headers[authInfo.HeaderName] = authInfo.Token;
             headers[ConnectionIdHeader] = connectionId;
-            return new __WEBPACK_IMPORTED_MODULE_0__common_browser_Exports__["c" /* WebsocketConnection */](endpoint, queryParams, headers, new __WEBPACK_IMPORTED_MODULE_2__speech_Exports__["k" /* WebsocketMessageFormatter */](), connectionId);
+            return new __WEBPACK_IMPORTED_MODULE_0__common_browser_Exports__["e" /* WebsocketConnection */](endpoint, queryParams, headers, new __WEBPACK_IMPORTED_MODULE_2__speech_Exports__["k" /* WebsocketMessageFormatter */](), connectionId);
         };
     }
     Object.defineProperty(SpeechConnectionFactory.prototype, "Host", {
@@ -2226,18 +2239,21 @@ navigator.mediaDevices.getUserMedia = navigator.mediaDevices.getUserMedia || (fu
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SpeechRecognition; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_browser_Exports__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__entities__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_microsoft_speech_browser_sdk_src_sdk_speech_browser_Exports__ = __webpack_require__(40);
+
 
 // include the needed parts of the library. webpack will treeshake all unneeded stuff.
 
 
-var SpeechRecognition = (function () {
+var SpeechRecognition = /** @class */ (function () {
     function SpeechRecognition(apiKey) {
         this.apiKey = apiKey;
         this.recognizer = null;
         this.onaudiostart = null;
+        // won't be triggered
         this.onaudioend = null;
         this.onstart = null;
         this.onend = null;
@@ -2271,7 +2287,23 @@ var SpeechRecognition = (function () {
         }
     };
     SpeechRecognition.prototype.handleEvent = function (event) {
-        console.log(event.name + " triggered");
+        var eventName = event.name;
+        switch (eventName) {
+            case "RecognitionTriggeredEvent":
+                console.log('start');
+                break;
+            case "ListeningStartedEvent":
+                console.log('audiostart');
+                break;
+            case "RecognitionStartedEvent":
+                console.log('speechstart');
+                break;
+            case "RecognitionEndedEvent":
+                console.log("speechend");
+                break;
+            default:
+                console.log(eventName);
+        }
         if (event.result) {
             this.handleResult(event.result);
         }
@@ -2279,30 +2311,31 @@ var SpeechRecognition = (function () {
             console.error(event.error);
         }
     };
-    SpeechRecognition.prototype.handleResult = function (result) {
-        var status = __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */][result.RecognitionStatus];
-        // console.log('my event');
+    SpeechRecognition.prototype.handleResult = function (event) {
+        var status = __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */][event.RecognitionStatus];
+        var results = event.results;
         switch (status) {
-            case __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */].Success:
-                console.log('got something', result);
+            case __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */].Success:
+                console.log('got something', event);
+                if (this.onresult) {
+                    this.onresult.call(this.recognizer, Object(__WEBPACK_IMPORTED_MODULE_0__entities__["a" /* createSpeechRecognitionResult */])(results, this.maxAlternatives));
+                }
                 // call onresult;
                 break;
-            case __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */].Error:
-                console.log('error', result);
+            case __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */].Error:
+                console.log('error', event);
                 // call onerror;
                 break;
-            case __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */].NoMatch:
-                console.log('no match', result);
+            case __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */].NoMatch:
+                console.log('no match', event);
                 // call onnomatch;
                 break;
-            case __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */].InitialSilenceTimeout:
-            case __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */].EndOfDictation:
-            case __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */].BabbleTimeout:
-                console.log('something happened', result);
+            case __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */].InitialSilenceTimeout:
+            case __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */].EndOfDictation:
+            case __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */].BabbleTimeout:
+                console.log('something happened', event);
                 // call onend;
                 break;
-            default:
-                console.log('falled into default', result);
         }
     };
     SpeechRecognition.prototype.recognitionStartSuccess = function (listening) {
@@ -2313,15 +2346,15 @@ var SpeechRecognition = (function () {
     };
     SpeechRecognition.prototype.setupRecognizer = function () {
         // prepare recognizer configuration
-        var speechConfig = new __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["i" /* SpeechConfig */](new __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["b" /* Context */](new __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["d" /* OS */]('Speech', 'Speech', null), new __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["c" /* Device */](navigator.userAgent, 'Browser', '1.0.0.0')));
-        var recognitionMode = this.interimResults ? __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["e" /* RecognitionMode */].Conversation : __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["e" /* RecognitionMode */].Dictation;
-        var language = Object(__WEBPACK_IMPORTED_MODULE_0__helpers__["a" /* resolveLang */])(this.lang);
-        var resultFormat = __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["j" /* SpeechResultFormat */].Detailed;
+        var speechConfig = new __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["i" /* SpeechConfig */](new __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["b" /* Context */](new __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["d" /* OS */]('Speech', 'Speech', null), new __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["c" /* Device */](navigator.userAgent, 'Browser', '1.0.0.0')));
+        var recognitionMode = this.interimResults ? __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["e" /* RecognitionMode */].Interactive : __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["e" /* RecognitionMode */].Conversation;
+        var language = Object(__WEBPACK_IMPORTED_MODULE_1__helpers__["a" /* resolveLang */])(this.lang);
+        var resultFormat = __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["j" /* SpeechResultFormat */].Detailed;
         // configure and authenticate recognizer
-        var config = new __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["h" /* RecognizerConfig */](speechConfig, recognitionMode, language, resultFormat);
-        var auth = new __WEBPACK_IMPORTED_MODULE_1_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["a" /* CognitiveSubscriptionKeyAuthentication */](this.apiKey);
+        var config = new __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["h" /* RecognizerConfig */](speechConfig, recognitionMode, language, resultFormat);
+        var auth = new __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["a" /* CognitiveSubscriptionKeyAuthentication */](this.apiKey);
         // create and return recognizer based on the prepared configuration
-        return Object(__WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_browser_Exports__["a" /* CreateRecognizer */])(config, auth);
+        return Object(__WEBPACK_IMPORTED_MODULE_3_microsoft_speech_browser_sdk_src_sdk_speech_browser_Exports__["a" /* CreateRecognizer */])(config, auth);
     };
     return SpeechRecognition;
 }());
@@ -2333,13 +2366,101 @@ var SpeechRecognition = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_LanguageResolver__ = __webpack_require__(20);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__helpers_LanguageResolver__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__entities_SpeechRecognitionEvent__ = __webpack_require__(20);
+/* unused harmony reexport SpeechRecognitionEvent */
+/* unused harmony reexport createResultEvent */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__entities_SpeechRecognitionResult__ = __webpack_require__(21);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__entities_SpeechRecognitionResult__["a"]; });
+
 
 
 
 /***/ }),
 /* 20 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export SpeechRecognitionEvent */
+/* unused harmony export createResultEvent */
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var SpeechRecognitionEvent = /** @class */ (function (_super) {
+    __extends(SpeechRecognitionEvent, _super);
+    function SpeechRecognitionEvent(typeArg) {
+        if (typeArg === void 0) { typeArg = 'result'; }
+        return _super.call(this, typeArg) || this;
+    }
+    return SpeechRecognitionEvent;
+}(Event));
+
+function createResultEvent(results, resultIndex, interpretation, emma) {
+    if (resultIndex === void 0) { resultIndex = 0; }
+    if (interpretation === void 0) { interpretation = null; }
+    if (emma === void 0) { emma = null; }
+    var event = new SpeechRecognitionEvent();
+    return Object.defineProperties(event, {
+        target: { value: this, writable: false },
+        emma: { value: emma, writable: false },
+        resultIndex: { value: resultIndex, writable: false },
+        results: { value: results, writable: false },
+        interpretation: { value: interpretation, writable: false }
+    });
+}
+
+
+/***/ }),
+/* 21 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return createSpeechRecognitionResult; });
+var SpeechRecognitionResult = /** @class */ (function () {
+    function SpeechRecognitionResult() {
+    }
+    return SpeechRecognitionResult;
+}());
+var createSpeechRecognitionResult = function (results, maxAlternatives) {
+    // create a blank result ()
+    var result = new SpeechRecognitionResult();
+    // add results on the object and let them be indexable
+    var length = results
+        .slice(0, maxAlternatives)
+        .reduce(function (sum, result, index) {
+        event[index] = {
+            confidence: result.Confidence,
+            transcript: result.ITN
+        };
+        return sum + 1;
+    }, 0);
+    // set read-only props for length and isFinal (isFinal will always be true for now)
+    Object.defineProperties(result, {
+        length: { value: length, writable: false },
+        isFinal: { value: true, writable: false }
+    });
+    return result;
+};
+
+
+/***/ }),
+/* 22 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_LanguageResolver__ = __webpack_require__(23);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__helpers_LanguageResolver__["a"]; });
+
+
+
+/***/ }),
+/* 23 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2371,7 +2492,7 @@ var resolveLang = function (langHint) {
 
 
 /***/ }),
-/* 21 */
+/* 24 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2381,7 +2502,7 @@ var resolveLang = function (langHint) {
 
 
 var AuthHeader = "Ocp-Apim-Subscription-Key";
-var CognitiveSubscriptionKeyAuthentication = (function () {
+var CognitiveSubscriptionKeyAuthentication = /** @class */ (function () {
     function CognitiveSubscriptionKeyAuthentication(subscriptionKey) {
         var _this = this;
         this.Fetch = function (authFetchEventId) {
@@ -2401,7 +2522,7 @@ var CognitiveSubscriptionKeyAuthentication = (function () {
 
 
 /***/ }),
-/* 22 */
+/* 25 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2427,7 +2548,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
-var AudioSourceEvent = (function (_super) {
+var AudioSourceEvent = /** @class */ (function (_super) {
     __extends(AudioSourceEvent, _super);
     function AudioSourceEvent(eventName, audioSourceId, eventType) {
         if (eventType === void 0) { eventType = __WEBPACK_IMPORTED_MODULE_0__PlatformEvent__["a" /* EventType */].Info; }
@@ -2446,7 +2567,7 @@ var AudioSourceEvent = (function (_super) {
 }(__WEBPACK_IMPORTED_MODULE_0__PlatformEvent__["b" /* PlatformEvent */]));
 
 // tslint:disable-next-line:max-classes-per-file
-var AudioSourceInitializingEvent = (function (_super) {
+var AudioSourceInitializingEvent = /** @class */ (function (_super) {
     __extends(AudioSourceInitializingEvent, _super);
     function AudioSourceInitializingEvent(audioSourceId) {
         return _super.call(this, "AudioSourceInitializingEvent", audioSourceId) || this;
@@ -2455,7 +2576,7 @@ var AudioSourceInitializingEvent = (function (_super) {
 }(AudioSourceEvent));
 
 // tslint:disable-next-line:max-classes-per-file
-var AudioSourceReadyEvent = (function (_super) {
+var AudioSourceReadyEvent = /** @class */ (function (_super) {
     __extends(AudioSourceReadyEvent, _super);
     function AudioSourceReadyEvent(audioSourceId) {
         return _super.call(this, "AudioSourceReadyEvent", audioSourceId) || this;
@@ -2464,7 +2585,7 @@ var AudioSourceReadyEvent = (function (_super) {
 }(AudioSourceEvent));
 
 // tslint:disable-next-line:max-classes-per-file
-var AudioSourceOffEvent = (function (_super) {
+var AudioSourceOffEvent = /** @class */ (function (_super) {
     __extends(AudioSourceOffEvent, _super);
     function AudioSourceOffEvent(audioSourceId) {
         return _super.call(this, "AudioSourceOffEvent", audioSourceId) || this;
@@ -2473,7 +2594,7 @@ var AudioSourceOffEvent = (function (_super) {
 }(AudioSourceEvent));
 
 // tslint:disable-next-line:max-classes-per-file
-var AudioSourceErrorEvent = (function (_super) {
+var AudioSourceErrorEvent = /** @class */ (function (_super) {
     __extends(AudioSourceErrorEvent, _super);
     function AudioSourceErrorEvent(audioSourceId, error) {
         var _this = _super.call(this, "AudioSourceErrorEvent", audioSourceId, __WEBPACK_IMPORTED_MODULE_0__PlatformEvent__["a" /* EventType */].Error) || this;
@@ -2491,7 +2612,7 @@ var AudioSourceErrorEvent = (function (_super) {
 }(AudioSourceEvent));
 
 // tslint:disable-next-line:max-classes-per-file
-var AudioStreamNodeEvent = (function (_super) {
+var AudioStreamNodeEvent = /** @class */ (function (_super) {
     __extends(AudioStreamNodeEvent, _super);
     function AudioStreamNodeEvent(eventName, audioSourceId, audioNodeId) {
         var _this = _super.call(this, eventName, audioSourceId) || this;
@@ -2509,7 +2630,7 @@ var AudioStreamNodeEvent = (function (_super) {
 }(AudioSourceEvent));
 
 // tslint:disable-next-line:max-classes-per-file
-var AudioStreamNodeAttachingEvent = (function (_super) {
+var AudioStreamNodeAttachingEvent = /** @class */ (function (_super) {
     __extends(AudioStreamNodeAttachingEvent, _super);
     function AudioStreamNodeAttachingEvent(audioSourceId, audioNodeId) {
         return _super.call(this, "AudioStreamNodeAttachingEvent", audioSourceId, audioNodeId) || this;
@@ -2518,7 +2639,7 @@ var AudioStreamNodeAttachingEvent = (function (_super) {
 }(AudioStreamNodeEvent));
 
 // tslint:disable-next-line:max-classes-per-file
-var AudioStreamNodeAttachedEvent = (function (_super) {
+var AudioStreamNodeAttachedEvent = /** @class */ (function (_super) {
     __extends(AudioStreamNodeAttachedEvent, _super);
     function AudioStreamNodeAttachedEvent(audioSourceId, audioNodeId) {
         return _super.call(this, "AudioStreamNodeAttachedEvent", audioSourceId, audioNodeId) || this;
@@ -2527,7 +2648,7 @@ var AudioStreamNodeAttachedEvent = (function (_super) {
 }(AudioStreamNodeEvent));
 
 // tslint:disable-next-line:max-classes-per-file
-var AudioStreamNodeDetachedEvent = (function (_super) {
+var AudioStreamNodeDetachedEvent = /** @class */ (function (_super) {
     __extends(AudioStreamNodeDetachedEvent, _super);
     function AudioStreamNodeDetachedEvent(audioSourceId, audioNodeId) {
         return _super.call(this, "AudioStreamNodeDetachedEvent", audioSourceId, audioNodeId) || this;
@@ -2536,7 +2657,7 @@ var AudioStreamNodeDetachedEvent = (function (_super) {
 }(AudioStreamNodeEvent));
 
 // tslint:disable-next-line:max-classes-per-file
-var AudioStreamNodeErrorEvent = (function (_super) {
+var AudioStreamNodeErrorEvent = /** @class */ (function (_super) {
     __extends(AudioStreamNodeErrorEvent, _super);
     function AudioStreamNodeErrorEvent(audioSourceId, audioNodeId, error) {
         var _this = _super.call(this, "AudioStreamNodeErrorEvent", audioSourceId, audioNodeId) || this;
@@ -2556,7 +2677,7 @@ var AudioStreamNodeErrorEvent = (function (_super) {
 
 
 /***/ }),
-/* 23 */
+/* 26 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2579,7 +2700,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
-var ConnectionEvent = (function (_super) {
+var ConnectionEvent = /** @class */ (function (_super) {
     __extends(ConnectionEvent, _super);
     function ConnectionEvent(eventName, connectionId, eventType) {
         if (eventType === void 0) { eventType = __WEBPACK_IMPORTED_MODULE_0__PlatformEvent__["a" /* EventType */].Info; }
@@ -2598,7 +2719,7 @@ var ConnectionEvent = (function (_super) {
 }(__WEBPACK_IMPORTED_MODULE_0__PlatformEvent__["b" /* PlatformEvent */]));
 
 // tslint:disable-next-line:max-classes-per-file
-var ConnectionStartEvent = (function (_super) {
+var ConnectionStartEvent = /** @class */ (function (_super) {
     __extends(ConnectionStartEvent, _super);
     function ConnectionStartEvent(connectionId, uri, headers) {
         var _this = _super.call(this, "ConnectionStartEvent", connectionId) || this;
@@ -2624,7 +2745,7 @@ var ConnectionStartEvent = (function (_super) {
 }(ConnectionEvent));
 
 // tslint:disable-next-line:max-classes-per-file
-var ConnectionEstablishedEvent = (function (_super) {
+var ConnectionEstablishedEvent = /** @class */ (function (_super) {
     __extends(ConnectionEstablishedEvent, _super);
     function ConnectionEstablishedEvent(connectionId, metadata) {
         return _super.call(this, "ConnectionEstablishedEvent", connectionId) || this;
@@ -2633,7 +2754,7 @@ var ConnectionEstablishedEvent = (function (_super) {
 }(ConnectionEvent));
 
 // tslint:disable-next-line:max-classes-per-file
-var ConnectionClosedEvent = (function (_super) {
+var ConnectionClosedEvent = /** @class */ (function (_super) {
     __extends(ConnectionClosedEvent, _super);
     function ConnectionClosedEvent(connectionId, statusCode, reason) {
         var _this = _super.call(this, "ConnectionClosedEvent", connectionId, __WEBPACK_IMPORTED_MODULE_0__PlatformEvent__["a" /* EventType */].Warning) || this;
@@ -2659,7 +2780,7 @@ var ConnectionClosedEvent = (function (_super) {
 }(ConnectionEvent));
 
 // tslint:disable-next-line:max-classes-per-file
-var ConnectionEstablishErrorEvent = (function (_super) {
+var ConnectionEstablishErrorEvent = /** @class */ (function (_super) {
     __extends(ConnectionEstablishErrorEvent, _super);
     function ConnectionEstablishErrorEvent(connectionId, statuscode, reason) {
         var _this = _super.call(this, "ConnectionEstablishErrorEvent", connectionId, __WEBPACK_IMPORTED_MODULE_0__PlatformEvent__["a" /* EventType */].Error) || this;
@@ -2685,7 +2806,7 @@ var ConnectionEstablishErrorEvent = (function (_super) {
 }(ConnectionEvent));
 
 // tslint:disable-next-line:max-classes-per-file
-var ConnectionMessageReceivedEvent = (function (_super) {
+var ConnectionMessageReceivedEvent = /** @class */ (function (_super) {
     __extends(ConnectionMessageReceivedEvent, _super);
     function ConnectionMessageReceivedEvent(connectionId, networkReceivedTimeISO, message) {
         var _this = _super.call(this, "ConnectionMessageReceivedEvent", connectionId) || this;
@@ -2711,7 +2832,7 @@ var ConnectionMessageReceivedEvent = (function (_super) {
 }(ConnectionEvent));
 
 // tslint:disable-next-line:max-classes-per-file
-var ConnectionMessageSentEvent = (function (_super) {
+var ConnectionMessageSentEvent = /** @class */ (function (_super) {
     __extends(ConnectionMessageSentEvent, _super);
     function ConnectionMessageSentEvent(connectionId, networkSentTimeISO, message) {
         var _this = _super.call(this, "ConnectionMessageSentEvent", connectionId) || this;
@@ -2739,12 +2860,12 @@ var ConnectionMessageSentEvent = (function (_super) {
 
 
 /***/ }),
-/* 24 */
+/* 27 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConnectionOpenResponse; });
-var ConnectionOpenResponse = (function () {
+var ConnectionOpenResponse = /** @class */ (function () {
     function ConnectionOpenResponse(statusCode, reason) {
         this.statusCode = statusCode;
         this.reason = reason;
@@ -2769,16 +2890,16 @@ var ConnectionOpenResponse = (function () {
 
 
 /***/ }),
-/* 25 */
+/* 28 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Events; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Error__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__EventSource__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__EventSource__ = __webpack_require__(9);
 
 
-var Events = (function () {
+var Events = /** @class */ (function () {
     function Events() {
     }
     Object.defineProperty(Events, "Instance", {
@@ -2801,7 +2922,7 @@ var Events = (function () {
 
 
 /***/ }),
-/* 26 */
+/* 29 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2816,18 +2937,18 @@ var ConnectionState;
 
 
 /***/ }),
-/* 27 */
+/* 30 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RawWebsocketMessage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ConnectionMessage__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ConnectionMessage__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Error__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Guid__ = __webpack_require__(2);
 
 
 
-var RawWebsocketMessage = (function () {
+var RawWebsocketMessage = /** @class */ (function () {
     function RawWebsocketMessage(messageType, payload, id) {
         this.payload = null;
         if (!payload) {
@@ -2890,12 +3011,12 @@ var RawWebsocketMessage = (function () {
 
 
 /***/ }),
-/* 28 */
+/* 31 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RiffPcmEncoder; });
-var RiffPcmEncoder = (function () {
+var RiffPcmEncoder = /** @class */ (function () {
     function RiffPcmEncoder(actualSampleRate, desiredSampleRate) {
         var _this = this;
         this.channelCount = 1;
@@ -2985,16 +3106,16 @@ var RiffPcmEncoder = (function () {
 
 
 /***/ }),
-/* 29 */
+/* 32 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Storage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Error__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__InMemoryStorage__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__InMemoryStorage__ = __webpack_require__(10);
 
 
-var Storage = (function () {
+var Storage = /** @class */ (function () {
     function Storage() {
     }
     Object.defineProperty(Storage, "Session", {
@@ -3031,7 +3152,7 @@ var Storage = (function () {
 
 
 /***/ }),
-/* 30 */
+/* 33 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3039,11 +3160,11 @@ var Storage = (function () {
 /* unused harmony export StreamReader */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Error__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Guid__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Queue__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Queue__ = __webpack_require__(13);
 
 
 
-var Stream = (function () {
+var Stream = /** @class */ (function () {
     function Stream(streamId) {
         var _this = this;
         this.readerIdCounter = 1;
@@ -3118,7 +3239,7 @@ var Stream = (function () {
 }());
 
 // tslint:disable-next-line:max-classes-per-file
-var StreamReader = (function () {
+var StreamReader = /** @class */ (function () {
     function StreamReader(streamId, readerQueue, onClose) {
         var _this = this;
         this.isClosed = false;
@@ -3166,7 +3287,7 @@ var StreamReader = (function () {
 
 
 /***/ }),
-/* 31 */
+/* 34 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3176,7 +3297,7 @@ var StreamReader = (function () {
 
 
 var AuthHeader = "Authorization";
-var CognitiveTokenAuthentication = (function () {
+var CognitiveTokenAuthentication = /** @class */ (function () {
     function CognitiveTokenAuthentication(fetchCallback, fetchOnExpiryCallback) {
         var _this = this;
         this.Fetch = function (authFetchEventId) {
@@ -3200,22 +3321,22 @@ var CognitiveTokenAuthentication = (function () {
 
 
 /***/ }),
-/* 32 */
+/* 35 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Recognizer; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_Exports__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__RecognitionEvents__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__RecognizerConfig__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ServiceTelemetryListener_Internal__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__SpeechConnectionMessage_Internal__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__RecognizerConfig__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ServiceTelemetryListener_Internal__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__SpeechConnectionMessage_Internal__ = __webpack_require__(37);
 
 
 
 
 
-var Recognizer = (function () {
+var Recognizer = /** @class */ (function () {
     function Recognizer(authentication, connectionFactory, audioSource, recognizerConfig) {
         var _this = this;
         this.Recognize = function (onEventCallback, speechContextJson) {
@@ -3318,6 +3439,9 @@ var Recognizer = (function () {
                         case "speech.hypothesis":
                             requestSession.OnServiceSpeechHypothesisResponse(JSON.parse(connectionMessage.TextBody));
                             break;
+                        case "speech.fragment":
+                            requestSession.OnServiceSpeechFragmentResponse(JSON.parse(connectionMessage.TextBody));
+                            break;
                         case "speech.enddetected":
                             requestSession.OnServiceSpeechEndDetectedResponse(JSON.parse(connectionMessage.TextBody));
                             break;
@@ -3411,7 +3535,7 @@ var Recognizer = (function () {
 }());
 
 // tslint:disable-next-line:max-classes-per-file
-var RequestSession = (function () {
+var RequestSession = /** @class */ (function () {
     function RequestSession(audioSourceId, onEventCallback) {
         var _this = this;
         this.isDisposed = false;
@@ -3455,17 +3579,20 @@ var RequestSession = (function () {
             }
         };
         this.OnServiceSpeechStartDetectedResponse = function (result) {
-            _this.OnEvent(new __WEBPACK_IMPORTED_MODULE_1__RecognitionEvents__["k" /* SpeechStartDetectedEvent */](_this.RequestId, result));
+            _this.OnEvent(new __WEBPACK_IMPORTED_MODULE_1__RecognitionEvents__["l" /* SpeechStartDetectedEvent */](_this.RequestId, result));
         };
         this.OnServiceSpeechHypothesisResponse = function (result) {
-            _this.OnEvent(new __WEBPACK_IMPORTED_MODULE_1__RecognitionEvents__["i" /* SpeechHypothesisEvent */](_this.RequestId, result));
+            _this.OnEvent(new __WEBPACK_IMPORTED_MODULE_1__RecognitionEvents__["j" /* SpeechHypothesisEvent */](_this.RequestId, result));
+        };
+        this.OnServiceSpeechFragmentResponse = function (result) {
+            _this.OnEvent(new __WEBPACK_IMPORTED_MODULE_1__RecognitionEvents__["i" /* SpeechFragmentEvent */](_this.RequestId, result));
         };
         this.OnServiceSpeechEndDetectedResponse = function (result) {
             _this.DetachAudioNode();
             _this.OnEvent(new __WEBPACK_IMPORTED_MODULE_1__RecognitionEvents__["h" /* SpeechEndDetectedEvent */](_this.RequestId, result));
         };
         this.OnServiceSimpleSpeechPhraseResponse = function (result) {
-            _this.OnEvent(new __WEBPACK_IMPORTED_MODULE_1__RecognitionEvents__["j" /* SpeechSimplePhraseEvent */](_this.RequestId, result));
+            _this.OnEvent(new __WEBPACK_IMPORTED_MODULE_1__RecognitionEvents__["k" /* SpeechSimplePhraseEvent */](_this.RequestId, result));
         };
         this.OnServiceDetailedSpeechPhraseResponse = function (result) {
             _this.OnEvent(new __WEBPACK_IMPORTED_MODULE_1__RecognitionEvents__["g" /* SpeechDetailedPhraseEvent */](_this.RequestId, result));
@@ -3564,7 +3691,7 @@ var RequestSession = (function () {
 
 
 /***/ }),
-/* 33 */
+/* 36 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3574,7 +3701,7 @@ var RequestSession = (function () {
 
 
 // tslint:disable-next-line:max-classes-per-file
-var ServiceTelemetryListener = (function () {
+var ServiceTelemetryListener = /** @class */ (function () {
     function ServiceTelemetryListener(requestId, audioSourceId, audioNodeId) {
         var _this = this;
         this.isDisposed = false;
@@ -3733,7 +3860,7 @@ var ServiceTelemetryListener = (function () {
 
 
 /***/ }),
-/* 34 */
+/* 37 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3754,7 +3881,7 @@ var PathHeaderName = "path";
 var ContentTypeHeaderName = "content-type";
 var RequestIdHeaderName = "x-requestid";
 var RequestTimestampHeaderName = "x-timestamp";
-var SpeechConnectionMessage = (function (_super) {
+var SpeechConnectionMessage = /** @class */ (function (_super) {
     __extends(SpeechConnectionMessage, _super);
     function SpeechConnectionMessage(messageType, path, requestId, contentType, body, additionalHeaders, id) {
         var _this = this;
@@ -3853,7 +3980,7 @@ var SpeechConnectionMessage = (function (_super) {
 
 
 /***/ }),
-/* 35 */
+/* 38 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3870,7 +3997,7 @@ var RecognitionStatus;
 
 
 /***/ }),
-/* 36 */
+/* 39 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3878,7 +4005,7 @@ var RecognitionStatus;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_Exports__ = __webpack_require__(0);
 
 var CRLF = "\r\n";
-var WebsocketMessageFormatter = (function () {
+var WebsocketMessageFormatter = /** @class */ (function () {
     function WebsocketMessageFormatter() {
         var _this = this;
         this.ToConnectionMessage = function (message) {
@@ -3984,10 +4111,10 @@ var WebsocketMessageFormatter = (function () {
                     for (var _i = 0, headerMatches_1 = headerMatches; _i < headerMatches_1.length; _i++) {
                         var header = headerMatches_1[_i];
                         if (header) {
-                            var seperatorIndex = header.indexOf(":");
-                            var headerName = seperatorIndex > 0 ? header.substr(0, seperatorIndex).trim().toLowerCase() : header;
-                            var headerValue = seperatorIndex > 0 && header.length > (seperatorIndex + 1) ?
-                                header.substr(seperatorIndex + 1).trim() :
+                            var separatorIndex = header.indexOf(":");
+                            var headerName = separatorIndex > 0 ? header.substr(0, separatorIndex).trim().toLowerCase() : header;
+                            var headerValue = separatorIndex > 0 && header.length > (separatorIndex + 1) ?
+                                header.substr(separatorIndex + 1).trim() :
                                 "";
                             headers[headerName] = headerValue;
                         }
@@ -4003,11 +4130,11 @@ var WebsocketMessageFormatter = (function () {
 
 
 /***/ }),
-/* 37 */
+/* 40 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Recognizer__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Recognizer__ = __webpack_require__(41);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__Recognizer__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__SpeechConnectionFactory__ = __webpack_require__(16);
 /* unused harmony namespace reexport */
@@ -4016,14 +4143,15 @@ var WebsocketMessageFormatter = (function () {
 
 
 /***/ }),
-/* 38 */
+/* 41 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CreateRecognizer; });
-/* unused harmony export CreateRecognizerWithPcmRecorder */
 /* unused harmony export CreateRecognizerWithCustomAudioSource */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_browser_Exports__ = __webpack_require__(14);
+/* unused harmony export CreateRecognizerWithFileAudioSource */
+/* unused harmony export CreateRecognizerWithPcmRecorder */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_browser_Exports__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__speech_Exports__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__SpeechConnectionFactory__ = __webpack_require__(16);
 
@@ -4033,7 +4161,10 @@ var CreateRecognizer = function (recognizerConfig, authentication) {
     return CreateRecognizerWithPcmRecorder(recognizerConfig, authentication);
 };
 var CreateRecognizerWithPcmRecorder = function (recognizerConfig, authentication) {
-    return CreateRecognizerWithCustomAudioSource(recognizerConfig, authentication, new __WEBPACK_IMPORTED_MODULE_0__common_browser_Exports__["a" /* MicAudioSource */](new __WEBPACK_IMPORTED_MODULE_0__common_browser_Exports__["b" /* PcmRecorder */]()));
+    return CreateRecognizerWithCustomAudioSource(recognizerConfig, authentication, new __WEBPACK_IMPORTED_MODULE_0__common_browser_Exports__["b" /* MicAudioSource */](new __WEBPACK_IMPORTED_MODULE_0__common_browser_Exports__["c" /* PcmRecorder */]()));
+};
+var CreateRecognizerWithFileAudioSource = function (recognizerConfig, authentication, file) {
+    return CreateRecognizerWithCustomAudioSource(recognizerConfig, authentication, new __WEBPACK_IMPORTED_MODULE_0__common_browser_Exports__["a" /* FileAudioSource */](file));
 };
 var CreateRecognizerWithCustomAudioSource = function (recognizerConfig, authentication, audioSource) {
     return new __WEBPACK_IMPORTED_MODULE_1__speech_Exports__["g" /* Recognizer */](authentication, new __WEBPACK_IMPORTED_MODULE_2__SpeechConnectionFactory__["a" /* SpeechConnectionFactory */](), audioSource, recognizerConfig);
@@ -4042,14 +4173,14 @@ var CreateRecognizerWithCustomAudioSource = function (recognizerConfig, authenti
 
 
 /***/ }),
-/* 39 */
+/* 42 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* unused harmony export ConsoleLoggingListener */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_Exports__ = __webpack_require__(0);
 
-var ConsoleLoggingListener = (function () {
+var ConsoleLoggingListener = /** @class */ (function () {
     function ConsoleLoggingListener(logLevelFilter) {
         if (logLevelFilter === void 0) { logLevelFilter = __WEBPACK_IMPORTED_MODULE_0__common_Exports__["v" /* EventType */].Warning; }
         var _this = this;
@@ -4110,14 +4241,14 @@ var ConsoleLoggingListener = (function () {
 
 
 /***/ }),
-/* 40 */
+/* 43 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* unused harmony export LocalStorage */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_Exports__ = __webpack_require__(0);
 
-var LocalStorage = (function () {
+var LocalStorage = /** @class */ (function () {
     function LocalStorage() {
         this.Get = function (key) {
             if (!key) {
@@ -4154,14 +4285,14 @@ var LocalStorage = (function () {
 
 
 /***/ }),
-/* 41 */
+/* 44 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MicAudioSource; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_Exports__ = __webpack_require__(0);
 
-var MicAudioSource = (function () {
+var MicAudioSource = /** @class */ (function () {
     function MicAudioSource(recorder, audioSourceId) {
         var _this = this;
         this.streams = {};
@@ -4176,7 +4307,7 @@ var MicAudioSource = (function () {
                 window.navigator.mozGetUserMedia ||
                 window.navigator.msGetUserMedia);
             if (!window.navigator.getUserMedia) {
-                var errorMsg = "Browser doesnot support getUserMedia.";
+                var errorMsg = "Browser does not support getUserMedia.";
                 _this.initializeDeferral.Reject(errorMsg);
                 _this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["b" /* AudioSourceErrorEvent */](errorMsg, "")); // mic initialized error - no streamid at this point
             }
@@ -4187,8 +4318,16 @@ var MicAudioSource = (function () {
                     _this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["e" /* AudioSourceReadyEvent */](_this.id));
                     _this.initializeDeferral.Resolve(true);
                 }, function (error) {
-                    var errorMsg = "Error occured processing the user media stream. " + error;
-                    _this.initializeDeferral.Reject(errorMsg);
+                    var errorMsg = "Error occurred processing the user media stream. " + error;
+                    var tmp = _this.initializeDeferral;
+                    // HACK: this should be handled through onError callbacks of all promises up the stack.
+                    // Unfortunately, the current implementation does not provide an easy way to reject promises
+                    // without a lot of code replication.
+                    // TODO: fix promise implementation, allow for a graceful reject chaining.
+                    _this.initializeDeferral = null;
+                    tmp.Reject(errorMsg); // this will bubble up through the whole chain of promises,
+                    // with each new level adding extra "Unhandled callback error" prefix to the error message.
+                    // The following line is not guaranteed to be executed.
                     _this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["b" /* AudioSourceErrorEvent */](_this.id, errorMsg));
                 });
             }
@@ -4247,9 +4386,8 @@ var MicAudioSource = (function () {
                     _this.recorder.Record(_this.mediaStream, stream);
                 }
                 catch (error) {
-                    var errorMsg = "Error occured processing the user media stream. " + error;
-                    _this.initializeDeferral.Reject(errorMsg);
                     _this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["i" /* AudioStreamNodeErrorEvent */](_this.id, audioNodeId, error));
+                    throw error;
                 }
                 return stream.GetReader();
             });
@@ -4275,12 +4413,164 @@ var MicAudioSource = (function () {
 
 
 /***/ }),
-/* 42 */
+/* 45 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileAudioSource; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_Exports__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__common_browser_Exports__ = __webpack_require__(7);
+
+
+var FileAudioSource = /** @class */ (function () {
+    function FileAudioSource(file, audioSourceId) {
+        var _this = this;
+        this.streams = {};
+        this.TurnOn = function () {
+            if (typeof FileReader === "undefined") {
+                var errorMsg = "Browser does not support FileReader.";
+                _this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["b" /* AudioSourceErrorEvent */](errorMsg, "")); // initialization error - no streamid at this point
+                return __WEBPACK_IMPORTED_MODULE_0__common_Exports__["z" /* PromiseHelper */].FromError(errorMsg);
+            }
+            else if (_this.file.name.lastIndexOf(".wav") !== _this.file.name.length - 4) {
+                var errorMsg = _this.file.name + " is not supported. Only WAVE files are allowed at the moment.";
+                _this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["b" /* AudioSourceErrorEvent */](errorMsg, ""));
+                return __WEBPACK_IMPORTED_MODULE_0__common_Exports__["z" /* PromiseHelper */].FromError(errorMsg);
+            }
+            else if (_this.file.size > FileAudioSource.MAX_SIZE) {
+                var errorMsg = _this.file.name + " exceeds the maximum allowed file size (" + FileAudioSource.MAX_SIZE + ").";
+                _this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["b" /* AudioSourceErrorEvent */](errorMsg, ""));
+                return __WEBPACK_IMPORTED_MODULE_0__common_Exports__["z" /* PromiseHelper */].FromError(errorMsg);
+            }
+            _this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["c" /* AudioSourceInitializingEvent */](_this.id)); // no stream id
+            _this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["e" /* AudioSourceReadyEvent */](_this.id));
+            return __WEBPACK_IMPORTED_MODULE_0__common_Exports__["z" /* PromiseHelper */].FromResult(true);
+        };
+        this.Id = function () {
+            return _this.id;
+        };
+        this.Attach = function (audioNodeId) {
+            _this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["g" /* AudioStreamNodeAttachingEvent */](_this.id, audioNodeId));
+            return _this.Upload(audioNodeId).OnSuccessContinueWith(function (streamReader) {
+                _this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["f" /* AudioStreamNodeAttachedEvent */](_this.id, audioNodeId));
+                return {
+                    Detach: function () {
+                        streamReader.Close();
+                        delete _this.streams[audioNodeId];
+                        _this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["h" /* AudioStreamNodeDetachedEvent */](_this.id, audioNodeId));
+                        _this.TurnOff();
+                    },
+                    Id: function () {
+                        return audioNodeId;
+                    },
+                    Read: function () {
+                        return streamReader.Read();
+                    },
+                };
+            });
+        };
+        this.Detach = function (audioNodeId) {
+            if (audioNodeId && _this.streams[audioNodeId]) {
+                _this.streams[audioNodeId].Close();
+                delete _this.streams[audioNodeId];
+                _this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["h" /* AudioStreamNodeDetachedEvent */](_this.id, audioNodeId));
+            }
+        };
+        this.TurnOff = function () {
+            for (var streamId in _this.streams) {
+                if (streamId) {
+                    var stream = _this.streams[streamId];
+                    if (stream && !stream.IsClosed) {
+                        stream.Close();
+                    }
+                }
+            }
+            _this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["d" /* AudioSourceOffEvent */](_this.id)); // no stream now
+            return __WEBPACK_IMPORTED_MODULE_0__common_Exports__["z" /* PromiseHelper */].FromResult(true);
+        };
+        this.Upload = function (audioNodeId) {
+            return _this.TurnOn()
+                .OnSuccessContinueWith(function (_) {
+                var stream = new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["E" /* Stream */](audioNodeId);
+                _this.streams[audioNodeId] = stream;
+                var reader = new FileReader();
+                var startOffset = 0;
+                var endOffset = FileAudioSource.CHUNK_SIZE;
+                var lastWriteTimestamp = 0;
+                var processNextChunk = function (event) {
+                    if (stream.IsClosed) {
+                        return; // output stream was closed (somebody called TurnOff). We're done here.
+                    }
+                    if (lastWriteTimestamp !== 0) {
+                        var delay = Date.now() - lastWriteTimestamp;
+                        if (delay < FileAudioSource.UPLOAD_INTERVAL) {
+                            // It's been less than the "upload interval" since we've uploaded the
+                            // last chunk. Schedule the next upload to make sure that we're sending
+                            // upstream roughly one chunk per upload interval.
+                            new __WEBPACK_IMPORTED_MODULE_1__common_browser_Exports__["d" /* Timer */](FileAudioSource.UPLOAD_INTERVAL - delay, processNextChunk).start();
+                            return;
+                        }
+                    }
+                    stream.Write(reader.result);
+                    lastWriteTimestamp = Date.now();
+                    if (endOffset < _this.file.size) {
+                        startOffset = endOffset;
+                        endOffset = Math.min(endOffset + FileAudioSource.CHUNK_SIZE, _this.file.size);
+                        var chunk_1 = _this.file.slice(startOffset, endOffset);
+                        reader.readAsArrayBuffer(chunk_1);
+                    }
+                    else {
+                        // we've written the entire file to the output stream, can close it now.
+                        stream.Close();
+                    }
+                };
+                reader.onload = processNextChunk;
+                reader.onerror = function (event) {
+                    var errorMsg = "Error occurred while processing '" + _this.file.name + "'. " + event.error;
+                    _this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["i" /* AudioStreamNodeErrorEvent */](_this.id, audioNodeId, event.error));
+                    throw new Error(errorMsg);
+                };
+                var chunk = _this.file.slice(startOffset, endOffset);
+                reader.readAsArrayBuffer(chunk);
+                return stream.GetReader();
+            });
+        };
+        this.OnEvent = function (event) {
+            _this.events.OnEvent(event);
+            __WEBPACK_IMPORTED_MODULE_0__common_Exports__["w" /* Events */].Instance.OnEvent(event);
+        };
+        this.id = audioSourceId ? audioSourceId : Object(__WEBPACK_IMPORTED_MODULE_0__common_Exports__["s" /* CreateNoDashGuid */])();
+        this.events = new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["u" /* EventSource */]();
+        this.file = file;
+    }
+    Object.defineProperty(FileAudioSource.prototype, "Events", {
+        get: function () {
+            return this.events;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    // Recommended sample rate (bytes/second).
+    FileAudioSource.SAMPLE_RATE = 16000 * 2; // 16 kHz * 16 bits
+    // We should stream audio at no faster than 2x real-time (i.e., send five chunks
+    // per second, with the chunk size == sample rate in bytes per second * 2 / 5).
+    FileAudioSource.CHUNK_SIZE = FileAudioSource.SAMPLE_RATE * 2 / 5;
+    FileAudioSource.UPLOAD_INTERVAL = 200; // milliseconds
+    // 10 seconds of audio in bytes =
+    // sample rate (bytes/second) * 600 (seconds) + 44 (size of the wave header).
+    FileAudioSource.MAX_SIZE = FileAudioSource.SAMPLE_RATE * 600 + 44;
+    return FileAudioSource;
+}());
+
+
+
+/***/ }),
+/* 46 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* unused harmony export OpusRecorder */
-var OpusRecorder = (function () {
+var OpusRecorder = /** @class */ (function () {
     function OpusRecorder(options) {
         var _this = this;
         this.Record = function (mediaStream, outputStream) {
@@ -4324,19 +4614,25 @@ declare class MediaRecorder {
 
 
 /***/ }),
-/* 43 */
+/* 47 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PcmRecorder; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_Exports__ = __webpack_require__(0);
 
-var PcmRecorder = (function () {
+var PcmRecorder = /** @class */ (function () {
     function PcmRecorder() {
         var _this = this;
         this.Record = function (mediaStream, outputStream) {
             // https://developer.mozilla.org/en-US/docs/Web/API/AudioContext
-            var audioContext = new AudioContext();
+            var contextCtor = (window.AudioContext)
+                || (window.webkitAudioContext)
+                || false;
+            if (!contextCtor) {
+                throw new Error("Browser does not support Web Audio API (AudioContext is not available).");
+            }
+            var audioContext = new contextCtor();
             // https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createMediaStreamSource
             var mediaStreamSource = audioContext.createMediaStreamSource(mediaStream);
             var desiredSampleRate = 16000;
@@ -4405,14 +4701,14 @@ var PcmRecorder = (function () {
 
 
 /***/ }),
-/* 44 */
+/* 48 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* unused harmony export SessionStorage */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_Exports__ = __webpack_require__(0);
 
-var SessionStorage = (function () {
+var SessionStorage = /** @class */ (function () {
     function SessionStorage() {
         this.Get = function (key) {
             if (!key) {
@@ -4449,12 +4745,12 @@ var SessionStorage = (function () {
 
 
 /***/ }),
-/* 45 */
+/* 49 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony export Timer */
-var Timer = (function () {
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Timer; });
+var Timer = /** @class */ (function () {
     function Timer(delayInMillisec, successCallback) {
         var _this = this;
         this.start = function () {
@@ -4479,7 +4775,7 @@ var Timer = (function () {
 
 
 /***/ }),
-/* 46 */
+/* 50 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4488,7 +4784,7 @@ var Timer = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__WebsocketMessageAdapter__ = __webpack_require__(15);
 
 
-var WebsocketConnection = (function () {
+var WebsocketConnection = /** @class */ (function () {
     function WebsocketConnection(uri, queryParameters, headers, messageFormatter, connectionId) {
         var _this = this;
         this.isDisposed = false;

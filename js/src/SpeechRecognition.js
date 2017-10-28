@@ -1,12 +1,14 @@
+import { createSpeechRecognitionResult } from './entities';
 import { resolveLang } from "./helpers";
 // include the needed parts of the library. webpack will treeshake all unneeded stuff.
 import { CognitiveSubscriptionKeyAuthentication, Context, Device, OS, RecognizerConfig, RecognitionMode, RecognitionStatus, SpeechConfig, SpeechResultFormat } from "microsoft-speech-browser-sdk/src/sdk/speech/Exports";
 import { CreateRecognizer } from "microsoft-speech-browser-sdk/src/sdk/speech.browser/Exports";
-var SpeechRecognition = (function () {
+var SpeechRecognition = /** @class */ (function () {
     function SpeechRecognition(apiKey) {
         this.apiKey = apiKey;
         this.recognizer = null;
         this.onaudiostart = null;
+        // won't be triggered
         this.onaudioend = null;
         this.onstart = null;
         this.onend = null;
@@ -40,7 +42,23 @@ var SpeechRecognition = (function () {
         }
     };
     SpeechRecognition.prototype.handleEvent = function (event) {
-        console.log(event.name + " triggered");
+        var eventName = event.name;
+        switch (eventName) {
+            case "RecognitionTriggeredEvent":
+                console.log('start');
+                break;
+            case "ListeningStartedEvent":
+                console.log('audiostart');
+                break;
+            case "RecognitionStartedEvent":
+                console.log('speechstart');
+                break;
+            case "RecognitionEndedEvent":
+                console.log("speechend");
+                break;
+            default:
+                console.log(eventName);
+        }
         if (event.result) {
             this.handleResult(event.result);
         }
@@ -48,30 +66,31 @@ var SpeechRecognition = (function () {
             console.error(event.error);
         }
     };
-    SpeechRecognition.prototype.handleResult = function (result) {
-        var status = RecognitionStatus[result.RecognitionStatus];
-        // console.log('my event');
+    SpeechRecognition.prototype.handleResult = function (event) {
+        var status = RecognitionStatus[event.RecognitionStatus];
+        var results = event.results;
         switch (status) {
             case RecognitionStatus.Success:
-                console.log('got something', result);
+                console.log('got something', event);
+                if (this.onresult) {
+                    this.onresult.call(this.recognizer, createSpeechRecognitionResult(results, this.maxAlternatives));
+                }
                 // call onresult;
                 break;
             case RecognitionStatus.Error:
-                console.log('error', result);
+                console.log('error', event);
                 // call onerror;
                 break;
             case RecognitionStatus.NoMatch:
-                console.log('no match', result);
+                console.log('no match', event);
                 // call onnomatch;
                 break;
             case RecognitionStatus.InitialSilenceTimeout:
             case RecognitionStatus.EndOfDictation:
             case RecognitionStatus.BabbleTimeout:
-                console.log('something happened', result);
+                console.log('something happened', event);
                 // call onend;
                 break;
-            default:
-                console.log('falled into default', result);
         }
     };
     SpeechRecognition.prototype.recognitionStartSuccess = function (listening) {
@@ -83,7 +102,7 @@ var SpeechRecognition = (function () {
     SpeechRecognition.prototype.setupRecognizer = function () {
         // prepare recognizer configuration
         var speechConfig = new SpeechConfig(new Context(new OS('Speech', 'Speech', null), new Device(navigator.userAgent, 'Browser', '1.0.0.0')));
-        var recognitionMode = this.interimResults ? RecognitionMode.Conversation : RecognitionMode.Dictation;
+        var recognitionMode = this.interimResults ? RecognitionMode.Interactive : RecognitionMode.Conversation;
         var language = resolveLang(this.lang);
         var resultFormat = SpeechResultFormat.Detailed;
         // configure and authenticate recognizer
