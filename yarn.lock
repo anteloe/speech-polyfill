@@ -1128,9 +1128,9 @@ micromatch@^2.1.5:
     parse-glob "^3.0.4"
     regex-cache "^0.4.2"
 
-microsoft-speech-browser-sdk@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/microsoft-speech-browser-sdk/-/microsoft-speech-browser-sdk-0.0.4.tgz#cc0b9c77df45e55f106a614cd6693f1b150bb160"
+microsoft-speech-browser-sdk@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/microsoft-speech-browser-sdk/-/microsoft-speech-browser-sdk-0.0.5.tgz#d8205da9a3e8ecdfb04e903f72a963349cf75b95"
 
 miller-rabin@^4.0.0:
   version "4.0.0"
@@ -1796,9 +1796,9 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
 
-typescript@^2.5.2:
-  version "2.5.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.5.2.tgz#038a95f7d9bbb420b1bf35ba31d4c5c1dd3ffe34"
+typescript@^2.5.3:
+  version "2.5.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.5.3.tgz#df3dcdc38f3beb800d4bc322646b04a3f6ca7f0d"
 
 uglify-js@^2.8.29:
   version "2.8.29"
