@@ -7,12 +7,13 @@
   "author": "Estefan Antelo Doval <@anteloe>",
   "license": "MIT",
   "scripts": {
+    "build": "tsc -w",
     "webpack": "webpack",
     "webpack:prod": "webpack -p --config webpack.config.prod.js"
   },
   "devDependencies": {
-    "microsoft-speech-browser-sdk": "^0.0.4",
-    "typescript": "^2.5.2",
+    "microsoft-speech-browser-sdk": "^0.0.5",
+    "typescript": "^2.5.3",
     "uglifyjs-webpack-plugin": "^0.4.6",
     "webpack": "^3.5.5"
   }
