@@ -5,7 +5,7 @@ class SpeechRecognitionResult implements ISpeechRecoginitionResult {
     length: boolean;
 }
 
-const createSpeechRecognitionResult: (results: ICoginitiveServiceSpeechResult[], maxAlternatives: number) => ISpeechRecoginitionResult = (results, maxAlternatives) => {
+export const createSpeechRecognitionResult: (results: ICoginitiveServiceSpeechResult[], maxAlternatives: number) => ISpeechRecoginitionResult = (results, maxAlternatives) => {
     // create a blank result ()
     const result = new SpeechRecognitionResult();
 

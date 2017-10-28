@@ -1,5 +1,5 @@
-import { ISpeechRecognition, ISpeechGrammarList } from "./contracts";
-import { SpeechRecognitionEvent } from './entities'
+import { ISpeechRecognition, ISpeechGrammarList, ICoginitiveServiceSpeechResult } from "./contracts";
+import { SpeechRecognitionEvent, createSpeechRecognitionResult } from './entities'
 import { resolveLang } from "./helpers";
 
 // include the needed parts of the library. webpack will treeshake all unneeded stuff.
@@ -16,6 +16,15 @@ import {
     SpeechResultFormat
  } from "microsoft-speech-browser-sdk/src/sdk/speech/Exports";
 import { CreateRecognizer } from "microsoft-speech-browser-sdk/src/sdk/speech.browser/Exports";
+
+type RecognitionEventName = "RecognitionTriggeredEvent"
+    | "ListeningStartedEvent"
+    | "ConnectingToServiceEvent"
+    | "RecognitionStartedEvent"
+    | "SpeechHypothesisEvent"
+    | "SpeechEndDetectedEvent"
+    | "SpeechDetailedPhraseEvent"
+    | "RecognitionEndedEvent";
 
 export class SpeechRecognition implements ISpeechRecognition{
     private recognizer: Recognizer = null;
@@ -44,41 +53,62 @@ export class SpeechRecognition implements ISpeechRecognition{
     }
 
     private handleEvent(event){
-        console.log(`${event.name} triggered`);
+        const eventName: RecognitionEventName = event.name;
+
+        switch(eventName){
+            case "RecognitionTriggeredEvent":
+                console.log('start');
+                break;
+            case "ListeningStartedEvent":
+                console.log('audiostart');
+                break;
+            case "RecognitionStartedEvent":
+                console.log('speechstart');
+                break;
+            case "RecognitionEndedEvent":
+                console.log("speechend");
+                break;
+            default:
+                console.log(eventName);
+        }
+
         if(event.result){
             this.handleResult(event.result);
         }
-
         if(event.error){
             console.error(event.error);
         }
     }
 
-    private handleResult(result){
-        const status = RecognitionStatus[(<string>result.RecognitionStatus)]
-        // console.log('my event');
+    private handleResult(event){
+        const status = RecognitionStatus[(<string>event.RecognitionStatus)]
+        const results = <ICoginitiveServiceSpeechResult[]>event.results;
         
         switch(status){
             case RecognitionStatus.Success:
-                console.log('got something', result);
+                console.log('got something', event);
+
+                if(this.onresult){
+                    this.onresult.call(this.recognizer, createSpeechRecognitionResult(results, this.maxAlternatives));
+                }
                 // call onresult;
                 break;
             case RecognitionStatus.Error:
-                console.log('error', result);
+                console.log('error', event);
                 // call onerror;
                 break;
             case RecognitionStatus.NoMatch:
-                console.log('no match', result);
+                console.log('no match', event);
                 // call onnomatch;
                 break;
             case RecognitionStatus.InitialSilenceTimeout:
             case RecognitionStatus.EndOfDictation:
             case RecognitionStatus.BabbleTimeout:
-                console.log('something happened', result);
+                console.log('something happened', event);
                 // call onend;
                 break;
-            default:
-                console.log('falled into default', result);
+            // default:
+            //     console.log('falled into default', event);
                 // log unexpected case
         }
     }
@@ -97,7 +127,7 @@ export class SpeechRecognition implements ISpeechRecognition{
             new OS('Speech', 'Speech', null),
             new Device(navigator.userAgent, 'Browser', '1.0.0.0')
         ));
-        const recognitionMode = this.interimResults ? RecognitionMode.Conversation : RecognitionMode.Dictation;
+        const recognitionMode = this.interimResults ? RecognitionMode.Interactive : RecognitionMode.Conversation;
         const language = resolveLang(this.lang);
         const resultFormat = SpeechResultFormat.Detailed;
 
@@ -110,15 +140,18 @@ export class SpeechRecognition implements ISpeechRecognition{
     }
 
     onaudiostart: () => void = null;
+    // won't be triggered
     onaudioend: () => void = null;
     onstart: () => void = null;
     onend: () => void = null;
     onerror: (event: any) => void = null;
     onnomatch: () => void = null;
     onresult: (event: any) => void = null;
+    // won't be triggered yet
     onsoundstart: () => void;
     onsoundend: () => void;
     onspeechstart: () => void;
+    // won't be triggered yet
     onspeechend: () => void;
 
     grammars: ISpeechGrammarList;

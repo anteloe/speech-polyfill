@@ -3,12 +3,17 @@ import { ISpeechRecognitionResultList } from "../contracts";
 export class SpeechRecognitionEvent extends Event{
     constructor(typeArg: string = 'result'){
         super(typeArg);
-
-        return Object.defineProperties(this, {
-            "emma": { value: null, writable: false },
-            "resultIndex": { value: 0, writable: false },
-            "results": { value: [], writable: false},
-            "interpretation": { value: null, writable: false}
-        });
     }
+}
+
+export function createResultEvent(results: ISpeechRecognitionResultList, resultIndex: number = 0, interpretation: string = null, emma: XMLDocument = null){
+    const event = new SpeechRecognitionEvent();
+
+    return Object.defineProperties(event, {
+        target: { value: this, writable: false },
+        emma: { value: emma, writable: false },
+        resultIndex: { value: resultIndex, writable: false },
+        results: { value: results, writable: false },
+        interpretation: { value: interpretation, writable: false }
+    });
 }
