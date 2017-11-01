@@ -1,25 +1,29 @@
-var SpeechRecognitionResult = /** @class */ (function () {
-    function SpeechRecognitionResult() {
+class SpeechRecognitionResult extends Array {
+    constructor() {
+        super(...arguments);
+        this.isFinal = false;
     }
-    return SpeechRecognitionResult;
-}());
-export var createSpeechRecognitionResult = function (results, maxAlternatives) {
-    // create a blank result ()
-    var result = new SpeechRecognitionResult();
-    // add results on the object and let them be indexable
-    var length = results
+}
+function toIntermediateResult({ Text }) {
+    return {
+        confidence: .5,
+        transcript: Text
+    };
+}
+function toFinalResult({ Confidence, Display }) {
+    return {
+        confidence: Confidence,
+        transcript: Display
+    };
+}
+export function createIntermediateResult(alternative) {
+    return new SpeechRecognitionResult(toIntermediateResult(alternative));
+}
+export function createFinalResult(alternatives, maxAlternatives) {
+    const transformed = alternatives
         .slice(0, maxAlternatives)
-        .reduce(function (sum, result, index) {
-        event[index] = {
-            confidence: result.Confidence,
-            transcript: result.ITN
-        };
-        return sum + 1;
-    }, 0);
-    // set read-only props for length and isFinal (isFinal will always be true for now)
-    Object.defineProperties(result, {
-        length: { value: length, writable: false },
-        isFinal: { value: true, writable: false }
-    });
+        .map(toFinalResult);
+    const result = new SpeechRecognitionResult(...transformed);
+    result.isFinal = true;
     return result;
-};
+}

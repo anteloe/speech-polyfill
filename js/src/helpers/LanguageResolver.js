@@ -1,4 +1,4 @@
-var supportedDefaults = {
+const supportedDefaults = {
     ar: 'ar-EG',
     ca: 'ca-ES',
     da: 'da-DK',
@@ -19,6 +19,6 @@ var supportedDefaults = {
     sv: 'sv-SE',
     zh: 'zh-CN'
 };
-export var resolveLang = function (langHint) {
+export const resolveLang = (langHint) => {
     return supportedDefaults[langHint] || langHint;
 };

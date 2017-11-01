@@ -1,12 +1,11 @@
-import { ISpeechRecognitionResultList } from "../contracts";
-
+import { ISpeechRecoginitionResult } from "../contracts";
 export class SpeechRecognitionEvent extends Event{
     constructor(typeArg: string = 'result'){
         super(typeArg);
     }
 }
 
-export function createResultEvent(results: ISpeechRecognitionResultList, resultIndex: number = 0, interpretation: string = null, emma: XMLDocument = null){
+export function createResultEvent(results: Array<ISpeechRecoginitionResult>, resultIndex: number = 0, interpretation: string = null, emma: XMLDocument = null){
     const event = new SpeechRecognitionEvent();
 
     return Object.defineProperties(event, {

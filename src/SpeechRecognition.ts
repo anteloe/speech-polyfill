@@ -1,5 +1,5 @@
 import { ISpeechRecognition, ISpeechGrammarList, ICoginitiveServiceSpeechResult } from "./contracts";
-import { SpeechRecognitionEvent, createSpeechRecognitionResult } from './entities'
+import { SpeechRecognitionEvent, createFinalResult, createIntermediateResult, createResultEvent } from './entities'
 import { resolveLang } from "./helpers";
 
 // include the needed parts of the library. webpack will treeshake all unneeded stuff.
@@ -56,49 +56,88 @@ export class SpeechRecognition implements ISpeechRecognition{
         const eventName: RecognitionEventName = event.name;
 
         switch(eventName){
-            case "RecognitionTriggeredEvent":
-                console.log('start');
-                break;
-            case "ListeningStartedEvent":
-                console.log('audiostart');
-                break;
-            case "RecognitionStartedEvent":
-                console.log('speechstart');
-                break;
-            case "RecognitionEndedEvent":
-                console.log("speechend");
-                break;
-            default:
-                console.log(eventName);
+            case "RecognitionTriggeredEvent": {
+                if(this.onstart){
+                    this.onstart.call(this);
+                }
+                return;
+            }
+            case "ListeningStartedEvent":{
+                if(this.onaudiostart){
+                    this.onaudiostart.call(this);
+                }
+                return;
+            }
+            case "RecognitionStartedEvent": {
+                if(this.onspeechstart){
+                    this.onspeechstart.call(this);
+                }
+                return;
+            }
+            case "RecognitionEndedEvent": {
+                if(this.onend){
+                    this.onend.call(this);
+                }
+                return;
+            }
+            case "SpeechHypothesisEvent":{
+                return this.handleHypothesis(event);
+            }
+            case "SpeechDetailedPhraseEvent": {
+                return this.handleResult(event);
+            }
+            case "SpeechEndDetectedEvent":{
+                if(this.onspeechend){
+                    this.onspeechend.call(this);
+                }
+                return;
+            }
+            case "ConnectingToServiceEvent": {
+                console.log("connecting to translation services");
+                return;
+            }
         }
 
-        if(event.result){
-            this.handleResult(event.result);
-        }
         if(event.error){
-            console.error(event.error);
+            if(this.onerror){
+                this.onerror.call(this, event.error);
+            }
         }
     }
 
-    private handleResult(event){
-        const status = RecognitionStatus[(<string>event.RecognitionStatus)]
-        const results = <ICoginitiveServiceSpeechResult[]>event.results;
+    private handleHypothesis({result, error}){
+        if (error) {
+            return;
+        }
+        
+        if(result.Text && this.onresult){
+            this.onresult.call(this.recognizer, createResultEvent([createIntermediateResult(result)]));
+        }
+    }
+
+    private handleResult({result, error}){
+        if (error) {
+            return;
+        }
+        
+        const results = createFinalResult(result.NBest, this.maxAlternatives)
+        const status = RecognitionStatus[(<string>result.RecognitionStatus)]
         
         switch(status){
             case RecognitionStatus.Success:
-                console.log('got something', event);
-
                 if(this.onresult){
-                    this.onresult.call(this.recognizer, createSpeechRecognitionResult(results, this.maxAlternatives));
+                    this.onresult.call(this.recognizer, createResultEvent([results]));
                 }
-                // call onresult;
                 break;
             case RecognitionStatus.Error:
-                console.log('error', event);
-                // call onerror;
+                if(this.onerror){
+                    this.onerror.call(this, error)
+                }
                 break;
             case RecognitionStatus.NoMatch:
-                console.log('no match', event);
+                if(this.onnomatch){
+                    this.onnomatch.call(this, error);
+                }
                 // call onnomatch;
                 break;
             case RecognitionStatus.InitialSilenceTimeout:
@@ -114,11 +153,11 @@ export class SpeechRecognition implements ISpeechRecognition{
     }
 
     private recognitionStartSuccess(listening: boolean){
-        console.log('recognition started');
+        console.log('start');
     }
 
     private recognitionStartFailed(error){
-        console.log('recognition start failed', error)
+        console.log('failed', error)
     }
 
     private setupRecognizer(){
@@ -140,19 +179,16 @@ export class SpeechRecognition implements ISpeechRecognition{
     }
 
     onaudiostart: () => void = null;
-    // won't be triggered
     onaudioend: () => void = null;
     onstart: () => void = null;
     onend: () => void = null;
     onerror: (event: any) => void = null;
     onnomatch: () => void = null;
     onresult: (event: any) => void = null;
-    // won't be triggered yet
-    onsoundstart: () => void;
-    onsoundend: () => void;
-    onspeechstart: () => void;
-    // won't be triggered yet
-    onspeechend: () => void;
+    onsoundstart: () => void = null;
+    onsoundend: () => void = null;
+    onspeechstart: () => void = null;
+    onspeechend: () => void = null;
 
     grammars: ISpeechGrammarList;
     lang: string = document.documentElement.lang || navigator.language;

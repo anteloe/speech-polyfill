@@ -1,27 +1,30 @@
-import { createSpeechRecognitionResult } from './entities';
+import { createFinalResult, createIntermediateResult, createResultEvent } from './entities';
 import { resolveLang } from "./helpers";
 // include the needed parts of the library. webpack will treeshake all unneeded stuff.
 import { CognitiveSubscriptionKeyAuthentication, Context, Device, OS, RecognizerConfig, RecognitionMode, RecognitionStatus, SpeechConfig, SpeechResultFormat } from "microsoft-speech-browser-sdk/src/sdk/speech/Exports";
 import { CreateRecognizer } from "microsoft-speech-browser-sdk/src/sdk/speech.browser/Exports";
-var SpeechRecognition = /** @class */ (function () {
-    function SpeechRecognition(apiKey) {
+export class SpeechRecognition {
+    constructor(apiKey) {
         this.apiKey = apiKey;
         this.recognizer = null;
         this.onaudiostart = null;
-        // won't be triggered
         this.onaudioend = null;
         this.onstart = null;
         this.onend = null;
         this.onerror = null;
         this.onnomatch = null;
         this.onresult = null;
+        this.onsoundstart = null;
+        this.onsoundend = null;
+        this.onspeechstart = null;
+        this.onspeechend = null;
         this.lang = document.documentElement.lang || navigator.language;
         this.continuous = false;
         this.interimResults = false;
         this.maxAlternatives = 1;
         this.serviceURI = 'https://api.cognitive.microsoft.com/sts/v1.0';
     }
-    SpeechRecognition.prototype.start = function () {
+    start() {
         if (!this.recognizer) {
             if (!this.apiKey) {
                 throw new Error('no api key specified');
@@ -30,59 +33,96 @@ var SpeechRecognition = /** @class */ (function () {
         }
         this.recognizer.Recognize(this.handleEvent.bind(this))
             .On(this.recognitionStartSuccess.bind(this), this.recognitionStartFailed.bind(this));
-    };
-    SpeechRecognition.prototype.stop = function () {
+    }
+    stop() {
         if (this.recognizer) {
             this.recognizer.AudioSource.TurnOff();
         }
-    };
-    SpeechRecognition.prototype.abort = function () {
+    }
+    abort() {
         if (this.recognizer) {
             this.recognizer.AudioSource.TurnOff();
         }
-    };
-    SpeechRecognition.prototype.handleEvent = function (event) {
-        var eventName = event.name;
+    }
+    handleEvent(event) {
+        const eventName = event.name;
         switch (eventName) {
-            case "RecognitionTriggeredEvent":
-                console.log('start');
-                break;
-            case "ListeningStartedEvent":
-                console.log('audiostart');
-                break;
-            case "RecognitionStartedEvent":
-                console.log('speechstart');
-                break;
-            case "RecognitionEndedEvent":
-                console.log("speechend");
-                break;
-            default:
-                console.log(eventName);
-        }
-        if (event.result) {
-            this.handleResult(event.result);
+            case "RecognitionTriggeredEvent": {
+                if (this.onstart) {
+                    this.onstart.call(this);
+                }
+                return;
+            }
+            case "ListeningStartedEvent": {
+                if (this.onaudiostart) {
+                    this.onaudiostart.call(this);
+                }
+                return;
+            }
+            case "RecognitionStartedEvent": {
+                if (this.onspeechstart) {
+                    this.onspeechstart.call(this);
+                }
+                return;
+            }
+            case "RecognitionEndedEvent": {
+                if (this.onend) {
+                    this.onend.call(this);
+                }
+                return;
+            }
+            case "SpeechHypothesisEvent": {
+                return this.handleHypothesis(event);
+            }
+            case "SpeechDetailedPhraseEvent": {
+                return this.handleResult(event);
+            }
+            case "SpeechEndDetectedEvent": {
+                if (this.onspeechend) {
+                    this.onspeechend.call(this);
+                }
+                return;
+            }
+            case "ConnectingToServiceEvent": {
+                console.log("connecting to translation services");
+                return;
+            }
         }
         if (event.error) {
-            console.error(event.error);
+            if (this.onerror) {
+                this.onerror.call(this, event.error);
+            }
         }
-    };
-    SpeechRecognition.prototype.handleResult = function (event) {
-        var status = RecognitionStatus[event.RecognitionStatus];
-        var results = event.results;
+    }
+    handleHypothesis({ result, error }) {
+        if (error) {
+            return;
+        }
+        if (result.Text && this.onresult) {
+            this.onresult.call(this.recognizer, createResultEvent([createIntermediateResult(result)]));
+        }
+    }
+    handleResult({ result, error }) {
+        if (error) {
+            return;
+        }
+        const results = createFinalResult(result.NBest, this.maxAlternatives);
+        const status = RecognitionStatus[result.RecognitionStatus];
         switch (status) {
             case RecognitionStatus.Success:
-                console.log('got something', event);
                 if (this.onresult) {
-                    this.onresult.call(this.recognizer, createSpeechRecognitionResult(results, this.maxAlternatives));
+                    this.onresult.call(this.recognizer, createResultEvent([results]));
                 }
-                // call onresult;
                 break;
             case RecognitionStatus.Error:
-                console.log('error', event);
-                // call onerror;
+                if (this.onerror) {
+                    this.onerror.call(this, error);
+                }
                 break;
             case RecognitionStatus.NoMatch:
-                console.log('no match', event);
+                if (this.onnomatch) {
+                    this.onnomatch.call(this, error);
+                }
                 // call onnomatch;
                 break;
             case RecognitionStatus.InitialSilenceTimeout:
@@ -92,25 +132,23 @@ var SpeechRecognition = /** @class */ (function () {
                 // call onend;
                 break;
         }
-    };
-    SpeechRecognition.prototype.recognitionStartSuccess = function (listening) {
-        console.log('recognition started');
-    };
-    SpeechRecognition.prototype.recognitionStartFailed = function (error) {
-        console.log('recognition start failed', error);
-    };
-    SpeechRecognition.prototype.setupRecognizer = function () {
+    }
+    recognitionStartSuccess(listening) {
+        console.log('start');
+    }
+    recognitionStartFailed(error) {
+        console.log('failed', error);
+    }
+    setupRecognizer() {
         // prepare recognizer configuration
-        var speechConfig = new SpeechConfig(new Context(new OS('Speech', 'Speech', null), new Device(navigator.userAgent, 'Browser', '1.0.0.0')));
-        var recognitionMode = this.interimResults ? RecognitionMode.Interactive : RecognitionMode.Conversation;
-        var language = resolveLang(this.lang);
-        var resultFormat = SpeechResultFormat.Detailed;
+        const speechConfig = new SpeechConfig(new Context(new OS('Speech', 'Speech', null), new Device(navigator.userAgent, 'Browser', '1.0.0.0')));
+        const recognitionMode = this.interimResults ? RecognitionMode.Interactive : RecognitionMode.Conversation;
+        const language = resolveLang(this.lang);
+        const resultFormat = SpeechResultFormat.Detailed;
         // configure and authenticate recognizer
-        var config = new RecognizerConfig(speechConfig, recognitionMode, language, resultFormat);
-        var auth = new CognitiveSubscriptionKeyAuthentication(this.apiKey);
+        const config = new RecognizerConfig(speechConfig, recognitionMode, language, resultFormat);
+        const auth = new CognitiveSubscriptionKeyAuthentication(this.apiKey);
         // create and return recognizer based on the prepared configuration
         return CreateRecognizer(config, auth);
-    };
-    return SpeechRecognition;
-}());
-export { SpeechRecognition };
+    }
+}
