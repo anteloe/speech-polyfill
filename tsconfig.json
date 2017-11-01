@@ -3,7 +3,9 @@
         "target": "es2015",
         "module": "es2015",
         "moduleResolution": "node",
-        "outDir": "js"
+        "outDir": "js",
+        "declaration": true,
+        "declarationDir": "types"
     },
     "include": [
         "src", "node_modules/microsoft-speech-browser-sdk/**/*.ts"

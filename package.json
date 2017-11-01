@@ -3,6 +3,7 @@
   "version": "0.0.2",
   "description": "This is a Polyfill for the HTML5 Speech Recognition API. It uses Microsoft's Cognitive Services as a backend. All Browsers supporting WebRTC will be supported by this Polyfill.",
   "main": "index.js",
+  "types": "types/src/SpeechRecognition.d.ts",
   "repository": "https://github.com/anteloe/speech-polyfill.git",
   "author": "Estefan Antelo Doval <@anteloe>",
   "license": "MIT",

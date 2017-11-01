@@ -1,0 +1,32 @@
+import { ISpeechRecognition, ISpeechGrammarList } from "./contracts";
+export declare class SpeechRecognition implements ISpeechRecognition {
+    private apiKey;
+    private recognizer;
+    constructor(apiKey: string);
+    start(): void;
+    stop(): void;
+    abort(): void;
+    private handleEvent(event);
+    private handleHypothesis({result, error});
+    private handleResult({result, error});
+    private recognitionStartSuccess(listening);
+    private recognitionStartFailed(error);
+    private setupRecognizer();
+    onaudiostart: () => void;
+    onaudioend: () => void;
+    onstart: () => void;
+    onend: () => void;
+    onerror: (event: any) => void;
+    onnomatch: () => void;
+    onresult: (event: any) => void;
+    onsoundstart: () => void;
+    onsoundend: () => void;
+    onspeechstart: () => void;
+    onspeechend: () => void;
+    grammars: ISpeechGrammarList;
+    lang: string;
+    continuous: boolean;
+    interimResults: boolean;
+    maxAlternatives: number;
+    serviceURI: string;
+}
