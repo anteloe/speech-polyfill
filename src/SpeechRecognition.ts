@@ -119,13 +119,12 @@ export class SpeechRecognition implements ISpeechRecognition{
         if (error) {
             return;
         }
-        
-        const results = createFinalResult(result.NBest, this.maxAlternatives)
         const status = RecognitionStatus[(<string>result.RecognitionStatus)]
         
         switch(status){
             case RecognitionStatus.Success:
                 if(this.onresult){
+                    const results = createFinalResult(result.NBest, this.maxAlternatives)
                     this.onresult.call(this.recognizer, createResultEvent([results]));
                 }
                 break;

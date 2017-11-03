@@ -1993,11 +1993,11 @@ class SpeechRecognition {
         if (error) {
             return;
         }
-        const results = Object(__WEBPACK_IMPORTED_MODULE_0__entities__["a" /* createFinalResult */])(result.NBest, this.maxAlternatives);
         const status = __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */][result.RecognitionStatus];
         switch (status) {
             case __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */].Success:
                 if (this.onresult) {
+                    const results = Object(__WEBPACK_IMPORTED_MODULE_0__entities__["a" /* createFinalResult */])(result.NBest, this.maxAlternatives);
                     this.onresult.call(this.recognizer, Object(__WEBPACK_IMPORTED_MODULE_0__entities__["c" /* createResultEvent */])([results]));
                 }
                 break;
