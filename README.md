@@ -10,9 +10,11 @@ For now I have tested the speech-polyfill on:
 * Mozilla Firefox Desktop
 * Chrome Desktop
     * speech-polyfill will not apply, since Chrome has already support for it
+* Edge
+
+Not working on:
 * iOS (Safari, Chrome Firefox) **(Not working yet)**
 * Opera **(Not working yet)**
-* Edge
 
 To be tested:
 * Chrome on Android
