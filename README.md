@@ -36,7 +36,7 @@ I did not omit my API key. Use it if you want to quickly test the polyfill befor
 ```js
 const recognizer = new SpeechRecognition('YOUR_API_KEY');
 recognizer.interimResults = true;
-recognizer.contiunous = true;
+recognizer.continuous = true;
 recognizer.maxAlternatives = 6;
 
 recognizer.onresult = e => console.log(e.results[0][0].transcript);
