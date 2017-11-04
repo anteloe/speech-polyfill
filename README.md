@@ -32,5 +32,18 @@ Not working yet:
 
 I did not omit my API key. Use it if you want to quickly test the polyfill before creating an Azure Subscription. It is funded with my MSDN Subscription, be fair ;-)
 
+### Saple usage
+```js
+const recognizer = new SpeechRecognition('YOUR_API_KEY');
+recognizer.interimResults = true;
+recognizer.contiunous = true;
+recognizer.maxAlternatives = 6;
+
+recognizer.onresult = e => console.log(e.results[0][0].transcript);
+recognizer.onerror = (event) => console.log('error', event);
+
+recognizer.start();
+```
+
 ## Demo
 [https://speech-polyfill.azurewebsites.net/](https://speech-polyfill.azurewebsites.net/)
