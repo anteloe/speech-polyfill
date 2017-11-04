@@ -12,12 +12,12 @@ For now I have tested the speech-polyfill on:
     * speech-polyfill will not apply, since Chrome has already support for it
 * Edge
 
-Not working on:
-* iOS (Safari, Chrome Firefox) **(Not working yet)**
-* Opera **(Not working yet)**
-
 To be tested:
 * Chrome on Android
+
+Not working yet:
+* iOS (Safari, Chrome Firefox)
+* Opera
 
 ## Prerequisites
 * Azure Subscription [https://azure.microsoft.com](https://azure.microsoft.com)
