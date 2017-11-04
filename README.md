@@ -3,6 +3,8 @@
 
 This is a Polyfill for the HTML5 Speech Recognition API. It uses Microsoft's Cognitive Services as a backend. All Browsers supporting WebRTC will be supported by this Polyfill.
 
+Leveraging Microsoft Cognitive Sercices SDK [https://github.com/Azure-Samples/SpeechToText-WebSockets-Javascript](https://github.com/Azure-Samples/SpeechToText-WebSockets-Javascript)
+
 ## Browser Support
 For now I have tested the speech-polyfill on:
 
@@ -47,3 +49,8 @@ recognizer.start();
 
 ## Demo
 [https://speech-polyfill.azurewebsites.net/](https://speech-polyfill.azurewebsites.net/)
+
+
+## TODO
+* Correct continuous mode
+* use `navigator.mediaDevices.getUserMedia` in Microsoft Cognitive Services SDK
