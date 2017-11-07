@@ -3708,7 +3708,29 @@ class MicAudioSource {
                 window.navigator.webkitGetUserMedia ||
                 window.navigator.mozGetUserMedia ||
                 window.navigator.msGetUserMedia);
-            if (!window.navigator.getUserMedia) {
+            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["c" /* AudioSourceInitializingEvent */](this.id));
+                navigator.mediaDevices.getUserMedia({ audio: true })
+                    .then(stream => {
+                    this.mediaStream = stream;
+                    this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["e" /* AudioSourceReadyEvent */](this.id));
+                    this.initializeDeferral.Resolve(true);
+                })
+                    .catch(error => {
+                    const errorMsg = `Error occurred processing the user media stream. ${error}`;
+                    const tmp = this.initializeDeferral;
+                    // HACK: this should be handled through onError callbacks of all promises up the stack.
+                    // Unfortunately, the current implementation does not provide an easy way to reject promises
+                    // without a lot of code replication.
+                    // TODO: fix promise implementation, allow for a graceful reject chaining.
+                    this.initializeDeferral = null;
+                    tmp.Reject(errorMsg); // this will bubble up through the whole chain of promises,
+                    // with each new level adding extra "Unhandled callback error" prefix to the error message.
+                    // The following line is not guaranteed to be executed.
+                    this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["b" /* AudioSourceErrorEvent */](this.id, errorMsg));
+                });
+            }
+            else if (!window.navigator.getUserMedia) {
                 const errorMsg = "Browser does not support getUserMedia.";
                 this.initializeDeferral.Reject(errorMsg);
                 this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["b" /* AudioSourceErrorEvent */](errorMsg, "")); // mic initialized error - no streamid at this point
