@@ -1,1 +1,1 @@
-export declare const resolveLang: (string) => string;
+export declare const resolveLang: (langHint: string) => any;

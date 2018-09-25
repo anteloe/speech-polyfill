@@ -20,6 +20,6 @@ const supportedDefaults = {
     zh: 'zh-CN'
 }
 
-export const resolveLang: (string) => string = (langHint: string) => {
+export const resolveLang = (langHint: string) => {
     return supportedDefaults[langHint] || langHint;
 }
