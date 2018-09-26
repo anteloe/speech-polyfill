@@ -12,8 +12,10 @@
     "webpack": "webpack",
     "webpack:prod": "webpack -p --config webpack.config.prod.js"
   },
+  "dependencies": {
+    "microsoft-speech-browser-sdk": "^0.0.12"
+  },
   "devDependencies": {
-    "microsoft-speech-browser-sdk": "0.0.12",
     "typescript": "^3.0.3",
     "uglifyjs-webpack-plugin": "^2.0.1",
     "webpack": "^4.20.2",
