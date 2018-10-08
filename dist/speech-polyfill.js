@@ -36,12 +36,32 @@
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
 /******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
 /******/ 	};
 /******/
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
@@ -59,4200 +79,635 @@
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
 /******/
+/******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 17);
+/******/ 	return __webpack_require__(__webpack_require__.s = "./index.js");
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ "./index.js":
+/*!******************!*\
+  !*** ./index.js ***!
+  \******************/
+/*! exports provided: SpeechRecognition */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__AudioSourceEvents__ = __webpack_require__(25);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__AudioSourceEvents__["a"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_0__AudioSourceEvents__["b"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_0__AudioSourceEvents__["c"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_0__AudioSourceEvents__["d"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_0__AudioSourceEvents__["e"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_0__AudioSourceEvents__["f"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_0__AudioSourceEvents__["g"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "i", function() { return __WEBPACK_IMPORTED_MODULE_0__AudioSourceEvents__["h"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ConnectionEvents__ = __webpack_require__(26);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "j", function() { return __WEBPACK_IMPORTED_MODULE_1__ConnectionEvents__["a"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "k", function() { return __WEBPACK_IMPORTED_MODULE_1__ConnectionEvents__["b"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "l", function() { return __WEBPACK_IMPORTED_MODULE_1__ConnectionEvents__["c"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "n", function() { return __WEBPACK_IMPORTED_MODULE_1__ConnectionEvents__["d"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "o", function() { return __WEBPACK_IMPORTED_MODULE_1__ConnectionEvents__["e"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "q", function() { return __WEBPACK_IMPORTED_MODULE_1__ConnectionEvents__["f"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ConnectionMessage__ = __webpack_require__(8);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "m", function() { return __WEBPACK_IMPORTED_MODULE_2__ConnectionMessage__["a"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "x", function() { return __WEBPACK_IMPORTED_MODULE_2__ConnectionMessage__["b"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ConnectionOpenResponse__ = __webpack_require__(27);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "p", function() { return __WEBPACK_IMPORTED_MODULE_3__ConnectionOpenResponse__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Error__ = __webpack_require__(1);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_4__Error__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Events__ = __webpack_require__(28);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "w", function() { return __WEBPACK_IMPORTED_MODULE_5__Events__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__EventSource__ = __webpack_require__(9);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "u", function() { return __WEBPACK_IMPORTED_MODULE_6__EventSource__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Guid__ = __webpack_require__(2);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "s", function() { return __WEBPACK_IMPORTED_MODULE_7__Guid__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__IConnection__ = __webpack_require__(29);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "r", function() { return __WEBPACK_IMPORTED_MODULE_8__IConnection__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__InMemoryStorage__ = __webpack_require__(10);
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__List__ = __webpack_require__(11);
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__PlatformEvent__ = __webpack_require__(4);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "v", function() { return __WEBPACK_IMPORTED_MODULE_11__PlatformEvent__["a"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "y", function() { return __WEBPACK_IMPORTED_MODULE_11__PlatformEvent__["b"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__Promise__ = __webpack_require__(12);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "t", function() { return __WEBPACK_IMPORTED_MODULE_12__Promise__["a"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "z", function() { return __WEBPACK_IMPORTED_MODULE_12__Promise__["b"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__Queue__ = __webpack_require__(13);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "A", function() { return __WEBPACK_IMPORTED_MODULE_13__Queue__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__RawWebsocketMessage__ = __webpack_require__(30);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "B", function() { return __WEBPACK_IMPORTED_MODULE_14__RawWebsocketMessage__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__RiffPcmEncoder__ = __webpack_require__(31);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "C", function() { return __WEBPACK_IMPORTED_MODULE_15__RiffPcmEncoder__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__Storage__ = __webpack_require__(32);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "D", function() { return __WEBPACK_IMPORTED_MODULE_16__Storage__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__Stream__ = __webpack_require__(33);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "E", function() { return __WEBPACK_IMPORTED_MODULE_17__Stream__["a"]; });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _js_src_SpeechRecognition__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/src/SpeechRecognition */ \"./js/src/SpeechRecognition.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"SpeechRecognition\", function() { return _js_src_SpeechRecognition__WEBPACK_IMPORTED_MODULE_0__[\"SpeechRecognition\"]; });\n\n\nif (Promise === undefined) {\n    throw new Error('Promises are not supported in this browser. Use this polyfill: https://www.npmjs.com/package/es6-promise');\n}\n// polyfill mediaDevices.getUserMedia\nif (!navigator.mediaDevices) navigator.mediaDevices = {};\nnavigator.mediaDevices.getUserMedia = navigator.mediaDevices.getUserMedia || (function () {\n    // returns a getUserMedia function\n    var getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;\n    return function (constraints) {\n        if (!getUserMedia) {\n            return Promise.reject(new Error('getUserMedia is not implemented in this browser'));\n        }\n        return new Promise(function (resolve, reject) {\n            getUserMedia.call(navigator, constraints, resolve, reject);\n        });\n    };\n})();\n// polyfill speechRecognition\n(function (speechRecognition) {\n    window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition || SpeechRecognition;\n})(window.SpeechRecognition || window.webkitSpeechRecognition);\n\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ }),
-/* 1 */
+
+/***/ "./js/src/SpeechRecognition.js":
+/*!*************************************!*\
+  !*** ./js/src/SpeechRecognition.js ***!
+  \*************************************/
+/*! exports provided: SpeechRecognition */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/**
- * The error that is thrown when an argument passed in is null.
- *
- * @export
- * @class ArgumentNullError
- * @extends {Error}
- */
-class ArgumentNullError extends Error {
-    /**
-     * Creates an instance of ArgumentNullError.
-     *
-     * @param {string} argumentName Name of the argument that is null
-     *
-     * @memberOf ArgumentNullError
-     */
-    constructor(argumentName) {
-        super(argumentName);
-        this.name = "ArgumentNull";
-        this.message = argumentName;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = ArgumentNullError;
-
-/**
- * The error that is thrown when an invalid operation is performed in the code.
- *
- * @export
- * @class InvalidOperationError
- * @extends {Error}
- */
-// tslint:disable-next-line:max-classes-per-file
-class InvalidOperationError extends Error {
-    /**
-     * Creates an instance of InvalidOperationError.
-     *
-     * @param {string} error The error
-     *
-     * @memberOf InvalidOperationError
-     */
-    constructor(error) {
-        super(error);
-        this.name = "InvalidOperation";
-        this.message = error;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["b"] = InvalidOperationError;
-
-/**
- * The error that is thrown when an object is disposed.
- *
- * @export
- * @class ObjectDisposedError
- * @extends {Error}
- */
-// tslint:disable-next-line:max-classes-per-file
-class ObjectDisposedError extends Error {
-    /**
-     * Creates an instance of ObjectDisposedError.
-     *
-     * @param {string} objectName The object that is disposed
-     * @param {string} error The error
-     *
-     * @memberOf ObjectDisposedError
-     */
-    constructor(objectName, error) {
-        super(error);
-        this.name = objectName + "ObjectDisposed";
-        this.message = error;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["c"] = ObjectDisposedError;
-
-
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"SpeechRecognition\", function() { return SpeechRecognition; });\n/* harmony import */ var microsoft_speech_browser_sdk__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! microsoft-speech-browser-sdk */ \"./node_modules/microsoft-speech-browser-sdk/distrib/Speech.Browser.Sdk.js\");\n/* harmony import */ var microsoft_speech_browser_sdk__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(microsoft_speech_browser_sdk__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _entities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./entities */ \"./js/src/entities.js\");\n/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./helpers */ \"./js/src/helpers.js\");\n\n\n\nclass SpeechRecognition {\n    constructor(_apiKey) {\n        this._apiKey = _apiKey;\n        this.recognizer = null;\n        this.onaudiostart = null;\n        this.onaudioend = null;\n        this.onstart = null;\n        this.onend = null;\n        this.onerror = null;\n        this.onnomatch = null;\n        this.onresult = null;\n        this.onsoundstart = null;\n        this.onsoundend = null;\n        this.onspeechstart = null;\n        this.onspeechend = null;\n        this.lang = document.documentElement.lang || navigator.language;\n        this.continuous = false;\n        this.interimResults = false;\n        this.maxAlternatives = 1;\n        this.serviceURI = 'https://api.cognitive.microsoft.com/sts/v1.0';\n    }\n    set apiKey(key) {\n        this._apiKey = key;\n    }\n    start() {\n        if (!this.recognizer) {\n            this.recognizer = this.setupRecognizer();\n        }\n        this.recognizer.Recognize(this.handleEvent.bind(this))\n            .On(this.recognitionStartSuccess.bind(this), this.recognitionStartFailed.bind(this));\n    }\n    stop() {\n        if (this.recognizer) {\n            this.recognizer.AudioSource.TurnOff();\n        }\n    }\n    abort() {\n        if (this.recognizer) {\n            this.recognizer.AudioSource.TurnOff();\n        }\n    }\n    handleEvent(event) {\n        const eventName = event.name;\n        switch (eventName) {\n            case 'RecognitionTriggeredEvent': {\n                if (this.onstart) {\n                    this.onstart.call(this);\n                }\n                return;\n            }\n            case 'ListeningStartedEvent': {\n                if (this.onaudiostart) {\n                    this.onaudiostart.call(this);\n                }\n                return;\n            }\n            case 'RecognitionStartedEvent': {\n                if (this.onspeechstart) {\n                    this.onspeechstart.call(this);\n                }\n                return;\n            }\n            case 'RecognitionEndedEvent': {\n                if (this.onend) {\n                    this.onend.call(this);\n                }\n                return;\n            }\n            case 'SpeechHypothesisEvent': {\n                return this.handleHypothesis(event);\n            }\n            case 'SpeechDetailedPhraseEvent': {\n                return this.handleResult(event);\n            }\n            case 'SpeechEndDetectedEvent': {\n                if (this.onspeechend) {\n                    this.onspeechend.call(this);\n                }\n                return;\n            }\n            case 'ConnectingToServiceEvent': {\n                console.log('connecting to translation services');\n                return;\n            }\n        }\n        if (event.error) {\n            if (this.onerror) {\n                this.onerror.call(this, event.error);\n            }\n        }\n    }\n    handleHypothesis({ result, error }) {\n        if (error) {\n            return;\n        }\n        if (result.Text && this.onresult) {\n            this.onresult.call(this.recognizer, Object(_entities__WEBPACK_IMPORTED_MODULE_1__[\"createResultEvent\"])([Object(_entities__WEBPACK_IMPORTED_MODULE_1__[\"createIntermediateResult\"])(result)]));\n        }\n    }\n    handleResult({ result, error }) {\n        if (error) {\n            return;\n        }\n        const status = microsoft_speech_browser_sdk__WEBPACK_IMPORTED_MODULE_0__[\"RecognitionStatus\"][result.RecognitionStatus];\n        switch (status) {\n            case microsoft_speech_browser_sdk__WEBPACK_IMPORTED_MODULE_0__[\"RecognitionStatus\"].Success:\n                if (this.onresult) {\n                    const results = Object(_entities__WEBPACK_IMPORTED_MODULE_1__[\"createFinalResult\"])(result.NBest, this.maxAlternatives);\n                    this.onresult.call(this.recognizer, Object(_entities__WEBPACK_IMPORTED_MODULE_1__[\"createResultEvent\"])([results]));\n                }\n                break;\n            case microsoft_speech_browser_sdk__WEBPACK_IMPORTED_MODULE_0__[\"RecognitionStatus\"].Error:\n                if (this.onerror) {\n                    this.onerror.call(this, error);\n                }\n                break;\n            case microsoft_speech_browser_sdk__WEBPACK_IMPORTED_MODULE_0__[\"RecognitionStatus\"].NoMatch:\n                if (this.onnomatch) {\n                    this.onnomatch.call(this, error);\n                }\n                // call onnomatch;\n                break;\n            case microsoft_speech_browser_sdk__WEBPACK_IMPORTED_MODULE_0__[\"RecognitionStatus\"].InitialSilenceTimeout:\n            case microsoft_speech_browser_sdk__WEBPACK_IMPORTED_MODULE_0__[\"RecognitionStatus\"].EndOfDictation:\n            case microsoft_speech_browser_sdk__WEBPACK_IMPORTED_MODULE_0__[\"RecognitionStatus\"].BabbleTimeout:\n                console.log('something happened', event);\n                // call onend;\n                break;\n            // default:\n            //     console.log('falled into default', event);\n            // log unexpected case\n        }\n    }\n    recognitionStartSuccess(_listening) {\n        console.log('start');\n    }\n    recognitionStartFailed(error) {\n        console.log('failed', error);\n    }\n    setupRecognizer() {\n        if (!this._apiKey) {\n            throw new Error('no api key specified');\n        }\n        // prepare recognizer configuration\n        const speechConfig = new microsoft_speech_browser_sdk__WEBPACK_IMPORTED_MODULE_0__[\"SpeechConfig\"](new microsoft_speech_browser_sdk__WEBPACK_IMPORTED_MODULE_0__[\"Context\"](new microsoft_speech_browser_sdk__WEBPACK_IMPORTED_MODULE_0__[\"OS\"]('Speech', 'Speech', ''), new microsoft_speech_browser_sdk__WEBPACK_IMPORTED_MODULE_0__[\"Device\"](navigator.userAgent, 'Browser', '1.0.0.0')));\n        const recognitionMode = this.interimResults ? microsoft_speech_browser_sdk__WEBPACK_IMPORTED_MODULE_0__[\"RecognitionMode\"].Interactive : microsoft_speech_browser_sdk__WEBPACK_IMPORTED_MODULE_0__[\"RecognitionMode\"].Conversation;\n        const language = Object(_helpers__WEBPACK_IMPORTED_MODULE_2__[\"resolveLang\"])(this.lang);\n        const resultFormat = microsoft_speech_browser_sdk__WEBPACK_IMPORTED_MODULE_0__[\"SpeechResultFormat\"].Detailed;\n        // configure and authenticate recognizer\n        const config = new microsoft_speech_browser_sdk__WEBPACK_IMPORTED_MODULE_0__[\"RecognizerConfig\"](speechConfig, recognitionMode, language, resultFormat);\n        const auth = new microsoft_speech_browser_sdk__WEBPACK_IMPORTED_MODULE_0__[\"CognitiveSubscriptionKeyAuthentication\"](this._apiKey);\n        // create and return recognizer based on the prepared configuration\n        return Object(microsoft_speech_browser_sdk__WEBPACK_IMPORTED_MODULE_0__[\"CreateRecognizer\"])(config, auth);\n    }\n}\n\n\n//# sourceURL=webpack:///./js/src/SpeechRecognition.js?");
 
 /***/ }),
-/* 2 */
+
+/***/ "./js/src/entities.js":
+/*!****************************!*\
+  !*** ./js/src/entities.js ***!
+  \****************************/
+/*! exports provided: SpeechRecognitionEvent, createResultEvent, createFinalResult, createIntermediateResult */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony export CreateGuid */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CreateNoDashGuid; });
-const CreateGuid = () => {
-    let d = new Date().getTime();
-    const guid = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
-        const r = (d + Math.random() * 16) % 16 | 0;
-        d = Math.floor(d / 16);
-        return (c === "x" ? r : (r & 0x3 | 0x8)).toString(16);
-    });
-    return guid;
-};
-const CreateNoDashGuid = () => {
-    return CreateGuid().replace(new RegExp("-", "g"), "").toUpperCase();
-};
-
-
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _entities_SpeechRecognitionEvent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./entities/SpeechRecognitionEvent */ \"./js/src/entities/SpeechRecognitionEvent.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"SpeechRecognitionEvent\", function() { return _entities_SpeechRecognitionEvent__WEBPACK_IMPORTED_MODULE_0__[\"SpeechRecognitionEvent\"]; });\n\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"createResultEvent\", function() { return _entities_SpeechRecognitionEvent__WEBPACK_IMPORTED_MODULE_0__[\"createResultEvent\"]; });\n\n/* harmony import */ var _entities_SpeechRecognitionResult__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./entities/SpeechRecognitionResult */ \"./js/src/entities/SpeechRecognitionResult.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"createFinalResult\", function() { return _entities_SpeechRecognitionResult__WEBPACK_IMPORTED_MODULE_1__[\"createFinalResult\"]; });\n\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"createIntermediateResult\", function() { return _entities_SpeechRecognitionResult__WEBPACK_IMPORTED_MODULE_1__[\"createIntermediateResult\"]; });\n\n\n\n\n\n//# sourceURL=webpack:///./js/src/entities.js?");
 
 /***/ }),
-/* 3 */
+
+/***/ "./js/src/entities/SpeechRecognitionEvent.js":
+/*!***************************************************!*\
+  !*** ./js/src/entities/SpeechRecognitionEvent.js ***!
+  \***************************************************/
+/*! exports provided: SpeechRecognitionEvent, createResultEvent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__CognitiveSubscriptionKeyAuthentication__ = __webpack_require__(24);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__CognitiveSubscriptionKeyAuthentication__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__CognitiveTokenAuthentication__ = __webpack_require__(34);
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__IAuthentication__ = __webpack_require__(5);
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__RecognitionEvents__ = __webpack_require__(6);
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Recognizer__ = __webpack_require__(35);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_4__Recognizer__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__RecognizerConfig__ = __webpack_require__(14);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_5__RecognizerConfig__["a"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_5__RecognizerConfig__["b"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_5__RecognizerConfig__["c"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_5__RecognizerConfig__["d"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_5__RecognizerConfig__["e"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "i", function() { return __WEBPACK_IMPORTED_MODULE_5__RecognizerConfig__["f"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "j", function() { return __WEBPACK_IMPORTED_MODULE_5__RecognizerConfig__["g"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__SpeechResults__ = __webpack_require__(38);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_6__SpeechResults__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__WebsocketMessageFormatter__ = __webpack_require__(39);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "k", function() { return __WEBPACK_IMPORTED_MODULE_7__WebsocketMessageFormatter__["a"]; });
-// IMPORTANT - Dont publish internal modules.
-
-
-
-
-
-
-
-
-
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"SpeechRecognitionEvent\", function() { return SpeechRecognitionEvent; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"createResultEvent\", function() { return createResultEvent; });\nclass SpeechRecognitionEvent extends Event {\n    constructor(typeArg = 'result') {\n        super(typeArg);\n    }\n}\nfunction createResultEvent(results, resultIndex = 0, interpretation = null, emma = null) {\n    const event = new SpeechRecognitionEvent();\n    return Object.defineProperties(event, {\n        target: { value: this, writable: false },\n        emma: { value: emma, writable: false },\n        resultIndex: { value: resultIndex, writable: false },\n        results: { value: results, writable: false },\n        interpretation: { value: interpretation, writable: false }\n    });\n}\n\n\n//# sourceURL=webpack:///./js/src/entities/SpeechRecognitionEvent.js?");
 
 /***/ }),
-/* 4 */
+
+/***/ "./js/src/entities/SpeechRecognitionResult.js":
+/*!****************************************************!*\
+  !*** ./js/src/entities/SpeechRecognitionResult.js ***!
+  \****************************************************/
+/*! exports provided: createIntermediateResult, createFinalResult */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EventType; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Guid__ = __webpack_require__(2);
-
-var EventType;
-(function (EventType) {
-    EventType[EventType["Debug"] = 0] = "Debug";
-    EventType[EventType["Info"] = 1] = "Info";
-    EventType[EventType["Warning"] = 2] = "Warning";
-    EventType[EventType["Error"] = 3] = "Error";
-})(EventType || (EventType = {}));
-class PlatformEvent {
-    constructor(eventName, eventType) {
-        this.name = eventName;
-        this.eventId = Object(__WEBPACK_IMPORTED_MODULE_0__Guid__["a" /* CreateNoDashGuid */])();
-        this.eventTime = new Date().toISOString();
-        this.eventType = eventType;
-        this.metadata = {};
-    }
-    get Name() {
-        return this.name;
-    }
-    get EventId() {
-        return this.eventId;
-    }
-    get EventTime() {
-        return this.eventTime;
-    }
-    get EventType() {
-        return this.eventType;
-    }
-    get Metadata() {
-        return this.metadata;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["b"] = PlatformEvent;
-
-
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"createIntermediateResult\", function() { return createIntermediateResult; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"createFinalResult\", function() { return createFinalResult; });\nclass SpeechRecognitionResult extends Array {\n    constructor() {\n        super(...arguments);\n        this.isFinal = false;\n    }\n}\nfunction toIntermediateResult({ Text }) {\n    return {\n        confidence: .5,\n        transcript: Text\n    };\n}\nfunction toFinalResult({ Confidence, Display }) {\n    return {\n        confidence: Confidence,\n        transcript: Display\n    };\n}\nfunction createIntermediateResult(alternative) {\n    return new SpeechRecognitionResult(toIntermediateResult(alternative));\n}\nfunction createFinalResult(alternatives, maxAlternatives) {\n    const transformed = alternatives\n        .slice(0, maxAlternatives)\n        .map(toFinalResult);\n    const result = new SpeechRecognitionResult(...transformed);\n    result.isFinal = true;\n    return result;\n}\n\n\n//# sourceURL=webpack:///./js/src/entities/SpeechRecognitionResult.js?");
 
 /***/ }),
-/* 5 */
+
+/***/ "./js/src/helpers.js":
+/*!***************************!*\
+  !*** ./js/src/helpers.js ***!
+  \***************************/
+/*! exports provided: resolveLang */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-class AuthInfo {
-    constructor(headerName, token) {
-        this.headerName = headerName;
-        this.token = token;
-    }
-    get HeaderName() {
-        return this.headerName;
-    }
-    get Token() {
-        return this.token;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = AuthInfo;
-
-
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _helpers_LanguageResolver__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helpers/LanguageResolver */ \"./js/src/helpers/LanguageResolver.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"resolveLang\", function() { return _helpers_LanguageResolver__WEBPACK_IMPORTED_MODULE_0__[\"resolveLang\"]; });\n\n\n\n\n//# sourceURL=webpack:///./js/src/helpers.js?");
 
 /***/ }),
-/* 6 */
+
+/***/ "./js/src/helpers/LanguageResolver.js":
+/*!********************************************!*\
+  !*** ./js/src/helpers/LanguageResolver.js ***!
+  \********************************************/
+/*! exports provided: resolveLang */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return RecognitionCompletionStatus; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_Exports__ = __webpack_require__(0);
-
-class SpeechRecognitionEvent extends __WEBPACK_IMPORTED_MODULE_0__common_Exports__["y" /* PlatformEvent */] {
-    constructor(eventName, requestId, eventType = __WEBPACK_IMPORTED_MODULE_0__common_Exports__["v" /* EventType */].Info) {
-        super(eventName, eventType);
-        this.requestId = requestId;
-    }
-    get RequestId() {
-        return this.requestId;
-    }
-}
-/* unused harmony export SpeechRecognitionEvent */
-
-// tslint:disable-next-line:max-classes-per-file
-class SpeechRecognitionResultEvent extends SpeechRecognitionEvent {
-    constructor(eventName, requestId, result) {
-        super(eventName, requestId);
-        this.result = result;
-    }
-    get Result() {
-        return this.result;
-    }
-}
-/* unused harmony export SpeechRecognitionResultEvent */
-
-// tslint:disable-next-line:max-classes-per-file
-class RecognitionTriggeredEvent extends SpeechRecognitionEvent {
-    constructor(requestId, audioSourceId, audioNodeId) {
-        super("RecognitionTriggeredEvent", requestId);
-        this.audioSourceId = audioSourceId;
-        this.audioNodeId = audioNodeId;
-    }
-    get AudioSourceId() {
-        return this.audioSourceId;
-    }
-    get AudioNodeId() {
-        return this.audioNodeId;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["f"] = RecognitionTriggeredEvent;
-
-// tslint:disable-next-line:max-classes-per-file
-class ListeningStartedEvent extends SpeechRecognitionEvent {
-    constructor(requestId, audioSourceId, audioNodeId) {
-        super("ListeningStartedEvent", requestId);
-        this.audioSourceId = audioSourceId;
-        this.audioNodeId = audioNodeId;
-    }
-    get AudioSourceId() {
-        return this.audioSourceId;
-    }
-    get AudioNodeId() {
-        return this.audioNodeId;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["b"] = ListeningStartedEvent;
-
-// tslint:disable-next-line:max-classes-per-file
-class ConnectingToServiceEvent extends SpeechRecognitionEvent {
-    constructor(requestId, authFetchEventid, connectionId) {
-        super("ConnectingToServiceEvent", requestId);
-        this.authFetchEventid = authFetchEventid;
-        this.connectionId = connectionId;
-    }
-    get AuthFetchEventid() {
-        return this.authFetchEventid;
-    }
-    get ConnectionId() {
-        return this.connectionId;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = ConnectingToServiceEvent;
-
-// tslint:disable-next-line:max-classes-per-file
-class RecognitionStartedEvent extends SpeechRecognitionEvent {
-    constructor(requestId, audioSourceId, audioNodeId, authFetchEventId, connectionId) {
-        super("RecognitionStartedEvent", requestId);
-        this.audioSourceId = audioSourceId;
-        this.audioNodeId = audioNodeId;
-        this.authFetchEventId = authFetchEventId;
-        this.connectionId = connectionId;
-    }
-    get AudioSourceId() {
-        return this.audioSourceId;
-    }
-    get AudioNodeId() {
-        return this.audioNodeId;
-    }
-    get AuthFetchEventId() {
-        return this.authFetchEventId;
-    }
-    get ConnectionId() {
-        return this.connectionId;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["e"] = RecognitionStartedEvent;
-
-// tslint:disable-next-line:max-classes-per-file
-class SpeechStartDetectedEvent extends SpeechRecognitionResultEvent {
-    constructor(requestId, result) {
-        super("SpeechStartDetectedEvent", requestId, result);
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["l"] = SpeechStartDetectedEvent;
-
-// tslint:disable-next-line:max-classes-per-file
-class SpeechHypothesisEvent extends SpeechRecognitionResultEvent {
-    constructor(requestId, result) {
-        super("SpeechHypothesisEvent", requestId, result);
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["j"] = SpeechHypothesisEvent;
-
-// tslint:disable-next-line:max-classes-per-file
-class SpeechFragmentEvent extends SpeechRecognitionResultEvent {
-    constructor(requestId, result) {
-        super("SpeechFragmentEvent", requestId, result);
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["i"] = SpeechFragmentEvent;
-
-// tslint:disable-next-line:max-classes-per-file
-class SpeechEndDetectedEvent extends SpeechRecognitionResultEvent {
-    constructor(requestId, result) {
-        super("SpeechEndDetectedEvent", requestId, result);
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["h"] = SpeechEndDetectedEvent;
-
-// tslint:disable-next-line:max-classes-per-file
-class SpeechSimplePhraseEvent extends SpeechRecognitionResultEvent {
-    constructor(requestId, result) {
-        super("SpeechSimplePhraseEvent", requestId, result);
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["k"] = SpeechSimplePhraseEvent;
-
-// tslint:disable-next-line:max-classes-per-file
-class SpeechDetailedPhraseEvent extends SpeechRecognitionResultEvent {
-    constructor(requestId, result) {
-        super("SpeechDetailedPhraseEvent", requestId, result);
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["g"] = SpeechDetailedPhraseEvent;
-
-var RecognitionCompletionStatus;
-(function (RecognitionCompletionStatus) {
-    RecognitionCompletionStatus[RecognitionCompletionStatus["Success"] = 0] = "Success";
-    RecognitionCompletionStatus[RecognitionCompletionStatus["AudioSourceError"] = 1] = "AudioSourceError";
-    RecognitionCompletionStatus[RecognitionCompletionStatus["AudioSourceTimeout"] = 2] = "AudioSourceTimeout";
-    RecognitionCompletionStatus[RecognitionCompletionStatus["AuthTokenFetchError"] = 3] = "AuthTokenFetchError";
-    RecognitionCompletionStatus[RecognitionCompletionStatus["AuthTokenFetchTimeout"] = 4] = "AuthTokenFetchTimeout";
-    RecognitionCompletionStatus[RecognitionCompletionStatus["UnAuthorized"] = 5] = "UnAuthorized";
-    RecognitionCompletionStatus[RecognitionCompletionStatus["ConnectTimeout"] = 6] = "ConnectTimeout";
-    RecognitionCompletionStatus[RecognitionCompletionStatus["ConnectError"] = 7] = "ConnectError";
-    RecognitionCompletionStatus[RecognitionCompletionStatus["ClientRecognitionActivityTimeout"] = 8] = "ClientRecognitionActivityTimeout";
-    RecognitionCompletionStatus[RecognitionCompletionStatus["UnknownError"] = 9] = "UnknownError";
-})(RecognitionCompletionStatus || (RecognitionCompletionStatus = {}));
-// tslint:disable-next-line:max-classes-per-file
-class RecognitionEndedEvent extends SpeechRecognitionEvent {
-    constructor(requestId, audioSourceId, audioNodeId, authFetchEventId, connectionId, serviceTag, status, error) {
-        super("RecognitionEndedEvent", requestId, status === RecognitionCompletionStatus.Success ? __WEBPACK_IMPORTED_MODULE_0__common_Exports__["v" /* EventType */].Info : __WEBPACK_IMPORTED_MODULE_0__common_Exports__["v" /* EventType */].Error);
-        this.audioSourceId = audioSourceId;
-        this.audioNodeId = audioNodeId;
-        this.connectionId = connectionId;
-        this.authFetchEventId = authFetchEventId;
-        this.status = status;
-        this.error = error;
-        this.serviceTag = serviceTag;
-    }
-    get AudioSourceId() {
-        return this.audioSourceId;
-    }
-    get AudioNodeId() {
-        return this.audioNodeId;
-    }
-    get AuthFetchEventId() {
-        return this.authFetchEventId;
-    }
-    get ConnectionId() {
-        return this.connectionId;
-    }
-    get ServiceTag() {
-        return this.serviceTag;
-    }
-    get Status() {
-        return this.status;
-    }
-    get Error() {
-        return this.error;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["d"] = RecognitionEndedEvent;
-
-
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"resolveLang\", function() { return resolveLang; });\nconst supportedDefaults = {\n    ar: 'ar-EG',\n    ca: 'ca-ES',\n    da: 'da-DK',\n    de: 'de-DE',\n    en: 'en-US',\n    es: 'es-ES',\n    fi: 'fi-FI',\n    fr: 'fr-FR',\n    hi: 'hi-IN',\n    it: 'it-IT',\n    ja: 'ja-JP',\n    ko: 'ko-KR',\n    nb: 'nb-NO',\n    nl: 'nl-NL',\n    pl: 'pl-PL',\n    pt: 'pt-PT',\n    ru: 'ru-RU',\n    sv: 'sv-SE',\n    zh: 'zh-CN'\n};\nconst resolveLang = (langHint) => {\n    return supportedDefaults[langHint] || langHint;\n};\n\n\n//# sourceURL=webpack:///./js/src/helpers/LanguageResolver.js?");
 
 /***/ }),
-/* 7 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/Speech.Browser.Sdk.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/Speech.Browser.Sdk.js ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ConsoleLoggingListener__ = __webpack_require__(42);
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__LocalStorage__ = __webpack_require__(43);
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__MicAudioSource__ = __webpack_require__(44);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_2__MicAudioSource__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__FileAudioSource__ = __webpack_require__(45);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_3__FileAudioSource__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__OpusRecorder__ = __webpack_require__(46);
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__PCMRecorder__ = __webpack_require__(47);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_5__PCMRecorder__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__SessionStorage__ = __webpack_require__(48);
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Timer__ = __webpack_require__(49);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_7__Timer__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__WebsocketConnection__ = __webpack_require__(50);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_8__WebsocketConnection__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__WebsocketMessageAdapter__ = __webpack_require__(15);
-/* unused harmony namespace reexport */
-
-
-
-
-
-
-
-
-
-
-
+eval("\nfunction __export(m) {\n    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];\n}\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar Exports_1 = __webpack_require__(/*! ./src/common.browser/Exports */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/Exports.js\");\nvar Exports_2 = __webpack_require__(/*! ./src/common/Exports */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Exports.js\");\n// Common.Storage.SetLocalStorage(new Common.Browser.LocalStorage());\n// Common.Storage.SetSessionStorage(new Common.Browser.SessionStorage());\nExports_2.Events.Instance.AttachListener(new Exports_1.ConsoleLoggingListener());\n__export(__webpack_require__(/*! ./src/common/Exports */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Exports.js\"));\n__export(__webpack_require__(/*! ./src/common.browser/Exports */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/Exports.js\"));\n__export(__webpack_require__(/*! ./src/sdk/speech/Exports */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/Exports.js\"));\n__export(__webpack_require__(/*! ./src/sdk/speech.browser/Exports */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech.browser/Exports.js\"));\n\n//# sourceMappingURL=Speech.Browser.Sdk.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/Speech.Browser.Sdk.js?");
 
 /***/ }),
-/* 8 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/ConsoleLoggingListener.js":
+/*!********************************************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/ConsoleLoggingListener.js ***!
+  \********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return MessageType; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Error__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Guid__ = __webpack_require__(2);
-
-
-var MessageType;
-(function (MessageType) {
-    MessageType[MessageType["Text"] = 0] = "Text";
-    MessageType[MessageType["Binary"] = 1] = "Binary";
-})(MessageType || (MessageType = {}));
-class ConnectionMessage {
-    constructor(messageType, body, headers, id) {
-        this.body = null;
-        if (messageType === MessageType.Text && body && !(typeof (body) === "string")) {
-            throw new __WEBPACK_IMPORTED_MODULE_0__Error__["b" /* InvalidOperationError */]("Payload must be a string");
-        }
-        if (messageType === MessageType.Binary && body && !(body instanceof ArrayBuffer)) {
-            throw new __WEBPACK_IMPORTED_MODULE_0__Error__["b" /* InvalidOperationError */]("Payload must be ArrayBuffer");
-        }
-        this.messageType = messageType;
-        this.body = body;
-        this.headers = headers ? headers : {};
-        this.id = id ? id : Object(__WEBPACK_IMPORTED_MODULE_1__Guid__["a" /* CreateNoDashGuid */])();
-    }
-    get MessageType() {
-        return this.messageType;
-    }
-    get Headers() {
-        return this.headers;
-    }
-    get Body() {
-        return this.body;
-    }
-    get TextBody() {
-        if (this.messageType === MessageType.Binary) {
-            throw new __WEBPACK_IMPORTED_MODULE_0__Error__["b" /* InvalidOperationError */]("Not supported for binary message");
-        }
-        return this.body;
-    }
-    get BinaryBody() {
-        if (this.messageType === MessageType.Text) {
-            throw new __WEBPACK_IMPORTED_MODULE_0__Error__["b" /* InvalidOperationError */]("Not supported for text message");
-        }
-        return this.body;
-    }
-    get Id() {
-        return this.id;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = ConnectionMessage;
-
-
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar Exports_1 = __webpack_require__(/*! ../common/Exports */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Exports.js\");\nvar ConsoleLoggingListener = /** @class */ (function () {\n    function ConsoleLoggingListener(logLevelFilter) {\n        if (logLevelFilter === void 0) { logLevelFilter = Exports_1.EventType.Warning; }\n        var _this = this;\n        this.OnEvent = function (event) {\n            if (event.EventType >= _this.logLevelFilter) {\n                var log = _this.ToString(event);\n                switch (event.EventType) {\n                    case Exports_1.EventType.Debug:\n                        // tslint:disable-next-line:no-console\n                        console.debug(log);\n                        break;\n                    case Exports_1.EventType.Info:\n                        // tslint:disable-next-line:no-console\n                        console.info(log);\n                        break;\n                    case Exports_1.EventType.Warning:\n                        // tslint:disable-next-line:no-console\n                        console.warn(log);\n                        break;\n                    case Exports_1.EventType.Error:\n                        // tslint:disable-next-line:no-console\n                        console.error(log);\n                        break;\n                    default:\n                        // tslint:disable-next-line:no-console\n                        console.log(log);\n                        break;\n                }\n            }\n        };\n        this.ToString = function (event) {\n            var logFragments = [\n                \"\" + event.EventTime,\n                \"\" + event.Name,\n            ];\n            for (var prop in event) {\n                if (prop && event.hasOwnProperty(prop) && prop !== \"eventTime\" && prop !== \"eventType\" && prop !== \"eventId\" && prop !== \"name\" && prop !== \"constructor\") {\n                    var value = event[prop];\n                    var valueToLog = \"<NULL>\";\n                    if (value !== undefined && value !== null) {\n                        if (typeof (value) === \"number\" || typeof (value) === \"string\") {\n                            valueToLog = value.toString();\n                        }\n                        else {\n                            valueToLog = JSON.stringify(value);\n                        }\n                    }\n                    logFragments.push(prop + \": \" + valueToLog);\n                }\n            }\n            return logFragments.join(\" | \");\n        };\n        this.logLevelFilter = logLevelFilter;\n    }\n    return ConsoleLoggingListener;\n}());\nexports.ConsoleLoggingListener = ConsoleLoggingListener;\n\n//# sourceMappingURL=ConsoleLoggingListener.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/ConsoleLoggingListener.js?");
 
 /***/ }),
-/* 9 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/Exports.js":
+/*!*****************************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/Exports.js ***!
+  \*****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Error__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Guid__ = __webpack_require__(2);
-
-
-class EventSource {
-    constructor(metadata) {
-        this.eventListeners = {};
-        this.isDisposed = false;
-        this.OnEvent = (event) => {
-            if (this.IsDisposed()) {
-                throw (new __WEBPACK_IMPORTED_MODULE_0__Error__["c" /* ObjectDisposedError */]("EventSource"));
-            }
-            if (this.Metadata) {
-                for (const paramName in this.Metadata) {
-                    if (paramName) {
-                        if (event.Metadata) {
-                            if (!event.Metadata[paramName]) {
-                                event.Metadata[paramName] = this.Metadata[paramName];
-                            }
-                        }
-                    }
-                }
-            }
-            for (const eventId in this.eventListeners) {
-                if (eventId && this.eventListeners[eventId]) {
-                    this.eventListeners[eventId](event);
-                }
-            }
-        };
-        this.Attach = (onEventCallback) => {
-            const id = Object(__WEBPACK_IMPORTED_MODULE_1__Guid__["a" /* CreateNoDashGuid */])();
-            this.eventListeners[id] = onEventCallback;
-            return {
-                Detach: () => {
-                    delete this.eventListeners[id];
-                },
-            };
-        };
-        this.AttachListener = (listener) => {
-            return this.Attach(listener.OnEvent);
-        };
-        this.IsDisposed = () => {
-            return this.isDisposed;
-        };
-        this.Dispose = () => {
-            this.eventListeners = null;
-            this.isDisposed = true;
-        };
-        this.metadata = metadata;
-    }
-    get Metadata() {
-        return this.metadata;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = EventSource;
-
-
+eval("\nfunction __export(m) {\n    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];\n}\nObject.defineProperty(exports, \"__esModule\", { value: true });\n__export(__webpack_require__(/*! ./ConsoleLoggingListener */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/ConsoleLoggingListener.js\"));\n__export(__webpack_require__(/*! ./LocalStorage */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/LocalStorage.js\"));\n__export(__webpack_require__(/*! ./MicAudioSource */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/MicAudioSource.js\"));\n__export(__webpack_require__(/*! ./FileAudioSource */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/FileAudioSource.js\"));\n__export(__webpack_require__(/*! ./OpusRecorder */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/OpusRecorder.js\"));\n__export(__webpack_require__(/*! ./PCMRecorder */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/PCMRecorder.js\"));\n__export(__webpack_require__(/*! ./SessionStorage */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/SessionStorage.js\"));\n__export(__webpack_require__(/*! ./Timer */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/Timer.js\"));\n__export(__webpack_require__(/*! ./WebsocketConnection */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/WebsocketConnection.js\"));\n__export(__webpack_require__(/*! ./WebsocketMessageAdapter */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/WebsocketMessageAdapter.js\"));\n\n//# sourceMappingURL=Exports.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/Exports.js?");
 
 /***/ }),
-/* 10 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/FileAudioSource.js":
+/*!*************************************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/FileAudioSource.js ***!
+  \*************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Error__ = __webpack_require__(1);
-
-class InMemoryStorage {
-    constructor() {
-        this.store = {};
-        this.Get = (key) => {
-            if (!key) {
-                throw new __WEBPACK_IMPORTED_MODULE_0__Error__["a" /* ArgumentNullError */]("key");
-            }
-            return this.store[key];
-        };
-        this.GetOrAdd = (key, valueToAdd) => {
-            if (!key) {
-                throw new __WEBPACK_IMPORTED_MODULE_0__Error__["a" /* ArgumentNullError */]("key");
-            }
-            if (this.store[key] === undefined) {
-                this.store[key] = valueToAdd;
-            }
-            return this.store[key];
-        };
-        this.Set = (key, value) => {
-            if (!key) {
-                throw new __WEBPACK_IMPORTED_MODULE_0__Error__["a" /* ArgumentNullError */]("key");
-            }
-            this.store[key] = value;
-        };
-        this.Remove = (key) => {
-            if (!key) {
-                throw new __WEBPACK_IMPORTED_MODULE_0__Error__["a" /* ArgumentNullError */]("key");
-            }
-            if (this.store[key] !== undefined) {
-                delete this.store[key];
-            }
-        };
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = InMemoryStorage;
-
-
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar Exports_1 = __webpack_require__(/*! ../common/Exports */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Exports.js\");\nvar Exports_2 = __webpack_require__(/*! ../common.browser/Exports */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/Exports.js\");\nvar FileAudioSource = /** @class */ (function () {\n    function FileAudioSource(file, audioSourceId) {\n        var _this = this;\n        this.streams = {};\n        this.TurnOn = function () {\n            if (typeof FileReader === \"undefined\") {\n                var errorMsg = \"Browser does not support FileReader.\";\n                _this.OnEvent(new Exports_1.AudioSourceErrorEvent(errorMsg, \"\")); // initialization error - no streamid at this point\n                return Exports_1.PromiseHelper.FromError(errorMsg);\n            }\n            else if (_this.file.name.lastIndexOf(\".wav\") !== _this.file.name.length - 4) {\n                var errorMsg = _this.file.name + \" is not supported. Only WAVE files are allowed at the moment.\";\n                _this.OnEvent(new Exports_1.AudioSourceErrorEvent(errorMsg, \"\"));\n                return Exports_1.PromiseHelper.FromError(errorMsg);\n            }\n            else if (_this.file.size > FileAudioSource.MAX_SIZE) {\n                var errorMsg = _this.file.name + \" exceeds the maximum allowed file size (\" + FileAudioSource.MAX_SIZE + \").\";\n                _this.OnEvent(new Exports_1.AudioSourceErrorEvent(errorMsg, \"\"));\n                return Exports_1.PromiseHelper.FromError(errorMsg);\n            }\n            _this.OnEvent(new Exports_1.AudioSourceInitializingEvent(_this.id)); // no stream id\n            _this.OnEvent(new Exports_1.AudioSourceReadyEvent(_this.id));\n            return Exports_1.PromiseHelper.FromResult(true);\n        };\n        this.Id = function () {\n            return _this.id;\n        };\n        this.Attach = function (audioNodeId) {\n            _this.OnEvent(new Exports_1.AudioStreamNodeAttachingEvent(_this.id, audioNodeId));\n            return _this.Upload(audioNodeId).OnSuccessContinueWith(function (streamReader) {\n                _this.OnEvent(new Exports_1.AudioStreamNodeAttachedEvent(_this.id, audioNodeId));\n                return {\n                    Detach: function () {\n                        streamReader.Close();\n                        delete _this.streams[audioNodeId];\n                        _this.OnEvent(new Exports_1.AudioStreamNodeDetachedEvent(_this.id, audioNodeId));\n                        _this.TurnOff();\n                    },\n                    Id: function () {\n                        return audioNodeId;\n                    },\n                    Read: function () {\n                        return streamReader.Read();\n                    },\n                };\n            });\n        };\n        this.Detach = function (audioNodeId) {\n            if (audioNodeId && _this.streams[audioNodeId]) {\n                _this.streams[audioNodeId].Close();\n                delete _this.streams[audioNodeId];\n                _this.OnEvent(new Exports_1.AudioStreamNodeDetachedEvent(_this.id, audioNodeId));\n            }\n        };\n        this.TurnOff = function () {\n            for (var streamId in _this.streams) {\n                if (streamId) {\n                    var stream = _this.streams[streamId];\n                    if (stream && !stream.IsClosed) {\n                        stream.Close();\n                    }\n                }\n            }\n            _this.OnEvent(new Exports_1.AudioSourceOffEvent(_this.id)); // no stream now\n            return Exports_1.PromiseHelper.FromResult(true);\n        };\n        this.Upload = function (audioNodeId) {\n            return _this.TurnOn()\n                .OnSuccessContinueWith(function (_) {\n                var stream = new Exports_1.Stream(audioNodeId);\n                _this.streams[audioNodeId] = stream;\n                var reader = new FileReader();\n                var startOffset = 0;\n                var endOffset = FileAudioSource.CHUNK_SIZE;\n                var lastWriteTimestamp = 0;\n                var processNextChunk = function (event) {\n                    if (stream.IsClosed) {\n                        return; // output stream was closed (somebody called TurnOff). We're done here.\n                    }\n                    if (lastWriteTimestamp !== 0) {\n                        var delay = Date.now() - lastWriteTimestamp;\n                        if (delay < FileAudioSource.UPLOAD_INTERVAL) {\n                            // It's been less than the \"upload interval\" since we've uploaded the\n                            // last chunk. Schedule the next upload to make sure that we're sending\n                            // upstream roughly one chunk per upload interval.\n                            new Exports_2.Timer(FileAudioSource.UPLOAD_INTERVAL - delay, processNextChunk).start();\n                            return;\n                        }\n                    }\n                    stream.Write(reader.result);\n                    lastWriteTimestamp = Date.now();\n                    if (endOffset < _this.file.size) {\n                        startOffset = endOffset;\n                        endOffset = Math.min(endOffset + FileAudioSource.CHUNK_SIZE, _this.file.size);\n                        var chunk_1 = _this.file.slice(startOffset, endOffset);\n                        reader.readAsArrayBuffer(chunk_1);\n                    }\n                    else {\n                        // we've written the entire file to the output stream, can close it now.\n                        stream.Close();\n                    }\n                };\n                reader.onload = processNextChunk;\n                reader.onerror = function (event) {\n                    var errorMsg = \"Error occurred while processing '\" + _this.file.name + \"'. \" + event.error;\n                    _this.OnEvent(new Exports_1.AudioStreamNodeErrorEvent(_this.id, audioNodeId, event.error));\n                    throw new Error(errorMsg);\n                };\n                var chunk = _this.file.slice(startOffset, endOffset);\n                reader.readAsArrayBuffer(chunk);\n                return stream.GetReader();\n            });\n        };\n        this.OnEvent = function (event) {\n            _this.events.OnEvent(event);\n            Exports_1.Events.Instance.OnEvent(event);\n        };\n        this.id = audioSourceId ? audioSourceId : Exports_1.CreateNoDashGuid();\n        this.events = new Exports_1.EventSource();\n        this.file = file;\n    }\n    Object.defineProperty(FileAudioSource.prototype, \"Events\", {\n        get: function () {\n            return this.events;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    // Recommended sample rate (bytes/second).\n    FileAudioSource.SAMPLE_RATE = 16000 * 2; // 16 kHz * 16 bits\n    // We should stream audio at no faster than 2x real-time (i.e., send five chunks\n    // per second, with the chunk size == sample rate in bytes per second * 2 / 5).\n    FileAudioSource.CHUNK_SIZE = FileAudioSource.SAMPLE_RATE * 2 / 5;\n    FileAudioSource.UPLOAD_INTERVAL = 200; // milliseconds\n    // 10 seconds of audio in bytes =\n    // sample rate (bytes/second) * 600 (seconds) + 44 (size of the wave header).\n    FileAudioSource.MAX_SIZE = FileAudioSource.SAMPLE_RATE * 600 + 44;\n    return FileAudioSource;\n}());\nexports.FileAudioSource = FileAudioSource;\n\n//# sourceMappingURL=FileAudioSource.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/FileAudioSource.js?");
 
 /***/ }),
-/* 11 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/LocalStorage.js":
+/*!**********************************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/LocalStorage.js ***!
+  \**********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Error__ = __webpack_require__(1);
-
-class List {
-    constructor(list) {
-        this.subscriptionIdCounter = 0;
-        this.addSubscriptions = {};
-        this.removeSubscriptions = {};
-        this.disposedSubscriptions = {};
-        this.disposeReason = null;
-        this.Get = (itemIndex) => {
-            this.ThrowIfDisposed();
-            return this.list[itemIndex];
-        };
-        this.First = () => {
-            return this.Get(0);
-        };
-        this.Last = () => {
-            return this.Get(this.Length() - 1);
-        };
-        this.Add = (item) => {
-            this.ThrowIfDisposed();
-            this.InsertAt(this.list.length, item);
-        };
-        this.InsertAt = (index, item) => {
-            this.ThrowIfDisposed();
-            if (index === 0) {
-                this.list.unshift(item);
-            }
-            else if (index === this.list.length) {
-                this.list.push(item);
-            }
-            else {
-                this.list.splice(index, 0, item);
-            }
-            this.TriggerSubscriptions(this.addSubscriptions);
-        };
-        this.RemoveFirst = () => {
-            this.ThrowIfDisposed();
-            return this.RemoveAt(0);
-        };
-        this.RemoveLast = () => {
-            this.ThrowIfDisposed();
-            return this.RemoveAt(this.Length() - 1);
-        };
-        this.RemoveAt = (index) => {
-            this.ThrowIfDisposed();
-            return this.Remove(index, 1)[0];
-        };
-        this.Remove = (index, count) => {
-            this.ThrowIfDisposed();
-            const removedElements = this.list.splice(index, count);
-            this.TriggerSubscriptions(this.removeSubscriptions);
-            return removedElements;
-        };
-        this.Clear = () => {
-            this.ThrowIfDisposed();
-            this.Remove(0, this.Length());
-        };
-        this.Length = () => {
-            this.ThrowIfDisposed();
-            return this.list.length;
-        };
-        this.OnAdded = (addedCallback) => {
-            this.ThrowIfDisposed();
-            const subscriptionId = this.subscriptionIdCounter++;
-            this.addSubscriptions[subscriptionId] = addedCallback;
-            return {
-                Detach: () => {
-                    delete this.addSubscriptions[subscriptionId];
-                },
-            };
-        };
-        this.OnRemoved = (removedCallback) => {
-            this.ThrowIfDisposed();
-            const subscriptionId = this.subscriptionIdCounter++;
-            this.removeSubscriptions[subscriptionId] = removedCallback;
-            return {
-                Detach: () => {
-                    delete this.removeSubscriptions[subscriptionId];
-                },
-            };
-        };
-        this.OnDisposed = (disposedCallback) => {
-            this.ThrowIfDisposed();
-            const subscriptionId = this.subscriptionIdCounter++;
-            this.disposedSubscriptions[subscriptionId] = disposedCallback;
-            return {
-                Detach: () => {
-                    delete this.disposedSubscriptions[subscriptionId];
-                },
-            };
-        };
-        this.Join = (seperator) => {
-            this.ThrowIfDisposed();
-            return this.list.join(seperator);
-        };
-        this.ToArray = () => {
-            const cloneCopy = Array();
-            this.list.forEach((val) => {
-                cloneCopy.push(val);
-            });
-            return cloneCopy;
-        };
-        this.Any = (callback) => {
-            this.ThrowIfDisposed();
-            if (callback) {
-                return this.Where(callback).Length() > 0;
-            }
-            else {
-                return this.Length() > 0;
-            }
-        };
-        this.All = (callback) => {
-            this.ThrowIfDisposed();
-            return this.Where(callback).Length() === this.Length();
-        };
-        this.ForEach = (callback) => {
-            this.ThrowIfDisposed();
-            for (let i = 0; i < this.Length(); i++) {
-                callback(this.list[i], i);
-            }
-        };
-        this.Select = (callback) => {
-            this.ThrowIfDisposed();
-            const selectList = [];
-            for (let i = 0; i < this.list.length; i++) {
-                selectList.push(callback(this.list[i], i));
-            }
-            return new List(selectList);
-        };
-        this.Where = (callback) => {
-            this.ThrowIfDisposed();
-            const filteredList = new List();
-            for (let i = 0; i < this.list.length; i++) {
-                if (callback(this.list[i], i)) {
-                    filteredList.Add(this.list[i]);
-                }
-            }
-            return filteredList;
-        };
-        this.OrderBy = (compareFn) => {
-            this.ThrowIfDisposed();
-            const clonedArray = this.ToArray();
-            const orderedArray = clonedArray.sort(compareFn);
-            return new List(orderedArray);
-        };
-        this.OrderByDesc = (compareFn) => {
-            this.ThrowIfDisposed();
-            return this.OrderBy((a, b) => compareFn(b, a));
-        };
-        this.Clone = () => {
-            this.ThrowIfDisposed();
-            return new List(this.ToArray());
-        };
-        this.Concat = (list) => {
-            this.ThrowIfDisposed();
-            return new List(this.list.concat(list.ToArray()));
-        };
-        this.ConcatArray = (array) => {
-            this.ThrowIfDisposed();
-            return new List(this.list.concat(array));
-        };
-        this.IsDisposed = () => {
-            return this.list == null;
-        };
-        this.Dispose = (reason) => {
-            if (!this.IsDisposed()) {
-                this.disposeReason = reason;
-                this.list = null;
-                this.addSubscriptions = null;
-                this.removeSubscriptions = null;
-                this.TriggerSubscriptions(this.disposedSubscriptions);
-            }
-        };
-        this.ThrowIfDisposed = () => {
-            if (this.IsDisposed()) {
-                throw new __WEBPACK_IMPORTED_MODULE_0__Error__["c" /* ObjectDisposedError */]("List", this.disposeReason);
-            }
-        };
-        this.TriggerSubscriptions = (subscriptions) => {
-            if (subscriptions) {
-                for (const subscriptionId in subscriptions) {
-                    if (subscriptionId) {
-                        subscriptions[subscriptionId]();
-                    }
-                }
-            }
-        };
-        this.list = [];
-        // copy the list rather than taking as is.
-        if (list) {
-            for (const item of list) {
-                this.list.push(item);
-            }
-        }
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = List;
-
-
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar Exports_1 = __webpack_require__(/*! ../common/Exports */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Exports.js\");\nvar LocalStorage = /** @class */ (function () {\n    function LocalStorage() {\n        this.Get = function (key) {\n            if (!key) {\n                throw new Exports_1.ArgumentNullError(\"key\");\n            }\n            return localStorage.getItem(key);\n        };\n        this.GetOrAdd = function (key, valueToAdd) {\n            if (!key) {\n                throw new Exports_1.ArgumentNullError(\"key\");\n            }\n            var value = localStorage.getItem(key);\n            if (value === null || value === undefined) {\n                localStorage.setItem(key, valueToAdd);\n            }\n            return localStorage.getItem(key);\n        };\n        this.Set = function (key, value) {\n            if (!key) {\n                throw new Exports_1.ArgumentNullError(\"key\");\n            }\n            localStorage.setItem(key, value);\n        };\n        this.Remove = function (key) {\n            if (!key) {\n                throw new Exports_1.ArgumentNullError(\"key\");\n            }\n            localStorage.removeItem(key);\n        };\n    }\n    return LocalStorage;\n}());\nexports.LocalStorage = LocalStorage;\n\n//# sourceMappingURL=LocalStorage.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/LocalStorage.js?");
 
 /***/ }),
-/* 12 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/MicAudioSource.js":
+/*!************************************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/MicAudioSource.js ***!
+  \************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* unused harmony export PromiseState */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Error__ = __webpack_require__(1);
-
-var PromiseState;
-(function (PromiseState) {
-    PromiseState[PromiseState["None"] = 0] = "None";
-    PromiseState[PromiseState["Resolved"] = 1] = "Resolved";
-    PromiseState[PromiseState["Rejected"] = 2] = "Rejected";
-})(PromiseState || (PromiseState = {}));
-class PromiseResult {
-    constructor(promiseResultEventSource) {
-        this.ThrowIfError = () => {
-            if (this.IsError) {
-                throw this.Error;
-            }
-        };
-        promiseResultEventSource.On((result) => {
-            if (!this.isCompleted) {
-                this.isCompleted = true;
-                this.isError = false;
-                this.result = result;
-            }
-        }, (error) => {
-            if (!this.isCompleted) {
-                this.isCompleted = true;
-                this.isError = true;
-                this.error = error;
-            }
-        });
-    }
-    get IsCompleted() {
-        return this.isCompleted;
-    }
-    get IsError() {
-        return this.isError;
-    }
-    get Error() {
-        return this.error;
-    }
-    get Result() {
-        return this.result;
-    }
-}
-/* unused harmony export PromiseResult */
-
-// tslint:disable-next-line:max-classes-per-file
-class PromiseResultEventSource {
-    constructor() {
-        this.SetResult = (result) => {
-            this.onSetResult(result);
-        };
-        this.SetError = (error) => {
-            this.onSetError(error);
-        };
-        this.On = (onSetResult, onSetError) => {
-            this.onSetResult = onSetResult;
-            this.onSetError = onSetError;
-        };
-    }
-}
-/* unused harmony export PromiseResultEventSource */
-
-// tslint:disable-next-line:max-classes-per-file
-class PromiseHelper {
-}
-/* harmony export (immutable) */ __webpack_exports__["b"] = PromiseHelper;
-
-PromiseHelper.WhenAll = (promises) => {
-    if (!promises || promises.length === 0) {
-        throw new __WEBPACK_IMPORTED_MODULE_0__Error__["a" /* ArgumentNullError */]("promises");
-    }
-    const deferred = new Deferred();
-    const errors = [];
-    let completedPromises = 0;
-    const checkForCompletion = () => {
-        completedPromises++;
-        if (completedPromises === promises.length) {
-            if (errors.length === 0) {
-                deferred.Resolve(true);
-            }
-            else {
-                deferred.Reject(errors.join(", "));
-            }
-        }
-    };
-    for (const promise of promises) {
-        promise.On((r) => {
-            checkForCompletion();
-        }, (e) => {
-            errors.push(e);
-            checkForCompletion();
-        });
-    }
-    return deferred.Promise();
-};
-PromiseHelper.FromResult = (result) => {
-    const deferred = new Deferred();
-    deferred.Resolve(result);
-    return deferred.Promise();
-};
-PromiseHelper.FromError = (error) => {
-    const deferred = new Deferred();
-    deferred.Reject(error);
-    return deferred.Promise();
-};
-// tslint:disable-next-line:max-classes-per-file
-class Promise {
-    constructor(sink) {
-        this.Result = () => {
-            return this.sink.Result;
-        };
-        this.ContinueWith = (continuationCallback) => {
-            if (!continuationCallback) {
-                throw new __WEBPACK_IMPORTED_MODULE_0__Error__["a" /* ArgumentNullError */]("continuationCallback");
-            }
-            const continuationDeferral = new Deferred();
-            this.sink.on((r) => {
-                try {
-                    const continuationResult = continuationCallback(this.sink.Result);
-                    continuationDeferral.Resolve(continuationResult);
-                }
-                catch (e) {
-                    continuationDeferral.Reject(`'Unhandled callback error: ${e}'`);
-                }
-            }, (error) => {
-                try {
-                    const continuationResult = continuationCallback(this.sink.Result);
-                    continuationDeferral.Resolve(continuationResult);
-                }
-                catch (e) {
-                    continuationDeferral.Reject(`'Unhandled callback error: ${e}. InnerError: ${error}'`);
-                }
-            });
-            return continuationDeferral.Promise();
-        };
-        this.OnSuccessContinueWith = (continuationCallback) => {
-            if (!continuationCallback) {
-                throw new __WEBPACK_IMPORTED_MODULE_0__Error__["a" /* ArgumentNullError */]("continuationCallback");
-            }
-            const continuationDeferral = new Deferred();
-            this.sink.on((r) => {
-                try {
-                    const continuationResult = continuationCallback(r);
-                    continuationDeferral.Resolve(continuationResult);
-                }
-                catch (e) {
-                    continuationDeferral.Reject(`'Unhandled callback error: ${e}'`);
-                }
-            }, (error) => {
-                continuationDeferral.Reject(`'Unhandled callback error: ${error}'`);
-            });
-            return continuationDeferral.Promise();
-        };
-        this.ContinueWithPromise = (continuationCallback) => {
-            if (!continuationCallback) {
-                throw new __WEBPACK_IMPORTED_MODULE_0__Error__["a" /* ArgumentNullError */]("continuationCallback");
-            }
-            const continuationDeferral = new Deferred();
-            this.sink.on((r) => {
-                try {
-                    const continuationPromise = continuationCallback(this.sink.Result);
-                    if (!continuationPromise) {
-                        throw new Error("'Continuation callback did not return promise'");
-                    }
-                    continuationPromise.On((continuationResult) => {
-                        continuationDeferral.Resolve(continuationResult);
-                    }, (e) => {
-                        continuationDeferral.Reject(e);
-                    });
-                }
-                catch (e) {
-                    continuationDeferral.Reject(`'Unhandled callback error: ${e}'`);
-                }
-            }, (error) => {
-                try {
-                    const continuationPromise = continuationCallback(this.sink.Result);
-                    if (!continuationPromise) {
-                        throw new Error("Continuation callback did not return promise");
-                    }
-                    continuationPromise.On((continuationResult) => {
-                        continuationDeferral.Resolve(continuationResult);
-                    }, (e) => {
-                        continuationDeferral.Reject(e);
-                    });
-                }
-                catch (e) {
-                    continuationDeferral.Reject(`'Unhandled callback error: ${e}. InnerError: ${error}'`);
-                }
-            });
-            return continuationDeferral.Promise();
-        };
-        this.OnSuccessContinueWithPromise = (continuationCallback) => {
-            if (!continuationCallback) {
-                throw new __WEBPACK_IMPORTED_MODULE_0__Error__["a" /* ArgumentNullError */]("continuationCallback");
-            }
-            const continuationDeferral = new Deferred();
-            this.sink.on((r) => {
-                try {
-                    const continuationPromise = continuationCallback(r);
-                    if (!continuationPromise) {
-                        throw new Error("Continuation callback did not return promise");
-                    }
-                    continuationPromise.On((continuationResult) => {
-                        continuationDeferral.Resolve(continuationResult);
-                    }, (e) => {
-                        continuationDeferral.Reject(e);
-                    });
-                }
-                catch (e) {
-                    continuationDeferral.Reject(`'Unhandled callback error: ${e}'`);
-                }
-            }, (error) => {
-                continuationDeferral.Reject(`'Unhandled callback error: ${error}.'`);
-            });
-            return continuationDeferral.Promise();
-        };
-        this.On = (successCallback, errorCallback) => {
-            if (!successCallback) {
-                throw new __WEBPACK_IMPORTED_MODULE_0__Error__["a" /* ArgumentNullError */]("successCallback");
-            }
-            if (!errorCallback) {
-                throw new __WEBPACK_IMPORTED_MODULE_0__Error__["a" /* ArgumentNullError */]("errorCallback");
-            }
-            this.sink.on(successCallback, errorCallback);
-            return this;
-        };
-        this.Finally = (callback) => {
-            if (!callback) {
-                throw new __WEBPACK_IMPORTED_MODULE_0__Error__["a" /* ArgumentNullError */]("callback");
-            }
-            const callbackWrapper = (_) => {
-                callback();
-            };
-            return this.On(callbackWrapper, callbackWrapper);
-        };
-        this.sink = sink;
-    }
-}
-/* unused harmony export Promise */
-
-// tslint:disable-next-line:max-classes-per-file
-class Deferred {
-    constructor() {
-        this.State = () => {
-            return this.sink.State;
-        };
-        this.Promise = () => {
-            return this.promise;
-        };
-        this.Resolve = (result) => {
-            this.sink.Resolve(result);
-            return this;
-        };
-        this.Reject = (error) => {
-            this.sink.Reject(error);
-            return this;
-        };
-        this.sink = new Sink();
-        this.promise = new Promise(this.sink);
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = Deferred;
-
-// tslint:disable-next-line:max-classes-per-file
-class Sink {
-    constructor() {
-        this.state = PromiseState.None;
-        this.promiseResult = null;
-        this.promiseResultEvents = null;
-        this.successHandlers = [];
-        this.errorHandlers = [];
-        this.Resolve = (result) => {
-            if (this.state !== PromiseState.None) {
-                throw new Error("'Cannot resolve a completed promise'");
-            }
-            this.state = PromiseState.Resolved;
-            this.promiseResultEvents.SetResult(result);
-            for (let i = 0; i < this.successHandlers.length; i++) {
-                this.ExecuteSuccessCallback(result, this.successHandlers[i], this.errorHandlers[i]);
-            }
-            this.DetachHandlers();
-        };
-        this.Reject = (error) => {
-            if (this.state !== PromiseState.None) {
-                throw new Error("'Cannot reject a completed promise'");
-            }
-            this.state = PromiseState.Rejected;
-            this.promiseResultEvents.SetError(error);
-            for (const errorHandler of this.errorHandlers) {
-                this.ExecuteErrorCallback(error, errorHandler);
-            }
-            this.DetachHandlers();
-        };
-        this.on = (successCallback, errorCallback) => {
-            if (successCallback == null) {
-                successCallback = (r) => { return; };
-            }
-            if (this.state === PromiseState.None) {
-                this.successHandlers.push(successCallback);
-                this.errorHandlers.push(errorCallback);
-            }
-            else {
-                if (this.state === PromiseState.Resolved) {
-                    this.ExecuteSuccessCallback(this.promiseResult.Result, successCallback, errorCallback);
-                }
-                else if (this.state === PromiseState.Rejected) {
-                    this.ExecuteErrorCallback(this.promiseResult.Error, errorCallback);
-                }
-                this.DetachHandlers();
-            }
-        };
-        this.ExecuteSuccessCallback = (result, successCallback, errorCallback) => {
-            try {
-                successCallback(result);
-            }
-            catch (e) {
-                this.ExecuteErrorCallback(`'Unhandled callback error: ${e}'`, errorCallback);
-            }
-        };
-        this.ExecuteErrorCallback = (error, errorCallback) => {
-            if (errorCallback) {
-                try {
-                    errorCallback(error);
-                }
-                catch (e) {
-                    throw new Error(`'Unhandled callback error: ${e}. InnerError: ${error}'`);
-                }
-            }
-            else {
-                throw new Error(`'Unhandled error: ${error}'`);
-            }
-        };
-        this.DetachHandlers = () => {
-            this.errorHandlers = [];
-            this.successHandlers = [];
-        };
-        this.promiseResultEvents = new PromiseResultEventSource();
-        this.promiseResult = new PromiseResult(this.promiseResultEvents);
-    }
-    get State() {
-        return this.state;
-    }
-    get Result() {
-        return this.promiseResult;
-    }
-}
-/* unused harmony export Sink */
-
-
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar Exports_1 = __webpack_require__(/*! ../common/Exports */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Exports.js\");\nvar MicAudioSource = /** @class */ (function () {\n    function MicAudioSource(recorder, audioSourceId) {\n        var _this = this;\n        this.streams = {};\n        this.TurnOn = function () {\n            if (_this.initializeDeferral) {\n                return _this.initializeDeferral.Promise();\n            }\n            _this.initializeDeferral = new Exports_1.Deferred();\n            _this.CreateAudioContext();\n            var nav = window.navigator;\n            var getUserMedia = (nav.getUserMedia ||\n                nav.webkitGetUserMedia ||\n                nav.mozGetUserMedia ||\n                nav.msGetUserMedia);\n            if (!!nav.mediaDevices) {\n                getUserMedia = function (constraints, successCallback, errorCallback) {\n                    nav.mediaDevices\n                        .getUserMedia(constraints)\n                        .then(successCallback)\n                        .catch(errorCallback);\n                };\n            }\n            if (!getUserMedia) {\n                var errorMsg = \"Browser does not support getUserMedia.\";\n                _this.initializeDeferral.Reject(errorMsg);\n                _this.OnEvent(new Exports_1.AudioSourceErrorEvent(errorMsg, \"\")); // mic initialized error - no streamid at this point\n            }\n            else {\n                var next = function () {\n                    _this.OnEvent(new Exports_1.AudioSourceInitializingEvent(_this.id)); // no stream id\n                    getUserMedia({ audio: true, video: false }, function (mediaStream) {\n                        _this.mediaStream = mediaStream;\n                        _this.OnEvent(new Exports_1.AudioSourceReadyEvent(_this.id));\n                        _this.initializeDeferral.Resolve(true);\n                    }, function (error) {\n                        var errorMsg = \"Error occurred during microphone initialization: \" + error;\n                        var tmp = _this.initializeDeferral;\n                        // HACK: this should be handled through onError callbacks of all promises up the stack.\n                        // Unfortunately, the current implementation does not provide an easy way to reject promises\n                        // without a lot of code replication.\n                        // TODO: fix promise implementation, allow for a graceful reject chaining.\n                        _this.initializeDeferral = null;\n                        tmp.Reject(errorMsg); // this will bubble up through the whole chain of promises,\n                        // with each new level adding extra \"Unhandled callback error\" prefix to the error message.\n                        // The following line is not guaranteed to be executed.\n                        _this.OnEvent(new Exports_1.AudioSourceErrorEvent(_this.id, errorMsg));\n                    });\n                };\n                if (_this.context.state === \"suspended\") {\n                    // NOTE: On iOS, the Web Audio API requires sounds to be triggered from an explicit user action.\n                    // https://github.com/WebAudio/web-audio-api/issues/790\n                    _this.context.resume().then(next, function (reason) {\n                        _this.initializeDeferral.Reject(\"Failed to initialize audio context: \" + reason);\n                    });\n                }\n                else {\n                    next();\n                }\n            }\n            return _this.initializeDeferral.Promise();\n        };\n        this.Id = function () {\n            return _this.id;\n        };\n        this.Attach = function (audioNodeId) {\n            _this.OnEvent(new Exports_1.AudioStreamNodeAttachingEvent(_this.id, audioNodeId));\n            return _this.Listen(audioNodeId).OnSuccessContinueWith(function (streamReader) {\n                _this.OnEvent(new Exports_1.AudioStreamNodeAttachedEvent(_this.id, audioNodeId));\n                return {\n                    Detach: function () {\n                        streamReader.Close();\n                        delete _this.streams[audioNodeId];\n                        _this.OnEvent(new Exports_1.AudioStreamNodeDetachedEvent(_this.id, audioNodeId));\n                        _this.TurnOff();\n                    },\n                    Id: function () {\n                        return audioNodeId;\n                    },\n                    Read: function () {\n                        return streamReader.Read();\n                    },\n                };\n            });\n        };\n        this.Detach = function (audioNodeId) {\n            if (audioNodeId && _this.streams[audioNodeId]) {\n                _this.streams[audioNodeId].Close();\n                delete _this.streams[audioNodeId];\n                _this.OnEvent(new Exports_1.AudioStreamNodeDetachedEvent(_this.id, audioNodeId));\n            }\n        };\n        this.TurnOff = function () {\n            for (var streamId in _this.streams) {\n                if (streamId) {\n                    var stream = _this.streams[streamId];\n                    if (stream) {\n                        stream.Close();\n                    }\n                }\n            }\n            _this.OnEvent(new Exports_1.AudioSourceOffEvent(_this.id)); // no stream now\n            _this.initializeDeferral = null;\n            _this.DestroyAudioContext();\n            return Exports_1.PromiseHelper.FromResult(true);\n        };\n        this.Listen = function (audioNodeId) {\n            return _this.TurnOn()\n                .OnSuccessContinueWith(function (_) {\n                var stream = new Exports_1.Stream(audioNodeId);\n                _this.streams[audioNodeId] = stream;\n                try {\n                    _this.recorder.Record(_this.context, _this.mediaStream, stream);\n                }\n                catch (error) {\n                    _this.OnEvent(new Exports_1.AudioStreamNodeErrorEvent(_this.id, audioNodeId, error));\n                    throw error;\n                }\n                return stream.GetReader();\n            });\n        };\n        this.OnEvent = function (event) {\n            _this.events.OnEvent(event);\n            Exports_1.Events.Instance.OnEvent(event);\n        };\n        this.CreateAudioContext = function () {\n            if (!!_this.context) {\n                return;\n            }\n            // https://developer.mozilla.org/en-US/docs/Web/API/AudioContext\n            var AudioContext = (window.AudioContext)\n                || (window.webkitAudioContext)\n                || false;\n            if (!AudioContext) {\n                throw new Error(\"Browser does not support Web Audio API (AudioContext is not available).\");\n            }\n            _this.context = new AudioContext();\n        };\n        this.DestroyAudioContext = function () {\n            if (!_this.context) {\n                return;\n            }\n            _this.recorder.ReleaseMediaResources(_this.context);\n            if (\"close\" in _this.context) {\n                _this.context.close();\n                _this.context = null;\n            }\n            else if (_this.context.state === \"running\") {\n                // Suspend actually takes a callback, but analogous to the\n                // resume method, it'll be only fired if suspend is called\n                // in a direct response to a user action. The later is not always\n                // the case, as TurnOff is also called, when we receive an\n                // end-of-speech message from the service. So, doing a best effort\n                // fire-and-forget here.\n                _this.context.suspend();\n            }\n        };\n        this.id = audioSourceId ? audioSourceId : Exports_1.CreateNoDashGuid();\n        this.events = new Exports_1.EventSource();\n        this.recorder = recorder;\n    }\n    Object.defineProperty(MicAudioSource.prototype, \"Events\", {\n        get: function () {\n            return this.events;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    return MicAudioSource;\n}());\nexports.MicAudioSource = MicAudioSource;\n\n//# sourceMappingURL=MicAudioSource.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/MicAudioSource.js?");
 
 /***/ }),
-/* 13 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/OpusRecorder.js":
+/*!**********************************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/OpusRecorder.js ***!
+  \**********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Error__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__List__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Promise__ = __webpack_require__(12);
-
-
-
-var SubscriberType;
-(function (SubscriberType) {
-    SubscriberType[SubscriberType["Dequeue"] = 0] = "Dequeue";
-    SubscriberType[SubscriberType["Peek"] = 1] = "Peek";
-})(SubscriberType || (SubscriberType = {}));
-class Queue {
-    constructor(list) {
-        this.promiseStore = new __WEBPACK_IMPORTED_MODULE_1__List__["a" /* List */]();
-        this.isDrainInProgress = false;
-        this.isDisposing = false;
-        this.disposeReason = null;
-        this.Enqueue = (item) => {
-            this.ThrowIfDispose();
-            this.EnqueueFromPromise(__WEBPACK_IMPORTED_MODULE_2__Promise__["b" /* PromiseHelper */].FromResult(item));
-        };
-        this.EnqueueFromPromise = (promise) => {
-            this.ThrowIfDispose();
-            this.promiseStore.Add(promise);
-            promise.Finally(() => {
-                while (this.promiseStore.Length() > 0) {
-                    if (!this.promiseStore.First().Result().IsCompleted) {
-                        break;
-                    }
-                    else {
-                        const p = this.promiseStore.RemoveFirst();
-                        if (!p.Result().IsError) {
-                            this.list.Add(p.Result().Result);
-                        }
-                        else {
-                            // TODO: Log as warning.
-                        }
-                    }
-                }
-            });
-        };
-        this.Dequeue = () => {
-            this.ThrowIfDispose();
-            const deferredSubscriber = new __WEBPACK_IMPORTED_MODULE_2__Promise__["a" /* Deferred */]();
-            this.subscribers.Add({ deferral: deferredSubscriber, type: SubscriberType.Dequeue });
-            this.Drain();
-            return deferredSubscriber.Promise();
-        };
-        this.Peek = () => {
-            this.ThrowIfDispose();
-            const deferredSubscriber = new __WEBPACK_IMPORTED_MODULE_2__Promise__["a" /* Deferred */]();
-            this.subscribers.Add({ deferral: deferredSubscriber, type: SubscriberType.Peek });
-            this.Drain();
-            return deferredSubscriber.Promise();
-        };
-        this.Length = () => {
-            this.ThrowIfDispose();
-            return this.list.Length();
-        };
-        this.IsDisposed = () => {
-            return this.subscribers == null;
-        };
-        this.DrainAndDispose = (pendingItemProcessor, reason) => {
-            if (!this.IsDisposed() && !this.isDisposing) {
-                this.disposeReason = reason;
-                this.isDisposing = true;
-                while (this.subscribers.Length() > 0) {
-                    const subscriber = this.subscribers.RemoveFirst();
-                    subscriber.deferral.Reject("Disposed");
-                }
-                for (const detachable of this.detachables) {
-                    detachable.Detach();
-                }
-                if (this.promiseStore.Length() > 0 && pendingItemProcessor) {
-                    return __WEBPACK_IMPORTED_MODULE_2__Promise__["b" /* PromiseHelper */]
-                        .WhenAll(this.promiseStore.ToArray())
-                        .ContinueWith(() => {
-                        this.subscribers = null;
-                        this.list.ForEach((item, index) => {
-                            pendingItemProcessor(item);
-                        });
-                        this.list = null;
-                        return true;
-                    });
-                }
-                else {
-                    this.subscribers = null;
-                    this.list = null;
-                }
-            }
-            return __WEBPACK_IMPORTED_MODULE_2__Promise__["b" /* PromiseHelper */].FromResult(true);
-        };
-        this.Dispose = (reason) => {
-            this.DrainAndDispose(null, reason);
-        };
-        this.Drain = () => {
-            if (!this.isDrainInProgress && !this.isDisposing) {
-                this.isDrainInProgress = true;
-                while (this.list.Length() > 0 && this.subscribers.Length() > 0 && !this.isDisposing) {
-                    const subscriber = this.subscribers.RemoveFirst();
-                    if (subscriber.type === SubscriberType.Peek) {
-                        subscriber.deferral.Resolve(this.list.First());
-                    }
-                    else {
-                        const dequeuedItem = this.list.RemoveFirst();
-                        subscriber.deferral.Resolve(dequeuedItem);
-                    }
-                }
-                this.isDrainInProgress = false;
-            }
-        };
-        this.ThrowIfDispose = () => {
-            if (this.IsDisposed()) {
-                if (this.disposeReason) {
-                    throw new __WEBPACK_IMPORTED_MODULE_0__Error__["b" /* InvalidOperationError */](this.disposeReason);
-                }
-                throw new __WEBPACK_IMPORTED_MODULE_0__Error__["c" /* ObjectDisposedError */]("Queue");
-            }
-            else if (this.isDisposing) {
-                throw new __WEBPACK_IMPORTED_MODULE_0__Error__["b" /* InvalidOperationError */]("Queue disposing");
-            }
-        };
-        this.list = list ? list : new __WEBPACK_IMPORTED_MODULE_1__List__["a" /* List */]();
-        this.detachables = [];
-        this.subscribers = new __WEBPACK_IMPORTED_MODULE_1__List__["a" /* List */]();
-        this.detachables.push(this.list.OnAdded(this.Drain));
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = Queue;
-
-
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar OpusRecorder = /** @class */ (function () {\n    function OpusRecorder(options) {\n        var _this = this;\n        this.Record = function (context, mediaStream, outputStream) {\n            var mediaRecorder = new MediaRecorder(mediaStream, _this.mediaRecorderOptions);\n            var timeslice = 100; // this is in ms - 100 ensures that the chunk doesn't exceed the max size of chunk allowed in WS connection\n            mediaRecorder.ondataavailable = function (dataAvailableEvent) {\n                if (outputStream) {\n                    var reader_1 = new FileReader();\n                    reader_1.readAsArrayBuffer(dataAvailableEvent.data);\n                    reader_1.onloadend = function (event) {\n                        outputStream.Write(reader_1.result);\n                    };\n                }\n            };\n            _this.mediaResources = {\n                recorder: mediaRecorder,\n                stream: mediaStream,\n            };\n            mediaRecorder.start(timeslice);\n        };\n        this.ReleaseMediaResources = function (context) {\n            if (_this.mediaResources.recorder.state !== \"inactive\") {\n                _this.mediaResources.recorder.stop();\n            }\n            _this.mediaResources.stream.getTracks().forEach(function (track) { return track.stop(); });\n        };\n        this.mediaRecorderOptions = options;\n    }\n    return OpusRecorder;\n}());\nexports.OpusRecorder = OpusRecorder;\n/* Declaring this inline to avoid compiler warnings\ndeclare class MediaRecorder {\n    constructor(mediaStream: MediaStream, options: any);\n\r\n    public state: string;\n\r\n    public ondataavailable(dataAvailableEvent: any): void;\n    public stop(): void;\n}*/\n\n//# sourceMappingURL=OpusRecorder.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/OpusRecorder.js?");
 
 /***/ }),
-/* 14 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/PCMRecorder.js":
+/*!*********************************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/PCMRecorder.js ***!
+  \*********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return RecognitionMode; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return SpeechResultFormat; });
-var RecognitionMode;
-(function (RecognitionMode) {
-    RecognitionMode[RecognitionMode["Interactive"] = 0] = "Interactive";
-    RecognitionMode[RecognitionMode["Conversation"] = 1] = "Conversation";
-    RecognitionMode[RecognitionMode["Dictation"] = 2] = "Dictation";
-})(RecognitionMode || (RecognitionMode = {}));
-var SpeechResultFormat;
-(function (SpeechResultFormat) {
-    SpeechResultFormat[SpeechResultFormat["Simple"] = 0] = "Simple";
-    SpeechResultFormat[SpeechResultFormat["Detailed"] = 1] = "Detailed";
-})(SpeechResultFormat || (SpeechResultFormat = {}));
-class RecognizerConfig {
-    constructor(platformConfig, recognitionMode = RecognitionMode.Interactive, language = "en-us", format = SpeechResultFormat.Simple) {
-        this.recognitionMode = RecognitionMode.Interactive;
-        this.speechConfig = platformConfig ? platformConfig : new SpeechConfig(new Context(null, null));
-        this.recognitionMode = recognitionMode;
-        this.language = language;
-        this.format = format;
-        this.recognitionActivityTimeout = recognitionMode === RecognitionMode.Interactive ? 8000 : 25000;
-    }
-    get RecognitionMode() {
-        return this.recognitionMode;
-    }
-    get Language() {
-        return this.language;
-    }
-    get Format() {
-        return this.format;
-    }
-    get SpeechConfig() {
-        return this.speechConfig;
-    }
-    get RecognitionActivityTimeout() {
-        return this.recognitionActivityTimeout;
-    }
-    get IsContinuousRecognition() {
-        return this.recognitionMode !== RecognitionMode.Interactive;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["e"] = RecognizerConfig;
-
-// tslint:disable-next-line:max-classes-per-file
-class SpeechConfig {
-    constructor(context) {
-        this.Serialize = () => {
-            return JSON.stringify(this, (key, value) => {
-                if (value && typeof value === "object") {
-                    const replacement = {};
-                    for (const k in value) {
-                        if (Object.hasOwnProperty.call(value, k)) {
-                            replacement[k && k.charAt(0).toLowerCase() + k.substring(1)] = value[k];
-                        }
-                    }
-                    return replacement;
-                }
-                return value;
-            });
-        };
-        this.context = context;
-    }
-    get Context() {
-        return this.context;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["f"] = SpeechConfig;
-
-// tslint:disable-next-line:max-classes-per-file
-class Context {
-    constructor(os, device) {
-        this.system = new System();
-        this.os = os;
-        this.device = device;
-    }
-    get System() {
-        return this.system;
-    }
-    get OS() {
-        return this.os;
-    }
-    get Device() {
-        return this.device;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = Context;
-
-// tslint:disable-next-line:max-classes-per-file
-class System {
-    constructor() {
-        // TODO: Tie this with the sdk Version somehow
-        this.version = "1.0.00000";
-    }
-    get Version() {
-        // Controlled by sdk
-        return this.version;
-    }
-}
-/* unused harmony export System */
-
-// tslint:disable-next-line:max-classes-per-file
-class OS {
-    constructor(platform, name, version) {
-        this.platform = platform;
-        this.name = name;
-        this.version = version;
-    }
-    get Platform() {
-        return this.platform;
-    }
-    get Name() {
-        return this.name;
-    }
-    get Version() {
-        return this.version;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["c"] = OS;
-
-// tslint:disable-next-line:max-classes-per-file
-class Device {
-    constructor(manufacturer, model, version) {
-        this.manufacturer = manufacturer;
-        this.model = model;
-        this.version = version;
-    }
-    get Manufacturer() {
-        return this.manufacturer;
-    }
-    get Model() {
-        return this.model;
-    }
-    get Version() {
-        return this.version;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["b"] = Device;
-
-
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar Exports_1 = __webpack_require__(/*! ../common/Exports */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Exports.js\");\nvar PcmRecorder = /** @class */ (function () {\n    function PcmRecorder() {\n        var _this = this;\n        this.Record = function (context, mediaStream, outputStream) {\n            var desiredSampleRate = 16000;\n            // https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createScriptProcessor\n            var scriptNode = (function () {\n                var bufferSize = 0;\n                try {\n                    return context.createScriptProcessor(bufferSize, 1, 1);\n                }\n                catch (error) {\n                    // Webkit (<= version 31) requires a valid bufferSize.\n                    bufferSize = 2048;\n                    var audioSampleRate = context.sampleRate;\n                    while (bufferSize < 16384 && audioSampleRate >= (2 * desiredSampleRate)) {\n                        bufferSize <<= 1;\n                        audioSampleRate >>= 1;\n                    }\n                    return context.createScriptProcessor(bufferSize, 1, 1);\n                }\n            })();\n            var waveStreamEncoder = new Exports_1.RiffPcmEncoder(context.sampleRate, desiredSampleRate);\n            var needHeader = true;\n            var that = _this;\n            scriptNode.onaudioprocess = function (event) {\n                var inputFrame = event.inputBuffer.getChannelData(0);\n                if (outputStream && !outputStream.IsClosed) {\n                    var waveFrame = waveStreamEncoder.Encode(needHeader, inputFrame);\n                    if (!!waveFrame) {\n                        outputStream.Write(waveFrame);\n                        needHeader = false;\n                    }\n                }\n            };\n            // https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createMediaStreamSource\n            var micInput = context.createMediaStreamSource(mediaStream);\n            _this.mediaResources = {\n                scriptProcessorNode: scriptNode,\n                source: micInput,\n                stream: mediaStream,\n            };\n            micInput.connect(scriptNode);\n            scriptNode.connect(context.destination);\n        };\n        this.ReleaseMediaResources = function (context) {\n            if (_this.mediaResources) {\n                if (_this.mediaResources.scriptProcessorNode) {\n                    _this.mediaResources.scriptProcessorNode.disconnect(context.destination);\n                    _this.mediaResources.scriptProcessorNode = null;\n                }\n                if (_this.mediaResources.source) {\n                    _this.mediaResources.source.disconnect();\n                    _this.mediaResources.stream.getTracks().forEach(function (track) { return track.stop(); });\n                    _this.mediaResources.source = null;\n                }\n            }\n        };\n    }\n    return PcmRecorder;\n}());\nexports.PcmRecorder = PcmRecorder;\n\n//# sourceMappingURL=PCMRecorder.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/PCMRecorder.js?");
 
 /***/ }),
-/* 15 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/SessionStorage.js":
+/*!************************************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/SessionStorage.js ***!
+  \************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_Exports__ = __webpack_require__(0);
-
-class WebsocketMessageAdapter {
-    constructor(uri, connectionId, messageFormatter) {
-        this.Open = () => {
-            if (this.connectionState === __WEBPACK_IMPORTED_MODULE_0__common_Exports__["r" /* ConnectionState */].Disconnected) {
-                return __WEBPACK_IMPORTED_MODULE_0__common_Exports__["z" /* PromiseHelper */].FromError(`Cannot open a connection that is in ${this.connectionState} state`);
-            }
-            if (this.connectionEstablishDeferral) {
-                return this.connectionEstablishDeferral.Promise();
-            }
-            this.connectionEstablishDeferral = new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["t" /* Deferred */]();
-            this.connectionState = __WEBPACK_IMPORTED_MODULE_0__common_Exports__["r" /* ConnectionState */].Connecting;
-            this.websocketClient = new WebSocket(this.uri);
-            this.receivingMessageQueue = new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["A" /* Queue */]();
-            this.disconnectDeferral = new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["t" /* Deferred */]();
-            this.sendMessageQueue = new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["A" /* Queue */]();
-            this.ProcessSendQueue();
-            this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["q" /* ConnectionStartEvent */](this.connectionId, this.uri));
-            this.websocketClient.onopen = (e) => {
-                this.connectionState = __WEBPACK_IMPORTED_MODULE_0__common_Exports__["r" /* ConnectionState */].Connected;
-                this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["l" /* ConnectionEstablishedEvent */](this.connectionId));
-                this.connectionEstablishDeferral.Resolve(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["p" /* ConnectionOpenResponse */](200, ""));
-            };
-            this.websocketClient.onerror = (e) => {
-                // TODO: Understand what this is error is. Will we still get onClose ?
-                if (this.connectionState !== __WEBPACK_IMPORTED_MODULE_0__common_Exports__["r" /* ConnectionState */].Connecting) {
-                    // TODO: Is this required ?
-                    // this.OnEvent(new ConnectionErrorEvent(errorMsg, connectionId));
-                }
-            };
-            this.websocketClient.onclose = (e) => {
-                if (this.connectionState === __WEBPACK_IMPORTED_MODULE_0__common_Exports__["r" /* ConnectionState */].Connecting) {
-                    this.connectionState = __WEBPACK_IMPORTED_MODULE_0__common_Exports__["r" /* ConnectionState */].Disconnected;
-                    this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["k" /* ConnectionEstablishErrorEvent */](this.connectionId, e.code, e.reason));
-                    this.connectionEstablishDeferral.Resolve(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["p" /* ConnectionOpenResponse */](e.code, e.reason));
-                }
-                else {
-                    this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["j" /* ConnectionClosedEvent */](this.connectionId, e.code, e.reason));
-                }
-                this.OnClose(e.code, e.reason);
-            };
-            this.websocketClient.onmessage = (e) => {
-                const networkReceivedTime = new Date().toISOString();
-                if (this.connectionState === __WEBPACK_IMPORTED_MODULE_0__common_Exports__["r" /* ConnectionState */].Connected) {
-                    const deferred = new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["t" /* Deferred */]();
-                    // let id = ++this.idCounter;
-                    this.receivingMessageQueue.EnqueueFromPromise(deferred.Promise());
-                    if (e.data instanceof Blob) {
-                        const fileReader = new FileReader();
-                        fileReader.onload = (le) => {
-                            const rawMessage = new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["B" /* RawWebsocketMessage */](__WEBPACK_IMPORTED_MODULE_0__common_Exports__["x" /* MessageType */].Binary, fileReader.result);
-                            this.messageFormatter
-                                .ToConnectionMessage(rawMessage)
-                                .On((connectionMessage) => {
-                                this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["n" /* ConnectionMessageReceivedEvent */](this.connectionId, networkReceivedTime, connectionMessage));
-                                deferred.Resolve(connectionMessage);
-                            }, (error) => {
-                                // TODO: Events for these ?
-                                deferred.Reject(`Invalid binary message format. Error: ${error}`);
-                            });
-                        };
-                        fileReader.onerror = (ev) => {
-                            // TODO: Events for these ?
-                            deferred.Reject("Binary message parse error");
-                        };
-                        fileReader.readAsArrayBuffer(e.data);
-                    }
-                    else {
-                        const rawMessage = new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["B" /* RawWebsocketMessage */](__WEBPACK_IMPORTED_MODULE_0__common_Exports__["x" /* MessageType */].Text, e.data);
-                        this.messageFormatter
-                            .ToConnectionMessage(rawMessage)
-                            .On((connectionMessage) => {
-                            this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["n" /* ConnectionMessageReceivedEvent */](this.connectionId, networkReceivedTime, connectionMessage));
-                            deferred.Resolve(connectionMessage);
-                        }, (error) => {
-                            // TODO: Events for these ?
-                            deferred.Reject(`Invalid text message format. Error: ${error}`);
-                        });
-                    }
-                }
-            };
-            return this.connectionEstablishDeferral.Promise();
-        };
-        this.Send = (message) => {
-            if (this.connectionState !== __WEBPACK_IMPORTED_MODULE_0__common_Exports__["r" /* ConnectionState */].Connected) {
-                return __WEBPACK_IMPORTED_MODULE_0__common_Exports__["z" /* PromiseHelper */].FromError(`Cannot send on connection that is in ${this.connectionState} state`);
-            }
-            const messageSendStatusDeferral = new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["t" /* Deferred */]();
-            const messageSendDeferral = new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["t" /* Deferred */]();
-            this.sendMessageQueue.EnqueueFromPromise(messageSendDeferral.Promise());
-            this.messageFormatter
-                .FromConnectionMessage(message)
-                .On((rawMessage) => {
-                messageSendDeferral.Resolve({
-                    Message: message,
-                    RawWebsocketMessage: rawMessage,
-                    SendStatusDeferral: messageSendStatusDeferral,
-                });
-            }, (error) => {
-                messageSendDeferral.Reject(`Error formatting the message. ${error}`);
-            });
-            return messageSendStatusDeferral.Promise();
-        };
-        this.Read = () => {
-            if (this.connectionState !== __WEBPACK_IMPORTED_MODULE_0__common_Exports__["r" /* ConnectionState */].Connected) {
-                return __WEBPACK_IMPORTED_MODULE_0__common_Exports__["z" /* PromiseHelper */].FromError(`Cannot read on connection that is in ${this.connectionState} state`);
-            }
-            return this.receivingMessageQueue.Dequeue();
-        };
-        this.Close = (reason) => {
-            if (this.websocketClient) {
-                if (this.connectionState !== __WEBPACK_IMPORTED_MODULE_0__common_Exports__["r" /* ConnectionState */].Connected) {
-                    this.websocketClient.close(1000, reason ? reason : "Normal closure by client");
-                }
-            }
-            else {
-                const deferral = new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["t" /* Deferred */]();
-                deferral.Resolve(true);
-                return deferral.Promise();
-            }
-            return this.disconnectDeferral.Promise();
-        };
-        this.SendRawMessage = (sendItem) => {
-            try {
-                this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["o" /* ConnectionMessageSentEvent */](this.connectionId, new Date().toISOString(), sendItem.Message));
-                this.websocketClient.send(sendItem.RawWebsocketMessage.Payload);
-                return __WEBPACK_IMPORTED_MODULE_0__common_Exports__["z" /* PromiseHelper */].FromResult(true);
-            }
-            catch (e) {
-                return __WEBPACK_IMPORTED_MODULE_0__common_Exports__["z" /* PromiseHelper */].FromError(`websocket send error: ${e}`);
-            }
-        };
-        this.OnClose = (code, reason) => {
-            const closeReason = `Connection closed. ${code}: ${reason}`;
-            this.connectionState = __WEBPACK_IMPORTED_MODULE_0__common_Exports__["r" /* ConnectionState */].Disconnected;
-            this.disconnectDeferral.Resolve(true);
-            this.receivingMessageQueue.Dispose(reason);
-            this.receivingMessageQueue.DrainAndDispose((pendingReceiveItem) => {
-                // TODO: Events for these ?
-                // Logger.Instance.OnEvent(new LoggingEvent(LogType.Warning, null, `Failed to process received message. Reason: ${closeReason}, Message: ${JSON.stringify(pendingReceiveItem)}`));
-            }, closeReason);
-            this.sendMessageQueue.DrainAndDispose((pendingSendItem) => {
-                pendingSendItem.SendStatusDeferral.Reject(closeReason);
-            }, closeReason);
-        };
-        this.ProcessSendQueue = () => {
-            this.sendMessageQueue
-                .Dequeue()
-                .On((sendItem) => {
-                this.SendRawMessage(sendItem)
-                    .On((result) => {
-                    sendItem.SendStatusDeferral.Resolve(result);
-                    this.ProcessSendQueue();
-                }, (sendError) => {
-                    sendItem.SendStatusDeferral.Reject(sendError);
-                    this.ProcessSendQueue();
-                });
-            }, (error) => {
-                // do nothing
-            });
-        };
-        this.OnEvent = (event) => {
-            this.connectionEvents.OnEvent(event);
-            __WEBPACK_IMPORTED_MODULE_0__common_Exports__["w" /* Events */].Instance.OnEvent(event);
-        };
-        if (!uri) {
-            throw new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["a" /* ArgumentNullError */]("uri");
-        }
-        if (!messageFormatter) {
-            throw new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["a" /* ArgumentNullError */]("messageFormatter");
-        }
-        this.connectionEvents = new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["u" /* EventSource */]();
-        this.connectionId = connectionId;
-        this.messageFormatter = messageFormatter;
-        this.connectionState = __WEBPACK_IMPORTED_MODULE_0__common_Exports__["r" /* ConnectionState */].None;
-        this.uri = uri;
-    }
-    get State() {
-        return this.connectionState;
-    }
-    get Events() {
-        return this.connectionEvents;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = WebsocketMessageAdapter;
-
-
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar Exports_1 = __webpack_require__(/*! ../common/Exports */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Exports.js\");\nvar SessionStorage = /** @class */ (function () {\n    function SessionStorage() {\n        this.Get = function (key) {\n            if (!key) {\n                throw new Exports_1.ArgumentNullError(\"key\");\n            }\n            return sessionStorage.getItem(key);\n        };\n        this.GetOrAdd = function (key, valueToAdd) {\n            if (!key) {\n                throw new Exports_1.ArgumentNullError(\"key\");\n            }\n            var value = sessionStorage.getItem(key);\n            if (value === null || value === undefined) {\n                sessionStorage.setItem(key, valueToAdd);\n            }\n            return sessionStorage.getItem(key);\n        };\n        this.Set = function (key, value) {\n            if (!key) {\n                throw new Exports_1.ArgumentNullError(\"key\");\n            }\n            sessionStorage.setItem(key, value);\n        };\n        this.Remove = function (key) {\n            if (!key) {\n                throw new Exports_1.ArgumentNullError(\"key\");\n            }\n            sessionStorage.removeItem(key);\n        };\n    }\n    return SessionStorage;\n}());\nexports.SessionStorage = SessionStorage;\n\n//# sourceMappingURL=SessionStorage.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/SessionStorage.js?");
 
 /***/ }),
-/* 16 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/Timer.js":
+/*!***************************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/Timer.js ***!
+  \***************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_browser_Exports__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__common_Exports__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__speech_Exports__ = __webpack_require__(3);
-
-
-
-const TestHooksParamName = "testhooks";
-const ConnectionIdHeader = "X-ConnectionId";
-class SpeechConnectionFactory {
-    constructor() {
-        this.Create = (config, authInfo, connectionId) => {
-            let endpoint = "";
-            switch (config.RecognitionMode) {
-                case __WEBPACK_IMPORTED_MODULE_2__speech_Exports__["e" /* RecognitionMode */].Conversation:
-                    endpoint = this.Host + this.ConversationRelativeUri;
-                    break;
-                case __WEBPACK_IMPORTED_MODULE_2__speech_Exports__["e" /* RecognitionMode */].Dictation:
-                    endpoint = this.Host + this.DictationRelativeUri;
-                    break;
-                default:
-                    endpoint = this.Host + this.InteractiveRelativeUri; // default is interactive
-                    break;
-            }
-            const queryParams = {
-                format: __WEBPACK_IMPORTED_MODULE_2__speech_Exports__["j" /* SpeechResultFormat */][config.Format].toString().toLowerCase(),
-                language: config.Language,
-            };
-            if (this.IsDebugModeEnabled) {
-                queryParams[TestHooksParamName] = "1";
-            }
-            const headers = {};
-            headers[authInfo.HeaderName] = authInfo.Token;
-            headers[ConnectionIdHeader] = connectionId;
-            return new __WEBPACK_IMPORTED_MODULE_0__common_browser_Exports__["e" /* WebsocketConnection */](endpoint, queryParams, headers, new __WEBPACK_IMPORTED_MODULE_2__speech_Exports__["k" /* WebsocketMessageFormatter */](), connectionId);
-        };
-    }
-    get Host() {
-        return __WEBPACK_IMPORTED_MODULE_1__common_Exports__["D" /* Storage */].Local.GetOrAdd("Host", "wss://speech.platform.bing.com");
-    }
-    get InteractiveRelativeUri() {
-        return __WEBPACK_IMPORTED_MODULE_1__common_Exports__["D" /* Storage */].Local.GetOrAdd("InteractiveRelativeUri", "/speech/recognition/interactive/cognitiveservices/v1");
-    }
-    get ConversationRelativeUri() {
-        return __WEBPACK_IMPORTED_MODULE_1__common_Exports__["D" /* Storage */].Local.GetOrAdd("ConversationRelativeUri", "/speech/recognition/conversation/cognitiveservices/v1");
-    }
-    get DictationRelativeUri() {
-        return __WEBPACK_IMPORTED_MODULE_1__common_Exports__["D" /* Storage */].Local.GetOrAdd("DictationRelativeUri", "/speech/recognition/dictation/cognitiveservices/v1");
-    }
-    get IsDebugModeEnabled() {
-        const value = __WEBPACK_IMPORTED_MODULE_1__common_Exports__["D" /* Storage */].Local.GetOrAdd("IsDebugModeEnabled", "false");
-        return value.toLowerCase() === "true";
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = SpeechConnectionFactory;
-
-
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar Timer = /** @class */ (function () {\n    function Timer(delayInMillisec, successCallback) {\n        var _this = this;\n        this.start = function () {\n            var params = [];\n            for (var _i = 0; _i < arguments.length; _i++) {\n                params[_i] = arguments[_i];\n            }\n            if (_this.timerId) {\n                _this.stop();\n            }\n            _this.timerId = setTimeout(_this.successCallback, _this.delayInMillisec, params);\n        };\n        this.stop = function () {\n            clearTimeout(_this.timerId);\n        };\n        this.delayInMillisec = delayInMillisec;\n        this.successCallback = successCallback;\n    }\n    return Timer;\n}());\nexports.Timer = Timer;\n\n//# sourceMappingURL=Timer.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/Timer.js?");
 
 /***/ }),
-/* 17 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/WebsocketConnection.js":
+/*!*****************************************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/WebsocketConnection.js ***!
+  \*****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__js_src_SpeechRecognition__ = __webpack_require__(18);
-
-if (Promise === undefined) {
-    throw new Error('Promises are not supported in this browser. Use this polyfill: https://www.npmjs.com/package/es6-promise');
-}
-// polyfill mediaDevices.getUserMedia
-if (!navigator.mediaDevices) navigator.mediaDevices = {};
-navigator.mediaDevices.getUserMedia = navigator.mediaDevices.getUserMedia || (function () {
-    // returns a getUserMedia function
-    var getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
-    return function (constraints) {
-        if (!getUserMedia) {
-            return Promise.reject(new Error('getUserMedia is not implemented in this browser'));
-        }
-        return new Promise(function (resolve, reject) {
-            getUserMedia.call(navigator, constraints, resolve, reject);
-        });
-    };
-})();
-// polyfill speechRecognition
-(function (speechRecognition) {
-    window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition || __WEBPACK_IMPORTED_MODULE_0__js_src_SpeechRecognition__["a" /* SpeechRecognition */];
-})(window.SpeechRecognition || window.webkitSpeechRecognition);
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar Exports_1 = __webpack_require__(/*! ../common/Exports */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Exports.js\");\nvar WebsocketMessageAdapter_1 = __webpack_require__(/*! ./WebsocketMessageAdapter */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/WebsocketMessageAdapter.js\");\nvar WebsocketConnection = /** @class */ (function () {\n    function WebsocketConnection(uri, queryParameters, headers, messageFormatter, connectionId) {\n        var _this = this;\n        this.isDisposed = false;\n        this.Dispose = function () {\n            _this.isDisposed = true;\n            if (_this.connectionMessageAdapter) {\n                _this.connectionMessageAdapter.Close();\n            }\n        };\n        this.IsDisposed = function () {\n            return _this.isDisposed;\n        };\n        this.State = function () {\n            return _this.connectionMessageAdapter.State;\n        };\n        this.Open = function () {\n            return _this.connectionMessageAdapter.Open();\n        };\n        this.Send = function (message) {\n            return _this.connectionMessageAdapter.Send(message);\n        };\n        this.Read = function () {\n            return _this.connectionMessageAdapter.Read();\n        };\n        if (!uri) {\n            throw new Exports_1.ArgumentNullError(\"uri\");\n        }\n        if (!messageFormatter) {\n            throw new Exports_1.ArgumentNullError(\"messageFormatter\");\n        }\n        this.messageFormatter = messageFormatter;\n        var queryParams = \"\";\n        var i = 0;\n        if (queryParameters) {\n            for (var paramName in queryParameters) {\n                if (paramName) {\n                    queryParams += i === 0 ? \"?\" : \"&\";\n                    var val = encodeURIComponent(queryParameters[paramName]);\n                    queryParams += paramName + \"=\" + val;\n                    i++;\n                }\n            }\n        }\n        if (headers) {\n            for (var headerName in headers) {\n                if (headerName) {\n                    queryParams += i === 0 ? \"?\" : \"&\";\n                    var val = encodeURIComponent(headers[headerName]);\n                    queryParams += headerName + \"=\" + val;\n                    i++;\n                }\n            }\n        }\n        this.uri = uri + queryParams;\n        this.id = connectionId ? connectionId : Exports_1.CreateNoDashGuid();\n        this.connectionMessageAdapter = new WebsocketMessageAdapter_1.WebsocketMessageAdapter(this.uri, this.Id, this.messageFormatter);\n    }\n    Object.defineProperty(WebsocketConnection.prototype, \"Id\", {\n        get: function () {\n            return this.id;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(WebsocketConnection.prototype, \"Events\", {\n        get: function () {\n            return this.connectionMessageAdapter.Events;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    return WebsocketConnection;\n}());\nexports.WebsocketConnection = WebsocketConnection;\n\n//# sourceMappingURL=WebsocketConnection.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/WebsocketConnection.js?");
 
 /***/ }),
-/* 18 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/WebsocketMessageAdapter.js":
+/*!*********************************************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/WebsocketMessageAdapter.js ***!
+  \*********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__entities__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_microsoft_speech_browser_sdk_src_sdk_speech_browser_Exports__ = __webpack_require__(40);
-
-
-// include the needed parts of the library. webpack will treeshake all unneeded stuff.
-
-
-class SpeechRecognition {
-    constructor(apiKey) {
-        this.apiKey = apiKey;
-        this.recognizer = null;
-        this.onaudiostart = null;
-        this.onaudioend = null;
-        this.onstart = null;
-        this.onend = null;
-        this.onerror = null;
-        this.onnomatch = null;
-        this.onresult = null;
-        this.onsoundstart = null;
-        this.onsoundend = null;
-        this.onspeechstart = null;
-        this.onspeechend = null;
-        this.lang = document.documentElement.lang || navigator.language;
-        this.continuous = false;
-        this.interimResults = false;
-        this.maxAlternatives = 1;
-        this.serviceURI = 'https://api.cognitive.microsoft.com/sts/v1.0';
-    }
-    start() {
-        if (!this.recognizer) {
-            if (!this.apiKey) {
-                throw new Error('no api key specified');
-            }
-            this.recognizer = this.setupRecognizer();
-        }
-        this.recognizer.Recognize(this.handleEvent.bind(this))
-            .On(this.recognitionStartSuccess.bind(this), this.recognitionStartFailed.bind(this));
-    }
-    stop() {
-        if (this.recognizer) {
-            this.recognizer.AudioSource.TurnOff();
-        }
-    }
-    abort() {
-        if (this.recognizer) {
-            this.recognizer.AudioSource.TurnOff();
-        }
-    }
-    handleEvent(event) {
-        const eventName = event.name;
-        switch (eventName) {
-            case "RecognitionTriggeredEvent": {
-                if (this.onstart) {
-                    this.onstart.call(this);
-                }
-                return;
-            }
-            case "ListeningStartedEvent": {
-                if (this.onaudiostart) {
-                    this.onaudiostart.call(this);
-                }
-                return;
-            }
-            case "RecognitionStartedEvent": {
-                if (this.onspeechstart) {
-                    this.onspeechstart.call(this);
-                }
-                return;
-            }
-            case "RecognitionEndedEvent": {
-                if (this.onend) {
-                    this.onend.call(this);
-                }
-                return;
-            }
-            case "SpeechHypothesisEvent": {
-                return this.handleHypothesis(event);
-            }
-            case "SpeechDetailedPhraseEvent": {
-                return this.handleResult(event);
-            }
-            case "SpeechEndDetectedEvent": {
-                if (this.onspeechend) {
-                    this.onspeechend.call(this);
-                }
-                return;
-            }
-            case "ConnectingToServiceEvent": {
-                console.log("connecting to translation services");
-                return;
-            }
-        }
-        if (event.error) {
-            if (this.onerror) {
-                this.onerror.call(this, event.error);
-            }
-        }
-    }
-    handleHypothesis({ result, error }) {
-        if (error) {
-            return;
-        }
-        if (result.Text && this.onresult) {
-            this.onresult.call(this.recognizer, Object(__WEBPACK_IMPORTED_MODULE_0__entities__["c" /* createResultEvent */])([Object(__WEBPACK_IMPORTED_MODULE_0__entities__["b" /* createIntermediateResult */])(result)]));
-        }
-    }
-    handleResult({ result, error }) {
-        if (error) {
-            return;
-        }
-        const status = __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */][result.RecognitionStatus];
-        switch (status) {
-            case __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */].Success:
-                if (this.onresult) {
-                    const results = Object(__WEBPACK_IMPORTED_MODULE_0__entities__["a" /* createFinalResult */])(result.NBest, this.maxAlternatives);
-                    this.onresult.call(this.recognizer, Object(__WEBPACK_IMPORTED_MODULE_0__entities__["c" /* createResultEvent */])([results]));
-                }
-                break;
-            case __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */].Error:
-                if (this.onerror) {
-                    this.onerror.call(this, error);
-                }
-                break;
-            case __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */].NoMatch:
-                if (this.onnomatch) {
-                    this.onnomatch.call(this, error);
-                }
-                // call onnomatch;
-                break;
-            case __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */].InitialSilenceTimeout:
-            case __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */].EndOfDictation:
-            case __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */].BabbleTimeout:
-                console.log('something happened', event);
-                // call onend;
-                break;
-        }
-    }
-    recognitionStartSuccess(listening) {
-        console.log('start');
-    }
-    recognitionStartFailed(error) {
-        console.log('failed', error);
-    }
-    setupRecognizer() {
-        // prepare recognizer configuration
-        const speechConfig = new __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["i" /* SpeechConfig */](new __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["b" /* Context */](new __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["d" /* OS */]('Speech', 'Speech', null), new __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["c" /* Device */](navigator.userAgent, 'Browser', '1.0.0.0')));
-        const recognitionMode = this.interimResults ? __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["e" /* RecognitionMode */].Interactive : __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["e" /* RecognitionMode */].Conversation;
-        const language = Object(__WEBPACK_IMPORTED_MODULE_1__helpers__["a" /* resolveLang */])(this.lang);
-        const resultFormat = __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["j" /* SpeechResultFormat */].Detailed;
-        // configure and authenticate recognizer
-        const config = new __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["h" /* RecognizerConfig */](speechConfig, recognitionMode, language, resultFormat);
-        const auth = new __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["a" /* CognitiveSubscriptionKeyAuthentication */](this.apiKey);
-        // create and return recognizer based on the prepared configuration
-        return Object(__WEBPACK_IMPORTED_MODULE_3_microsoft_speech_browser_sdk_src_sdk_speech_browser_Exports__["a" /* CreateRecognizer */])(config, auth);
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = SpeechRecognition;
-
-
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar Exports_1 = __webpack_require__(/*! ../common/Exports */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Exports.js\");\nvar WebsocketMessageAdapter = /** @class */ (function () {\n    function WebsocketMessageAdapter(uri, connectionId, messageFormatter) {\n        var _this = this;\n        this.Open = function () {\n            if (_this.connectionState === Exports_1.ConnectionState.Disconnected) {\n                return Exports_1.PromiseHelper.FromError(\"Cannot open a connection that is in \" + _this.connectionState + \" state\");\n            }\n            if (_this.connectionEstablishDeferral) {\n                return _this.connectionEstablishDeferral.Promise();\n            }\n            _this.connectionEstablishDeferral = new Exports_1.Deferred();\n            _this.connectionState = Exports_1.ConnectionState.Connecting;\n            _this.websocketClient = new WebSocket(_this.uri);\n            _this.websocketClient.binaryType = \"arraybuffer\";\n            _this.receivingMessageQueue = new Exports_1.Queue();\n            _this.disconnectDeferral = new Exports_1.Deferred();\n            _this.sendMessageQueue = new Exports_1.Queue();\n            _this.ProcessSendQueue();\n            _this.OnEvent(new Exports_1.ConnectionStartEvent(_this.connectionId, _this.uri));\n            _this.websocketClient.onopen = function (e) {\n                _this.connectionState = Exports_1.ConnectionState.Connected;\n                _this.OnEvent(new Exports_1.ConnectionEstablishedEvent(_this.connectionId));\n                _this.connectionEstablishDeferral.Resolve(new Exports_1.ConnectionOpenResponse(200, \"\"));\n            };\n            _this.websocketClient.onerror = function (e) {\n                // TODO: Understand what this is error is. Will we still get onClose ?\n                if (_this.connectionState !== Exports_1.ConnectionState.Connecting) {\n                    // TODO: Is this required ?\n                    // this.OnEvent(new ConnectionErrorEvent(errorMsg, connectionId));\n                }\n            };\n            _this.websocketClient.onclose = function (e) {\n                if (_this.connectionState === Exports_1.ConnectionState.Connecting) {\n                    _this.connectionState = Exports_1.ConnectionState.Disconnected;\n                    _this.OnEvent(new Exports_1.ConnectionEstablishErrorEvent(_this.connectionId, e.code, e.reason));\n                    _this.connectionEstablishDeferral.Resolve(new Exports_1.ConnectionOpenResponse(e.code, e.reason));\n                }\n                else {\n                    _this.OnEvent(new Exports_1.ConnectionClosedEvent(_this.connectionId, e.code, e.reason));\n                }\n                _this.OnClose(e.code, e.reason);\n            };\n            _this.websocketClient.onmessage = function (e) {\n                var networkReceivedTime = new Date().toISOString();\n                if (_this.connectionState === Exports_1.ConnectionState.Connected) {\n                    var deferred_1 = new Exports_1.Deferred();\n                    // let id = ++this.idCounter;\n                    _this.receivingMessageQueue.EnqueueFromPromise(deferred_1.Promise());\n                    if (e.data instanceof ArrayBuffer) {\n                        var rawMessage = new Exports_1.RawWebsocketMessage(Exports_1.MessageType.Binary, e.data);\n                        _this.messageFormatter\n                            .ToConnectionMessage(rawMessage)\n                            .On(function (connectionMessage) {\n                            _this.OnEvent(new Exports_1.ConnectionMessageReceivedEvent(_this.connectionId, networkReceivedTime, connectionMessage));\n                            deferred_1.Resolve(connectionMessage);\n                        }, function (error) {\n                            // TODO: Events for these ?\n                            deferred_1.Reject(\"Invalid binary message format. Error: \" + error);\n                        });\n                    }\n                    else {\n                        var rawMessage = new Exports_1.RawWebsocketMessage(Exports_1.MessageType.Text, e.data);\n                        _this.messageFormatter\n                            .ToConnectionMessage(rawMessage)\n                            .On(function (connectionMessage) {\n                            _this.OnEvent(new Exports_1.ConnectionMessageReceivedEvent(_this.connectionId, networkReceivedTime, connectionMessage));\n                            deferred_1.Resolve(connectionMessage);\n                        }, function (error) {\n                            // TODO: Events for these ?\n                            deferred_1.Reject(\"Invalid text message format. Error: \" + error);\n                        });\n                    }\n                }\n            };\n            return _this.connectionEstablishDeferral.Promise();\n        };\n        this.Send = function (message) {\n            if (_this.connectionState !== Exports_1.ConnectionState.Connected) {\n                return Exports_1.PromiseHelper.FromError(\"Cannot send on connection that is in \" + _this.connectionState + \" state\");\n            }\n            var messageSendStatusDeferral = new Exports_1.Deferred();\n            var messageSendDeferral = new Exports_1.Deferred();\n            _this.sendMessageQueue.EnqueueFromPromise(messageSendDeferral.Promise());\n            _this.messageFormatter\n                .FromConnectionMessage(message)\n                .On(function (rawMessage) {\n                messageSendDeferral.Resolve({\n                    Message: message,\n                    RawWebsocketMessage: rawMessage,\n                    SendStatusDeferral: messageSendStatusDeferral,\n                });\n            }, function (error) {\n                messageSendDeferral.Reject(\"Error formatting the message. \" + error);\n            });\n            return messageSendStatusDeferral.Promise();\n        };\n        this.Read = function () {\n            if (_this.connectionState !== Exports_1.ConnectionState.Connected) {\n                return Exports_1.PromiseHelper.FromError(\"Cannot read on connection that is in \" + _this.connectionState + \" state\");\n            }\n            return _this.receivingMessageQueue.Dequeue();\n        };\n        this.Close = function (reason) {\n            if (_this.websocketClient) {\n                if (_this.connectionState !== Exports_1.ConnectionState.Connected) {\n                    _this.websocketClient.close(1000, reason ? reason : \"Normal closure by client\");\n                }\n            }\n            else {\n                var deferral = new Exports_1.Deferred();\n                deferral.Resolve(true);\n                return deferral.Promise();\n            }\n            return _this.disconnectDeferral.Promise();\n        };\n        this.SendRawMessage = function (sendItem) {\n            try {\n                _this.OnEvent(new Exports_1.ConnectionMessageSentEvent(_this.connectionId, new Date().toISOString(), sendItem.Message));\n                _this.websocketClient.send(sendItem.RawWebsocketMessage.Payload);\n                return Exports_1.PromiseHelper.FromResult(true);\n            }\n            catch (e) {\n                return Exports_1.PromiseHelper.FromError(\"websocket send error: \" + e);\n            }\n        };\n        this.OnClose = function (code, reason) {\n            var closeReason = \"Connection closed. \" + code + \": \" + reason;\n            _this.connectionState = Exports_1.ConnectionState.Disconnected;\n            _this.disconnectDeferral.Resolve(true);\n            _this.receivingMessageQueue.Dispose(reason);\n            _this.receivingMessageQueue.DrainAndDispose(function (pendingReceiveItem) {\n                // TODO: Events for these ?\n                // Logger.Instance.OnEvent(new LoggingEvent(LogType.Warning, null, `Failed to process received message. Reason: ${closeReason}, Message: ${JSON.stringify(pendingReceiveItem)}`));\n            }, closeReason);\n            _this.sendMessageQueue.DrainAndDispose(function (pendingSendItem) {\n                pendingSendItem.SendStatusDeferral.Reject(closeReason);\n            }, closeReason);\n        };\n        this.ProcessSendQueue = function () {\n            _this.sendMessageQueue\n                .Dequeue()\n                .On(function (sendItem) {\n                _this.SendRawMessage(sendItem)\n                    .On(function (result) {\n                    sendItem.SendStatusDeferral.Resolve(result);\n                    _this.ProcessSendQueue();\n                }, function (sendError) {\n                    sendItem.SendStatusDeferral.Reject(sendError);\n                    _this.ProcessSendQueue();\n                });\n            }, function (error) {\n                // do nothing\n            });\n        };\n        this.OnEvent = function (event) {\n            _this.connectionEvents.OnEvent(event);\n            Exports_1.Events.Instance.OnEvent(event);\n        };\n        if (!uri) {\n            throw new Exports_1.ArgumentNullError(\"uri\");\n        }\n        if (!messageFormatter) {\n            throw new Exports_1.ArgumentNullError(\"messageFormatter\");\n        }\n        this.connectionEvents = new Exports_1.EventSource();\n        this.connectionId = connectionId;\n        this.messageFormatter = messageFormatter;\n        this.connectionState = Exports_1.ConnectionState.None;\n        this.uri = uri;\n    }\n    Object.defineProperty(WebsocketMessageAdapter.prototype, \"State\", {\n        get: function () {\n            return this.connectionState;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(WebsocketMessageAdapter.prototype, \"Events\", {\n        get: function () {\n            return this.connectionEvents;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    return WebsocketMessageAdapter;\n}());\nexports.WebsocketMessageAdapter = WebsocketMessageAdapter;\n\n//# sourceMappingURL=WebsocketMessageAdapter.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/WebsocketMessageAdapter.js?");
 
 /***/ }),
-/* 19 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/common/AudioSourceEvents.js":
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/common/AudioSourceEvents.js ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__entities_SpeechRecognitionEvent__ = __webpack_require__(20);
-/* unused harmony reexport SpeechRecognitionEvent */
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_0__entities_SpeechRecognitionEvent__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__entities_SpeechRecognitionResult__ = __webpack_require__(21);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__entities_SpeechRecognitionResult__["a"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__entities_SpeechRecognitionResult__["b"]; });
-
-
-
+eval("\nvar __extends = (this && this.__extends) || (function () {\n    var extendStatics = Object.setPrototypeOf ||\n        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||\n        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };\n    return function (d, b) {\n        extendStatics(d, b);\n        function __() { this.constructor = d; }\n        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());\n    };\n})();\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar PlatformEvent_1 = __webpack_require__(/*! ./PlatformEvent */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/PlatformEvent.js\");\nvar AudioSourceEvent = /** @class */ (function (_super) {\n    __extends(AudioSourceEvent, _super);\n    function AudioSourceEvent(eventName, audioSourceId, eventType) {\n        if (eventType === void 0) { eventType = PlatformEvent_1.EventType.Info; }\n        var _this = _super.call(this, eventName, eventType) || this;\n        _this.audioSourceId = audioSourceId;\n        return _this;\n    }\n    Object.defineProperty(AudioSourceEvent.prototype, \"AudioSourceId\", {\n        get: function () {\n            return this.audioSourceId;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    return AudioSourceEvent;\n}(PlatformEvent_1.PlatformEvent));\nexports.AudioSourceEvent = AudioSourceEvent;\n// tslint:disable-next-line:max-classes-per-file\nvar AudioSourceInitializingEvent = /** @class */ (function (_super) {\n    __extends(AudioSourceInitializingEvent, _super);\n    function AudioSourceInitializingEvent(audioSourceId) {\n        return _super.call(this, \"AudioSourceInitializingEvent\", audioSourceId) || this;\n    }\n    return AudioSourceInitializingEvent;\n}(AudioSourceEvent));\nexports.AudioSourceInitializingEvent = AudioSourceInitializingEvent;\n// tslint:disable-next-line:max-classes-per-file\nvar AudioSourceReadyEvent = /** @class */ (function (_super) {\n    __extends(AudioSourceReadyEvent, _super);\n    function AudioSourceReadyEvent(audioSourceId) {\n        return _super.call(this, \"AudioSourceReadyEvent\", audioSourceId) || this;\n    }\n    return AudioSourceReadyEvent;\n}(AudioSourceEvent));\nexports.AudioSourceReadyEvent = AudioSourceReadyEvent;\n// tslint:disable-next-line:max-classes-per-file\nvar AudioSourceOffEvent = /** @class */ (function (_super) {\n    __extends(AudioSourceOffEvent, _super);\n    function AudioSourceOffEvent(audioSourceId) {\n        return _super.call(this, \"AudioSourceOffEvent\", audioSourceId) || this;\n    }\n    return AudioSourceOffEvent;\n}(AudioSourceEvent));\nexports.AudioSourceOffEvent = AudioSourceOffEvent;\n// tslint:disable-next-line:max-classes-per-file\nvar AudioSourceErrorEvent = /** @class */ (function (_super) {\n    __extends(AudioSourceErrorEvent, _super);\n    function AudioSourceErrorEvent(audioSourceId, error) {\n        var _this = _super.call(this, \"AudioSourceErrorEvent\", audioSourceId, PlatformEvent_1.EventType.Error) || this;\n        _this.error = error;\n        return _this;\n    }\n    Object.defineProperty(AudioSourceErrorEvent.prototype, \"Error\", {\n        get: function () {\n            return this.error;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    return AudioSourceErrorEvent;\n}(AudioSourceEvent));\nexports.AudioSourceErrorEvent = AudioSourceErrorEvent;\n// tslint:disable-next-line:max-classes-per-file\nvar AudioStreamNodeEvent = /** @class */ (function (_super) {\n    __extends(AudioStreamNodeEvent, _super);\n    function AudioStreamNodeEvent(eventName, audioSourceId, audioNodeId) {\n        var _this = _super.call(this, eventName, audioSourceId) || this;\n        _this.audioNodeId = audioNodeId;\n        return _this;\n    }\n    Object.defineProperty(AudioStreamNodeEvent.prototype, \"AudioNodeId\", {\n        get: function () {\n            return this.audioNodeId;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    return AudioStreamNodeEvent;\n}(AudioSourceEvent));\nexports.AudioStreamNodeEvent = AudioStreamNodeEvent;\n// tslint:disable-next-line:max-classes-per-file\nvar AudioStreamNodeAttachingEvent = /** @class */ (function (_super) {\n    __extends(AudioStreamNodeAttachingEvent, _super);\n    function AudioStreamNodeAttachingEvent(audioSourceId, audioNodeId) {\n        return _super.call(this, \"AudioStreamNodeAttachingEvent\", audioSourceId, audioNodeId) || this;\n    }\n    return AudioStreamNodeAttachingEvent;\n}(AudioStreamNodeEvent));\nexports.AudioStreamNodeAttachingEvent = AudioStreamNodeAttachingEvent;\n// tslint:disable-next-line:max-classes-per-file\nvar AudioStreamNodeAttachedEvent = /** @class */ (function (_super) {\n    __extends(AudioStreamNodeAttachedEvent, _super);\n    function AudioStreamNodeAttachedEvent(audioSourceId, audioNodeId) {\n        return _super.call(this, \"AudioStreamNodeAttachedEvent\", audioSourceId, audioNodeId) || this;\n    }\n    return AudioStreamNodeAttachedEvent;\n}(AudioStreamNodeEvent));\nexports.AudioStreamNodeAttachedEvent = AudioStreamNodeAttachedEvent;\n// tslint:disable-next-line:max-classes-per-file\nvar AudioStreamNodeDetachedEvent = /** @class */ (function (_super) {\n    __extends(AudioStreamNodeDetachedEvent, _super);\n    function AudioStreamNodeDetachedEvent(audioSourceId, audioNodeId) {\n        return _super.call(this, \"AudioStreamNodeDetachedEvent\", audioSourceId, audioNodeId) || this;\n    }\n    return AudioStreamNodeDetachedEvent;\n}(AudioStreamNodeEvent));\nexports.AudioStreamNodeDetachedEvent = AudioStreamNodeDetachedEvent;\n// tslint:disable-next-line:max-classes-per-file\nvar AudioStreamNodeErrorEvent = /** @class */ (function (_super) {\n    __extends(AudioStreamNodeErrorEvent, _super);\n    function AudioStreamNodeErrorEvent(audioSourceId, audioNodeId, error) {\n        var _this = _super.call(this, \"AudioStreamNodeErrorEvent\", audioSourceId, audioNodeId) || this;\n        _this.error = error;\n        return _this;\n    }\n    Object.defineProperty(AudioStreamNodeErrorEvent.prototype, \"Error\", {\n        get: function () {\n            return this.error;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    return AudioStreamNodeErrorEvent;\n}(AudioStreamNodeEvent));\nexports.AudioStreamNodeErrorEvent = AudioStreamNodeErrorEvent;\n\n//# sourceMappingURL=AudioSourceEvents.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/common/AudioSourceEvents.js?");
 
 /***/ }),
-/* 20 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/common/ConnectionEvents.js":
+/*!******************************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/common/ConnectionEvents.js ***!
+  \******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = createResultEvent;
-class SpeechRecognitionEvent extends Event {
-    constructor(typeArg = 'result') {
-        super(typeArg);
-    }
-}
-/* unused harmony export SpeechRecognitionEvent */
-
-function createResultEvent(results, resultIndex = 0, interpretation = null, emma = null) {
-    const event = new SpeechRecognitionEvent();
-    return Object.defineProperties(event, {
-        target: { value: this, writable: false },
-        emma: { value: emma, writable: false },
-        resultIndex: { value: resultIndex, writable: false },
-        results: { value: results, writable: false },
-        interpretation: { value: interpretation, writable: false }
-    });
-}
-
+eval("\nvar __extends = (this && this.__extends) || (function () {\n    var extendStatics = Object.setPrototypeOf ||\n        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||\n        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };\n    return function (d, b) {\n        extendStatics(d, b);\n        function __() { this.constructor = d; }\n        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());\n    };\n})();\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar PlatformEvent_1 = __webpack_require__(/*! ./PlatformEvent */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/PlatformEvent.js\");\nvar ConnectionEvent = /** @class */ (function (_super) {\n    __extends(ConnectionEvent, _super);\n    function ConnectionEvent(eventName, connectionId, eventType) {\n        if (eventType === void 0) { eventType = PlatformEvent_1.EventType.Info; }\n        var _this = _super.call(this, eventName, eventType) || this;\n        _this.connectionId = connectionId;\n        return _this;\n    }\n    Object.defineProperty(ConnectionEvent.prototype, \"ConnectionId\", {\n        get: function () {\n            return this.connectionId;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    return ConnectionEvent;\n}(PlatformEvent_1.PlatformEvent));\nexports.ConnectionEvent = ConnectionEvent;\n// tslint:disable-next-line:max-classes-per-file\nvar ConnectionStartEvent = /** @class */ (function (_super) {\n    __extends(ConnectionStartEvent, _super);\n    function ConnectionStartEvent(connectionId, uri, headers) {\n        var _this = _super.call(this, \"ConnectionStartEvent\", connectionId) || this;\n        _this.uri = uri;\n        _this.headers = headers;\n        return _this;\n    }\n    Object.defineProperty(ConnectionStartEvent.prototype, \"Uri\", {\n        get: function () {\n            return this.uri;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(ConnectionStartEvent.prototype, \"Headers\", {\n        get: function () {\n            return this.headers;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    return ConnectionStartEvent;\n}(ConnectionEvent));\nexports.ConnectionStartEvent = ConnectionStartEvent;\n// tslint:disable-next-line:max-classes-per-file\nvar ConnectionEstablishedEvent = /** @class */ (function (_super) {\n    __extends(ConnectionEstablishedEvent, _super);\n    function ConnectionEstablishedEvent(connectionId, metadata) {\n        return _super.call(this, \"ConnectionEstablishedEvent\", connectionId) || this;\n    }\n    return ConnectionEstablishedEvent;\n}(ConnectionEvent));\nexports.ConnectionEstablishedEvent = ConnectionEstablishedEvent;\n// tslint:disable-next-line:max-classes-per-file\nvar ConnectionClosedEvent = /** @class */ (function (_super) {\n    __extends(ConnectionClosedEvent, _super);\n    function ConnectionClosedEvent(connectionId, statusCode, reason) {\n        var _this = _super.call(this, \"ConnectionClosedEvent\", connectionId, PlatformEvent_1.EventType.Warning) || this;\n        _this.reason = reason;\n        _this.statusCode = statusCode;\n        return _this;\n    }\n    Object.defineProperty(ConnectionClosedEvent.prototype, \"Reason\", {\n        get: function () {\n            return this.reason;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(ConnectionClosedEvent.prototype, \"StatusCode\", {\n        get: function () {\n            return this.statusCode;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    return ConnectionClosedEvent;\n}(ConnectionEvent));\nexports.ConnectionClosedEvent = ConnectionClosedEvent;\n// tslint:disable-next-line:max-classes-per-file\nvar ConnectionEstablishErrorEvent = /** @class */ (function (_super) {\n    __extends(ConnectionEstablishErrorEvent, _super);\n    function ConnectionEstablishErrorEvent(connectionId, statuscode, reason) {\n        var _this = _super.call(this, \"ConnectionEstablishErrorEvent\", connectionId, PlatformEvent_1.EventType.Error) || this;\n        _this.statusCode = statuscode;\n        _this.reason = reason;\n        return _this;\n    }\n    Object.defineProperty(ConnectionEstablishErrorEvent.prototype, \"Reason\", {\n        get: function () {\n            return this.reason;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(ConnectionEstablishErrorEvent.prototype, \"StatusCode\", {\n        get: function () {\n            return this.statusCode;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    return ConnectionEstablishErrorEvent;\n}(ConnectionEvent));\nexports.ConnectionEstablishErrorEvent = ConnectionEstablishErrorEvent;\n// tslint:disable-next-line:max-classes-per-file\nvar ConnectionMessageReceivedEvent = /** @class */ (function (_super) {\n    __extends(ConnectionMessageReceivedEvent, _super);\n    function ConnectionMessageReceivedEvent(connectionId, networkReceivedTimeISO, message) {\n        var _this = _super.call(this, \"ConnectionMessageReceivedEvent\", connectionId) || this;\n        _this.networkReceivedTime = networkReceivedTimeISO;\n        _this.message = message;\n        return _this;\n    }\n    Object.defineProperty(ConnectionMessageReceivedEvent.prototype, \"NetworkReceivedTime\", {\n        get: function () {\n            return this.networkReceivedTime;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(ConnectionMessageReceivedEvent.prototype, \"Message\", {\n        get: function () {\n            return this.message;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    return ConnectionMessageReceivedEvent;\n}(ConnectionEvent));\nexports.ConnectionMessageReceivedEvent = ConnectionMessageReceivedEvent;\n// tslint:disable-next-line:max-classes-per-file\nvar ConnectionMessageSentEvent = /** @class */ (function (_super) {\n    __extends(ConnectionMessageSentEvent, _super);\n    function ConnectionMessageSentEvent(connectionId, networkSentTimeISO, message) {\n        var _this = _super.call(this, \"ConnectionMessageSentEvent\", connectionId) || this;\n        _this.networkSentTime = networkSentTimeISO;\n        _this.message = message;\n        return _this;\n    }\n    Object.defineProperty(ConnectionMessageSentEvent.prototype, \"NetworkSentTime\", {\n        get: function () {\n            return this.networkSentTime;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(ConnectionMessageSentEvent.prototype, \"Message\", {\n        get: function () {\n            return this.message;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    return ConnectionMessageSentEvent;\n}(ConnectionEvent));\nexports.ConnectionMessageSentEvent = ConnectionMessageSentEvent;\n\n//# sourceMappingURL=ConnectionEvents.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/common/ConnectionEvents.js?");
 
 /***/ }),
-/* 21 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/common/ConnectionMessage.js":
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/common/ConnectionMessage.js ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["b"] = createIntermediateResult;
-/* harmony export (immutable) */ __webpack_exports__["a"] = createFinalResult;
-class SpeechRecognitionResult extends Array {
-    constructor() {
-        super(...arguments);
-        this.isFinal = false;
-    }
-}
-function toIntermediateResult({ Text }) {
-    return {
-        confidence: .5,
-        transcript: Text
-    };
-}
-function toFinalResult({ Confidence, Display }) {
-    return {
-        confidence: Confidence,
-        transcript: Display
-    };
-}
-function createIntermediateResult(alternative) {
-    return new SpeechRecognitionResult(toIntermediateResult(alternative));
-}
-function createFinalResult(alternatives, maxAlternatives) {
-    const transformed = alternatives
-        .slice(0, maxAlternatives)
-        .map(toFinalResult);
-    const result = new SpeechRecognitionResult(...transformed);
-    result.isFinal = true;
-    return result;
-}
-
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar Error_1 = __webpack_require__(/*! ./Error */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Error.js\");\nvar Guid_1 = __webpack_require__(/*! ./Guid */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Guid.js\");\nvar MessageType;\n(function (MessageType) {\n    MessageType[MessageType[\"Text\"] = 0] = \"Text\";\n    MessageType[MessageType[\"Binary\"] = 1] = \"Binary\";\n})(MessageType = exports.MessageType || (exports.MessageType = {}));\nvar ConnectionMessage = /** @class */ (function () {\n    function ConnectionMessage(messageType, body, headers, id) {\n        this.body = null;\n        if (messageType === MessageType.Text && body && !(typeof (body) === \"string\")) {\n            throw new Error_1.InvalidOperationError(\"Payload must be a string\");\n        }\n        if (messageType === MessageType.Binary && body && !(body instanceof ArrayBuffer)) {\n            throw new Error_1.InvalidOperationError(\"Payload must be ArrayBuffer\");\n        }\n        this.messageType = messageType;\n        this.body = body;\n        this.headers = headers ? headers : {};\n        this.id = id ? id : Guid_1.CreateNoDashGuid();\n    }\n    Object.defineProperty(ConnectionMessage.prototype, \"MessageType\", {\n        get: function () {\n            return this.messageType;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(ConnectionMessage.prototype, \"Headers\", {\n        get: function () {\n            return this.headers;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(ConnectionMessage.prototype, \"Body\", {\n        get: function () {\n            return this.body;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(ConnectionMessage.prototype, \"TextBody\", {\n        get: function () {\n            if (this.messageType === MessageType.Binary) {\n                throw new Error_1.InvalidOperationError(\"Not supported for binary message\");\n            }\n            return this.body;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(ConnectionMessage.prototype, \"BinaryBody\", {\n        get: function () {\n            if (this.messageType === MessageType.Text) {\n                throw new Error_1.InvalidOperationError(\"Not supported for text message\");\n            }\n            return this.body;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(ConnectionMessage.prototype, \"Id\", {\n        get: function () {\n            return this.id;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    return ConnectionMessage;\n}());\nexports.ConnectionMessage = ConnectionMessage;\n\n//# sourceMappingURL=ConnectionMessage.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/common/ConnectionMessage.js?");
 
 /***/ }),
-/* 22 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/common/ConnectionOpenResponse.js":
+/*!************************************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/common/ConnectionOpenResponse.js ***!
+  \************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_LanguageResolver__ = __webpack_require__(23);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__helpers_LanguageResolver__["a"]; });
-
-
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar ConnectionOpenResponse = /** @class */ (function () {\n    function ConnectionOpenResponse(statusCode, reason) {\n        this.statusCode = statusCode;\n        this.reason = reason;\n    }\n    Object.defineProperty(ConnectionOpenResponse.prototype, \"StatusCode\", {\n        get: function () {\n            return this.statusCode;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(ConnectionOpenResponse.prototype, \"Reason\", {\n        get: function () {\n            return this.reason;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    return ConnectionOpenResponse;\n}());\nexports.ConnectionOpenResponse = ConnectionOpenResponse;\n\n//# sourceMappingURL=ConnectionOpenResponse.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/common/ConnectionOpenResponse.js?");
 
 /***/ }),
-/* 23 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Error.js":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Error.js ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-const supportedDefaults = {
-    ar: 'ar-EG',
-    ca: 'ca-ES',
-    da: 'da-DK',
-    de: 'de-DE',
-    en: 'en-US',
-    es: 'es-ES',
-    fi: 'fi-FI',
-    fr: 'fr-FR',
-    hi: 'hi-IN',
-    it: 'it-IT',
-    ja: 'ja-JP',
-    ko: 'ko-KR',
-    nb: 'nb-NO',
-    nl: 'nl-NL',
-    pl: 'pl-PL',
-    pt: 'pt-PT',
-    ru: 'ru-RU',
-    sv: 'sv-SE',
-    zh: 'zh-CN'
-};
-const resolveLang = (langHint) => {
-    return supportedDefaults[langHint] || langHint;
-};
-/* harmony export (immutable) */ __webpack_exports__["a"] = resolveLang;
-
-
+eval("\nvar __extends = (this && this.__extends) || (function () {\n    var extendStatics = Object.setPrototypeOf ||\n        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||\n        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };\n    return function (d, b) {\n        extendStatics(d, b);\n        function __() { this.constructor = d; }\n        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());\n    };\n})();\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/**\n * The error that is thrown when an argument passed in is null.\n *\n * @export\n * @class ArgumentNullError\n * @extends {Error}\n */\nvar ArgumentNullError = /** @class */ (function (_super) {\n    __extends(ArgumentNullError, _super);\n    /**\n     * Creates an instance of ArgumentNullError.\n     *\n     * @param {string} argumentName Name of the argument that is null\n     *\n     * @memberOf ArgumentNullError\n     */\n    function ArgumentNullError(argumentName) {\n        var _this = _super.call(this, argumentName) || this;\n        _this.name = \"ArgumentNull\";\n        _this.message = argumentName;\n        return _this;\n    }\n    return ArgumentNullError;\n}(Error));\nexports.ArgumentNullError = ArgumentNullError;\n/**\n * The error that is thrown when an invalid operation is performed in the code.\n *\n * @export\n * @class InvalidOperationError\n * @extends {Error}\n */\n// tslint:disable-next-line:max-classes-per-file\nvar InvalidOperationError = /** @class */ (function (_super) {\n    __extends(InvalidOperationError, _super);\n    /**\n     * Creates an instance of InvalidOperationError.\n     *\n     * @param {string} error The error\n     *\n     * @memberOf InvalidOperationError\n     */\n    function InvalidOperationError(error) {\n        var _this = _super.call(this, error) || this;\n        _this.name = \"InvalidOperation\";\n        _this.message = error;\n        return _this;\n    }\n    return InvalidOperationError;\n}(Error));\nexports.InvalidOperationError = InvalidOperationError;\n/**\n * The error that is thrown when an object is disposed.\n *\n * @export\n * @class ObjectDisposedError\n * @extends {Error}\n */\n// tslint:disable-next-line:max-classes-per-file\nvar ObjectDisposedError = /** @class */ (function (_super) {\n    __extends(ObjectDisposedError, _super);\n    /**\n     * Creates an instance of ObjectDisposedError.\n     *\n     * @param {string} objectName The object that is disposed\n     * @param {string} error The error\n     *\n     * @memberOf ObjectDisposedError\n     */\n    function ObjectDisposedError(objectName, error) {\n        var _this = _super.call(this, error) || this;\n        _this.name = objectName + \"ObjectDisposed\";\n        _this.message = error;\n        return _this;\n    }\n    return ObjectDisposedError;\n}(Error));\nexports.ObjectDisposedError = ObjectDisposedError;\n\n//# sourceMappingURL=Error.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Error.js?");
 
 /***/ }),
-/* 24 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/common/EventSource.js":
+/*!*************************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/common/EventSource.js ***!
+  \*************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_Exports__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__IAuthentication__ = __webpack_require__(5);
-
-
-const AuthHeader = "Ocp-Apim-Subscription-Key";
-class CognitiveSubscriptionKeyAuthentication {
-    constructor(subscriptionKey) {
-        this.Fetch = (authFetchEventId) => {
-            return __WEBPACK_IMPORTED_MODULE_0__common_Exports__["z" /* PromiseHelper */].FromResult(this.authInfo);
-        };
-        this.FetchOnExpiry = (authFetchEventId) => {
-            return __WEBPACK_IMPORTED_MODULE_0__common_Exports__["z" /* PromiseHelper */].FromResult(this.authInfo);
-        };
-        if (!subscriptionKey) {
-            throw new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["a" /* ArgumentNullError */]("subscriptionKey");
-        }
-        this.authInfo = new __WEBPACK_IMPORTED_MODULE_1__IAuthentication__["a" /* AuthInfo */](AuthHeader, subscriptionKey);
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = CognitiveSubscriptionKeyAuthentication;
-
-
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar Error_1 = __webpack_require__(/*! ./Error */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Error.js\");\nvar Guid_1 = __webpack_require__(/*! ./Guid */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Guid.js\");\nvar EventSource = /** @class */ (function () {\n    function EventSource(metadata) {\n        var _this = this;\n        this.eventListeners = {};\n        this.isDisposed = false;\n        this.OnEvent = function (event) {\n            if (_this.IsDisposed()) {\n                throw (new Error_1.ObjectDisposedError(\"EventSource\"));\n            }\n            if (_this.Metadata) {\n                for (var paramName in _this.Metadata) {\n                    if (paramName) {\n                        if (event.Metadata) {\n                            if (!event.Metadata[paramName]) {\n                                event.Metadata[paramName] = _this.Metadata[paramName];\n                            }\n                        }\n                    }\n                }\n            }\n            for (var eventId in _this.eventListeners) {\n                if (eventId && _this.eventListeners[eventId]) {\n                    _this.eventListeners[eventId](event);\n                }\n            }\n        };\n        this.Attach = function (onEventCallback) {\n            var id = Guid_1.CreateNoDashGuid();\n            _this.eventListeners[id] = onEventCallback;\n            return {\n                Detach: function () {\n                    delete _this.eventListeners[id];\n                },\n            };\n        };\n        this.AttachListener = function (listener) {\n            return _this.Attach(listener.OnEvent);\n        };\n        this.IsDisposed = function () {\n            return _this.isDisposed;\n        };\n        this.Dispose = function () {\n            _this.eventListeners = null;\n            _this.isDisposed = true;\n        };\n        this.metadata = metadata;\n    }\n    Object.defineProperty(EventSource.prototype, \"Metadata\", {\n        get: function () {\n            return this.metadata;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    return EventSource;\n}());\nexports.EventSource = EventSource;\n\n//# sourceMappingURL=EventSource.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/common/EventSource.js?");
 
 /***/ }),
-/* 25 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Events.js":
+/*!********************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Events.js ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__PlatformEvent__ = __webpack_require__(4);
-
-class AudioSourceEvent extends __WEBPACK_IMPORTED_MODULE_0__PlatformEvent__["b" /* PlatformEvent */] {
-    constructor(eventName, audioSourceId, eventType = __WEBPACK_IMPORTED_MODULE_0__PlatformEvent__["a" /* EventType */].Info) {
-        super(eventName, eventType);
-        this.audioSourceId = audioSourceId;
-    }
-    get AudioSourceId() {
-        return this.audioSourceId;
-    }
-}
-/* unused harmony export AudioSourceEvent */
-
-// tslint:disable-next-line:max-classes-per-file
-class AudioSourceInitializingEvent extends AudioSourceEvent {
-    constructor(audioSourceId) {
-        super("AudioSourceInitializingEvent", audioSourceId);
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["b"] = AudioSourceInitializingEvent;
-
-// tslint:disable-next-line:max-classes-per-file
-class AudioSourceReadyEvent extends AudioSourceEvent {
-    constructor(audioSourceId) {
-        super("AudioSourceReadyEvent", audioSourceId);
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["d"] = AudioSourceReadyEvent;
-
-// tslint:disable-next-line:max-classes-per-file
-class AudioSourceOffEvent extends AudioSourceEvent {
-    constructor(audioSourceId) {
-        super("AudioSourceOffEvent", audioSourceId);
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["c"] = AudioSourceOffEvent;
-
-// tslint:disable-next-line:max-classes-per-file
-class AudioSourceErrorEvent extends AudioSourceEvent {
-    constructor(audioSourceId, error) {
-        super("AudioSourceErrorEvent", audioSourceId, __WEBPACK_IMPORTED_MODULE_0__PlatformEvent__["a" /* EventType */].Error);
-        this.error = error;
-    }
-    get Error() {
-        return this.error;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = AudioSourceErrorEvent;
-
-// tslint:disable-next-line:max-classes-per-file
-class AudioStreamNodeEvent extends AudioSourceEvent {
-    constructor(eventName, audioSourceId, audioNodeId) {
-        super(eventName, audioSourceId);
-        this.audioNodeId = audioNodeId;
-    }
-    get AudioNodeId() {
-        return this.audioNodeId;
-    }
-}
-/* unused harmony export AudioStreamNodeEvent */
-
-// tslint:disable-next-line:max-classes-per-file
-class AudioStreamNodeAttachingEvent extends AudioStreamNodeEvent {
-    constructor(audioSourceId, audioNodeId) {
-        super("AudioStreamNodeAttachingEvent", audioSourceId, audioNodeId);
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["f"] = AudioStreamNodeAttachingEvent;
-
-// tslint:disable-next-line:max-classes-per-file
-class AudioStreamNodeAttachedEvent extends AudioStreamNodeEvent {
-    constructor(audioSourceId, audioNodeId) {
-        super("AudioStreamNodeAttachedEvent", audioSourceId, audioNodeId);
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["e"] = AudioStreamNodeAttachedEvent;
-
-// tslint:disable-next-line:max-classes-per-file
-class AudioStreamNodeDetachedEvent extends AudioStreamNodeEvent {
-    constructor(audioSourceId, audioNodeId) {
-        super("AudioStreamNodeDetachedEvent", audioSourceId, audioNodeId);
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["g"] = AudioStreamNodeDetachedEvent;
-
-// tslint:disable-next-line:max-classes-per-file
-class AudioStreamNodeErrorEvent extends AudioStreamNodeEvent {
-    constructor(audioSourceId, audioNodeId, error) {
-        super("AudioStreamNodeErrorEvent", audioSourceId, audioNodeId);
-        this.error = error;
-    }
-    get Error() {
-        return this.error;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["h"] = AudioStreamNodeErrorEvent;
-
-
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar Error_1 = __webpack_require__(/*! ./Error */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Error.js\");\nvar EventSource_1 = __webpack_require__(/*! ./EventSource */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/EventSource.js\");\nvar Events = /** @class */ (function () {\n    function Events() {\n    }\n    Object.defineProperty(Events, \"Instance\", {\n        get: function () {\n            return Events.instance;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Events.instance = new EventSource_1.EventSource();\n    Events.SetEventSource = function (eventSource) {\n        if (!eventSource) {\n            throw new Error_1.ArgumentNullError(\"eventSource\");\n        }\n        Events.instance = eventSource;\n    };\n    return Events;\n}());\nexports.Events = Events;\n\n//# sourceMappingURL=Events.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Events.js?");
 
 /***/ }),
-/* 26 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Exports.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Exports.js ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__PlatformEvent__ = __webpack_require__(4);
-
-class ConnectionEvent extends __WEBPACK_IMPORTED_MODULE_0__PlatformEvent__["b" /* PlatformEvent */] {
-    constructor(eventName, connectionId, eventType = __WEBPACK_IMPORTED_MODULE_0__PlatformEvent__["a" /* EventType */].Info) {
-        super(eventName, eventType);
-        this.connectionId = connectionId;
-    }
-    get ConnectionId() {
-        return this.connectionId;
-    }
-}
-/* unused harmony export ConnectionEvent */
-
-// tslint:disable-next-line:max-classes-per-file
-class ConnectionStartEvent extends ConnectionEvent {
-    constructor(connectionId, uri, headers) {
-        super("ConnectionStartEvent", connectionId);
-        this.uri = uri;
-        this.headers = headers;
-    }
-    get Uri() {
-        return this.uri;
-    }
-    get Headers() {
-        return this.headers;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["f"] = ConnectionStartEvent;
-
-// tslint:disable-next-line:max-classes-per-file
-class ConnectionEstablishedEvent extends ConnectionEvent {
-    constructor(connectionId, metadata) {
-        super("ConnectionEstablishedEvent", connectionId);
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["c"] = ConnectionEstablishedEvent;
-
-// tslint:disable-next-line:max-classes-per-file
-class ConnectionClosedEvent extends ConnectionEvent {
-    constructor(connectionId, statusCode, reason) {
-        super("ConnectionClosedEvent", connectionId, __WEBPACK_IMPORTED_MODULE_0__PlatformEvent__["a" /* EventType */].Warning);
-        this.reason = reason;
-        this.statusCode = statusCode;
-    }
-    get Reason() {
-        return this.reason;
-    }
-    get StatusCode() {
-        return this.statusCode;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = ConnectionClosedEvent;
-
-// tslint:disable-next-line:max-classes-per-file
-class ConnectionEstablishErrorEvent extends ConnectionEvent {
-    constructor(connectionId, statuscode, reason) {
-        super("ConnectionEstablishErrorEvent", connectionId, __WEBPACK_IMPORTED_MODULE_0__PlatformEvent__["a" /* EventType */].Error);
-        this.statusCode = statuscode;
-        this.reason = reason;
-    }
-    get Reason() {
-        return this.reason;
-    }
-    get StatusCode() {
-        return this.statusCode;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["b"] = ConnectionEstablishErrorEvent;
-
-// tslint:disable-next-line:max-classes-per-file
-class ConnectionMessageReceivedEvent extends ConnectionEvent {
-    constructor(connectionId, networkReceivedTimeISO, message) {
-        super("ConnectionMessageReceivedEvent", connectionId);
-        this.networkReceivedTime = networkReceivedTimeISO;
-        this.message = message;
-    }
-    get NetworkReceivedTime() {
-        return this.networkReceivedTime;
-    }
-    get Message() {
-        return this.message;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["d"] = ConnectionMessageReceivedEvent;
-
-// tslint:disable-next-line:max-classes-per-file
-class ConnectionMessageSentEvent extends ConnectionEvent {
-    constructor(connectionId, networkSentTimeISO, message) {
-        super("ConnectionMessageSentEvent", connectionId);
-        this.networkSentTime = networkSentTimeISO;
-        this.message = message;
-    }
-    get NetworkSentTime() {
-        return this.networkSentTime;
-    }
-    get Message() {
-        return this.message;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["e"] = ConnectionMessageSentEvent;
-
-
+eval("\nfunction __export(m) {\n    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];\n}\nObject.defineProperty(exports, \"__esModule\", { value: true });\n__export(__webpack_require__(/*! ./AudioSourceEvents */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/AudioSourceEvents.js\"));\n__export(__webpack_require__(/*! ./ConnectionEvents */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/ConnectionEvents.js\"));\n__export(__webpack_require__(/*! ./ConnectionMessage */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/ConnectionMessage.js\"));\n__export(__webpack_require__(/*! ./ConnectionOpenResponse */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/ConnectionOpenResponse.js\"));\n__export(__webpack_require__(/*! ./Error */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Error.js\"));\n__export(__webpack_require__(/*! ./Events */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Events.js\"));\n__export(__webpack_require__(/*! ./EventSource */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/EventSource.js\"));\n__export(__webpack_require__(/*! ./Guid */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Guid.js\"));\n__export(__webpack_require__(/*! ./IConnection */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/IConnection.js\"));\n__export(__webpack_require__(/*! ./InMemoryStorage */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/InMemoryStorage.js\"));\n__export(__webpack_require__(/*! ./List */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/List.js\"));\n__export(__webpack_require__(/*! ./PlatformEvent */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/PlatformEvent.js\"));\n__export(__webpack_require__(/*! ./Promise */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Promise.js\"));\n__export(__webpack_require__(/*! ./Queue */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Queue.js\"));\n__export(__webpack_require__(/*! ./RawWebsocketMessage */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/RawWebsocketMessage.js\"));\n__export(__webpack_require__(/*! ./RiffPcmEncoder */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/RiffPcmEncoder.js\"));\n__export(__webpack_require__(/*! ./Storage */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Storage.js\"));\n__export(__webpack_require__(/*! ./Stream */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Stream.js\"));\n\n//# sourceMappingURL=Exports.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Exports.js?");
 
 /***/ }),
-/* 27 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Guid.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Guid.js ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-class ConnectionOpenResponse {
-    constructor(statusCode, reason) {
-        this.statusCode = statusCode;
-        this.reason = reason;
-    }
-    get StatusCode() {
-        return this.statusCode;
-    }
-    get Reason() {
-        return this.reason;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = ConnectionOpenResponse;
-
-
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar CreateGuid = function () {\n    var d = new Date().getTime();\n    var guid = \"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx\".replace(/[xy]/g, function (c) {\n        var r = (d + Math.random() * 16) % 16 | 0;\n        d = Math.floor(d / 16);\n        return (c === \"x\" ? r : (r & 0x3 | 0x8)).toString(16);\n    });\n    return guid;\n};\nexports.CreateGuid = CreateGuid;\nvar CreateNoDashGuid = function () {\n    return CreateGuid().replace(new RegExp(\"-\", \"g\"), \"\").toUpperCase();\n};\nexports.CreateNoDashGuid = CreateNoDashGuid;\n\n//# sourceMappingURL=Guid.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Guid.js?");
 
 /***/ }),
-/* 28 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/common/IConnection.js":
+/*!*************************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/common/IConnection.js ***!
+  \*************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Error__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__EventSource__ = __webpack_require__(9);
-
-
-class Events {
-    static get Instance() {
-        return Events.instance;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = Events;
-
-Events.instance = new __WEBPACK_IMPORTED_MODULE_1__EventSource__["a" /* EventSource */]();
-Events.SetEventSource = (eventSource) => {
-    if (!eventSource) {
-        throw new __WEBPACK_IMPORTED_MODULE_0__Error__["a" /* ArgumentNullError */]("eventSource");
-    }
-    Events.instance = eventSource;
-};
-
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar ConnectionState;\n(function (ConnectionState) {\n    ConnectionState[ConnectionState[\"None\"] = 0] = \"None\";\n    ConnectionState[ConnectionState[\"Connected\"] = 1] = \"Connected\";\n    ConnectionState[ConnectionState[\"Connecting\"] = 2] = \"Connecting\";\n    ConnectionState[ConnectionState[\"Disconnected\"] = 3] = \"Disconnected\";\n})(ConnectionState = exports.ConnectionState || (exports.ConnectionState = {}));\n\n//# sourceMappingURL=IConnection.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/common/IConnection.js?");
 
 /***/ }),
-/* 29 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/common/InMemoryStorage.js":
+/*!*****************************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/common/InMemoryStorage.js ***!
+  \*****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConnectionState; });
-var ConnectionState;
-(function (ConnectionState) {
-    ConnectionState[ConnectionState["None"] = 0] = "None";
-    ConnectionState[ConnectionState["Connected"] = 1] = "Connected";
-    ConnectionState[ConnectionState["Connecting"] = 2] = "Connecting";
-    ConnectionState[ConnectionState["Disconnected"] = 3] = "Disconnected";
-})(ConnectionState || (ConnectionState = {}));
-
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar Error_1 = __webpack_require__(/*! ./Error */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Error.js\");\nvar InMemoryStorage = /** @class */ (function () {\n    function InMemoryStorage() {\n        var _this = this;\n        this.store = {};\n        this.Get = function (key) {\n            if (!key) {\n                throw new Error_1.ArgumentNullError(\"key\");\n            }\n            return _this.store[key];\n        };\n        this.GetOrAdd = function (key, valueToAdd) {\n            if (!key) {\n                throw new Error_1.ArgumentNullError(\"key\");\n            }\n            if (_this.store[key] === undefined) {\n                _this.store[key] = valueToAdd;\n            }\n            return _this.store[key];\n        };\n        this.Set = function (key, value) {\n            if (!key) {\n                throw new Error_1.ArgumentNullError(\"key\");\n            }\n            _this.store[key] = value;\n        };\n        this.Remove = function (key) {\n            if (!key) {\n                throw new Error_1.ArgumentNullError(\"key\");\n            }\n            if (_this.store[key] !== undefined) {\n                delete _this.store[key];\n            }\n        };\n    }\n    return InMemoryStorage;\n}());\nexports.InMemoryStorage = InMemoryStorage;\n\n//# sourceMappingURL=InMemoryStorage.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/common/InMemoryStorage.js?");
 
 /***/ }),
-/* 30 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/common/List.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/common/List.js ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ConnectionMessage__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Error__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Guid__ = __webpack_require__(2);
-
-
-
-class RawWebsocketMessage {
-    constructor(messageType, payload, id) {
-        this.payload = null;
-        if (!payload) {
-            throw new __WEBPACK_IMPORTED_MODULE_1__Error__["a" /* ArgumentNullError */]("payload");
-        }
-        if (messageType === __WEBPACK_IMPORTED_MODULE_0__ConnectionMessage__["b" /* MessageType */].Binary && !(payload instanceof ArrayBuffer)) {
-            throw new __WEBPACK_IMPORTED_MODULE_1__Error__["b" /* InvalidOperationError */]("Payload must be ArrayBuffer");
-        }
-        if (messageType === __WEBPACK_IMPORTED_MODULE_0__ConnectionMessage__["b" /* MessageType */].Text && !(typeof (payload) === "string")) {
-            throw new __WEBPACK_IMPORTED_MODULE_1__Error__["b" /* InvalidOperationError */]("Payload must be a string");
-        }
-        this.messageType = messageType;
-        this.payload = payload;
-        this.id = id ? id : Object(__WEBPACK_IMPORTED_MODULE_2__Guid__["a" /* CreateNoDashGuid */])();
-    }
-    get MessageType() {
-        return this.messageType;
-    }
-    get Payload() {
-        return this.payload;
-    }
-    get TextContent() {
-        if (this.messageType === __WEBPACK_IMPORTED_MODULE_0__ConnectionMessage__["b" /* MessageType */].Binary) {
-            throw new __WEBPACK_IMPORTED_MODULE_1__Error__["b" /* InvalidOperationError */]("Not supported for binary message");
-        }
-        return this.payload;
-    }
-    get BinaryContent() {
-        if (this.messageType === __WEBPACK_IMPORTED_MODULE_0__ConnectionMessage__["b" /* MessageType */].Text) {
-            throw new __WEBPACK_IMPORTED_MODULE_1__Error__["b" /* InvalidOperationError */]("Not supported for text message");
-        }
-        return this.payload;
-    }
-    get Id() {
-        return this.id;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = RawWebsocketMessage;
-
-
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar Error_1 = __webpack_require__(/*! ./Error */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Error.js\");\nvar List = /** @class */ (function () {\n    function List(list) {\n        var _this = this;\n        this.subscriptionIdCounter = 0;\n        this.addSubscriptions = {};\n        this.removeSubscriptions = {};\n        this.disposedSubscriptions = {};\n        this.disposeReason = null;\n        this.Get = function (itemIndex) {\n            _this.ThrowIfDisposed();\n            return _this.list[itemIndex];\n        };\n        this.First = function () {\n            return _this.Get(0);\n        };\n        this.Last = function () {\n            return _this.Get(_this.Length() - 1);\n        };\n        this.Add = function (item) {\n            _this.ThrowIfDisposed();\n            _this.InsertAt(_this.list.length, item);\n        };\n        this.InsertAt = function (index, item) {\n            _this.ThrowIfDisposed();\n            if (index === 0) {\n                _this.list.unshift(item);\n            }\n            else if (index === _this.list.length) {\n                _this.list.push(item);\n            }\n            else {\n                _this.list.splice(index, 0, item);\n            }\n            _this.TriggerSubscriptions(_this.addSubscriptions);\n        };\n        this.RemoveFirst = function () {\n            _this.ThrowIfDisposed();\n            return _this.RemoveAt(0);\n        };\n        this.RemoveLast = function () {\n            _this.ThrowIfDisposed();\n            return _this.RemoveAt(_this.Length() - 1);\n        };\n        this.RemoveAt = function (index) {\n            _this.ThrowIfDisposed();\n            return _this.Remove(index, 1)[0];\n        };\n        this.Remove = function (index, count) {\n            _this.ThrowIfDisposed();\n            var removedElements = _this.list.splice(index, count);\n            _this.TriggerSubscriptions(_this.removeSubscriptions);\n            return removedElements;\n        };\n        this.Clear = function () {\n            _this.ThrowIfDisposed();\n            _this.Remove(0, _this.Length());\n        };\n        this.Length = function () {\n            _this.ThrowIfDisposed();\n            return _this.list.length;\n        };\n        this.OnAdded = function (addedCallback) {\n            _this.ThrowIfDisposed();\n            var subscriptionId = _this.subscriptionIdCounter++;\n            _this.addSubscriptions[subscriptionId] = addedCallback;\n            return {\n                Detach: function () {\n                    delete _this.addSubscriptions[subscriptionId];\n                },\n            };\n        };\n        this.OnRemoved = function (removedCallback) {\n            _this.ThrowIfDisposed();\n            var subscriptionId = _this.subscriptionIdCounter++;\n            _this.removeSubscriptions[subscriptionId] = removedCallback;\n            return {\n                Detach: function () {\n                    delete _this.removeSubscriptions[subscriptionId];\n                },\n            };\n        };\n        this.OnDisposed = function (disposedCallback) {\n            _this.ThrowIfDisposed();\n            var subscriptionId = _this.subscriptionIdCounter++;\n            _this.disposedSubscriptions[subscriptionId] = disposedCallback;\n            return {\n                Detach: function () {\n                    delete _this.disposedSubscriptions[subscriptionId];\n                },\n            };\n        };\n        this.Join = function (seperator) {\n            _this.ThrowIfDisposed();\n            return _this.list.join(seperator);\n        };\n        this.ToArray = function () {\n            var cloneCopy = Array();\n            _this.list.forEach(function (val) {\n                cloneCopy.push(val);\n            });\n            return cloneCopy;\n        };\n        this.Any = function (callback) {\n            _this.ThrowIfDisposed();\n            if (callback) {\n                return _this.Where(callback).Length() > 0;\n            }\n            else {\n                return _this.Length() > 0;\n            }\n        };\n        this.All = function (callback) {\n            _this.ThrowIfDisposed();\n            return _this.Where(callback).Length() === _this.Length();\n        };\n        this.ForEach = function (callback) {\n            _this.ThrowIfDisposed();\n            for (var i = 0; i < _this.Length(); i++) {\n                callback(_this.list[i], i);\n            }\n        };\n        this.Select = function (callback) {\n            _this.ThrowIfDisposed();\n            var selectList = [];\n            for (var i = 0; i < _this.list.length; i++) {\n                selectList.push(callback(_this.list[i], i));\n            }\n            return new List(selectList);\n        };\n        this.Where = function (callback) {\n            _this.ThrowIfDisposed();\n            var filteredList = new List();\n            for (var i = 0; i < _this.list.length; i++) {\n                if (callback(_this.list[i], i)) {\n                    filteredList.Add(_this.list[i]);\n                }\n            }\n            return filteredList;\n        };\n        this.OrderBy = function (compareFn) {\n            _this.ThrowIfDisposed();\n            var clonedArray = _this.ToArray();\n            var orderedArray = clonedArray.sort(compareFn);\n            return new List(orderedArray);\n        };\n        this.OrderByDesc = function (compareFn) {\n            _this.ThrowIfDisposed();\n            return _this.OrderBy(function (a, b) { return compareFn(b, a); });\n        };\n        this.Clone = function () {\n            _this.ThrowIfDisposed();\n            return new List(_this.ToArray());\n        };\n        this.Concat = function (list) {\n            _this.ThrowIfDisposed();\n            return new List(_this.list.concat(list.ToArray()));\n        };\n        this.ConcatArray = function (array) {\n            _this.ThrowIfDisposed();\n            return new List(_this.list.concat(array));\n        };\n        this.IsDisposed = function () {\n            return _this.list == null;\n        };\n        this.Dispose = function (reason) {\n            if (!_this.IsDisposed()) {\n                _this.disposeReason = reason;\n                _this.list = null;\n                _this.addSubscriptions = null;\n                _this.removeSubscriptions = null;\n                _this.TriggerSubscriptions(_this.disposedSubscriptions);\n            }\n        };\n        this.ThrowIfDisposed = function () {\n            if (_this.IsDisposed()) {\n                throw new Error_1.ObjectDisposedError(\"List\", _this.disposeReason);\n            }\n        };\n        this.TriggerSubscriptions = function (subscriptions) {\n            if (subscriptions) {\n                for (var subscriptionId in subscriptions) {\n                    if (subscriptionId) {\n                        subscriptions[subscriptionId]();\n                    }\n                }\n            }\n        };\n        this.list = [];\n        // copy the list rather than taking as is.\n        if (list) {\n            for (var _i = 0, list_1 = list; _i < list_1.length; _i++) {\n                var item = list_1[_i];\n                this.list.push(item);\n            }\n        }\n    }\n    return List;\n}());\nexports.List = List;\n\n//# sourceMappingURL=List.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/common/List.js?");
 
 /***/ }),
-/* 31 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/common/PlatformEvent.js":
+/*!***************************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/common/PlatformEvent.js ***!
+  \***************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-class RiffPcmEncoder {
-    constructor(actualSampleRate, desiredSampleRate) {
-        this.channelCount = 1;
-        this.Encode = (isFirstAudioFrame, actualAudioFrame) => {
-            const audioFrame = this.DownSampleAudioFrame(actualAudioFrame, this.actualSampleRate, this.desiredSampleRate);
-            const audioLength = audioFrame.length * 2;
-            if (!isFirstAudioFrame) {
-                const buffer = new ArrayBuffer(audioLength);
-                const view = new DataView(buffer);
-                this.FloatTo16BitPCM(view, 0, audioFrame);
-                return buffer;
-            }
-            const buffer = new ArrayBuffer(44 + audioLength);
-            const bitsPerSample = 16;
-            const bytesPerSample = bitsPerSample / 8;
-            // We dont know ahead of time about the length of audio to stream. So set to 0.
-            const fileLength = 0;
-            // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView
-            const view = new DataView(buffer);
-            /* RIFF identifier */
-            this.SetString(view, 0, "RIFF");
-            /* file length */
-            view.setUint32(4, fileLength, true);
-            /* RIFF type & Format */
-            this.SetString(view, 8, "WAVEfmt ");
-            /* format chunk length */
-            view.setUint32(16, 16, true);
-            /* sample format (raw) */
-            view.setUint16(20, 1, true);
-            /* channel count */
-            view.setUint16(22, this.channelCount, true);
-            /* sample rate */
-            view.setUint32(24, this.desiredSampleRate, true);
-            /* byte rate (sample rate * block align) */
-            view.setUint32(28, this.desiredSampleRate * this.channelCount * bytesPerSample, true);
-            /* block align (channel count * bytes per sample) */
-            view.setUint16(32, this.channelCount * bytesPerSample, true);
-            /* bits per sample */
-            view.setUint16(34, bitsPerSample, true);
-            /* data chunk identifier */
-            this.SetString(view, 36, "data");
-            /* data chunk length */
-            view.setUint32(40, fileLength, true);
-            this.FloatTo16BitPCM(view, 44, audioFrame);
-            return buffer;
-        };
-        this.SetString = (view, offset, str) => {
-            for (let i = 0; i < str.length; i++) {
-                view.setUint8(offset + i, str.charCodeAt(i));
-            }
-        };
-        this.FloatTo16BitPCM = (view, offset, input) => {
-            for (let i = 0; i < input.length; i++, offset += 2) {
-                const s = Math.max(-1, Math.min(1, input[i]));
-                view.setInt16(offset, s < 0 ? s * 0x8000 : s * 0x7FFF, true);
-            }
-        };
-        this.DownSampleAudioFrame = (audioFrame, actualSampleRate, desiredSamplerate) => {
-            if (desiredSamplerate === actualSampleRate || desiredSamplerate > actualSampleRate) {
-                return audioFrame;
-            }
-            const sampleRateRatio = actualSampleRate / desiredSamplerate;
-            const newLength = Math.round(audioFrame.length / sampleRateRatio);
-            const downSampledAudioFrame = new Float32Array(newLength);
-            let offsetResult = 0;
-            let offsetBuffer = 0;
-            while (offsetResult < downSampledAudioFrame.length) {
-                const nextOffsetBuffer = Math.round((offsetResult + 1) * sampleRateRatio);
-                let accum = 0;
-                let count = 0;
-                for (let i = offsetBuffer; i < nextOffsetBuffer && i < audioFrame.length; i++) {
-                    accum += audioFrame[i];
-                    count++;
-                }
-                downSampledAudioFrame[offsetResult] = accum / count;
-                offsetResult++;
-                offsetBuffer = nextOffsetBuffer;
-            }
-            return downSampledAudioFrame;
-        };
-        this.actualSampleRate = actualSampleRate;
-        this.desiredSampleRate = desiredSampleRate;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = RiffPcmEncoder;
-
-
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar Guid_1 = __webpack_require__(/*! ./Guid */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Guid.js\");\nvar EventType;\n(function (EventType) {\n    EventType[EventType[\"Debug\"] = 0] = \"Debug\";\n    EventType[EventType[\"Info\"] = 1] = \"Info\";\n    EventType[EventType[\"Warning\"] = 2] = \"Warning\";\n    EventType[EventType[\"Error\"] = 3] = \"Error\";\n})(EventType = exports.EventType || (exports.EventType = {}));\nvar PlatformEvent = /** @class */ (function () {\n    function PlatformEvent(eventName, eventType) {\n        this.name = eventName;\n        this.eventId = Guid_1.CreateNoDashGuid();\n        this.eventTime = new Date().toISOString();\n        this.eventType = eventType;\n        this.metadata = {};\n    }\n    Object.defineProperty(PlatformEvent.prototype, \"Name\", {\n        get: function () {\n            return this.name;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(PlatformEvent.prototype, \"EventId\", {\n        get: function () {\n            return this.eventId;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(PlatformEvent.prototype, \"EventTime\", {\n        get: function () {\n            return this.eventTime;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(PlatformEvent.prototype, \"EventType\", {\n        get: function () {\n            return this.eventType;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(PlatformEvent.prototype, \"Metadata\", {\n        get: function () {\n            return this.metadata;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    return PlatformEvent;\n}());\nexports.PlatformEvent = PlatformEvent;\n\n//# sourceMappingURL=PlatformEvent.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/common/PlatformEvent.js?");
 
 /***/ }),
-/* 32 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Promise.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Promise.js ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Error__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__InMemoryStorage__ = __webpack_require__(10);
-
-
-class Storage {
-    static get Session() {
-        return Storage.sessionStorage;
-    }
-    static get Local() {
-        return Storage.localStorage;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = Storage;
-
-Storage.sessionStorage = new __WEBPACK_IMPORTED_MODULE_1__InMemoryStorage__["a" /* InMemoryStorage */]();
-Storage.localStorage = new __WEBPACK_IMPORTED_MODULE_1__InMemoryStorage__["a" /* InMemoryStorage */]();
-Storage.SetSessionStorage = (sessionStorage) => {
-    if (!sessionStorage) {
-        throw new __WEBPACK_IMPORTED_MODULE_0__Error__["a" /* ArgumentNullError */]("sessionStorage");
-    }
-    Storage.sessionStorage = sessionStorage;
-};
-Storage.SetLocalStorage = (localStorage) => {
-    if (!localStorage) {
-        throw new __WEBPACK_IMPORTED_MODULE_0__Error__["a" /* ArgumentNullError */]("localStorage");
-    }
-    Storage.localStorage = localStorage;
-};
-
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar Error_1 = __webpack_require__(/*! ./Error */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Error.js\");\nvar PromiseState;\n(function (PromiseState) {\n    PromiseState[PromiseState[\"None\"] = 0] = \"None\";\n    PromiseState[PromiseState[\"Resolved\"] = 1] = \"Resolved\";\n    PromiseState[PromiseState[\"Rejected\"] = 2] = \"Rejected\";\n})(PromiseState = exports.PromiseState || (exports.PromiseState = {}));\nvar PromiseResult = /** @class */ (function () {\n    function PromiseResult(promiseResultEventSource) {\n        var _this = this;\n        this.ThrowIfError = function () {\n            if (_this.IsError) {\n                throw _this.Error;\n            }\n        };\n        promiseResultEventSource.On(function (result) {\n            if (!_this.isCompleted) {\n                _this.isCompleted = true;\n                _this.isError = false;\n                _this.result = result;\n            }\n        }, function (error) {\n            if (!_this.isCompleted) {\n                _this.isCompleted = true;\n                _this.isError = true;\n                _this.error = error;\n            }\n        });\n    }\n    Object.defineProperty(PromiseResult.prototype, \"IsCompleted\", {\n        get: function () {\n            return this.isCompleted;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(PromiseResult.prototype, \"IsError\", {\n        get: function () {\n            return this.isError;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(PromiseResult.prototype, \"Error\", {\n        get: function () {\n            return this.error;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(PromiseResult.prototype, \"Result\", {\n        get: function () {\n            return this.result;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    return PromiseResult;\n}());\nexports.PromiseResult = PromiseResult;\n// tslint:disable-next-line:max-classes-per-file\nvar PromiseResultEventSource = /** @class */ (function () {\n    function PromiseResultEventSource() {\n        var _this = this;\n        this.SetResult = function (result) {\n            _this.onSetResult(result);\n        };\n        this.SetError = function (error) {\n            _this.onSetError(error);\n        };\n        this.On = function (onSetResult, onSetError) {\n            _this.onSetResult = onSetResult;\n            _this.onSetError = onSetError;\n        };\n    }\n    return PromiseResultEventSource;\n}());\nexports.PromiseResultEventSource = PromiseResultEventSource;\n// tslint:disable-next-line:max-classes-per-file\nvar PromiseHelper = /** @class */ (function () {\n    function PromiseHelper() {\n    }\n    PromiseHelper.WhenAll = function (promises) {\n        if (!promises || promises.length === 0) {\n            throw new Error_1.ArgumentNullError(\"promises\");\n        }\n        var deferred = new Deferred();\n        var errors = [];\n        var completedPromises = 0;\n        var checkForCompletion = function () {\n            completedPromises++;\n            if (completedPromises === promises.length) {\n                if (errors.length === 0) {\n                    deferred.Resolve(true);\n                }\n                else {\n                    deferred.Reject(errors.join(\", \"));\n                }\n            }\n        };\n        for (var _i = 0, promises_1 = promises; _i < promises_1.length; _i++) {\n            var promise = promises_1[_i];\n            promise.On(function (r) {\n                checkForCompletion();\n            }, function (e) {\n                errors.push(e);\n                checkForCompletion();\n            });\n        }\n        return deferred.Promise();\n    };\n    PromiseHelper.FromResult = function (result) {\n        var deferred = new Deferred();\n        deferred.Resolve(result);\n        return deferred.Promise();\n    };\n    PromiseHelper.FromError = function (error) {\n        var deferred = new Deferred();\n        deferred.Reject(error);\n        return deferred.Promise();\n    };\n    return PromiseHelper;\n}());\nexports.PromiseHelper = PromiseHelper;\n// TODO: replace with ES6 promises\n// tslint:disable-next-line:max-classes-per-file\nvar Promise = /** @class */ (function () {\n    function Promise(sink) {\n        var _this = this;\n        this.Result = function () {\n            return _this.sink.Result;\n        };\n        this.ContinueWith = function (continuationCallback) {\n            if (!continuationCallback) {\n                throw new Error_1.ArgumentNullError(\"continuationCallback\");\n            }\n            var continuationDeferral = new Deferred();\n            _this.sink.on(function (r) {\n                try {\n                    var continuationResult = continuationCallback(_this.sink.Result);\n                    continuationDeferral.Resolve(continuationResult);\n                }\n                catch (e) {\n                    continuationDeferral.Reject(\"'Unhandled callback error: \" + e + \"'\");\n                }\n            }, function (error) {\n                try {\n                    var continuationResult = continuationCallback(_this.sink.Result);\n                    continuationDeferral.Resolve(continuationResult);\n                }\n                catch (e) {\n                    continuationDeferral.Reject(\"'Unhandled callback error: \" + e + \". InnerError: \" + error + \"'\");\n                }\n            });\n            return continuationDeferral.Promise();\n        };\n        this.OnSuccessContinueWith = function (continuationCallback) {\n            if (!continuationCallback) {\n                throw new Error_1.ArgumentNullError(\"continuationCallback\");\n            }\n            var continuationDeferral = new Deferred();\n            _this.sink.on(function (r) {\n                try {\n                    var continuationResult = continuationCallback(r);\n                    continuationDeferral.Resolve(continuationResult);\n                }\n                catch (e) {\n                    continuationDeferral.Reject(\"'Unhandled callback error: \" + e + \"'\");\n                }\n            }, function (error) {\n                continuationDeferral.Reject(\"'Unhandled callback error: \" + error + \"'\");\n            });\n            return continuationDeferral.Promise();\n        };\n        this.ContinueWithPromise = function (continuationCallback) {\n            if (!continuationCallback) {\n                throw new Error_1.ArgumentNullError(\"continuationCallback\");\n            }\n            var continuationDeferral = new Deferred();\n            _this.sink.on(function (r) {\n                try {\n                    var continuationPromise = continuationCallback(_this.sink.Result);\n                    if (!continuationPromise) {\n                        throw new Error(\"'Continuation callback did not return promise'\");\n                    }\n                    continuationPromise.On(function (continuationResult) {\n                        continuationDeferral.Resolve(continuationResult);\n                    }, function (e) {\n                        continuationDeferral.Reject(e);\n                    });\n                }\n                catch (e) {\n                    continuationDeferral.Reject(\"'Unhandled callback error: \" + e + \"'\");\n                }\n            }, function (error) {\n                try {\n                    var continuationPromise = continuationCallback(_this.sink.Result);\n                    if (!continuationPromise) {\n                        throw new Error(\"Continuation callback did not return promise\");\n                    }\n                    continuationPromise.On(function (continuationResult) {\n                        continuationDeferral.Resolve(continuationResult);\n                    }, function (e) {\n                        continuationDeferral.Reject(e);\n                    });\n                }\n                catch (e) {\n                    continuationDeferral.Reject(\"'Unhandled callback error: \" + e + \". InnerError: \" + error + \"'\");\n                }\n            });\n            return continuationDeferral.Promise();\n        };\n        this.OnSuccessContinueWithPromise = function (continuationCallback) {\n            if (!continuationCallback) {\n                throw new Error_1.ArgumentNullError(\"continuationCallback\");\n            }\n            var continuationDeferral = new Deferred();\n            _this.sink.on(function (r) {\n                try {\n                    var continuationPromise = continuationCallback(r);\n                    if (!continuationPromise) {\n                        throw new Error(\"Continuation callback did not return promise\");\n                    }\n                    continuationPromise.On(function (continuationResult) {\n                        continuationDeferral.Resolve(continuationResult);\n                    }, function (e) {\n                        continuationDeferral.Reject(e);\n                    });\n                }\n                catch (e) {\n                    continuationDeferral.Reject(\"'Unhandled callback error: \" + e + \"'\");\n                }\n            }, function (error) {\n                continuationDeferral.Reject(\"'Unhandled callback error: \" + error + \".'\");\n            });\n            return continuationDeferral.Promise();\n        };\n        this.On = function (successCallback, errorCallback) {\n            if (!successCallback) {\n                throw new Error_1.ArgumentNullError(\"successCallback\");\n            }\n            if (!errorCallback) {\n                throw new Error_1.ArgumentNullError(\"errorCallback\");\n            }\n            _this.sink.on(successCallback, errorCallback);\n            return _this;\n        };\n        this.Finally = function (callback) {\n            if (!callback) {\n                throw new Error_1.ArgumentNullError(\"callback\");\n            }\n            var callbackWrapper = function (_) {\n                callback();\n            };\n            return _this.On(callbackWrapper, callbackWrapper);\n        };\n        this.sink = sink;\n    }\n    return Promise;\n}());\nexports.Promise = Promise;\n// tslint:disable-next-line:max-classes-per-file\nvar Deferred = /** @class */ (function () {\n    function Deferred() {\n        var _this = this;\n        this.State = function () {\n            return _this.sink.State;\n        };\n        this.Promise = function () {\n            return _this.promise;\n        };\n        this.Resolve = function (result) {\n            _this.sink.Resolve(result);\n            return _this;\n        };\n        this.Reject = function (error) {\n            _this.sink.Reject(error);\n            return _this;\n        };\n        this.sink = new Sink();\n        this.promise = new Promise(this.sink);\n    }\n    return Deferred;\n}());\nexports.Deferred = Deferred;\n// tslint:disable-next-line:max-classes-per-file\nvar Sink = /** @class */ (function () {\n    function Sink() {\n        var _this = this;\n        this.state = PromiseState.None;\n        this.promiseResult = null;\n        this.promiseResultEvents = null;\n        this.successHandlers = [];\n        this.errorHandlers = [];\n        this.Resolve = function (result) {\n            if (_this.state !== PromiseState.None) {\n                throw new Error(\"'Cannot resolve a completed promise'\");\n            }\n            _this.state = PromiseState.Resolved;\n            _this.promiseResultEvents.SetResult(result);\n            for (var i = 0; i < _this.successHandlers.length; i++) {\n                _this.ExecuteSuccessCallback(result, _this.successHandlers[i], _this.errorHandlers[i]);\n            }\n            _this.DetachHandlers();\n        };\n        this.Reject = function (error) {\n            if (_this.state !== PromiseState.None) {\n                throw new Error(\"'Cannot reject a completed promise'\");\n            }\n            _this.state = PromiseState.Rejected;\n            _this.promiseResultEvents.SetError(error);\n            for (var _i = 0, _a = _this.errorHandlers; _i < _a.length; _i++) {\n                var errorHandler = _a[_i];\n                _this.ExecuteErrorCallback(error, errorHandler);\n            }\n            _this.DetachHandlers();\n        };\n        this.on = function (successCallback, errorCallback) {\n            if (successCallback == null) {\n                successCallback = function (r) { return; };\n            }\n            if (_this.state === PromiseState.None) {\n                _this.successHandlers.push(successCallback);\n                _this.errorHandlers.push(errorCallback);\n            }\n            else {\n                if (_this.state === PromiseState.Resolved) {\n                    _this.ExecuteSuccessCallback(_this.promiseResult.Result, successCallback, errorCallback);\n                }\n                else if (_this.state === PromiseState.Rejected) {\n                    _this.ExecuteErrorCallback(_this.promiseResult.Error, errorCallback);\n                }\n                _this.DetachHandlers();\n            }\n        };\n        this.ExecuteSuccessCallback = function (result, successCallback, errorCallback) {\n            try {\n                successCallback(result);\n            }\n            catch (e) {\n                _this.ExecuteErrorCallback(\"'Unhandled callback error: \" + e + \"'\", errorCallback);\n            }\n        };\n        this.ExecuteErrorCallback = function (error, errorCallback) {\n            if (errorCallback) {\n                try {\n                    errorCallback(error);\n                }\n                catch (e) {\n                    throw new Error(\"'Unhandled callback error: \" + e + \". InnerError: \" + error + \"'\");\n                }\n            }\n            else {\n                throw new Error(\"'Unhandled error: \" + error + \"'\");\n            }\n        };\n        this.DetachHandlers = function () {\n            _this.errorHandlers = [];\n            _this.successHandlers = [];\n        };\n        this.promiseResultEvents = new PromiseResultEventSource();\n        this.promiseResult = new PromiseResult(this.promiseResultEvents);\n    }\n    Object.defineProperty(Sink.prototype, \"State\", {\n        get: function () {\n            return this.state;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(Sink.prototype, \"Result\", {\n        get: function () {\n            return this.promiseResult;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    return Sink;\n}());\nexports.Sink = Sink;\n\n//# sourceMappingURL=Promise.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Promise.js?");
 
 /***/ }),
-/* 33 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Queue.js":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Queue.js ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Error__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Guid__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Queue__ = __webpack_require__(13);
-
-
-
-class Stream {
-    constructor(streamId) {
-        this.readerIdCounter = 1;
-        this.isEnded = false;
-        this.Write = (buffer) => {
-            this.ThrowIfClosed();
-            this.WriteStreamChunk({
-                Buffer: buffer,
-                IsEnd: false,
-            });
-        };
-        this.GetReader = () => {
-            const readerId = this.readerIdCounter;
-            this.readerIdCounter++;
-            const readerQueue = new __WEBPACK_IMPORTED_MODULE_2__Queue__["a" /* Queue */]();
-            const currentLength = this.streambuffer.length;
-            this.readerQueues[readerId] = readerQueue;
-            for (let i = 0; i < currentLength; i++) {
-                readerQueue.Enqueue(this.streambuffer[i]);
-            }
-            return new StreamReader(this.id, readerQueue, () => {
-                delete this.readerQueues[readerId];
-            });
-        };
-        this.Close = () => {
-            if (!this.isEnded) {
-                this.WriteStreamChunk({
-                    Buffer: null,
-                    IsEnd: true,
-                });
-                this.isEnded = true;
-            }
-        };
-        this.WriteStreamChunk = (streamChunk) => {
-            this.ThrowIfClosed();
-            this.streambuffer.push(streamChunk);
-            for (const readerId in this.readerQueues) {
-                if (!this.readerQueues[readerId].IsDisposed()) {
-                    try {
-                        this.readerQueues[readerId].Enqueue(streamChunk);
-                    }
-                    catch (e) {
-                        // Do nothing
-                    }
-                }
-            }
-        };
-        this.ThrowIfClosed = () => {
-            if (this.isEnded) {
-                throw new __WEBPACK_IMPORTED_MODULE_0__Error__["b" /* InvalidOperationError */]("Stream closed");
-            }
-        };
-        this.id = streamId ? streamId : Object(__WEBPACK_IMPORTED_MODULE_1__Guid__["a" /* CreateNoDashGuid */])();
-        this.streambuffer = [];
-        this.readerQueues = {};
-    }
-    get IsClosed() {
-        return this.isEnded;
-    }
-    get Id() {
-        return this.id;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = Stream;
-
-// tslint:disable-next-line:max-classes-per-file
-class StreamReader {
-    constructor(streamId, readerQueue, onClose) {
-        this.isClosed = false;
-        this.Read = () => {
-            if (this.IsClosed) {
-                throw new __WEBPACK_IMPORTED_MODULE_0__Error__["b" /* InvalidOperationError */]("StreamReader closed");
-            }
-            return this.readerQueue
-                .Dequeue()
-                .OnSuccessContinueWith((streamChunk) => {
-                if (streamChunk.IsEnd) {
-                    this.readerQueue.Dispose("End of stream reached");
-                }
-                return streamChunk;
-            });
-        };
-        this.Close = () => {
-            if (!this.isClosed) {
-                this.isClosed = true;
-                this.readerQueue.Dispose("StreamReader closed");
-                this.onClose();
-            }
-        };
-        this.readerQueue = readerQueue;
-        this.onClose = onClose;
-        this.streamId = streamId;
-    }
-    get IsClosed() {
-        return this.isClosed;
-    }
-    get StreamId() {
-        return this.streamId;
-    }
-}
-/* unused harmony export StreamReader */
-
-
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar Error_1 = __webpack_require__(/*! ./Error */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Error.js\");\nvar List_1 = __webpack_require__(/*! ./List */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/List.js\");\nvar Promise_1 = __webpack_require__(/*! ./Promise */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Promise.js\");\nvar SubscriberType;\n(function (SubscriberType) {\n    SubscriberType[SubscriberType[\"Dequeue\"] = 0] = \"Dequeue\";\n    SubscriberType[SubscriberType[\"Peek\"] = 1] = \"Peek\";\n})(SubscriberType || (SubscriberType = {}));\nvar Queue = /** @class */ (function () {\n    function Queue(list) {\n        var _this = this;\n        this.promiseStore = new List_1.List();\n        this.isDrainInProgress = false;\n        this.isDisposing = false;\n        this.disposeReason = null;\n        this.Enqueue = function (item) {\n            _this.ThrowIfDispose();\n            _this.EnqueueFromPromise(Promise_1.PromiseHelper.FromResult(item));\n        };\n        this.EnqueueFromPromise = function (promise) {\n            _this.ThrowIfDispose();\n            _this.promiseStore.Add(promise);\n            promise.Finally(function () {\n                while (_this.promiseStore.Length() > 0) {\n                    if (!_this.promiseStore.First().Result().IsCompleted) {\n                        break;\n                    }\n                    else {\n                        var p = _this.promiseStore.RemoveFirst();\n                        if (!p.Result().IsError) {\n                            _this.list.Add(p.Result().Result);\n                        }\n                        else {\n                            // TODO: Log as warning.\n                        }\n                    }\n                }\n            });\n        };\n        this.Dequeue = function () {\n            _this.ThrowIfDispose();\n            var deferredSubscriber = new Promise_1.Deferred();\n            _this.subscribers.Add({ deferral: deferredSubscriber, type: SubscriberType.Dequeue });\n            _this.Drain();\n            return deferredSubscriber.Promise();\n        };\n        this.Peek = function () {\n            _this.ThrowIfDispose();\n            var deferredSubscriber = new Promise_1.Deferred();\n            _this.subscribers.Add({ deferral: deferredSubscriber, type: SubscriberType.Peek });\n            _this.Drain();\n            return deferredSubscriber.Promise();\n        };\n        this.Length = function () {\n            _this.ThrowIfDispose();\n            return _this.list.Length();\n        };\n        this.IsDisposed = function () {\n            return _this.subscribers == null;\n        };\n        this.DrainAndDispose = function (pendingItemProcessor, reason) {\n            if (!_this.IsDisposed() && !_this.isDisposing) {\n                _this.disposeReason = reason;\n                _this.isDisposing = true;\n                while (_this.subscribers.Length() > 0) {\n                    var subscriber = _this.subscribers.RemoveFirst();\n                    // TODO: this needs work (Resolve(null) instead?).\n                    subscriber.deferral.Reject(\"Disposed\");\n                }\n                for (var _i = 0, _a = _this.detachables; _i < _a.length; _i++) {\n                    var detachable = _a[_i];\n                    detachable.Detach();\n                }\n                if (_this.promiseStore.Length() > 0 && pendingItemProcessor) {\n                    return Promise_1.PromiseHelper\n                        .WhenAll(_this.promiseStore.ToArray())\n                        .ContinueWith(function () {\n                        _this.subscribers = null;\n                        _this.list.ForEach(function (item, index) {\n                            pendingItemProcessor(item);\n                        });\n                        _this.list = null;\n                        return true;\n                    });\n                }\n                else {\n                    _this.subscribers = null;\n                    _this.list = null;\n                }\n            }\n            return Promise_1.PromiseHelper.FromResult(true);\n        };\n        this.Dispose = function (reason) {\n            _this.DrainAndDispose(null, reason);\n        };\n        this.Drain = function () {\n            if (!_this.isDrainInProgress && !_this.isDisposing) {\n                _this.isDrainInProgress = true;\n                while (_this.list.Length() > 0 && _this.subscribers.Length() > 0 && !_this.isDisposing) {\n                    var subscriber = _this.subscribers.RemoveFirst();\n                    if (subscriber.type === SubscriberType.Peek) {\n                        subscriber.deferral.Resolve(_this.list.First());\n                    }\n                    else {\n                        var dequeuedItem = _this.list.RemoveFirst();\n                        subscriber.deferral.Resolve(dequeuedItem);\n                    }\n                }\n                _this.isDrainInProgress = false;\n            }\n        };\n        this.ThrowIfDispose = function () {\n            if (_this.IsDisposed()) {\n                if (_this.disposeReason) {\n                    throw new Error_1.InvalidOperationError(_this.disposeReason);\n                }\n                throw new Error_1.ObjectDisposedError(\"Queue\");\n            }\n            else if (_this.isDisposing) {\n                throw new Error_1.InvalidOperationError(\"Queue disposing\");\n            }\n        };\n        this.list = list ? list : new List_1.List();\n        this.detachables = [];\n        this.subscribers = new List_1.List();\n        this.detachables.push(this.list.OnAdded(this.Drain));\n    }\n    return Queue;\n}());\nexports.Queue = Queue;\n\n//# sourceMappingURL=Queue.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Queue.js?");
 
 /***/ }),
-/* 34 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/common/RawWebsocketMessage.js":
+/*!*********************************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/common/RawWebsocketMessage.js ***!
+  \*********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_Exports__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__IAuthentication__ = __webpack_require__(5);
-
-
-const AuthHeader = "Authorization";
-class CognitiveTokenAuthentication {
-    constructor(fetchCallback, fetchOnExpiryCallback) {
-        this.Fetch = (authFetchEventId) => {
-            return this.fetchCallback(authFetchEventId).OnSuccessContinueWith((token) => new __WEBPACK_IMPORTED_MODULE_1__IAuthentication__["a" /* AuthInfo */](AuthHeader, token));
-        };
-        this.FetchOnExpiry = (authFetchEventId) => {
-            return this.fetchOnExpiryCallback(authFetchEventId).OnSuccessContinueWith((token) => new __WEBPACK_IMPORTED_MODULE_1__IAuthentication__["a" /* AuthInfo */](AuthHeader, token));
-        };
-        if (!fetchCallback) {
-            throw new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["a" /* ArgumentNullError */]("fetchCallback");
-        }
-        if (!fetchOnExpiryCallback) {
-            throw new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["a" /* ArgumentNullError */]("fetchOnExpiryCallback");
-        }
-        this.fetchCallback = fetchCallback;
-        this.fetchOnExpiryCallback = fetchOnExpiryCallback;
-    }
-}
-/* unused harmony export CognitiveTokenAuthentication */
-
-
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar ConnectionMessage_1 = __webpack_require__(/*! ./ConnectionMessage */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/ConnectionMessage.js\");\nvar Error_1 = __webpack_require__(/*! ./Error */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Error.js\");\nvar Guid_1 = __webpack_require__(/*! ./Guid */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Guid.js\");\nvar RawWebsocketMessage = /** @class */ (function () {\n    function RawWebsocketMessage(messageType, payload, id) {\n        this.payload = null;\n        if (!payload) {\n            throw new Error_1.ArgumentNullError(\"payload\");\n        }\n        if (messageType === ConnectionMessage_1.MessageType.Binary && !(payload instanceof ArrayBuffer)) {\n            throw new Error_1.InvalidOperationError(\"Payload must be ArrayBuffer\");\n        }\n        if (messageType === ConnectionMessage_1.MessageType.Text && !(typeof (payload) === \"string\")) {\n            throw new Error_1.InvalidOperationError(\"Payload must be a string\");\n        }\n        this.messageType = messageType;\n        this.payload = payload;\n        this.id = id ? id : Guid_1.CreateNoDashGuid();\n    }\n    Object.defineProperty(RawWebsocketMessage.prototype, \"MessageType\", {\n        get: function () {\n            return this.messageType;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(RawWebsocketMessage.prototype, \"Payload\", {\n        get: function () {\n            return this.payload;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(RawWebsocketMessage.prototype, \"TextContent\", {\n        get: function () {\n            if (this.messageType === ConnectionMessage_1.MessageType.Binary) {\n                throw new Error_1.InvalidOperationError(\"Not supported for binary message\");\n            }\n            return this.payload;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(RawWebsocketMessage.prototype, \"BinaryContent\", {\n        get: function () {\n            if (this.messageType === ConnectionMessage_1.MessageType.Text) {\n                throw new Error_1.InvalidOperationError(\"Not supported for text message\");\n            }\n            return this.payload;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(RawWebsocketMessage.prototype, \"Id\", {\n        get: function () {\n            return this.id;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    return RawWebsocketMessage;\n}());\nexports.RawWebsocketMessage = RawWebsocketMessage;\n\n//# sourceMappingURL=RawWebsocketMessage.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/common/RawWebsocketMessage.js?");
 
 /***/ }),
-/* 35 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/common/RiffPcmEncoder.js":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/common/RiffPcmEncoder.js ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_Exports__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__RecognitionEvents__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__RecognizerConfig__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ServiceTelemetryListener_Internal__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__SpeechConnectionMessage_Internal__ = __webpack_require__(37);
-
-
-
-
-
-class Recognizer {
-    constructor(authentication, connectionFactory, audioSource, recognizerConfig) {
-        this.Recognize = (onEventCallback, speechContextJson) => {
-            const requestSession = new RequestSession(this.audioSource.Id(), onEventCallback);
-            requestSession.ListenForServiceTelemetry(this.audioSource.Events);
-            return this.audioSource
-                .Attach(requestSession.AudioNodeId)
-                .ContinueWithPromise((result) => {
-                if (result.IsError) {
-                    requestSession.OnAudioSourceAttachCompleted(null, true, result.Error);
-                    throw new Error(result.Error);
-                }
-                else {
-                    requestSession.OnAudioSourceAttachCompleted(result.Result, false);
-                }
-                const audioNode = result.Result;
-                this.FetchConnection(requestSession)
-                    .OnSuccessContinueWith((connection) => {
-                    const messageRetrievalPromise = this.ReceiveMessage(connection, requestSession);
-                    const messageSendPromise = this.SendSpeechConfig(requestSession.RequestId, connection, this.recognizerConfig.SpeechConfig.Serialize())
-                        .OnSuccessContinueWithPromise((_) => {
-                        return this.SendSpeechContext(requestSession.RequestId, connection, speechContextJson)
-                            .OnSuccessContinueWithPromise((_) => {
-                            return this.SendAudio(requestSession.RequestId, connection, audioNode, requestSession);
-                        });
-                    });
-                    const completionPromise = __WEBPACK_IMPORTED_MODULE_0__common_Exports__["z" /* PromiseHelper */].WhenAll([messageRetrievalPromise, messageSendPromise]);
-                    completionPromise.On((r) => {
-                        requestSession.Dispose();
-                        this.SendTelemetryData(requestSession.RequestId, connection, requestSession.GetTelemetry());
-                    }, (error) => {
-                        requestSession.Dispose(error);
-                        this.SendTelemetryData(requestSession.RequestId, connection, requestSession.GetTelemetry());
-                    });
-                    return completionPromise;
-                });
-                return requestSession.CompletionPromise;
-            });
-        };
-        this.FetchConnection = (requestSession, isUnAuthorized = false) => {
-            if (this.connectionFetchPromise) {
-                if (this.connectionFetchPromise.Result().IsError
-                    || this.connectionFetchPromise.Result().Result.State() === __WEBPACK_IMPORTED_MODULE_0__common_Exports__["r" /* ConnectionState */].Disconnected) {
-                    this.connectionId = null;
-                    this.connectionFetchPromise = null;
-                    return this.FetchConnection(requestSession);
-                }
-                else {
-                    requestSession.OnPreConnectionStart(this.authFetchEventId, this.connectionId);
-                    requestSession.OnConnectionEstablishCompleted(200);
-                    requestSession.ListenForServiceTelemetry(this.connectionFetchPromise.Result().Result.Events);
-                    return this.connectionFetchPromise;
-                }
-            }
-            this.authFetchEventId = Object(__WEBPACK_IMPORTED_MODULE_0__common_Exports__["s" /* CreateNoDashGuid */])();
-            this.connectionId = Object(__WEBPACK_IMPORTED_MODULE_0__common_Exports__["s" /* CreateNoDashGuid */])();
-            requestSession.OnPreConnectionStart(this.authFetchEventId, this.connectionId);
-            const authPromise = isUnAuthorized ? this.authentication.FetchOnExpiry(this.authFetchEventId) : this.authentication.Fetch(this.authFetchEventId);
-            this.connectionFetchPromise = authPromise
-                .ContinueWithPromise((result) => {
-                if (result.IsError) {
-                    requestSession.OnAuthCompleted(true, result.Error);
-                    throw new Error(result.Error);
-                }
-                else {
-                    requestSession.OnAuthCompleted(false);
-                }
-                const connection = this.connectionFactory.Create(this.recognizerConfig, result.Result, this.connectionId);
-                requestSession.ListenForServiceTelemetry(connection.Events);
-                return connection.Open().OnSuccessContinueWithPromise((response) => {
-                    if (response.StatusCode === 200) {
-                        requestSession.OnConnectionEstablishCompleted(response.StatusCode);
-                        return __WEBPACK_IMPORTED_MODULE_0__common_Exports__["z" /* PromiseHelper */].FromResult(connection);
-                    }
-                    else if (response.StatusCode === 403 && !isUnAuthorized) {
-                        return this.FetchConnection(requestSession, true);
-                    }
-                    else {
-                        requestSession.OnConnectionEstablishCompleted(response.StatusCode, response.Reason);
-                        return __WEBPACK_IMPORTED_MODULE_0__common_Exports__["z" /* PromiseHelper */].FromError(`Unable to contact server. StatusCode: ${response.StatusCode}, Reason: ${response.Reason}`);
-                    }
-                });
-            });
-            return this.connectionFetchPromise;
-        };
-        this.ReceiveMessage = (connection, requestSession) => {
-            return connection
-                .Read()
-                .OnSuccessContinueWithPromise((message) => {
-                const connectionMessage = __WEBPACK_IMPORTED_MODULE_4__SpeechConnectionMessage_Internal__["a" /* SpeechConnectionMessage */].FromConnectionMessage(message);
-                if (connectionMessage.RequestId.toLowerCase() === requestSession.RequestId.toLowerCase()) {
-                    switch (connectionMessage.Path.toLowerCase()) {
-                        case "turn.start":
-                            requestSession.OnServiceTurnStartResponse(JSON.parse(connectionMessage.TextBody));
-                            break;
-                        case "speech.startDetected":
-                            requestSession.OnServiceSpeechStartDetectedResponse(JSON.parse(connectionMessage.TextBody));
-                            break;
-                        case "speech.hypothesis":
-                            requestSession.OnServiceSpeechHypothesisResponse(JSON.parse(connectionMessage.TextBody));
-                            break;
-                        case "speech.fragment":
-                            requestSession.OnServiceSpeechFragmentResponse(JSON.parse(connectionMessage.TextBody));
-                            break;
-                        case "speech.enddetected":
-                            requestSession.OnServiceSpeechEndDetectedResponse(JSON.parse(connectionMessage.TextBody));
-                            break;
-                        case "speech.phrase":
-                            if (this.recognizerConfig.IsContinuousRecognition) {
-                                // For continuous recognition telemetry has to be sent for every phrase as per spec.
-                                this.SendTelemetryData(requestSession.RequestId, connection, requestSession.GetTelemetry());
-                            }
-                            if (this.recognizerConfig.Format === __WEBPACK_IMPORTED_MODULE_2__RecognizerConfig__["g" /* SpeechResultFormat */].Simple) {
-                                requestSession.OnServiceSimpleSpeechPhraseResponse(JSON.parse(connectionMessage.TextBody));
-                            }
-                            else {
-                                requestSession.OnServiceDetailedSpeechPhraseResponse(JSON.parse(connectionMessage.TextBody));
-                            }
-                            break;
-                        case "turn.end":
-                            requestSession.OnServiceTurnEndResponse();
-                            return __WEBPACK_IMPORTED_MODULE_0__common_Exports__["z" /* PromiseHelper */].FromResult(true);
-                        default:
-                            break;
-                    }
-                }
-                return this.ReceiveMessage(connection, requestSession);
-            });
-        };
-        this.SendSpeechConfig = (requestId, connection, speechConfigJson) => {
-            if (speechConfigJson && this.connectionId !== this.speechConfigConnectionId) {
-                this.speechConfigConnectionId = this.connectionId;
-                return connection
-                    .Send(new __WEBPACK_IMPORTED_MODULE_4__SpeechConnectionMessage_Internal__["a" /* SpeechConnectionMessage */](__WEBPACK_IMPORTED_MODULE_0__common_Exports__["x" /* MessageType */].Text, "speech.config", requestId, "application/json", speechConfigJson));
-            }
-            return __WEBPACK_IMPORTED_MODULE_0__common_Exports__["z" /* PromiseHelper */].FromResult(true);
-        };
-        this.SendSpeechContext = (requestId, connection, speechContextJson) => {
-            if (speechContextJson) {
-                return connection
-                    .Send(new __WEBPACK_IMPORTED_MODULE_4__SpeechConnectionMessage_Internal__["a" /* SpeechConnectionMessage */](__WEBPACK_IMPORTED_MODULE_0__common_Exports__["x" /* MessageType */].Text, "speech.context", requestId, "application/json", speechContextJson));
-            }
-            return __WEBPACK_IMPORTED_MODULE_0__common_Exports__["z" /* PromiseHelper */].FromResult(true);
-        };
-        this.SendTelemetryData = (requestId, connection, telemetryData) => {
-            return connection
-                .Send(new __WEBPACK_IMPORTED_MODULE_4__SpeechConnectionMessage_Internal__["a" /* SpeechConnectionMessage */](__WEBPACK_IMPORTED_MODULE_0__common_Exports__["x" /* MessageType */].Text, "telemetry", requestId, "application/json", telemetryData));
-        };
-        this.SendAudio = (requestId, connection, audioStreamNode, requestSession) => {
-            return audioStreamNode
-                .Read()
-                .OnSuccessContinueWithPromise((audioStreamChunk) => {
-                if (requestSession.IsSpeechEnded) {
-                    // If service already recognized audio end then dont send any more audio
-                    return __WEBPACK_IMPORTED_MODULE_0__common_Exports__["z" /* PromiseHelper */].FromResult(true);
-                }
-                else if (audioStreamChunk.IsEnd) {
-                    return connection
-                        .Send(new __WEBPACK_IMPORTED_MODULE_4__SpeechConnectionMessage_Internal__["a" /* SpeechConnectionMessage */](__WEBPACK_IMPORTED_MODULE_0__common_Exports__["x" /* MessageType */].Binary, "audio", requestId, null, null));
-                }
-                else {
-                    return connection
-                        .Send(new __WEBPACK_IMPORTED_MODULE_4__SpeechConnectionMessage_Internal__["a" /* SpeechConnectionMessage */](__WEBPACK_IMPORTED_MODULE_0__common_Exports__["x" /* MessageType */].Binary, "audio", requestId, null, audioStreamChunk.Buffer))
-                        .OnSuccessContinueWithPromise((_) => {
-                        return this.SendAudio(requestId, connection, audioStreamNode, requestSession);
-                    });
-                }
-            });
-        };
-        if (!authentication) {
-            throw new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["a" /* ArgumentNullError */]("authentication");
-        }
-        if (!connectionFactory) {
-            throw new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["a" /* ArgumentNullError */]("connectionFactory");
-        }
-        if (!audioSource) {
-            throw new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["a" /* ArgumentNullError */]("audioSource");
-        }
-        if (!recognizerConfig) {
-            throw new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["a" /* ArgumentNullError */]("recognizerConfig");
-        }
-        this.authentication = authentication;
-        this.connectionFactory = connectionFactory;
-        this.audioSource = audioSource;
-        this.recognizerConfig = recognizerConfig;
-    }
-    get AudioSource() {
-        return this.audioSource;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = Recognizer;
-
-// tslint:disable-next-line:max-classes-per-file
-class RequestSession {
-    constructor(audioSourceId, onEventCallback) {
-        this.isDisposed = false;
-        this.detachables = new Array();
-        this.isAudioNodeDetached = false;
-        this.isCompleted = false;
-        this.OnAudioSourceAttachCompleted = (audioNode, isError, error) => {
-            this.audioNode = audioNode;
-            if (isError) {
-                this.OnComplete(__WEBPACK_IMPORTED_MODULE_1__RecognitionEvents__["c" /* RecognitionCompletionStatus */].AudioSourceError, error);
-            }
-            else {
-                this.OnEvent(new __WEBPACK_IMPORTED_MODULE_1__RecognitionEvents__["b" /* ListeningStartedEvent */](this.requestId, this.audioSourceId, this.audioNodeId));
-            }
-        };
-        this.OnPreConnectionStart = (authFetchEventId, connectionId) => {
-            this.authFetchEventId = authFetchEventId;
-            this.connectionId = connectionId;
-            this.OnEvent(new __WEBPACK_IMPORTED_MODULE_1__RecognitionEvents__["a" /* ConnectingToServiceEvent */](this.requestId, this.authFetchEventId, this.connectionId));
-        };
-        this.OnAuthCompleted = (isError, error) => {
-            if (isError) {
-                this.OnComplete(__WEBPACK_IMPORTED_MODULE_1__RecognitionEvents__["c" /* RecognitionCompletionStatus */].AuthTokenFetchError, error);
-            }
-        };
-        this.OnConnectionEstablishCompleted = (statusCode, reason) => {
-            if (statusCode === 200) {
-                this.OnEvent(new __WEBPACK_IMPORTED_MODULE_1__RecognitionEvents__["e" /* RecognitionStartedEvent */](this.RequestId, this.audioSourceId, this.audioNodeId, this.authFetchEventId, this.connectionId));
-                return;
-            }
-            else if (statusCode === 403) {
-                this.OnComplete(__WEBPACK_IMPORTED_MODULE_1__RecognitionEvents__["c" /* RecognitionCompletionStatus */].UnAuthorized, reason);
-            }
-            else {
-                this.OnComplete(__WEBPACK_IMPORTED_MODULE_1__RecognitionEvents__["c" /* RecognitionCompletionStatus */].ConnectError, reason);
-            }
-        };
-        this.OnServiceTurnStartResponse = (response) => {
-            if (response && response.context && response.context.serviceTag) {
-                this.serviceTag = response.context.serviceTag;
-            }
-        };
-        this.OnServiceSpeechStartDetectedResponse = (result) => {
-            this.OnEvent(new __WEBPACK_IMPORTED_MODULE_1__RecognitionEvents__["l" /* SpeechStartDetectedEvent */](this.RequestId, result));
-        };
-        this.OnServiceSpeechHypothesisResponse = (result) => {
-            this.OnEvent(new __WEBPACK_IMPORTED_MODULE_1__RecognitionEvents__["j" /* SpeechHypothesisEvent */](this.RequestId, result));
-        };
-        this.OnServiceSpeechFragmentResponse = (result) => {
-            this.OnEvent(new __WEBPACK_IMPORTED_MODULE_1__RecognitionEvents__["i" /* SpeechFragmentEvent */](this.RequestId, result));
-        };
-        this.OnServiceSpeechEndDetectedResponse = (result) => {
-            this.DetachAudioNode();
-            this.OnEvent(new __WEBPACK_IMPORTED_MODULE_1__RecognitionEvents__["h" /* SpeechEndDetectedEvent */](this.RequestId, result));
-        };
-        this.OnServiceSimpleSpeechPhraseResponse = (result) => {
-            this.OnEvent(new __WEBPACK_IMPORTED_MODULE_1__RecognitionEvents__["k" /* SpeechSimplePhraseEvent */](this.RequestId, result));
-        };
-        this.OnServiceDetailedSpeechPhraseResponse = (result) => {
-            this.OnEvent(new __WEBPACK_IMPORTED_MODULE_1__RecognitionEvents__["g" /* SpeechDetailedPhraseEvent */](this.RequestId, result));
-        };
-        this.OnServiceTurnEndResponse = () => {
-            this.OnComplete(__WEBPACK_IMPORTED_MODULE_1__RecognitionEvents__["c" /* RecognitionCompletionStatus */].Success);
-        };
-        this.OnConnectionError = (error) => {
-            this.OnComplete(__WEBPACK_IMPORTED_MODULE_1__RecognitionEvents__["c" /* RecognitionCompletionStatus */].UnknownError, error);
-        };
-        this.Dispose = (error) => {
-            if (!this.isDisposed) {
-                // we should have completed by now. If we did not its an unknown error.
-                this.OnComplete(__WEBPACK_IMPORTED_MODULE_1__RecognitionEvents__["c" /* RecognitionCompletionStatus */].UnknownError, error);
-                this.isDisposed = true;
-                for (const detachable of this.detachables) {
-                    detachable.Detach();
-                }
-                this.serviceTelemetryListener.Dispose();
-            }
-        };
-        this.GetTelemetry = () => {
-            return this.serviceTelemetryListener.GetTelemetry();
-        };
-        this.OnComplete = (status, error) => {
-            if (!this.isCompleted) {
-                this.isCompleted = true;
-                this.DetachAudioNode();
-                this.OnEvent(new __WEBPACK_IMPORTED_MODULE_1__RecognitionEvents__["d" /* RecognitionEndedEvent */](this.RequestId, this.audioSourceId, this.audioNodeId, this.authFetchEventId, this.connectionId, this.serviceTag, status, error ? error : ""));
-            }
-        };
-        this.DetachAudioNode = () => {
-            if (!this.isAudioNodeDetached) {
-                this.isAudioNodeDetached = true;
-                if (this.audioNode) {
-                    this.audioNode.Detach();
-                }
-            }
-        };
-        this.OnEvent = (event) => {
-            this.serviceTelemetryListener.OnEvent(event);
-            __WEBPACK_IMPORTED_MODULE_0__common_Exports__["w" /* Events */].Instance.OnEvent(event);
-            if (this.onEventCallback) {
-                this.onEventCallback(event);
-            }
-        };
-        this.audioSourceId = audioSourceId;
-        this.onEventCallback = onEventCallback;
-        this.requestId = Object(__WEBPACK_IMPORTED_MODULE_0__common_Exports__["s" /* CreateNoDashGuid */])();
-        this.audioNodeId = Object(__WEBPACK_IMPORTED_MODULE_0__common_Exports__["s" /* CreateNoDashGuid */])();
-        this.requestCompletionDeferral = new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["t" /* Deferred */]();
-        this.serviceTelemetryListener = new __WEBPACK_IMPORTED_MODULE_3__ServiceTelemetryListener_Internal__["a" /* ServiceTelemetryListener */](this.requestId, this.audioSourceId, this.audioNodeId);
-        this.OnEvent(new __WEBPACK_IMPORTED_MODULE_1__RecognitionEvents__["f" /* RecognitionTriggeredEvent */](this.RequestId, this.audioSourceId, this.audioNodeId));
-    }
-    get RequestId() {
-        return this.requestId;
-    }
-    get AudioNodeId() {
-        return this.audioNodeId;
-    }
-    get CompletionPromise() {
-        return this.requestCompletionDeferral.Promise();
-    }
-    get IsSpeechEnded() {
-        return this.isAudioNodeDetached;
-    }
-    get IsCompleted() {
-        return this.isCompleted;
-    }
-    ListenForServiceTelemetry(eventSource) {
-        this.detachables.push(eventSource.AttachListener(this.serviceTelemetryListener));
-    }
-}
-
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar RiffPcmEncoder = /** @class */ (function () {\n    function RiffPcmEncoder(actualSampleRate, desiredSampleRate) {\n        var _this = this;\n        this.channelCount = 1;\n        this.Encode = function (needHeader, actualAudioFrame) {\n            var audioFrame = _this.DownSampleAudioFrame(actualAudioFrame, _this.actualSampleRate, _this.desiredSampleRate);\n            if (!audioFrame) {\n                return null;\n            }\n            var audioLength = audioFrame.length * 2;\n            if (!needHeader) {\n                var buffer_1 = new ArrayBuffer(audioLength);\n                var view_1 = new DataView(buffer_1);\n                _this.FloatTo16BitPCM(view_1, 0, audioFrame);\n                return buffer_1;\n            }\n            var buffer = new ArrayBuffer(44 + audioLength);\n            var bitsPerSample = 16;\n            var bytesPerSample = bitsPerSample / 8;\n            // We dont know ahead of time about the length of audio to stream. So set to 0.\n            var fileLength = 0;\n            // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView\n            var view = new DataView(buffer);\n            /* RIFF identifier */\n            _this.SetString(view, 0, \"RIFF\");\n            /* file length */\n            view.setUint32(4, fileLength, true);\n            /* RIFF type & Format */\n            _this.SetString(view, 8, \"WAVEfmt \");\n            /* format chunk length */\n            view.setUint32(16, 16, true);\n            /* sample format (raw) */\n            view.setUint16(20, 1, true);\n            /* channel count */\n            view.setUint16(22, _this.channelCount, true);\n            /* sample rate */\n            view.setUint32(24, _this.desiredSampleRate, true);\n            /* byte rate (sample rate * block align) */\n            view.setUint32(28, _this.desiredSampleRate * _this.channelCount * bytesPerSample, true);\n            /* block align (channel count * bytes per sample) */\n            view.setUint16(32, _this.channelCount * bytesPerSample, true);\n            /* bits per sample */\n            view.setUint16(34, bitsPerSample, true);\n            /* data chunk identifier */\n            _this.SetString(view, 36, \"data\");\n            /* data chunk length */\n            view.setUint32(40, fileLength, true);\n            _this.FloatTo16BitPCM(view, 44, audioFrame);\n            return buffer;\n        };\n        this.SetString = function (view, offset, str) {\n            for (var i = 0; i < str.length; i++) {\n                view.setUint8(offset + i, str.charCodeAt(i));\n            }\n        };\n        this.FloatTo16BitPCM = function (view, offset, input) {\n            for (var i = 0; i < input.length; i++, offset += 2) {\n                var s = Math.max(-1, Math.min(1, input[i]));\n                view.setInt16(offset, s < 0 ? s * 0x8000 : s * 0x7FFF, true);\n            }\n        };\n        this.DownSampleAudioFrame = function (srcFrame, srcRate, dstRate) {\n            if (dstRate === srcRate || dstRate > srcRate) {\n                return srcFrame;\n            }\n            var ratio = srcRate / dstRate;\n            var dstLength = Math.round(srcFrame.length / ratio);\n            var dstFrame = new Float32Array(dstLength);\n            var srcOffset = 0;\n            var dstOffset = 0;\n            while (dstOffset < dstLength) {\n                var nextSrcOffset = Math.round((dstOffset + 1) * ratio);\n                var accum = 0;\n                var count = 0;\n                while (srcOffset < nextSrcOffset && srcOffset < srcFrame.length) {\n                    accum += srcFrame[srcOffset++];\n                    count++;\n                }\n                dstFrame[dstOffset++] = accum / count;\n            }\n            return dstFrame;\n        };\n        this.actualSampleRate = actualSampleRate;\n        this.desiredSampleRate = desiredSampleRate;\n    }\n    return RiffPcmEncoder;\n}());\nexports.RiffPcmEncoder = RiffPcmEncoder;\n\n//# sourceMappingURL=RiffPcmEncoder.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/common/RiffPcmEncoder.js?");
 
 /***/ }),
-/* 36 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Storage.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Storage.js ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_Exports__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__RecognitionEvents__ = __webpack_require__(6);
-
-
-// tslint:disable-next-line:max-classes-per-file
-class ServiceTelemetryListener {
-    constructor(requestId, audioSourceId, audioNodeId) {
-        this.isDisposed = false;
-        this.listeningTriggerMetric = null;
-        this.micMetric = null;
-        this.connectionEstablishMetric = null;
-        this.OnEvent = (e) => {
-            if (this.isDisposed) {
-                return;
-            }
-            if (e instanceof __WEBPACK_IMPORTED_MODULE_1__RecognitionEvents__["f" /* RecognitionTriggeredEvent */] && e.RequestId === this.requestId) {
-                this.listeningTriggerMetric = {
-                    End: e.EventTime,
-                    Name: "ListeningTrigger",
-                    Start: e.EventTime,
-                };
-            }
-            if (e instanceof __WEBPACK_IMPORTED_MODULE_0__common_Exports__["g" /* AudioStreamNodeAttachingEvent */] && e.AudioSourceId === this.audioSourceId && e.AudioNodeId === this.audioNodeId) {
-                this.micStartTime = e.EventTime;
-            }
-            if (e instanceof __WEBPACK_IMPORTED_MODULE_0__common_Exports__["f" /* AudioStreamNodeAttachedEvent */] && e.AudioSourceId === this.audioSourceId && e.AudioNodeId === this.audioNodeId) {
-                this.micStartTime = e.EventTime;
-            }
-            if (e instanceof __WEBPACK_IMPORTED_MODULE_0__common_Exports__["b" /* AudioSourceErrorEvent */] && e.AudioSourceId === this.audioSourceId) {
-                if (!this.micMetric) {
-                    this.micMetric = {
-                        End: e.EventTime,
-                        Error: e.Error,
-                        Name: "Microphone",
-                        Start: this.micStartTime,
-                    };
-                }
-            }
-            if (e instanceof __WEBPACK_IMPORTED_MODULE_0__common_Exports__["i" /* AudioStreamNodeErrorEvent */] && e.AudioSourceId === this.audioSourceId && e.AudioNodeId === this.audioNodeId) {
-                if (!this.micMetric) {
-                    this.micMetric = {
-                        End: e.EventTime,
-                        Error: e.Error,
-                        Name: "Microphone",
-                        Start: this.micStartTime,
-                    };
-                }
-            }
-            if (e instanceof __WEBPACK_IMPORTED_MODULE_0__common_Exports__["h" /* AudioStreamNodeDetachedEvent */] && e.AudioSourceId === this.audioSourceId && e.AudioNodeId === this.audioNodeId) {
-                if (!this.micMetric) {
-                    this.micMetric = {
-                        End: e.EventTime,
-                        Name: "Microphone",
-                        Start: this.micStartTime,
-                    };
-                }
-            }
-            if (e instanceof __WEBPACK_IMPORTED_MODULE_1__RecognitionEvents__["a" /* ConnectingToServiceEvent */] && e.RequestId === this.requestId) {
-                this.connectionId = e.ConnectionId;
-            }
-            if (e instanceof __WEBPACK_IMPORTED_MODULE_0__common_Exports__["q" /* ConnectionStartEvent */] && e.ConnectionId === this.connectionId) {
-                this.connectionStartTime = e.EventTime;
-            }
-            if (e instanceof __WEBPACK_IMPORTED_MODULE_0__common_Exports__["l" /* ConnectionEstablishedEvent */] && e.ConnectionId === this.connectionId) {
-                if (!this.connectionEstablishMetric) {
-                    this.connectionEstablishMetric = {
-                        End: e.EventTime,
-                        Id: this.connectionId,
-                        Name: "Connection",
-                        Start: this.connectionStartTime,
-                    };
-                }
-            }
-            if (e instanceof __WEBPACK_IMPORTED_MODULE_0__common_Exports__["k" /* ConnectionEstablishErrorEvent */] && e.ConnectionId === this.connectionId) {
-                if (!this.connectionEstablishMetric) {
-                    this.connectionEstablishMetric = {
-                        End: e.EventTime,
-                        Error: this.GetConnectionError(e.StatusCode),
-                        Id: this.connectionId,
-                        Name: "Connection",
-                        Start: this.connectionStartTime,
-                    };
-                }
-            }
-            if (e instanceof __WEBPACK_IMPORTED_MODULE_0__common_Exports__["n" /* ConnectionMessageReceivedEvent */] && e.ConnectionId === this.connectionId) {
-                if (e.Message && e.Message.Headers && e.Message.Headers.path) {
-                    if (!this.receivedMessages[e.Message.Headers.path]) {
-                        this.receivedMessages[e.Message.Headers.path] = new Array();
-                    }
-                    this.receivedMessages[e.Message.Headers.path].push(e.NetworkReceivedTime);
-                }
-            }
-        };
-        this.GetTelemetry = () => {
-            const metrics = new Array();
-            if (this.listeningTriggerMetric) {
-                metrics.push(this.listeningTriggerMetric);
-            }
-            if (this.micMetric) {
-                metrics.push(this.micMetric);
-            }
-            if (this.connectionEstablishMetric) {
-                metrics.push(this.connectionEstablishMetric);
-            }
-            const telemetry = {
-                Metrics: metrics,
-                ReceivedMessages: this.receivedMessages,
-            };
-            const json = JSON.stringify(telemetry);
-            // We dont want to send the same telemetry again. So clean those out.
-            this.receivedMessages = {};
-            this.listeningTriggerMetric = null;
-            this.micMetric = null;
-            this.connectionEstablishMetric = null;
-            return json;
-        };
-        this.Dispose = () => {
-            this.isDisposed = true;
-        };
-        this.GetConnectionError = (statusCode) => {
-            /*
-            -- Websocket status codes --
-            NormalClosure = 1000,
-            EndpointUnavailable = 1001,
-            ProtocolError = 1002,
-            InvalidMessageType = 1003,
-            Empty = 1005,
-            InvalidPayloadData = 1007,
-            PolicyViolation = 1008,
-            MessageTooBig = 1009,
-            MandatoryExtension = 1010,
-            InternalServerError = 1011
-            */
-            switch (statusCode) {
-                case 400:
-                case 1002:
-                case 1003:
-                case 1005:
-                case 1007:
-                case 1008:
-                case 1009: return "BadRequest";
-                case 401: return "Unauthorized";
-                case 403: return "Forbidden";
-                case 503:
-                case 1001: return "ServerUnavailable";
-                case 500:
-                case 1011: return "ServerError";
-                case 408:
-                case 504: return "Timeout";
-                default: return "statuscode:" + statusCode.toString();
-            }
-        };
-        this.requestId = requestId;
-        this.audioSourceId = audioSourceId;
-        this.audioNodeId = audioNodeId;
-        this.receivedMessages = {};
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = ServiceTelemetryListener;
-
-
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar Error_1 = __webpack_require__(/*! ./Error */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Error.js\");\nvar InMemoryStorage_1 = __webpack_require__(/*! ./InMemoryStorage */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/InMemoryStorage.js\");\nvar Storage = /** @class */ (function () {\n    function Storage() {\n    }\n    Object.defineProperty(Storage, \"Session\", {\n        get: function () {\n            return Storage.sessionStorage;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(Storage, \"Local\", {\n        get: function () {\n            return Storage.localStorage;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Storage.sessionStorage = new InMemoryStorage_1.InMemoryStorage();\n    Storage.localStorage = new InMemoryStorage_1.InMemoryStorage();\n    Storage.SetSessionStorage = function (sessionStorage) {\n        if (!sessionStorage) {\n            throw new Error_1.ArgumentNullError(\"sessionStorage\");\n        }\n        Storage.sessionStorage = sessionStorage;\n    };\n    Storage.SetLocalStorage = function (localStorage) {\n        if (!localStorage) {\n            throw new Error_1.ArgumentNullError(\"localStorage\");\n        }\n        Storage.localStorage = localStorage;\n    };\n    return Storage;\n}());\nexports.Storage = Storage;\n\n//# sourceMappingURL=Storage.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Storage.js?");
 
 /***/ }),
-/* 37 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Stream.js":
+/*!********************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Stream.js ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_Exports__ = __webpack_require__(0);
-
-const PathHeaderName = "path";
-const ContentTypeHeaderName = "content-type";
-const RequestIdHeaderName = "x-requestid";
-const RequestTimestampHeaderName = "x-timestamp";
-class SpeechConnectionMessage extends __WEBPACK_IMPORTED_MODULE_0__common_Exports__["m" /* ConnectionMessage */] {
-    constructor(messageType, path, requestId, contentType, body, additionalHeaders, id) {
-        if (!path) {
-            throw new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["a" /* ArgumentNullError */]("path");
-        }
-        if (!requestId) {
-            throw new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["a" /* ArgumentNullError */]("requestId");
-        }
-        const headers = {};
-        headers[PathHeaderName] = path;
-        headers[RequestIdHeaderName] = requestId;
-        headers[RequestTimestampHeaderName] = new Date().toISOString();
-        if (contentType) {
-            headers[ContentTypeHeaderName] = contentType;
-        }
-        if (additionalHeaders) {
-            for (const headerName in additionalHeaders) {
-                if (headerName) {
-                    headers[headerName] = additionalHeaders[headerName];
-                }
-            }
-        }
-        if (id) {
-            super(messageType, body, headers, id);
-        }
-        else {
-            super(messageType, body, headers);
-        }
-        this.path = path;
-        this.requestId = requestId;
-        this.contentType = contentType;
-        this.additionalHeaders = additionalHeaders;
-    }
-    get Path() {
-        return this.path;
-    }
-    get RequestId() {
-        return this.requestId;
-    }
-    get ContentType() {
-        return this.contentType;
-    }
-    get AdditionalHeaders() {
-        return this.additionalHeaders;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = SpeechConnectionMessage;
-
-SpeechConnectionMessage.FromConnectionMessage = (message) => {
-    let path = null;
-    let requestId = null;
-    let contentType = null;
-    let requestTimestamp = null;
-    const additionalHeaders = {};
-    if (message.Headers) {
-        for (const headerName in message.Headers) {
-            if (headerName) {
-                if (headerName.toLowerCase() === PathHeaderName.toLowerCase()) {
-                    path = message.Headers[headerName];
-                }
-                else if (headerName.toLowerCase() === RequestIdHeaderName.toLowerCase()) {
-                    requestId = message.Headers[headerName];
-                }
-                else if (headerName.toLowerCase() === RequestTimestampHeaderName.toLowerCase()) {
-                    requestTimestamp = message.Headers[headerName];
-                }
-                else if (headerName.toLowerCase() === ContentTypeHeaderName.toLowerCase()) {
-                    contentType = message.Headers[headerName];
-                }
-                else {
-                    additionalHeaders[headerName] = message.Headers[headerName];
-                }
-            }
-        }
-    }
-    return new SpeechConnectionMessage(message.MessageType, path, requestId, contentType, message.Body, additionalHeaders, message.Id);
-};
-
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar Error_1 = __webpack_require__(/*! ./Error */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Error.js\");\nvar Guid_1 = __webpack_require__(/*! ./Guid */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Guid.js\");\nvar Queue_1 = __webpack_require__(/*! ./Queue */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Queue.js\");\nvar Stream = /** @class */ (function () {\n    function Stream(streamId) {\n        var _this = this;\n        this.readerIdCounter = 1;\n        this.isEnded = false;\n        this.Write = function (buffer) {\n            _this.ThrowIfClosed();\n            _this.WriteStreamChunk({\n                Buffer: buffer,\n                IsEnd: false,\n            });\n        };\n        this.GetReader = function () {\n            var readerId = _this.readerIdCounter;\n            _this.readerIdCounter++;\n            var readerQueue = new Queue_1.Queue();\n            var currentLength = _this.streambuffer.length;\n            _this.readerQueues[readerId] = readerQueue;\n            for (var i = 0; i < currentLength; i++) {\n                readerQueue.Enqueue(_this.streambuffer[i]);\n            }\n            return new StreamReader(_this.id, readerQueue, function () {\n                delete _this.readerQueues[readerId];\n            });\n        };\n        this.Close = function () {\n            if (!_this.isEnded) {\n                _this.WriteStreamChunk({\n                    Buffer: null,\n                    IsEnd: true,\n                });\n                _this.isEnded = true;\n            }\n        };\n        this.WriteStreamChunk = function (streamChunk) {\n            _this.ThrowIfClosed();\n            _this.streambuffer.push(streamChunk);\n            for (var readerId in _this.readerQueues) {\n                if (!_this.readerQueues[readerId].IsDisposed()) {\n                    try {\n                        _this.readerQueues[readerId].Enqueue(streamChunk);\n                    }\n                    catch (e) {\n                        // Do nothing\n                    }\n                }\n            }\n        };\n        this.ThrowIfClosed = function () {\n            if (_this.isEnded) {\n                throw new Error_1.InvalidOperationError(\"Stream closed\");\n            }\n        };\n        this.id = streamId ? streamId : Guid_1.CreateNoDashGuid();\n        this.streambuffer = [];\n        this.readerQueues = {};\n    }\n    Object.defineProperty(Stream.prototype, \"IsClosed\", {\n        get: function () {\n            return this.isEnded;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(Stream.prototype, \"Id\", {\n        get: function () {\n            return this.id;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    return Stream;\n}());\nexports.Stream = Stream;\n// tslint:disable-next-line:max-classes-per-file\nvar StreamReader = /** @class */ (function () {\n    function StreamReader(streamId, readerQueue, onClose) {\n        var _this = this;\n        this.isClosed = false;\n        this.Read = function () {\n            if (_this.IsClosed) {\n                throw new Error_1.InvalidOperationError(\"StreamReader closed\");\n            }\n            return _this.readerQueue\n                .Dequeue()\n                .OnSuccessContinueWith(function (streamChunk) {\n                if (streamChunk.IsEnd) {\n                    _this.readerQueue.Dispose(\"End of stream reached\");\n                }\n                return streamChunk;\n            });\n        };\n        this.Close = function () {\n            if (!_this.isClosed) {\n                _this.isClosed = true;\n                _this.readerQueue.Dispose(\"StreamReader closed\");\n                _this.onClose();\n            }\n        };\n        this.readerQueue = readerQueue;\n        this.onClose = onClose;\n        this.streamId = streamId;\n    }\n    Object.defineProperty(StreamReader.prototype, \"IsClosed\", {\n        get: function () {\n            return this.isClosed;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(StreamReader.prototype, \"StreamId\", {\n        get: function () {\n            return this.streamId;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    return StreamReader;\n}());\nexports.StreamReader = StreamReader;\n\n//# sourceMappingURL=Stream.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Stream.js?");
 
 /***/ }),
-/* 38 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech.browser/Exports.js":
+/*!*********************************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech.browser/Exports.js ***!
+  \*********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RecognitionStatus; });
-var RecognitionStatus;
-(function (RecognitionStatus) {
-    RecognitionStatus[RecognitionStatus["Success"] = 0] = "Success";
-    RecognitionStatus[RecognitionStatus["NoMatch"] = 1] = "NoMatch";
-    RecognitionStatus[RecognitionStatus["InitialSilenceTimeout"] = 2] = "InitialSilenceTimeout";
-    RecognitionStatus[RecognitionStatus["BabbleTimeout"] = 3] = "BabbleTimeout";
-    RecognitionStatus[RecognitionStatus["Error"] = 4] = "Error";
-    RecognitionStatus[RecognitionStatus["EndOfDictation"] = 5] = "EndOfDictation";
-})(RecognitionStatus || (RecognitionStatus = {}));
-
+eval("\nfunction __export(m) {\n    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];\n}\nObject.defineProperty(exports, \"__esModule\", { value: true });\n__export(__webpack_require__(/*! ./Recognizer */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech.browser/Recognizer.js\"));\n__export(__webpack_require__(/*! ./SpeechConnectionFactory */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech.browser/SpeechConnectionFactory.js\"));\n\n//# sourceMappingURL=Exports.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech.browser/Exports.js?");
 
 /***/ }),
-/* 39 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech.browser/Recognizer.js":
+/*!************************************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech.browser/Recognizer.js ***!
+  \************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_Exports__ = __webpack_require__(0);
-
-const CRLF = "\r\n";
-class WebsocketMessageFormatter {
-    constructor() {
-        this.ToConnectionMessage = (message) => {
-            const deferral = new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["t" /* Deferred */]();
-            try {
-                if (message.MessageType === __WEBPACK_IMPORTED_MODULE_0__common_Exports__["x" /* MessageType */].Text) {
-                    const textMessage = message.TextContent;
-                    let headers = {};
-                    let body = null;
-                    if (textMessage) {
-                        const headerBodySplit = textMessage.split("\r\n\r\n");
-                        if (headerBodySplit && headerBodySplit.length > 0) {
-                            headers = this.ParseHeaders(headerBodySplit[0]);
-                            if (headerBodySplit.length > 1) {
-                                body = headerBodySplit[1];
-                            }
-                        }
-                    }
-                    deferral.Resolve(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["m" /* ConnectionMessage */](message.MessageType, body, headers, message.Id));
-                }
-                else if (message.MessageType === __WEBPACK_IMPORTED_MODULE_0__common_Exports__["x" /* MessageType */].Binary) {
-                    const binaryMessage = message.BinaryContent;
-                    let headers = {};
-                    let body = null;
-                    if (!binaryMessage || binaryMessage.byteLength < 2) {
-                        throw new Error("Invalid binary message format. Header length missing.");
-                    }
-                    const dataView = new DataView(binaryMessage);
-                    const headerLength = dataView.getInt16(0);
-                    if (binaryMessage.byteLength < headerLength + 2) {
-                        throw new Error("Invalid binary message format. Header content missing.");
-                    }
-                    let headersString = "";
-                    for (let i = 0; i < headerLength; i++) {
-                        headersString += String.fromCharCode((dataView).getInt8(i + 2));
-                    }
-                    headers = this.ParseHeaders(headersString);
-                    if (binaryMessage.byteLength > headerLength + 2) {
-                        body = binaryMessage.slice(2 + headerLength);
-                    }
-                    deferral.Resolve(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["m" /* ConnectionMessage */](message.MessageType, body, headers, message.Id));
-                }
-            }
-            catch (e) {
-                deferral.Reject(`Error formatting the message. Error: ${e}`);
-            }
-            return deferral.Promise();
-        };
-        this.FromConnectionMessage = (message) => {
-            const deferral = new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["t" /* Deferred */]();
-            try {
-                if (message.MessageType === __WEBPACK_IMPORTED_MODULE_0__common_Exports__["x" /* MessageType */].Text) {
-                    const payload = `${this.MakeHeaders(message)}${CRLF}${message.TextBody ? message.TextBody : ""}`;
-                    deferral.Resolve(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["B" /* RawWebsocketMessage */](__WEBPACK_IMPORTED_MODULE_0__common_Exports__["x" /* MessageType */].Text, payload, message.Id));
-                }
-                else if (message.MessageType === __WEBPACK_IMPORTED_MODULE_0__common_Exports__["x" /* MessageType */].Binary) {
-                    const headersString = this.MakeHeaders(message);
-                    const content = message.BinaryBody;
-                    const fr = new FileReader();
-                    fr.onload = () => {
-                        const headerInt8Array = new Int8Array(fr.result);
-                        const payload = new ArrayBuffer(2 + headerInt8Array.byteLength + (content ? content.byteLength : 0));
-                        const dataView = new DataView(payload);
-                        dataView.setInt16(0, headerInt8Array.length);
-                        for (let i = 0; i < headerInt8Array.byteLength; i++) {
-                            dataView.setInt8(2 + i, headerInt8Array[i]);
-                        }
-                        if (content) {
-                            const bodyInt8Array = new Int8Array(content);
-                            for (let i = 0; i < bodyInt8Array.byteLength; i++) {
-                                dataView.setInt8(2 + headerInt8Array.byteLength + i, bodyInt8Array[i]);
-                            }
-                        }
-                        deferral.Resolve(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["B" /* RawWebsocketMessage */](__WEBPACK_IMPORTED_MODULE_0__common_Exports__["x" /* MessageType */].Binary, payload, message.Id));
-                    };
-                    fr.onerror = () => {
-                        deferral.Reject("failed to load headers into file reader");
-                    };
-                    fr.readAsArrayBuffer(new Blob([headersString]));
-                }
-            }
-            catch (e) {
-                deferral.Reject(`Error formatting the message. ${e}`);
-            }
-            return deferral.Promise();
-        };
-        this.MakeHeaders = (message) => {
-            let headersString = "";
-            if (message.Headers) {
-                for (const header in message.Headers) {
-                    if (header) {
-                        headersString += `${header}: ${message.Headers[header]}${CRLF}`;
-                    }
-                }
-            }
-            return headersString;
-        };
-        this.ParseHeaders = (headersString) => {
-            const headers = {};
-            if (headersString) {
-                const headerMatches = headersString.match(/[^\r\n]+/g);
-                if (headers) {
-                    for (const header of headerMatches) {
-                        if (header) {
-                            const separatorIndex = header.indexOf(":");
-                            const headerName = separatorIndex > 0 ? header.substr(0, separatorIndex).trim().toLowerCase() : header;
-                            const headerValue = separatorIndex > 0 && header.length > (separatorIndex + 1) ?
-                                header.substr(separatorIndex + 1).trim() :
-                                "";
-                            headers[headerName] = headerValue;
-                        }
-                    }
-                }
-            }
-            return headers;
-        };
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = WebsocketMessageFormatter;
-
-
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar Exports_1 = __webpack_require__(/*! ../../common.browser/Exports */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/Exports.js\");\nvar Exports_2 = __webpack_require__(/*! ../speech/Exports */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/Exports.js\");\nvar SpeechConnectionFactory_1 = __webpack_require__(/*! ./SpeechConnectionFactory */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech.browser/SpeechConnectionFactory.js\");\nvar CreateRecognizer = function (recognizerConfig, authentication) {\n    return CreateRecognizerWithPcmRecorder(recognizerConfig, authentication);\n};\nexports.CreateRecognizer = CreateRecognizer;\nvar CreateRecognizerWithPcmRecorder = function (recognizerConfig, authentication) {\n    return CreateRecognizerWithCustomAudioSource(recognizerConfig, authentication, new Exports_1.MicAudioSource(new Exports_1.PcmRecorder()));\n};\nexports.CreateRecognizerWithPcmRecorder = CreateRecognizerWithPcmRecorder;\nvar CreateRecognizerWithFileAudioSource = function (recognizerConfig, authentication, file) {\n    return CreateRecognizerWithCustomAudioSource(recognizerConfig, authentication, new Exports_1.FileAudioSource(file));\n};\nexports.CreateRecognizerWithFileAudioSource = CreateRecognizerWithFileAudioSource;\nvar CreateRecognizerWithCustomAudioSource = function (recognizerConfig, authentication, audioSource) {\n    return new Exports_2.Recognizer(authentication, new SpeechConnectionFactory_1.SpeechConnectionFactory(), audioSource, recognizerConfig);\n};\nexports.CreateRecognizerWithCustomAudioSource = CreateRecognizerWithCustomAudioSource;\n\n//# sourceMappingURL=Recognizer.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech.browser/Recognizer.js?");
 
 /***/ }),
-/* 40 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech.browser/SpeechConnectionFactory.js":
+/*!*************************************************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech.browser/SpeechConnectionFactory.js ***!
+  \*************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Recognizer__ = __webpack_require__(41);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__Recognizer__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__SpeechConnectionFactory__ = __webpack_require__(16);
-/* unused harmony namespace reexport */
-
-
-
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar Exports_1 = __webpack_require__(/*! ../../common.browser/Exports */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common.browser/Exports.js\");\nvar Exports_2 = __webpack_require__(/*! ../../common/Exports */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Exports.js\");\nvar Exports_3 = __webpack_require__(/*! ../speech/Exports */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/Exports.js\");\nvar TestHooksParamName = \"testhooks\";\nvar ConnectionIdHeader = \"X-ConnectionId\";\nvar SpeechConnectionFactory = /** @class */ (function () {\n    function SpeechConnectionFactory() {\n        var _this = this;\n        this.Create = function (config, authInfo, connectionId) {\n            var endpoint = \"\";\n            switch (config.RecognitionMode) {\n                case Exports_3.RecognitionMode.Conversation:\n                    endpoint = _this.Host + _this.ConversationRelativeUri;\n                    break;\n                case Exports_3.RecognitionMode.Dictation:\n                    endpoint = _this.Host + _this.DictationRelativeUri;\n                    break;\n                default:\n                    endpoint = _this.Host + _this.InteractiveRelativeUri; // default is interactive\n                    break;\n            }\n            var queryParams = {\n                format: Exports_3.SpeechResultFormat[config.Format].toString().toLowerCase(),\n                language: config.Language,\n            };\n            if (_this.IsDebugModeEnabled) {\n                queryParams[TestHooksParamName] = \"1\";\n            }\n            var headers = {};\n            headers[authInfo.HeaderName] = authInfo.Token;\n            headers[ConnectionIdHeader] = connectionId;\n            return new Exports_1.WebsocketConnection(endpoint, queryParams, headers, new Exports_3.WebsocketMessageFormatter(), connectionId);\n        };\n    }\n    Object.defineProperty(SpeechConnectionFactory.prototype, \"Host\", {\n        get: function () {\n            return Exports_2.Storage.Local.GetOrAdd(\"Host\", \"wss://speech.platform.bing.com\");\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(SpeechConnectionFactory.prototype, \"InteractiveRelativeUri\", {\n        get: function () {\n            return Exports_2.Storage.Local.GetOrAdd(\"InteractiveRelativeUri\", \"/speech/recognition/interactive/cognitiveservices/v1\");\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(SpeechConnectionFactory.prototype, \"ConversationRelativeUri\", {\n        get: function () {\n            return Exports_2.Storage.Local.GetOrAdd(\"ConversationRelativeUri\", \"/speech/recognition/conversation/cognitiveservices/v1\");\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(SpeechConnectionFactory.prototype, \"DictationRelativeUri\", {\n        get: function () {\n            return Exports_2.Storage.Local.GetOrAdd(\"DictationRelativeUri\", \"/speech/recognition/dictation/cognitiveservices/v1\");\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(SpeechConnectionFactory.prototype, \"IsDebugModeEnabled\", {\n        get: function () {\n            var value = Exports_2.Storage.Local.GetOrAdd(\"IsDebugModeEnabled\", \"false\");\n            return value.toLowerCase() === \"true\";\n        },\n        enumerable: true,\n        configurable: true\n    });\n    return SpeechConnectionFactory;\n}());\nexports.SpeechConnectionFactory = SpeechConnectionFactory;\n\n//# sourceMappingURL=SpeechConnectionFactory.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech.browser/SpeechConnectionFactory.js?");
 
 /***/ }),
-/* 41 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/CognitiveSubscriptionKeyAuthentication.js":
+/*!********************************************************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/CognitiveSubscriptionKeyAuthentication.js ***!
+  \********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CreateRecognizer; });
-/* unused harmony export CreateRecognizerWithCustomAudioSource */
-/* unused harmony export CreateRecognizerWithFileAudioSource */
-/* unused harmony export CreateRecognizerWithPcmRecorder */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_browser_Exports__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__speech_Exports__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__SpeechConnectionFactory__ = __webpack_require__(16);
-
-
-
-const CreateRecognizer = (recognizerConfig, authentication) => {
-    return CreateRecognizerWithPcmRecorder(recognizerConfig, authentication);
-};
-const CreateRecognizerWithPcmRecorder = (recognizerConfig, authentication) => {
-    return CreateRecognizerWithCustomAudioSource(recognizerConfig, authentication, new __WEBPACK_IMPORTED_MODULE_0__common_browser_Exports__["b" /* MicAudioSource */](new __WEBPACK_IMPORTED_MODULE_0__common_browser_Exports__["c" /* PcmRecorder */]()));
-};
-const CreateRecognizerWithFileAudioSource = (recognizerConfig, authentication, file) => {
-    return CreateRecognizerWithCustomAudioSource(recognizerConfig, authentication, new __WEBPACK_IMPORTED_MODULE_0__common_browser_Exports__["a" /* FileAudioSource */](file));
-};
-const CreateRecognizerWithCustomAudioSource = (recognizerConfig, authentication, audioSource) => {
-    return new __WEBPACK_IMPORTED_MODULE_1__speech_Exports__["g" /* Recognizer */](authentication, new __WEBPACK_IMPORTED_MODULE_2__SpeechConnectionFactory__["a" /* SpeechConnectionFactory */](), audioSource, recognizerConfig);
-};
-
-
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar Exports_1 = __webpack_require__(/*! ../../common/Exports */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Exports.js\");\nvar IAuthentication_1 = __webpack_require__(/*! ./IAuthentication */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/IAuthentication.js\");\nvar AuthHeader = \"Ocp-Apim-Subscription-Key\";\nvar CognitiveSubscriptionKeyAuthentication = /** @class */ (function () {\n    function CognitiveSubscriptionKeyAuthentication(subscriptionKey) {\n        var _this = this;\n        this.Fetch = function (authFetchEventId) {\n            return Exports_1.PromiseHelper.FromResult(_this.authInfo);\n        };\n        this.FetchOnExpiry = function (authFetchEventId) {\n            return Exports_1.PromiseHelper.FromResult(_this.authInfo);\n        };\n        if (!subscriptionKey) {\n            throw new Exports_1.ArgumentNullError(\"subscriptionKey\");\n        }\n        this.authInfo = new IAuthentication_1.AuthInfo(AuthHeader, subscriptionKey);\n    }\n    return CognitiveSubscriptionKeyAuthentication;\n}());\nexports.CognitiveSubscriptionKeyAuthentication = CognitiveSubscriptionKeyAuthentication;\n\n//# sourceMappingURL=CognitiveSubscriptionKeyAuthentication.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/CognitiveSubscriptionKeyAuthentication.js?");
 
 /***/ }),
-/* 42 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/CognitiveTokenAuthentication.js":
+/*!**********************************************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/CognitiveTokenAuthentication.js ***!
+  \**********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_Exports__ = __webpack_require__(0);
-
-class ConsoleLoggingListener {
-    constructor(logLevelFilter = __WEBPACK_IMPORTED_MODULE_0__common_Exports__["v" /* EventType */].Warning) {
-        this.OnEvent = (event) => {
-            if (event.EventType >= this.logLevelFilter) {
-                const log = this.ToString(event);
-                switch (event.EventType) {
-                    case __WEBPACK_IMPORTED_MODULE_0__common_Exports__["v" /* EventType */].Debug:
-                        // tslint:disable-next-line:no-console
-                        console.debug(log);
-                        break;
-                    case __WEBPACK_IMPORTED_MODULE_0__common_Exports__["v" /* EventType */].Info:
-                        // tslint:disable-next-line:no-console
-                        console.info(log);
-                        break;
-                    case __WEBPACK_IMPORTED_MODULE_0__common_Exports__["v" /* EventType */].Warning:
-                        // tslint:disable-next-line:no-console
-                        console.warn(log);
-                        break;
-                    case __WEBPACK_IMPORTED_MODULE_0__common_Exports__["v" /* EventType */].Error:
-                        // tslint:disable-next-line:no-console
-                        console.error(log);
-                        break;
-                    default:
-                        // tslint:disable-next-line:no-console
-                        console.log(log);
-                        break;
-                }
-            }
-        };
-        this.ToString = (event) => {
-            const logFragments = [
-                `${event.EventTime}`,
-                `${event.Name}`,
-            ];
-            for (const prop in event) {
-                if (prop && event.hasOwnProperty(prop) && prop !== "eventTime" && prop !== "eventType" && prop !== "eventId" && prop !== "name" && prop !== "constructor") {
-                    const value = event[prop];
-                    let valueToLog = "<NULL>";
-                    if (value !== undefined && value !== null) {
-                        if (typeof (value) === "number" || typeof (value) === "string") {
-                            valueToLog = value.toString();
-                        }
-                        else {
-                            valueToLog = JSON.stringify(value);
-                        }
-                    }
-                    logFragments.push(`${prop}: ${valueToLog}`);
-                }
-            }
-            return logFragments.join(" | ");
-        };
-        this.logLevelFilter = logLevelFilter;
-    }
-}
-/* unused harmony export ConsoleLoggingListener */
-
-
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar Exports_1 = __webpack_require__(/*! ../../common/Exports */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Exports.js\");\nvar IAuthentication_1 = __webpack_require__(/*! ./IAuthentication */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/IAuthentication.js\");\nvar AuthHeader = \"Authorization\";\nvar CognitiveTokenAuthentication = /** @class */ (function () {\n    function CognitiveTokenAuthentication(fetchCallback, fetchOnExpiryCallback) {\n        var _this = this;\n        this.Fetch = function (authFetchEventId) {\n            return _this.fetchCallback(authFetchEventId).OnSuccessContinueWith(function (token) { return new IAuthentication_1.AuthInfo(AuthHeader, token); });\n        };\n        this.FetchOnExpiry = function (authFetchEventId) {\n            return _this.fetchOnExpiryCallback(authFetchEventId).OnSuccessContinueWith(function (token) { return new IAuthentication_1.AuthInfo(AuthHeader, token); });\n        };\n        if (!fetchCallback) {\n            throw new Exports_1.ArgumentNullError(\"fetchCallback\");\n        }\n        if (!fetchOnExpiryCallback) {\n            throw new Exports_1.ArgumentNullError(\"fetchOnExpiryCallback\");\n        }\n        this.fetchCallback = fetchCallback;\n        this.fetchOnExpiryCallback = fetchOnExpiryCallback;\n    }\n    return CognitiveTokenAuthentication;\n}());\nexports.CognitiveTokenAuthentication = CognitiveTokenAuthentication;\n\n//# sourceMappingURL=CognitiveTokenAuthentication.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/CognitiveTokenAuthentication.js?");
 
 /***/ }),
-/* 43 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/Exports.js":
+/*!*************************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/Exports.js ***!
+  \*************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_Exports__ = __webpack_require__(0);
-
-class LocalStorage {
-    constructor() {
-        this.Get = (key) => {
-            if (!key) {
-                throw new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["a" /* ArgumentNullError */]("key");
-            }
-            return localStorage.getItem(key);
-        };
-        this.GetOrAdd = (key, valueToAdd) => {
-            if (!key) {
-                throw new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["a" /* ArgumentNullError */]("key");
-            }
-            const value = localStorage.getItem(key);
-            if (value === null || value === undefined) {
-                localStorage.setItem(key, valueToAdd);
-            }
-            return localStorage.getItem(key);
-        };
-        this.Set = (key, value) => {
-            if (!key) {
-                throw new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["a" /* ArgumentNullError */]("key");
-            }
-            localStorage.setItem(key, value);
-        };
-        this.Remove = (key) => {
-            if (!key) {
-                throw new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["a" /* ArgumentNullError */]("key");
-            }
-            localStorage.removeItem(key);
-        };
-    }
-}
-/* unused harmony export LocalStorage */
-
-
+eval("\n// IMPORTANT - Dont publish internal modules.\nfunction __export(m) {\n    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];\n}\nObject.defineProperty(exports, \"__esModule\", { value: true });\n__export(__webpack_require__(/*! ./CognitiveSubscriptionKeyAuthentication */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/CognitiveSubscriptionKeyAuthentication.js\"));\n__export(__webpack_require__(/*! ./CognitiveTokenAuthentication */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/CognitiveTokenAuthentication.js\"));\n__export(__webpack_require__(/*! ./IAuthentication */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/IAuthentication.js\"));\n__export(__webpack_require__(/*! ./RecognitionEvents */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/RecognitionEvents.js\"));\n__export(__webpack_require__(/*! ./Recognizer */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/Recognizer.js\"));\n__export(__webpack_require__(/*! ./RecognizerConfig */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/RecognizerConfig.js\"));\n__export(__webpack_require__(/*! ./SpeechResults */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/SpeechResults.js\"));\n__export(__webpack_require__(/*! ./WebsocketMessageFormatter */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/WebsocketMessageFormatter.js\"));\n\n//# sourceMappingURL=Exports.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/Exports.js?");
 
 /***/ }),
-/* 44 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/IAuthentication.js":
+/*!*********************************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/IAuthentication.js ***!
+  \*********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_Exports__ = __webpack_require__(0);
-
-class MicAudioSource {
-    constructor(recorder, audioSourceId) {
-        this.streams = {};
-        this.TurnOn = () => {
-            if (this.initializeDeferral) {
-                return this.initializeDeferral.Promise();
-            }
-            this.initializeDeferral = new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["t" /* Deferred */]();
-            const nav = window.navigator;
-            window.navigator.getUserMedia = (window.navigator.getUserMedia ||
-                window.navigator.webkitGetUserMedia ||
-                window.navigator.mozGetUserMedia ||
-                window.navigator.msGetUserMedia);
-            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-                this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["c" /* AudioSourceInitializingEvent */](this.id));
-                navigator.mediaDevices.getUserMedia({ audio: true })
-                    .then(stream => {
-                    this.mediaStream = stream;
-                    this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["e" /* AudioSourceReadyEvent */](this.id));
-                    this.initializeDeferral.Resolve(true);
-                })
-                    .catch(error => {
-                    const errorMsg = `Error occurred processing the user media stream. ${error}`;
-                    const tmp = this.initializeDeferral;
-                    // HACK: this should be handled through onError callbacks of all promises up the stack.
-                    // Unfortunately, the current implementation does not provide an easy way to reject promises
-                    // without a lot of code replication.
-                    // TODO: fix promise implementation, allow for a graceful reject chaining.
-                    this.initializeDeferral = null;
-                    tmp.Reject(errorMsg); // this will bubble up through the whole chain of promises,
-                    // with each new level adding extra "Unhandled callback error" prefix to the error message.
-                    // The following line is not guaranteed to be executed.
-                    this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["b" /* AudioSourceErrorEvent */](this.id, errorMsg));
-                });
-            }
-            else if (!window.navigator.getUserMedia) {
-                const errorMsg = "Browser does not support getUserMedia.";
-                this.initializeDeferral.Reject(errorMsg);
-                this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["b" /* AudioSourceErrorEvent */](errorMsg, "")); // mic initialized error - no streamid at this point
-            }
-            else {
-                this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["c" /* AudioSourceInitializingEvent */](this.id)); // no stream id
-                window.navigator.getUserMedia({ audio: true }, (mediaStream) => {
-                    this.mediaStream = mediaStream;
-                    this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["e" /* AudioSourceReadyEvent */](this.id));
-                    this.initializeDeferral.Resolve(true);
-                }, (error) => {
-                    const errorMsg = `Error occurred processing the user media stream. ${error}`;
-                    const tmp = this.initializeDeferral;
-                    // HACK: this should be handled through onError callbacks of all promises up the stack.
-                    // Unfortunately, the current implementation does not provide an easy way to reject promises
-                    // without a lot of code replication.
-                    // TODO: fix promise implementation, allow for a graceful reject chaining.
-                    this.initializeDeferral = null;
-                    tmp.Reject(errorMsg); // this will bubble up through the whole chain of promises,
-                    // with each new level adding extra "Unhandled callback error" prefix to the error message.
-                    // The following line is not guaranteed to be executed.
-                    this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["b" /* AudioSourceErrorEvent */](this.id, errorMsg));
-                });
-            }
-            return this.initializeDeferral.Promise();
-        };
-        this.Id = () => {
-            return this.id;
-        };
-        this.Attach = (audioNodeId) => {
-            this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["g" /* AudioStreamNodeAttachingEvent */](this.id, audioNodeId));
-            return this.Listen(audioNodeId).OnSuccessContinueWith((streamReader) => {
-                this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["f" /* AudioStreamNodeAttachedEvent */](this.id, audioNodeId));
-                return {
-                    Detach: () => {
-                        streamReader.Close();
-                        delete this.streams[audioNodeId];
-                        this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["h" /* AudioStreamNodeDetachedEvent */](this.id, audioNodeId));
-                        this.TurnOff();
-                    },
-                    Id: () => {
-                        return audioNodeId;
-                    },
-                    Read: () => {
-                        return streamReader.Read();
-                    },
-                };
-            });
-        };
-        this.Detach = (audioNodeId) => {
-            if (audioNodeId && this.streams[audioNodeId]) {
-                this.streams[audioNodeId].Close();
-                delete this.streams[audioNodeId];
-                this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["h" /* AudioStreamNodeDetachedEvent */](this.id, audioNodeId));
-            }
-        };
-        this.TurnOff = () => {
-            for (const streamId in this.streams) {
-                if (streamId) {
-                    const stream = this.streams[streamId];
-                    if (stream) {
-                        stream.Close();
-                    }
-                }
-            }
-            this.recorder.ReleaseMediaResources();
-            this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["d" /* AudioSourceOffEvent */](this.id)); // no stream now
-            this.initializeDeferral = null;
-            return __WEBPACK_IMPORTED_MODULE_0__common_Exports__["z" /* PromiseHelper */].FromResult(true);
-        };
-        this.Listen = (audioNodeId) => {
-            return this.TurnOn()
-                .OnSuccessContinueWith((_) => {
-                const stream = new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["E" /* Stream */](audioNodeId);
-                this.streams[audioNodeId] = stream;
-                try {
-                    this.recorder.Record(this.mediaStream, stream);
-                }
-                catch (error) {
-                    this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["i" /* AudioStreamNodeErrorEvent */](this.id, audioNodeId, error));
-                    throw error;
-                }
-                return stream.GetReader();
-            });
-        };
-        this.OnEvent = (event) => {
-            this.events.OnEvent(event);
-            __WEBPACK_IMPORTED_MODULE_0__common_Exports__["w" /* Events */].Instance.OnEvent(event);
-        };
-        this.id = audioSourceId ? audioSourceId : Object(__WEBPACK_IMPORTED_MODULE_0__common_Exports__["s" /* CreateNoDashGuid */])();
-        this.events = new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["u" /* EventSource */]();
-        this.recorder = recorder;
-    }
-    get Events() {
-        return this.events;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = MicAudioSource;
-
-
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar AuthInfo = /** @class */ (function () {\n    function AuthInfo(headerName, token) {\n        this.headerName = headerName;\n        this.token = token;\n    }\n    Object.defineProperty(AuthInfo.prototype, \"HeaderName\", {\n        get: function () {\n            return this.headerName;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(AuthInfo.prototype, \"Token\", {\n        get: function () {\n            return this.token;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    return AuthInfo;\n}());\nexports.AuthInfo = AuthInfo;\n\n//# sourceMappingURL=IAuthentication.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/IAuthentication.js?");
 
 /***/ }),
-/* 45 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/RecognitionEvents.js":
+/*!***********************************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/RecognitionEvents.js ***!
+  \***********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_Exports__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__common_browser_Exports__ = __webpack_require__(7);
-
-
-class FileAudioSource {
-    constructor(file, audioSourceId) {
-        this.streams = {};
-        this.TurnOn = () => {
-            if (typeof FileReader === "undefined") {
-                const errorMsg = "Browser does not support FileReader.";
-                this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["b" /* AudioSourceErrorEvent */](errorMsg, "")); // initialization error - no streamid at this point
-                return __WEBPACK_IMPORTED_MODULE_0__common_Exports__["z" /* PromiseHelper */].FromError(errorMsg);
-            }
-            else if (this.file.name.lastIndexOf(".wav") !== this.file.name.length - 4) {
-                const errorMsg = this.file.name + " is not supported. Only WAVE files are allowed at the moment.";
-                this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["b" /* AudioSourceErrorEvent */](errorMsg, ""));
-                return __WEBPACK_IMPORTED_MODULE_0__common_Exports__["z" /* PromiseHelper */].FromError(errorMsg);
-            }
-            else if (this.file.size > FileAudioSource.MAX_SIZE) {
-                const errorMsg = this.file.name + " exceeds the maximum allowed file size (" + FileAudioSource.MAX_SIZE + ").";
-                this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["b" /* AudioSourceErrorEvent */](errorMsg, ""));
-                return __WEBPACK_IMPORTED_MODULE_0__common_Exports__["z" /* PromiseHelper */].FromError(errorMsg);
-            }
-            this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["c" /* AudioSourceInitializingEvent */](this.id)); // no stream id
-            this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["e" /* AudioSourceReadyEvent */](this.id));
-            return __WEBPACK_IMPORTED_MODULE_0__common_Exports__["z" /* PromiseHelper */].FromResult(true);
-        };
-        this.Id = () => {
-            return this.id;
-        };
-        this.Attach = (audioNodeId) => {
-            this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["g" /* AudioStreamNodeAttachingEvent */](this.id, audioNodeId));
-            return this.Upload(audioNodeId).OnSuccessContinueWith((streamReader) => {
-                this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["f" /* AudioStreamNodeAttachedEvent */](this.id, audioNodeId));
-                return {
-                    Detach: () => {
-                        streamReader.Close();
-                        delete this.streams[audioNodeId];
-                        this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["h" /* AudioStreamNodeDetachedEvent */](this.id, audioNodeId));
-                        this.TurnOff();
-                    },
-                    Id: () => {
-                        return audioNodeId;
-                    },
-                    Read: () => {
-                        return streamReader.Read();
-                    },
-                };
-            });
-        };
-        this.Detach = (audioNodeId) => {
-            if (audioNodeId && this.streams[audioNodeId]) {
-                this.streams[audioNodeId].Close();
-                delete this.streams[audioNodeId];
-                this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["h" /* AudioStreamNodeDetachedEvent */](this.id, audioNodeId));
-            }
-        };
-        this.TurnOff = () => {
-            for (const streamId in this.streams) {
-                if (streamId) {
-                    const stream = this.streams[streamId];
-                    if (stream && !stream.IsClosed) {
-                        stream.Close();
-                    }
-                }
-            }
-            this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["d" /* AudioSourceOffEvent */](this.id)); // no stream now
-            return __WEBPACK_IMPORTED_MODULE_0__common_Exports__["z" /* PromiseHelper */].FromResult(true);
-        };
-        this.Upload = (audioNodeId) => {
-            return this.TurnOn()
-                .OnSuccessContinueWith((_) => {
-                const stream = new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["E" /* Stream */](audioNodeId);
-                this.streams[audioNodeId] = stream;
-                const reader = new FileReader();
-                let startOffset = 0;
-                let endOffset = FileAudioSource.CHUNK_SIZE;
-                let lastWriteTimestamp = 0;
-                const processNextChunk = (event) => {
-                    if (stream.IsClosed) {
-                        return; // output stream was closed (somebody called TurnOff). We're done here.
-                    }
-                    if (lastWriteTimestamp !== 0) {
-                        const delay = Date.now() - lastWriteTimestamp;
-                        if (delay < FileAudioSource.UPLOAD_INTERVAL) {
-                            // It's been less than the "upload interval" since we've uploaded the
-                            // last chunk. Schedule the next upload to make sure that we're sending
-                            // upstream roughly one chunk per upload interval.
-                            new __WEBPACK_IMPORTED_MODULE_1__common_browser_Exports__["d" /* Timer */](FileAudioSource.UPLOAD_INTERVAL - delay, processNextChunk).start();
-                            return;
-                        }
-                    }
-                    stream.Write(reader.result);
-                    lastWriteTimestamp = Date.now();
-                    if (endOffset < this.file.size) {
-                        startOffset = endOffset;
-                        endOffset = Math.min(endOffset + FileAudioSource.CHUNK_SIZE, this.file.size);
-                        const chunk = this.file.slice(startOffset, endOffset);
-                        reader.readAsArrayBuffer(chunk);
-                    }
-                    else {
-                        // we've written the entire file to the output stream, can close it now.
-                        stream.Close();
-                    }
-                };
-                reader.onload = processNextChunk;
-                reader.onerror = (event) => {
-                    const errorMsg = `Error occurred while processing '${this.file.name}'. ${event.error}`;
-                    this.OnEvent(new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["i" /* AudioStreamNodeErrorEvent */](this.id, audioNodeId, event.error));
-                    throw new Error(errorMsg);
-                };
-                const chunk = this.file.slice(startOffset, endOffset);
-                reader.readAsArrayBuffer(chunk);
-                return stream.GetReader();
-            });
-        };
-        this.OnEvent = (event) => {
-            this.events.OnEvent(event);
-            __WEBPACK_IMPORTED_MODULE_0__common_Exports__["w" /* Events */].Instance.OnEvent(event);
-        };
-        this.id = audioSourceId ? audioSourceId : Object(__WEBPACK_IMPORTED_MODULE_0__common_Exports__["s" /* CreateNoDashGuid */])();
-        this.events = new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["u" /* EventSource */]();
-        this.file = file;
-    }
-    get Events() {
-        return this.events;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = FileAudioSource;
-
-// Recommended sample rate (bytes/second).
-FileAudioSource.SAMPLE_RATE = 16000 * 2; // 16 kHz * 16 bits
-// We should stream audio at no faster than 2x real-time (i.e., send five chunks
-// per second, with the chunk size == sample rate in bytes per second * 2 / 5).
-FileAudioSource.CHUNK_SIZE = FileAudioSource.SAMPLE_RATE * 2 / 5;
-FileAudioSource.UPLOAD_INTERVAL = 200; // milliseconds
-// 10 seconds of audio in bytes =
-// sample rate (bytes/second) * 600 (seconds) + 44 (size of the wave header).
-FileAudioSource.MAX_SIZE = FileAudioSource.SAMPLE_RATE * 600 + 44;
-
+eval("\nvar __extends = (this && this.__extends) || (function () {\n    var extendStatics = Object.setPrototypeOf ||\n        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||\n        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };\n    return function (d, b) {\n        extendStatics(d, b);\n        function __() { this.constructor = d; }\n        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());\n    };\n})();\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar Exports_1 = __webpack_require__(/*! ../../common/Exports */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Exports.js\");\nvar SpeechRecognitionEvent = /** @class */ (function (_super) {\n    __extends(SpeechRecognitionEvent, _super);\n    function SpeechRecognitionEvent(eventName, requestId, eventType) {\n        if (eventType === void 0) { eventType = Exports_1.EventType.Info; }\n        var _this = _super.call(this, eventName, eventType) || this;\n        _this.requestId = requestId;\n        return _this;\n    }\n    Object.defineProperty(SpeechRecognitionEvent.prototype, \"RequestId\", {\n        get: function () {\n            return this.requestId;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    return SpeechRecognitionEvent;\n}(Exports_1.PlatformEvent));\nexports.SpeechRecognitionEvent = SpeechRecognitionEvent;\n// tslint:disable-next-line:max-classes-per-file\nvar SpeechRecognitionResultEvent = /** @class */ (function (_super) {\n    __extends(SpeechRecognitionResultEvent, _super);\n    function SpeechRecognitionResultEvent(eventName, requestId, result) {\n        var _this = _super.call(this, eventName, requestId) || this;\n        _this.result = result;\n        return _this;\n    }\n    Object.defineProperty(SpeechRecognitionResultEvent.prototype, \"Result\", {\n        get: function () {\n            return this.result;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    return SpeechRecognitionResultEvent;\n}(SpeechRecognitionEvent));\nexports.SpeechRecognitionResultEvent = SpeechRecognitionResultEvent;\n// tslint:disable-next-line:max-classes-per-file\nvar RecognitionTriggeredEvent = /** @class */ (function (_super) {\n    __extends(RecognitionTriggeredEvent, _super);\n    function RecognitionTriggeredEvent(requestId, audioSourceId, audioNodeId) {\n        var _this = _super.call(this, \"RecognitionTriggeredEvent\", requestId) || this;\n        _this.audioSourceId = audioSourceId;\n        _this.audioNodeId = audioNodeId;\n        return _this;\n    }\n    Object.defineProperty(RecognitionTriggeredEvent.prototype, \"AudioSourceId\", {\n        get: function () {\n            return this.audioSourceId;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(RecognitionTriggeredEvent.prototype, \"AudioNodeId\", {\n        get: function () {\n            return this.audioNodeId;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    return RecognitionTriggeredEvent;\n}(SpeechRecognitionEvent));\nexports.RecognitionTriggeredEvent = RecognitionTriggeredEvent;\n// tslint:disable-next-line:max-classes-per-file\nvar ListeningStartedEvent = /** @class */ (function (_super) {\n    __extends(ListeningStartedEvent, _super);\n    function ListeningStartedEvent(requestId, audioSourceId, audioNodeId) {\n        var _this = _super.call(this, \"ListeningStartedEvent\", requestId) || this;\n        _this.audioSourceId = audioSourceId;\n        _this.audioNodeId = audioNodeId;\n        return _this;\n    }\n    Object.defineProperty(ListeningStartedEvent.prototype, \"AudioSourceId\", {\n        get: function () {\n            return this.audioSourceId;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(ListeningStartedEvent.prototype, \"AudioNodeId\", {\n        get: function () {\n            return this.audioNodeId;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    return ListeningStartedEvent;\n}(SpeechRecognitionEvent));\nexports.ListeningStartedEvent = ListeningStartedEvent;\n// tslint:disable-next-line:max-classes-per-file\nvar ConnectingToServiceEvent = /** @class */ (function (_super) {\n    __extends(ConnectingToServiceEvent, _super);\n    function ConnectingToServiceEvent(requestId, authFetchEventid, connectionId) {\n        var _this = _super.call(this, \"ConnectingToServiceEvent\", requestId) || this;\n        _this.authFetchEventid = authFetchEventid;\n        _this.connectionId = connectionId;\n        return _this;\n    }\n    Object.defineProperty(ConnectingToServiceEvent.prototype, \"AuthFetchEventid\", {\n        get: function () {\n            return this.authFetchEventid;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(ConnectingToServiceEvent.prototype, \"ConnectionId\", {\n        get: function () {\n            return this.connectionId;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    return ConnectingToServiceEvent;\n}(SpeechRecognitionEvent));\nexports.ConnectingToServiceEvent = ConnectingToServiceEvent;\n// tslint:disable-next-line:max-classes-per-file\nvar RecognitionStartedEvent = /** @class */ (function (_super) {\n    __extends(RecognitionStartedEvent, _super);\n    function RecognitionStartedEvent(requestId, audioSourceId, audioNodeId, authFetchEventId, connectionId) {\n        var _this = _super.call(this, \"RecognitionStartedEvent\", requestId) || this;\n        _this.audioSourceId = audioSourceId;\n        _this.audioNodeId = audioNodeId;\n        _this.authFetchEventId = authFetchEventId;\n        _this.connectionId = connectionId;\n        return _this;\n    }\n    Object.defineProperty(RecognitionStartedEvent.prototype, \"AudioSourceId\", {\n        get: function () {\n            return this.audioSourceId;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(RecognitionStartedEvent.prototype, \"AudioNodeId\", {\n        get: function () {\n            return this.audioNodeId;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(RecognitionStartedEvent.prototype, \"AuthFetchEventId\", {\n        get: function () {\n            return this.authFetchEventId;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(RecognitionStartedEvent.prototype, \"ConnectionId\", {\n        get: function () {\n            return this.connectionId;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    return RecognitionStartedEvent;\n}(SpeechRecognitionEvent));\nexports.RecognitionStartedEvent = RecognitionStartedEvent;\n// tslint:disable-next-line:max-classes-per-file\nvar SpeechStartDetectedEvent = /** @class */ (function (_super) {\n    __extends(SpeechStartDetectedEvent, _super);\n    function SpeechStartDetectedEvent(requestId, result) {\n        return _super.call(this, \"SpeechStartDetectedEvent\", requestId, result) || this;\n    }\n    return SpeechStartDetectedEvent;\n}(SpeechRecognitionResultEvent));\nexports.SpeechStartDetectedEvent = SpeechStartDetectedEvent;\n// tslint:disable-next-line:max-classes-per-file\nvar SpeechHypothesisEvent = /** @class */ (function (_super) {\n    __extends(SpeechHypothesisEvent, _super);\n    function SpeechHypothesisEvent(requestId, result) {\n        return _super.call(this, \"SpeechHypothesisEvent\", requestId, result) || this;\n    }\n    return SpeechHypothesisEvent;\n}(SpeechRecognitionResultEvent));\nexports.SpeechHypothesisEvent = SpeechHypothesisEvent;\n// tslint:disable-next-line:max-classes-per-file\nvar SpeechFragmentEvent = /** @class */ (function (_super) {\n    __extends(SpeechFragmentEvent, _super);\n    function SpeechFragmentEvent(requestId, result) {\n        return _super.call(this, \"SpeechFragmentEvent\", requestId, result) || this;\n    }\n    return SpeechFragmentEvent;\n}(SpeechRecognitionResultEvent));\nexports.SpeechFragmentEvent = SpeechFragmentEvent;\n// tslint:disable-next-line:max-classes-per-file\nvar SpeechEndDetectedEvent = /** @class */ (function (_super) {\n    __extends(SpeechEndDetectedEvent, _super);\n    function SpeechEndDetectedEvent(requestId, result) {\n        return _super.call(this, \"SpeechEndDetectedEvent\", requestId, result) || this;\n    }\n    return SpeechEndDetectedEvent;\n}(SpeechRecognitionResultEvent));\nexports.SpeechEndDetectedEvent = SpeechEndDetectedEvent;\n// tslint:disable-next-line:max-classes-per-file\nvar SpeechSimplePhraseEvent = /** @class */ (function (_super) {\n    __extends(SpeechSimplePhraseEvent, _super);\n    function SpeechSimplePhraseEvent(requestId, result) {\n        return _super.call(this, \"SpeechSimplePhraseEvent\", requestId, result) || this;\n    }\n    return SpeechSimplePhraseEvent;\n}(SpeechRecognitionResultEvent));\nexports.SpeechSimplePhraseEvent = SpeechSimplePhraseEvent;\n// tslint:disable-next-line:max-classes-per-file\nvar SpeechDetailedPhraseEvent = /** @class */ (function (_super) {\n    __extends(SpeechDetailedPhraseEvent, _super);\n    function SpeechDetailedPhraseEvent(requestId, result) {\n        return _super.call(this, \"SpeechDetailedPhraseEvent\", requestId, result) || this;\n    }\n    return SpeechDetailedPhraseEvent;\n}(SpeechRecognitionResultEvent));\nexports.SpeechDetailedPhraseEvent = SpeechDetailedPhraseEvent;\nvar RecognitionCompletionStatus;\n(function (RecognitionCompletionStatus) {\n    RecognitionCompletionStatus[RecognitionCompletionStatus[\"Success\"] = 0] = \"Success\";\n    RecognitionCompletionStatus[RecognitionCompletionStatus[\"AudioSourceError\"] = 1] = \"AudioSourceError\";\n    RecognitionCompletionStatus[RecognitionCompletionStatus[\"AudioSourceTimeout\"] = 2] = \"AudioSourceTimeout\";\n    RecognitionCompletionStatus[RecognitionCompletionStatus[\"AuthTokenFetchError\"] = 3] = \"AuthTokenFetchError\";\n    RecognitionCompletionStatus[RecognitionCompletionStatus[\"AuthTokenFetchTimeout\"] = 4] = \"AuthTokenFetchTimeout\";\n    RecognitionCompletionStatus[RecognitionCompletionStatus[\"UnAuthorized\"] = 5] = \"UnAuthorized\";\n    RecognitionCompletionStatus[RecognitionCompletionStatus[\"ConnectTimeout\"] = 6] = \"ConnectTimeout\";\n    RecognitionCompletionStatus[RecognitionCompletionStatus[\"ConnectError\"] = 7] = \"ConnectError\";\n    RecognitionCompletionStatus[RecognitionCompletionStatus[\"ClientRecognitionActivityTimeout\"] = 8] = \"ClientRecognitionActivityTimeout\";\n    RecognitionCompletionStatus[RecognitionCompletionStatus[\"UnknownError\"] = 9] = \"UnknownError\";\n})(RecognitionCompletionStatus = exports.RecognitionCompletionStatus || (exports.RecognitionCompletionStatus = {}));\n// tslint:disable-next-line:max-classes-per-file\nvar RecognitionEndedEvent = /** @class */ (function (_super) {\n    __extends(RecognitionEndedEvent, _super);\n    function RecognitionEndedEvent(requestId, audioSourceId, audioNodeId, authFetchEventId, connectionId, serviceTag, status, error) {\n        var _this = _super.call(this, \"RecognitionEndedEvent\", requestId, status === RecognitionCompletionStatus.Success ? Exports_1.EventType.Info : Exports_1.EventType.Error) || this;\n        _this.audioSourceId = audioSourceId;\n        _this.audioNodeId = audioNodeId;\n        _this.connectionId = connectionId;\n        _this.authFetchEventId = authFetchEventId;\n        _this.status = status;\n        _this.error = error;\n        _this.serviceTag = serviceTag;\n        return _this;\n    }\n    Object.defineProperty(RecognitionEndedEvent.prototype, \"AudioSourceId\", {\n        get: function () {\n            return this.audioSourceId;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(RecognitionEndedEvent.prototype, \"AudioNodeId\", {\n        get: function () {\n            return this.audioNodeId;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(RecognitionEndedEvent.prototype, \"AuthFetchEventId\", {\n        get: function () {\n            return this.authFetchEventId;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(RecognitionEndedEvent.prototype, \"ConnectionId\", {\n        get: function () {\n            return this.connectionId;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(RecognitionEndedEvent.prototype, \"ServiceTag\", {\n        get: function () {\n            return this.serviceTag;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(RecognitionEndedEvent.prototype, \"Status\", {\n        get: function () {\n            return this.status;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(RecognitionEndedEvent.prototype, \"Error\", {\n        get: function () {\n            return this.error;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    return RecognitionEndedEvent;\n}(SpeechRecognitionEvent));\nexports.RecognitionEndedEvent = RecognitionEndedEvent;\n\n//# sourceMappingURL=RecognitionEvents.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/RecognitionEvents.js?");
 
 /***/ }),
-/* 46 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/Recognizer.js":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/Recognizer.js ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-class OpusRecorder {
-    constructor(options) {
-        this.Record = (mediaStream, outputStream) => {
-            const mediaRecorder = new MediaRecorder(mediaStream, this.mediaRecorderOptions);
-            const timeslice = 100; // this is in ms - 100 ensures that the chunk doesn't exceed the max size of chunk allowed in WS connection
-            mediaRecorder.ondataavailable = (dataAvailableEvent) => {
-                if (outputStream) {
-                    const reader = new FileReader();
-                    reader.readAsArrayBuffer(dataAvailableEvent.data);
-                    reader.onloadend = (event) => {
-                        outputStream.Write(reader.result);
-                    };
-                }
-            };
-            this.mediaResources = {
-                recorder: mediaRecorder,
-                stream: mediaStream,
-            };
-            mediaRecorder.start(timeslice);
-        };
-        this.ReleaseMediaResources = () => {
-            if (this.mediaResources.recorder.state !== "inactive") {
-                this.mediaResources.recorder.stop();
-            }
-            this.mediaResources.stream.getTracks().forEach((track) => track.stop());
-        };
-        this.mediaRecorderOptions = options;
-    }
-}
-/* unused harmony export OpusRecorder */
-
-/* Declaring this inline to avoid compiler warnings
-declare class MediaRecorder {
-    constructor(mediaStream: MediaStream, options: any);
-
-    public state: string;
-
-    public ondataavailable(dataAvailableEvent: any): void;
-    public stop(): void;
-}*/
-
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar Exports_1 = __webpack_require__(/*! ../../common/Exports */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Exports.js\");\nvar RecognitionEvents_1 = __webpack_require__(/*! ./RecognitionEvents */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/RecognitionEvents.js\");\nvar RecognizerConfig_1 = __webpack_require__(/*! ./RecognizerConfig */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/RecognizerConfig.js\");\nvar ServiceTelemetryListener_Internal_1 = __webpack_require__(/*! ./ServiceTelemetryListener.Internal */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/ServiceTelemetryListener.Internal.js\");\nvar SpeechConnectionMessage_Internal_1 = __webpack_require__(/*! ./SpeechConnectionMessage.Internal */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/SpeechConnectionMessage.Internal.js\");\nvar Recognizer = /** @class */ (function () {\n    function Recognizer(authentication, connectionFactory, audioSource, recognizerConfig) {\n        var _this = this;\n        this.Recognize = function (onEventCallback, speechContextJson) {\n            var requestSession = new RequestSession(_this.audioSource.Id(), onEventCallback);\n            requestSession.ListenForServiceTelemetry(_this.audioSource.Events);\n            return _this.audioSource\n                .Attach(requestSession.AudioNodeId)\n                .ContinueWithPromise(function (result) {\n                if (result.IsError) {\n                    requestSession.OnAudioSourceAttachCompleted(null, true, result.Error);\n                    throw new Error(result.Error);\n                }\n                else {\n                    requestSession.OnAudioSourceAttachCompleted(result.Result, false);\n                }\n                var audioNode = result.Result;\n                _this.FetchConnection(requestSession)\n                    .OnSuccessContinueWith(function (connection) {\n                    var messageRetrievalPromise = _this.ReceiveMessage(connection, requestSession);\n                    var messageSendPromise = _this.SendSpeechConfig(requestSession.RequestId, connection, _this.recognizerConfig.SpeechConfig.Serialize())\n                        .OnSuccessContinueWithPromise(function (_) {\n                        return _this.SendSpeechContext(requestSession.RequestId, connection, speechContextJson)\n                            .OnSuccessContinueWithPromise(function (_) {\n                            return _this.SendAudio(requestSession.RequestId, connection, audioNode, requestSession);\n                        });\n                    });\n                    var completionPromise = Exports_1.PromiseHelper.WhenAll([messageRetrievalPromise, messageSendPromise]);\n                    completionPromise.On(function (r) {\n                        requestSession.Dispose();\n                        _this.SendTelemetryData(requestSession.RequestId, connection, requestSession.GetTelemetry());\n                    }, function (error) {\n                        requestSession.Dispose(error);\n                        _this.SendTelemetryData(requestSession.RequestId, connection, requestSession.GetTelemetry());\n                    });\n                    return completionPromise;\n                });\n                return requestSession.CompletionPromise;\n            });\n        };\n        this.FetchConnection = function (requestSession, isUnAuthorized) {\n            if (isUnAuthorized === void 0) { isUnAuthorized = false; }\n            if (_this.connectionFetchPromise) {\n                if (_this.connectionFetchPromise.Result().IsError\n                    || _this.connectionFetchPromise.Result().Result.State() === Exports_1.ConnectionState.Disconnected) {\n                    _this.connectionId = null;\n                    _this.connectionFetchPromise = null;\n                    return _this.FetchConnection(requestSession);\n                }\n                else {\n                    requestSession.OnPreConnectionStart(_this.authFetchEventId, _this.connectionId);\n                    requestSession.OnConnectionEstablishCompleted(200);\n                    requestSession.ListenForServiceTelemetry(_this.connectionFetchPromise.Result().Result.Events);\n                    return _this.connectionFetchPromise;\n                }\n            }\n            _this.authFetchEventId = Exports_1.CreateNoDashGuid();\n            _this.connectionId = Exports_1.CreateNoDashGuid();\n            requestSession.OnPreConnectionStart(_this.authFetchEventId, _this.connectionId);\n            var authPromise = isUnAuthorized ? _this.authentication.FetchOnExpiry(_this.authFetchEventId) : _this.authentication.Fetch(_this.authFetchEventId);\n            _this.connectionFetchPromise = authPromise\n                .ContinueWithPromise(function (result) {\n                if (result.IsError) {\n                    requestSession.OnAuthCompleted(true, result.Error);\n                    throw new Error(result.Error);\n                }\n                else {\n                    requestSession.OnAuthCompleted(false);\n                }\n                var connection = _this.connectionFactory.Create(_this.recognizerConfig, result.Result, _this.connectionId);\n                requestSession.ListenForServiceTelemetry(connection.Events);\n                return connection.Open().OnSuccessContinueWithPromise(function (response) {\n                    if (response.StatusCode === 200) {\n                        requestSession.OnConnectionEstablishCompleted(response.StatusCode);\n                        return Exports_1.PromiseHelper.FromResult(connection);\n                    }\n                    else if (response.StatusCode === 403 && !isUnAuthorized) {\n                        return _this.FetchConnection(requestSession, true);\n                    }\n                    else {\n                        requestSession.OnConnectionEstablishCompleted(response.StatusCode, response.Reason);\n                        return Exports_1.PromiseHelper.FromError(\"Unable to contact server. StatusCode: \" + response.StatusCode + \", Reason: \" + response.Reason);\n                    }\n                });\n            });\n            return _this.connectionFetchPromise;\n        };\n        this.ReceiveMessage = function (connection, requestSession) {\n            return connection\n                .Read()\n                .OnSuccessContinueWithPromise(function (message) {\n                var connectionMessage = SpeechConnectionMessage_Internal_1.SpeechConnectionMessage.FromConnectionMessage(message);\n                if (connectionMessage.RequestId.toLowerCase() === requestSession.RequestId.toLowerCase()) {\n                    switch (connectionMessage.Path.toLowerCase()) {\n                        case \"turn.start\":\n                            requestSession.OnServiceTurnStartResponse(JSON.parse(connectionMessage.TextBody));\n                            break;\n                        case \"speech.startDetected\":\n                            requestSession.OnServiceSpeechStartDetectedResponse(JSON.parse(connectionMessage.TextBody));\n                            break;\n                        case \"speech.hypothesis\":\n                            requestSession.OnServiceSpeechHypothesisResponse(JSON.parse(connectionMessage.TextBody));\n                            break;\n                        case \"speech.fragment\":\n                            requestSession.OnServiceSpeechFragmentResponse(JSON.parse(connectionMessage.TextBody));\n                            break;\n                        case \"speech.enddetected\":\n                            requestSession.OnServiceSpeechEndDetectedResponse(JSON.parse(connectionMessage.TextBody));\n                            break;\n                        case \"speech.phrase\":\n                            if (_this.recognizerConfig.IsContinuousRecognition) {\n                                // For continuous recognition telemetry has to be sent for every phrase as per spec.\n                                _this.SendTelemetryData(requestSession.RequestId, connection, requestSession.GetTelemetry());\n                            }\n                            if (_this.recognizerConfig.Format === RecognizerConfig_1.SpeechResultFormat.Simple) {\n                                requestSession.OnServiceSimpleSpeechPhraseResponse(JSON.parse(connectionMessage.TextBody));\n                            }\n                            else {\n                                requestSession.OnServiceDetailedSpeechPhraseResponse(JSON.parse(connectionMessage.TextBody));\n                            }\n                            break;\n                        case \"turn.end\":\n                            requestSession.OnServiceTurnEndResponse();\n                            return Exports_1.PromiseHelper.FromResult(true);\n                        default:\n                            break;\n                    }\n                }\n                return _this.ReceiveMessage(connection, requestSession);\n            });\n        };\n        this.SendSpeechConfig = function (requestId, connection, speechConfigJson) {\n            if (speechConfigJson && _this.connectionId !== _this.speechConfigConnectionId) {\n                _this.speechConfigConnectionId = _this.connectionId;\n                return connection\n                    .Send(new SpeechConnectionMessage_Internal_1.SpeechConnectionMessage(Exports_1.MessageType.Text, \"speech.config\", requestId, \"application/json\", speechConfigJson));\n            }\n            return Exports_1.PromiseHelper.FromResult(true);\n        };\n        this.SendSpeechContext = function (requestId, connection, speechContextJson) {\n            if (speechContextJson) {\n                return connection\n                    .Send(new SpeechConnectionMessage_Internal_1.SpeechConnectionMessage(Exports_1.MessageType.Text, \"speech.context\", requestId, \"application/json\", speechContextJson));\n            }\n            return Exports_1.PromiseHelper.FromResult(true);\n        };\n        this.SendTelemetryData = function (requestId, connection, telemetryData) {\n            return connection\n                .Send(new SpeechConnectionMessage_Internal_1.SpeechConnectionMessage(Exports_1.MessageType.Text, \"telemetry\", requestId, \"application/json\", telemetryData));\n        };\n        this.SendAudio = function (requestId, connection, audioStreamNode, requestSession) {\n            // NOTE: Home-baked promises crash ios safari during the invocation\n            // of the error callback chain (looks like the recursion is way too deep, and\n            // it blows up the stack). The following construct is a stop-gap that does not\n            // bubble the error up the callback chain and hence circumvents this problem.\n            // TODO: rewrite with ES6 promises.\n            var deferred = new Exports_1.Deferred();\n            var readAndUploadCycle = function (_) {\n                audioStreamNode.Read().On(function (audioStreamChunk) {\n                    // we have a new audio chunk to upload.\n                    if (requestSession.IsSpeechEnded) {\n                        // If service already recognized audio end then dont send any more audio\n                        deferred.Resolve(true);\n                        return;\n                    }\n                    var payload = (audioStreamChunk.IsEnd) ? null : audioStreamChunk.Buffer;\n                    var uploaded = connection.Send(new SpeechConnectionMessage_Internal_1.SpeechConnectionMessage(Exports_1.MessageType.Binary, \"audio\", requestId, null, payload));\n                    if (!audioStreamChunk.IsEnd) {\n                        uploaded.OnSuccessContinueWith(readAndUploadCycle);\n                    }\n                    else {\n                        // the audio stream has been closed, no need to schedule next\n                        // read-upload cycle.\n                        deferred.Resolve(true);\n                    }\n                }, function (error) {\n                    if (requestSession.IsSpeechEnded) {\n                        // For whatever reason, Reject is used to remove queue subscribers inside\n                        // the Queue.DrainAndDispose invoked from DetachAudioNode down blow, which\n                        // means that sometimes things can be rejected in normal circumstances, without\n                        // any errors.\n                        deferred.Resolve(true); // TODO: remove the argument, it's is completely meaningless.\n                    }\n                    else {\n                        // Only reject, if there was a proper error.\n                        deferred.Reject(error);\n                    }\n                });\n            };\n            readAndUploadCycle(true);\n            return deferred.Promise();\n        };\n        if (!authentication) {\n            throw new Exports_1.ArgumentNullError(\"authentication\");\n        }\n        if (!connectionFactory) {\n            throw new Exports_1.ArgumentNullError(\"connectionFactory\");\n        }\n        if (!audioSource) {\n            throw new Exports_1.ArgumentNullError(\"audioSource\");\n        }\n        if (!recognizerConfig) {\n            throw new Exports_1.ArgumentNullError(\"recognizerConfig\");\n        }\n        this.authentication = authentication;\n        this.connectionFactory = connectionFactory;\n        this.audioSource = audioSource;\n        this.recognizerConfig = recognizerConfig;\n    }\n    Object.defineProperty(Recognizer.prototype, \"AudioSource\", {\n        get: function () {\n            return this.audioSource;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    return Recognizer;\n}());\nexports.Recognizer = Recognizer;\n// tslint:disable-next-line:max-classes-per-file\nvar RequestSession = /** @class */ (function () {\n    function RequestSession(audioSourceId, onEventCallback) {\n        var _this = this;\n        this.isDisposed = false;\n        this.detachables = new Array();\n        this.isAudioNodeDetached = false;\n        this.isCompleted = false;\n        this.OnAudioSourceAttachCompleted = function (audioNode, isError, error) {\n            _this.audioNode = audioNode;\n            if (isError) {\n                _this.OnComplete(RecognitionEvents_1.RecognitionCompletionStatus.AudioSourceError, error);\n            }\n            else {\n                _this.OnEvent(new RecognitionEvents_1.ListeningStartedEvent(_this.requestId, _this.audioSourceId, _this.audioNodeId));\n            }\n        };\n        this.OnPreConnectionStart = function (authFetchEventId, connectionId) {\n            _this.authFetchEventId = authFetchEventId;\n            _this.connectionId = connectionId;\n            _this.OnEvent(new RecognitionEvents_1.ConnectingToServiceEvent(_this.requestId, _this.authFetchEventId, _this.connectionId));\n        };\n        this.OnAuthCompleted = function (isError, error) {\n            if (isError) {\n                _this.OnComplete(RecognitionEvents_1.RecognitionCompletionStatus.AuthTokenFetchError, error);\n            }\n        };\n        this.OnConnectionEstablishCompleted = function (statusCode, reason) {\n            if (statusCode === 200) {\n                _this.OnEvent(new RecognitionEvents_1.RecognitionStartedEvent(_this.RequestId, _this.audioSourceId, _this.audioNodeId, _this.authFetchEventId, _this.connectionId));\n                return;\n            }\n            else if (statusCode === 403) {\n                _this.OnComplete(RecognitionEvents_1.RecognitionCompletionStatus.UnAuthorized, reason);\n            }\n            else {\n                _this.OnComplete(RecognitionEvents_1.RecognitionCompletionStatus.ConnectError, reason);\n            }\n        };\n        this.OnServiceTurnStartResponse = function (response) {\n            if (response && response.context && response.context.serviceTag) {\n                _this.serviceTag = response.context.serviceTag;\n            }\n        };\n        this.OnServiceSpeechStartDetectedResponse = function (result) {\n            _this.OnEvent(new RecognitionEvents_1.SpeechStartDetectedEvent(_this.RequestId, result));\n        };\n        this.OnServiceSpeechHypothesisResponse = function (result) {\n            _this.OnEvent(new RecognitionEvents_1.SpeechHypothesisEvent(_this.RequestId, result));\n        };\n        this.OnServiceSpeechFragmentResponse = function (result) {\n            _this.OnEvent(new RecognitionEvents_1.SpeechFragmentEvent(_this.RequestId, result));\n        };\n        this.OnServiceSpeechEndDetectedResponse = function (result) {\n            _this.DetachAudioNode();\n            _this.OnEvent(new RecognitionEvents_1.SpeechEndDetectedEvent(_this.RequestId, result));\n        };\n        this.OnServiceSimpleSpeechPhraseResponse = function (result) {\n            _this.OnEvent(new RecognitionEvents_1.SpeechSimplePhraseEvent(_this.RequestId, result));\n        };\n        this.OnServiceDetailedSpeechPhraseResponse = function (result) {\n            _this.OnEvent(new RecognitionEvents_1.SpeechDetailedPhraseEvent(_this.RequestId, result));\n        };\n        this.OnServiceTurnEndResponse = function () {\n            _this.OnComplete(RecognitionEvents_1.RecognitionCompletionStatus.Success);\n        };\n        this.OnConnectionError = function (error) {\n            _this.OnComplete(RecognitionEvents_1.RecognitionCompletionStatus.UnknownError, error);\n        };\n        this.Dispose = function (error) {\n            if (!_this.isDisposed) {\n                // we should have completed by now. If we did not its an unknown error.\n                _this.OnComplete(RecognitionEvents_1.RecognitionCompletionStatus.UnknownError, error);\n                _this.isDisposed = true;\n                for (var _i = 0, _a = _this.detachables; _i < _a.length; _i++) {\n                    var detachable = _a[_i];\n                    detachable.Detach();\n                }\n                _this.serviceTelemetryListener.Dispose();\n            }\n        };\n        this.GetTelemetry = function () {\n            return _this.serviceTelemetryListener.GetTelemetry();\n        };\n        this.OnComplete = function (status, error) {\n            if (!_this.isCompleted) {\n                _this.isCompleted = true;\n                _this.DetachAudioNode();\n                _this.OnEvent(new RecognitionEvents_1.RecognitionEndedEvent(_this.RequestId, _this.audioSourceId, _this.audioNodeId, _this.authFetchEventId, _this.connectionId, _this.serviceTag, status, error ? error : \"\"));\n            }\n        };\n        this.DetachAudioNode = function () {\n            if (!_this.isAudioNodeDetached) {\n                _this.isAudioNodeDetached = true;\n                if (_this.audioNode) {\n                    _this.audioNode.Detach();\n                }\n            }\n        };\n        this.OnEvent = function (event) {\n            _this.serviceTelemetryListener.OnEvent(event);\n            Exports_1.Events.Instance.OnEvent(event);\n            if (_this.onEventCallback) {\n                _this.onEventCallback(event);\n            }\n        };\n        this.audioSourceId = audioSourceId;\n        this.onEventCallback = onEventCallback;\n        this.requestId = Exports_1.CreateNoDashGuid();\n        this.audioNodeId = Exports_1.CreateNoDashGuid();\n        this.requestCompletionDeferral = new Exports_1.Deferred();\n        this.serviceTelemetryListener = new ServiceTelemetryListener_Internal_1.ServiceTelemetryListener(this.requestId, this.audioSourceId, this.audioNodeId);\n        this.OnEvent(new RecognitionEvents_1.RecognitionTriggeredEvent(this.RequestId, this.audioSourceId, this.audioNodeId));\n    }\n    Object.defineProperty(RequestSession.prototype, \"RequestId\", {\n        get: function () {\n            return this.requestId;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(RequestSession.prototype, \"AudioNodeId\", {\n        get: function () {\n            return this.audioNodeId;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(RequestSession.prototype, \"CompletionPromise\", {\n        get: function () {\n            return this.requestCompletionDeferral.Promise();\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(RequestSession.prototype, \"IsSpeechEnded\", {\n        get: function () {\n            return this.isAudioNodeDetached;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(RequestSession.prototype, \"IsCompleted\", {\n        get: function () {\n            return this.isCompleted;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    RequestSession.prototype.ListenForServiceTelemetry = function (eventSource) {\n        this.detachables.push(eventSource.AttachListener(this.serviceTelemetryListener));\n    };\n    return RequestSession;\n}());\n\n//# sourceMappingURL=Recognizer.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/Recognizer.js?");
 
 /***/ }),
-/* 47 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/RecognizerConfig.js":
+/*!**********************************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/RecognizerConfig.js ***!
+  \**********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_Exports__ = __webpack_require__(0);
-
-class PcmRecorder {
-    constructor() {
-        this.Record = (mediaStream, outputStream) => {
-            // https://developer.mozilla.org/en-US/docs/Web/API/AudioContext
-            const contextCtor = (window.AudioContext)
-                || (window.webkitAudioContext)
-                || false;
-            if (!contextCtor) {
-                throw new Error("Browser does not support Web Audio API (AudioContext is not available).");
-            }
-            const audioContext = new contextCtor();
-            // https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createMediaStreamSource
-            const mediaStreamSource = audioContext.createMediaStreamSource(mediaStream);
-            const desiredSampleRate = 16000;
-            // let compressionRatio = mediaStreamSource.context.sampleRate / desiredSampleRate;
-            let bufferSize = 2048;
-            let isFirstFrameWritten = false;
-            if (desiredSampleRate * 4 <= mediaStreamSource.context.sampleRate) {
-                bufferSize = 8192;
-            }
-            else if (desiredSampleRate * 2 <= mediaStreamSource.context.sampleRate) {
-                bufferSize = 4096;
-            }
-            // https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createScriptProcessor
-            const scriptNode = mediaStreamSource.context.createScriptProcessor(bufferSize, 1, 1);
-            const waveStreamEncoder = new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["C" /* RiffPcmEncoder */](mediaStreamSource.context.sampleRate, desiredSampleRate);
-            scriptNode.onaudioprocess = (audioProcessingEvent) => {
-                const monoAudioChunk = audioProcessingEvent.inputBuffer.getChannelData(0);
-                let encodedAudioFrameWithRiffHeader;
-                let encodedAudioFrame;
-                if (outputStream) {
-                    if (isFirstFrameWritten) {
-                        if (!encodedAudioFrame) {
-                            encodedAudioFrame = waveStreamEncoder.Encode(false, monoAudioChunk);
-                        }
-                        outputStream.Write(encodedAudioFrame);
-                    }
-                    else {
-                        if (!encodedAudioFrameWithRiffHeader) {
-                            encodedAudioFrameWithRiffHeader =
-                                waveStreamEncoder.Encode(true, monoAudioChunk);
-                        }
-                        outputStream.Write(encodedAudioFrameWithRiffHeader);
-                        isFirstFrameWritten = true;
-                    }
-                }
-            };
-            this.mediaResources = {
-                context: audioContext,
-                scriptProcessorNode: scriptNode,
-                source: mediaStreamSource,
-                stream: mediaStream,
-            };
-            mediaStreamSource.connect(scriptNode);
-            scriptNode.connect(mediaStreamSource.context.destination);
-        };
-        this.ReleaseMediaResources = () => {
-            if (this.mediaResources) {
-                if (this.mediaResources.scriptProcessorNode) {
-                    this.mediaResources.scriptProcessorNode.disconnect();
-                    this.mediaResources.scriptProcessorNode = null;
-                }
-                if (this.mediaResources.source) {
-                    this.mediaResources.source.disconnect();
-                    this.mediaResources.stream.getTracks().forEach((track) => track.stop());
-                    this.mediaResources.source = null;
-                }
-                if (this.mediaResources.context && this.mediaResources.context.state !== "closed") {
-                    this.mediaResources.context.close();
-                }
-            }
-        };
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = PcmRecorder;
-
-
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar RecognitionMode;\n(function (RecognitionMode) {\n    RecognitionMode[RecognitionMode[\"Interactive\"] = 0] = \"Interactive\";\n    RecognitionMode[RecognitionMode[\"Conversation\"] = 1] = \"Conversation\";\n    RecognitionMode[RecognitionMode[\"Dictation\"] = 2] = \"Dictation\";\n})(RecognitionMode = exports.RecognitionMode || (exports.RecognitionMode = {}));\nvar SpeechResultFormat;\n(function (SpeechResultFormat) {\n    SpeechResultFormat[SpeechResultFormat[\"Simple\"] = 0] = \"Simple\";\n    SpeechResultFormat[SpeechResultFormat[\"Detailed\"] = 1] = \"Detailed\";\n})(SpeechResultFormat = exports.SpeechResultFormat || (exports.SpeechResultFormat = {}));\nvar RecognizerConfig = /** @class */ (function () {\n    function RecognizerConfig(platformConfig, recognitionMode, language, format) {\n        if (recognitionMode === void 0) { recognitionMode = RecognitionMode.Interactive; }\n        if (language === void 0) { language = \"en-us\"; }\n        if (format === void 0) { format = SpeechResultFormat.Simple; }\n        this.recognitionMode = RecognitionMode.Interactive;\n        this.speechConfig = platformConfig ? platformConfig : new SpeechConfig(new Context(null, null));\n        this.recognitionMode = recognitionMode;\n        this.language = language;\n        this.format = format;\n        this.recognitionActivityTimeout = recognitionMode === RecognitionMode.Interactive ? 8000 : 25000;\n    }\n    Object.defineProperty(RecognizerConfig.prototype, \"RecognitionMode\", {\n        get: function () {\n            return this.recognitionMode;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(RecognizerConfig.prototype, \"Language\", {\n        get: function () {\n            return this.language;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(RecognizerConfig.prototype, \"Format\", {\n        get: function () {\n            return this.format;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(RecognizerConfig.prototype, \"SpeechConfig\", {\n        get: function () {\n            return this.speechConfig;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(RecognizerConfig.prototype, \"RecognitionActivityTimeout\", {\n        get: function () {\n            return this.recognitionActivityTimeout;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(RecognizerConfig.prototype, \"IsContinuousRecognition\", {\n        get: function () {\n            return this.recognitionMode !== RecognitionMode.Interactive;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    return RecognizerConfig;\n}());\nexports.RecognizerConfig = RecognizerConfig;\n// tslint:disable-next-line:max-classes-per-file\nvar SpeechConfig = /** @class */ (function () {\n    function SpeechConfig(context) {\n        var _this = this;\n        this.Serialize = function () {\n            return JSON.stringify(_this, function (key, value) {\n                if (value && typeof value === \"object\") {\n                    var replacement = {};\n                    for (var k in value) {\n                        if (Object.hasOwnProperty.call(value, k)) {\n                            replacement[k && k.charAt(0).toLowerCase() + k.substring(1)] = value[k];\n                        }\n                    }\n                    return replacement;\n                }\n                return value;\n            });\n        };\n        this.context = context;\n    }\n    Object.defineProperty(SpeechConfig.prototype, \"Context\", {\n        get: function () {\n            return this.context;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    return SpeechConfig;\n}());\nexports.SpeechConfig = SpeechConfig;\n// tslint:disable-next-line:max-classes-per-file\nvar Context = /** @class */ (function () {\n    function Context(os, device) {\n        this.system = new System();\n        this.os = os;\n        this.device = device;\n    }\n    Object.defineProperty(Context.prototype, \"System\", {\n        get: function () {\n            return this.system;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(Context.prototype, \"OS\", {\n        get: function () {\n            return this.os;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(Context.prototype, \"Device\", {\n        get: function () {\n            return this.device;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    return Context;\n}());\nexports.Context = Context;\n// tslint:disable-next-line:max-classes-per-file\nvar System = /** @class */ (function () {\n    function System() {\n        // TODO: Tie this with the sdk Version somehow\n        this.version = \"1.0.00000\";\n    }\n    Object.defineProperty(System.prototype, \"Version\", {\n        get: function () {\n            // Controlled by sdk\n            return this.version;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    return System;\n}());\nexports.System = System;\n// tslint:disable-next-line:max-classes-per-file\nvar OS = /** @class */ (function () {\n    function OS(platform, name, version) {\n        this.platform = platform;\n        this.name = name;\n        this.version = version;\n    }\n    Object.defineProperty(OS.prototype, \"Platform\", {\n        get: function () {\n            return this.platform;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(OS.prototype, \"Name\", {\n        get: function () {\n            return this.name;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(OS.prototype, \"Version\", {\n        get: function () {\n            return this.version;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    return OS;\n}());\nexports.OS = OS;\n// tslint:disable-next-line:max-classes-per-file\nvar Device = /** @class */ (function () {\n    function Device(manufacturer, model, version) {\n        this.manufacturer = manufacturer;\n        this.model = model;\n        this.version = version;\n    }\n    Object.defineProperty(Device.prototype, \"Manufacturer\", {\n        get: function () {\n            return this.manufacturer;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(Device.prototype, \"Model\", {\n        get: function () {\n            return this.model;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(Device.prototype, \"Version\", {\n        get: function () {\n            return this.version;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    return Device;\n}());\nexports.Device = Device;\n\n//# sourceMappingURL=RecognizerConfig.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/RecognizerConfig.js?");
 
 /***/ }),
-/* 48 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/ServiceTelemetryListener.Internal.js":
+/*!***************************************************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/ServiceTelemetryListener.Internal.js ***!
+  \***************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_Exports__ = __webpack_require__(0);
-
-class SessionStorage {
-    constructor() {
-        this.Get = (key) => {
-            if (!key) {
-                throw new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["a" /* ArgumentNullError */]("key");
-            }
-            return sessionStorage.getItem(key);
-        };
-        this.GetOrAdd = (key, valueToAdd) => {
-            if (!key) {
-                throw new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["a" /* ArgumentNullError */]("key");
-            }
-            const value = sessionStorage.getItem(key);
-            if (value === null || value === undefined) {
-                sessionStorage.setItem(key, valueToAdd);
-            }
-            return sessionStorage.getItem(key);
-        };
-        this.Set = (key, value) => {
-            if (!key) {
-                throw new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["a" /* ArgumentNullError */]("key");
-            }
-            sessionStorage.setItem(key, value);
-        };
-        this.Remove = (key) => {
-            if (!key) {
-                throw new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["a" /* ArgumentNullError */]("key");
-            }
-            sessionStorage.removeItem(key);
-        };
-    }
-}
-/* unused harmony export SessionStorage */
-
-
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar Exports_1 = __webpack_require__(/*! ../../common/Exports */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Exports.js\");\nvar RecognitionEvents_1 = __webpack_require__(/*! ./RecognitionEvents */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/RecognitionEvents.js\");\n// tslint:disable-next-line:max-classes-per-file\nvar ServiceTelemetryListener = /** @class */ (function () {\n    function ServiceTelemetryListener(requestId, audioSourceId, audioNodeId) {\n        var _this = this;\n        this.isDisposed = false;\n        this.listeningTriggerMetric = null;\n        this.micMetric = null;\n        this.connectionEstablishMetric = null;\n        this.OnEvent = function (e) {\n            if (_this.isDisposed) {\n                return;\n            }\n            if (e instanceof RecognitionEvents_1.RecognitionTriggeredEvent && e.RequestId === _this.requestId) {\n                _this.listeningTriggerMetric = {\n                    End: e.EventTime,\n                    Name: \"ListeningTrigger\",\n                    Start: e.EventTime,\n                };\n            }\n            if (e instanceof Exports_1.AudioStreamNodeAttachingEvent && e.AudioSourceId === _this.audioSourceId && e.AudioNodeId === _this.audioNodeId) {\n                _this.micStartTime = e.EventTime;\n            }\n            if (e instanceof Exports_1.AudioStreamNodeAttachedEvent && e.AudioSourceId === _this.audioSourceId && e.AudioNodeId === _this.audioNodeId) {\n                _this.micStartTime = e.EventTime;\n            }\n            if (e instanceof Exports_1.AudioSourceErrorEvent && e.AudioSourceId === _this.audioSourceId) {\n                if (!_this.micMetric) {\n                    _this.micMetric = {\n                        End: e.EventTime,\n                        Error: e.Error,\n                        Name: \"Microphone\",\n                        Start: _this.micStartTime,\n                    };\n                }\n            }\n            if (e instanceof Exports_1.AudioStreamNodeErrorEvent && e.AudioSourceId === _this.audioSourceId && e.AudioNodeId === _this.audioNodeId) {\n                if (!_this.micMetric) {\n                    _this.micMetric = {\n                        End: e.EventTime,\n                        Error: e.Error,\n                        Name: \"Microphone\",\n                        Start: _this.micStartTime,\n                    };\n                }\n            }\n            if (e instanceof Exports_1.AudioStreamNodeDetachedEvent && e.AudioSourceId === _this.audioSourceId && e.AudioNodeId === _this.audioNodeId) {\n                if (!_this.micMetric) {\n                    _this.micMetric = {\n                        End: e.EventTime,\n                        Name: \"Microphone\",\n                        Start: _this.micStartTime,\n                    };\n                }\n            }\n            if (e instanceof RecognitionEvents_1.ConnectingToServiceEvent && e.RequestId === _this.requestId) {\n                _this.connectionId = e.ConnectionId;\n            }\n            if (e instanceof Exports_1.ConnectionStartEvent && e.ConnectionId === _this.connectionId) {\n                _this.connectionStartTime = e.EventTime;\n            }\n            if (e instanceof Exports_1.ConnectionEstablishedEvent && e.ConnectionId === _this.connectionId) {\n                if (!_this.connectionEstablishMetric) {\n                    _this.connectionEstablishMetric = {\n                        End: e.EventTime,\n                        Id: _this.connectionId,\n                        Name: \"Connection\",\n                        Start: _this.connectionStartTime,\n                    };\n                }\n            }\n            if (e instanceof Exports_1.ConnectionEstablishErrorEvent && e.ConnectionId === _this.connectionId) {\n                if (!_this.connectionEstablishMetric) {\n                    _this.connectionEstablishMetric = {\n                        End: e.EventTime,\n                        Error: _this.GetConnectionError(e.StatusCode),\n                        Id: _this.connectionId,\n                        Name: \"Connection\",\n                        Start: _this.connectionStartTime,\n                    };\n                }\n            }\n            if (e instanceof Exports_1.ConnectionMessageReceivedEvent && e.ConnectionId === _this.connectionId) {\n                if (e.Message && e.Message.Headers && e.Message.Headers.path) {\n                    if (!_this.receivedMessages[e.Message.Headers.path]) {\n                        _this.receivedMessages[e.Message.Headers.path] = new Array();\n                    }\n                    _this.receivedMessages[e.Message.Headers.path].push(e.NetworkReceivedTime);\n                }\n            }\n        };\n        this.GetTelemetry = function () {\n            var metrics = new Array();\n            if (_this.listeningTriggerMetric) {\n                metrics.push(_this.listeningTriggerMetric);\n            }\n            if (_this.micMetric) {\n                metrics.push(_this.micMetric);\n            }\n            if (_this.connectionEstablishMetric) {\n                metrics.push(_this.connectionEstablishMetric);\n            }\n            var telemetry = {\n                Metrics: metrics,\n                ReceivedMessages: _this.receivedMessages,\n            };\n            var json = JSON.stringify(telemetry);\n            // We dont want to send the same telemetry again. So clean those out.\n            _this.receivedMessages = {};\n            _this.listeningTriggerMetric = null;\n            _this.micMetric = null;\n            _this.connectionEstablishMetric = null;\n            return json;\n        };\n        this.Dispose = function () {\n            _this.isDisposed = true;\n        };\n        this.GetConnectionError = function (statusCode) {\n            /*\n            -- Websocket status codes --\n            NormalClosure = 1000,\n            EndpointUnavailable = 1001,\n            ProtocolError = 1002,\n            InvalidMessageType = 1003,\n            Empty = 1005,\n            InvalidPayloadData = 1007,\n            PolicyViolation = 1008,\n            MessageTooBig = 1009,\n            MandatoryExtension = 1010,\n            InternalServerError = 1011\n            */\n            switch (statusCode) {\n                case 400:\n                case 1002:\n                case 1003:\n                case 1005:\n                case 1007:\n                case 1008:\n                case 1009: return \"BadRequest\";\n                case 401: return \"Unauthorized\";\n                case 403: return \"Forbidden\";\n                case 503:\n                case 1001: return \"ServerUnavailable\";\n                case 500:\n                case 1011: return \"ServerError\";\n                case 408:\n                case 504: return \"Timeout\";\n                default: return \"statuscode:\" + statusCode.toString();\n            }\n        };\n        this.requestId = requestId;\n        this.audioSourceId = audioSourceId;\n        this.audioNodeId = audioNodeId;\n        this.receivedMessages = {};\n    }\n    return ServiceTelemetryListener;\n}());\nexports.ServiceTelemetryListener = ServiceTelemetryListener;\n\n//# sourceMappingURL=ServiceTelemetryListener.Internal.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/ServiceTelemetryListener.Internal.js?");
 
 /***/ }),
-/* 49 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/SpeechConnectionMessage.Internal.js":
+/*!**************************************************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/SpeechConnectionMessage.Internal.js ***!
+  \**************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-class Timer {
-    constructor(delayInMillisec, successCallback) {
-        this.start = (...params) => {
-            if (this.timerId) {
-                this.stop();
-            }
-            this.timerId = setTimeout(this.successCallback, this.delayInMillisec, params);
-        };
-        this.stop = () => {
-            clearTimeout(this.timerId);
-        };
-        this.delayInMillisec = delayInMillisec;
-        this.successCallback = successCallback;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = Timer;
-
-
+eval("\nvar __extends = (this && this.__extends) || (function () {\n    var extendStatics = Object.setPrototypeOf ||\n        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||\n        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };\n    return function (d, b) {\n        extendStatics(d, b);\n        function __() { this.constructor = d; }\n        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());\n    };\n})();\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar Exports_1 = __webpack_require__(/*! ../../common/Exports */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Exports.js\");\nvar PathHeaderName = \"path\";\nvar ContentTypeHeaderName = \"content-type\";\nvar RequestIdHeaderName = \"x-requestid\";\nvar RequestTimestampHeaderName = \"x-timestamp\";\nvar SpeechConnectionMessage = /** @class */ (function (_super) {\n    __extends(SpeechConnectionMessage, _super);\n    function SpeechConnectionMessage(messageType, path, requestId, contentType, body, additionalHeaders, id) {\n        var _this = this;\n        if (!path) {\n            throw new Exports_1.ArgumentNullError(\"path\");\n        }\n        if (!requestId) {\n            throw new Exports_1.ArgumentNullError(\"requestId\");\n        }\n        var headers = {};\n        headers[PathHeaderName] = path;\n        headers[RequestIdHeaderName] = requestId;\n        headers[RequestTimestampHeaderName] = new Date().toISOString();\n        if (contentType) {\n            headers[ContentTypeHeaderName] = contentType;\n        }\n        if (additionalHeaders) {\n            for (var headerName in additionalHeaders) {\n                if (headerName) {\n                    headers[headerName] = additionalHeaders[headerName];\n                }\n            }\n        }\n        if (id) {\n            _this = _super.call(this, messageType, body, headers, id) || this;\n        }\n        else {\n            _this = _super.call(this, messageType, body, headers) || this;\n        }\n        _this.path = path;\n        _this.requestId = requestId;\n        _this.contentType = contentType;\n        _this.additionalHeaders = additionalHeaders;\n        return _this;\n    }\n    Object.defineProperty(SpeechConnectionMessage.prototype, \"Path\", {\n        get: function () {\n            return this.path;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(SpeechConnectionMessage.prototype, \"RequestId\", {\n        get: function () {\n            return this.requestId;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(SpeechConnectionMessage.prototype, \"ContentType\", {\n        get: function () {\n            return this.contentType;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    Object.defineProperty(SpeechConnectionMessage.prototype, \"AdditionalHeaders\", {\n        get: function () {\n            return this.additionalHeaders;\n        },\n        enumerable: true,\n        configurable: true\n    });\n    SpeechConnectionMessage.FromConnectionMessage = function (message) {\n        var path = null;\n        var requestId = null;\n        var contentType = null;\n        var requestTimestamp = null;\n        var additionalHeaders = {};\n        if (message.Headers) {\n            for (var headerName in message.Headers) {\n                if (headerName) {\n                    if (headerName.toLowerCase() === PathHeaderName.toLowerCase()) {\n                        path = message.Headers[headerName];\n                    }\n                    else if (headerName.toLowerCase() === RequestIdHeaderName.toLowerCase()) {\n                        requestId = message.Headers[headerName];\n                    }\n                    else if (headerName.toLowerCase() === RequestTimestampHeaderName.toLowerCase()) {\n                        requestTimestamp = message.Headers[headerName];\n                    }\n                    else if (headerName.toLowerCase() === ContentTypeHeaderName.toLowerCase()) {\n                        contentType = message.Headers[headerName];\n                    }\n                    else {\n                        additionalHeaders[headerName] = message.Headers[headerName];\n                    }\n                }\n            }\n        }\n        return new SpeechConnectionMessage(message.MessageType, path, requestId, contentType, message.Body, additionalHeaders, message.Id);\n    };\n    return SpeechConnectionMessage;\n}(Exports_1.ConnectionMessage));\nexports.SpeechConnectionMessage = SpeechConnectionMessage;\n\n//# sourceMappingURL=SpeechConnectionMessage.Internal.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/SpeechConnectionMessage.Internal.js?");
 
 /***/ }),
-/* 50 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/SpeechResults.js":
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/SpeechResults.js ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_Exports__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__WebsocketMessageAdapter__ = __webpack_require__(15);
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar RecognitionStatus;\n(function (RecognitionStatus) {\n    RecognitionStatus[RecognitionStatus[\"Success\"] = 0] = \"Success\";\n    RecognitionStatus[RecognitionStatus[\"NoMatch\"] = 1] = \"NoMatch\";\n    RecognitionStatus[RecognitionStatus[\"InitialSilenceTimeout\"] = 2] = \"InitialSilenceTimeout\";\n    RecognitionStatus[RecognitionStatus[\"BabbleTimeout\"] = 3] = \"BabbleTimeout\";\n    RecognitionStatus[RecognitionStatus[\"Error\"] = 4] = \"Error\";\n    RecognitionStatus[RecognitionStatus[\"EndOfDictation\"] = 5] = \"EndOfDictation\";\n})(RecognitionStatus = exports.RecognitionStatus || (exports.RecognitionStatus = {}));\n\n//# sourceMappingURL=SpeechResults.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/SpeechResults.js?");
 
+/***/ }),
 
-class WebsocketConnection {
-    constructor(uri, queryParameters, headers, messageFormatter, connectionId) {
-        this.isDisposed = false;
-        this.Dispose = () => {
-            this.isDisposed = true;
-            if (this.connectionMessageAdapter) {
-                this.connectionMessageAdapter.Close();
-            }
-        };
-        this.IsDisposed = () => {
-            return this.isDisposed;
-        };
-        this.State = () => {
-            return this.connectionMessageAdapter.State;
-        };
-        this.Open = () => {
-            return this.connectionMessageAdapter.Open();
-        };
-        this.Send = (message) => {
-            return this.connectionMessageAdapter.Send(message);
-        };
-        this.Read = () => {
-            return this.connectionMessageAdapter.Read();
-        };
-        if (!uri) {
-            throw new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["a" /* ArgumentNullError */]("uri");
-        }
-        if (!messageFormatter) {
-            throw new __WEBPACK_IMPORTED_MODULE_0__common_Exports__["a" /* ArgumentNullError */]("messageFormatter");
-        }
-        this.messageFormatter = messageFormatter;
-        let queryParams = "";
-        let i = 0;
-        if (queryParameters) {
-            for (const paramName in queryParameters) {
-                if (paramName) {
-                    queryParams += i === 0 ? "?" : "&";
-                    const val = encodeURIComponent(queryParameters[paramName]);
-                    queryParams += `${paramName}=${val}`;
-                    i++;
-                }
-            }
-        }
-        if (headers) {
-            for (const headerName in headers) {
-                if (headerName) {
-                    queryParams += i === 0 ? "?" : "&";
-                    const val = encodeURIComponent(headers[headerName]);
-                    queryParams += `${headerName}=${val}`;
-                    i++;
-                }
-            }
-        }
-        this.uri = uri + queryParams;
-        this.id = connectionId ? connectionId : Object(__WEBPACK_IMPORTED_MODULE_0__common_Exports__["s" /* CreateNoDashGuid */])();
-        this.connectionMessageAdapter = new __WEBPACK_IMPORTED_MODULE_1__WebsocketMessageAdapter__["a" /* WebsocketMessageAdapter */](this.uri, this.Id, this.messageFormatter);
-    }
-    get Id() {
-        return this.id;
-    }
-    get Events() {
-        return this.connectionMessageAdapter.Events;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = WebsocketConnection;
+/***/ "./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/WebsocketMessageFormatter.js":
+/*!*******************************************************************************************************!*\
+  !*** ./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/WebsocketMessageFormatter.js ***!
+  \*******************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar Exports_1 = __webpack_require__(/*! ../../common/Exports */ \"./node_modules/microsoft-speech-browser-sdk/distrib/src/common/Exports.js\");\nvar CRLF = \"\\r\\n\";\nvar WebsocketMessageFormatter = /** @class */ (function () {\n    function WebsocketMessageFormatter() {\n        var _this = this;\n        this.ToConnectionMessage = function (message) {\n            var deferral = new Exports_1.Deferred();\n            try {\n                if (message.MessageType === Exports_1.MessageType.Text) {\n                    var textMessage = message.TextContent;\n                    var headers = {};\n                    var body = null;\n                    if (textMessage) {\n                        var headerBodySplit = textMessage.split(\"\\r\\n\\r\\n\");\n                        if (headerBodySplit && headerBodySplit.length > 0) {\n                            headers = _this.ParseHeaders(headerBodySplit[0]);\n                            if (headerBodySplit.length > 1) {\n                                body = headerBodySplit[1];\n                            }\n                        }\n                    }\n                    deferral.Resolve(new Exports_1.ConnectionMessage(message.MessageType, body, headers, message.Id));\n                }\n                else if (message.MessageType === Exports_1.MessageType.Binary) {\n                    var binaryMessage = message.BinaryContent;\n                    var headers = {};\n                    var body = null;\n                    if (!binaryMessage || binaryMessage.byteLength < 2) {\n                        throw new Error(\"Invalid binary message format. Header length missing.\");\n                    }\n                    var dataView = new DataView(binaryMessage);\n                    var headerLength = dataView.getInt16(0);\n                    if (binaryMessage.byteLength < headerLength + 2) {\n                        throw new Error(\"Invalid binary message format. Header content missing.\");\n                    }\n                    var headersString = \"\";\n                    for (var i = 0; i < headerLength; i++) {\n                        headersString += String.fromCharCode((dataView).getInt8(i + 2));\n                    }\n                    headers = _this.ParseHeaders(headersString);\n                    if (binaryMessage.byteLength > headerLength + 2) {\n                        body = binaryMessage.slice(2 + headerLength);\n                    }\n                    deferral.Resolve(new Exports_1.ConnectionMessage(message.MessageType, body, headers, message.Id));\n                }\n            }\n            catch (e) {\n                deferral.Reject(\"Error formatting the message. Error: \" + e);\n            }\n            return deferral.Promise();\n        };\n        this.FromConnectionMessage = function (message) {\n            var deferral = new Exports_1.Deferred();\n            try {\n                if (message.MessageType === Exports_1.MessageType.Text) {\n                    var payload = \"\" + _this.MakeHeaders(message) + CRLF + (message.TextBody ? message.TextBody : \"\");\n                    deferral.Resolve(new Exports_1.RawWebsocketMessage(Exports_1.MessageType.Text, payload, message.Id));\n                }\n                else if (message.MessageType === Exports_1.MessageType.Binary) {\n                    var headersString = _this.MakeHeaders(message);\n                    var content = message.BinaryBody;\n                    var headerInt8Array = new Int8Array(_this.StringToArrayBuffer(headersString));\n                    var payload = new ArrayBuffer(2 + headerInt8Array.byteLength + (content ? content.byteLength : 0));\n                    var dataView = new DataView(payload);\n                    dataView.setInt16(0, headerInt8Array.length);\n                    for (var i = 0; i < headerInt8Array.byteLength; i++) {\n                        dataView.setInt8(2 + i, headerInt8Array[i]);\n                    }\n                    if (content) {\n                        var bodyInt8Array = new Int8Array(content);\n                        for (var i = 0; i < bodyInt8Array.byteLength; i++) {\n                            dataView.setInt8(2 + headerInt8Array.byteLength + i, bodyInt8Array[i]);\n                        }\n                    }\n                    deferral.Resolve(new Exports_1.RawWebsocketMessage(Exports_1.MessageType.Binary, payload, message.Id));\n                }\n            }\n            catch (e) {\n                deferral.Reject(\"Error formatting the message. \" + e);\n            }\n            return deferral.Promise();\n        };\n        this.MakeHeaders = function (message) {\n            var headersString = \"\";\n            if (message.Headers) {\n                for (var header in message.Headers) {\n                    if (header) {\n                        headersString += header + \": \" + message.Headers[header] + CRLF;\n                    }\n                }\n            }\n            return headersString;\n        };\n        this.ParseHeaders = function (headersString) {\n            var headers = {};\n            if (headersString) {\n                var headerMatches = headersString.match(/[^\\r\\n]+/g);\n                if (headers) {\n                    for (var _i = 0, headerMatches_1 = headerMatches; _i < headerMatches_1.length; _i++) {\n                        var header = headerMatches_1[_i];\n                        if (header) {\n                            var separatorIndex = header.indexOf(\":\");\n                            var headerName = separatorIndex > 0 ? header.substr(0, separatorIndex).trim().toLowerCase() : header;\n                            var headerValue = separatorIndex > 0 && header.length > (separatorIndex + 1) ?\n                                header.substr(separatorIndex + 1).trim() :\n                                \"\";\n                            headers[headerName] = headerValue;\n                        }\n                    }\n                }\n            }\n            return headers;\n        };\n        this.StringToArrayBuffer = function (str) {\n            var buffer = new ArrayBuffer(str.length);\n            var view = new DataView(buffer);\n            for (var i = 0; i < str.length; i++) {\n                view.setUint8(i, str.charCodeAt(i));\n            }\n            return buffer;\n        };\n    }\n    return WebsocketMessageFormatter;\n}());\nexports.WebsocketMessageFormatter = WebsocketMessageFormatter;\n\n//# sourceMappingURL=WebsocketMessageFormatter.js.map\n\n\n//# sourceURL=webpack:///./node_modules/microsoft-speech-browser-sdk/distrib/src/sdk/speech/WebsocketMessageFormatter.js?");
 
 /***/ })
-/******/ ]);
+
+/******/ });

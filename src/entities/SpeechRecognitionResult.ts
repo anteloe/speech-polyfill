@@ -1,4 +1,4 @@
-import { ISpeechRecoginitionAlternative, ISpeechRecoginitionResult, ICoginitiveServiceSpeechHypothesis, ICoginitiveServiceSpeechResult } from "../contracts";
+import { ISpeechRecoginitionAlternative, ISpeechRecoginitionResult, ICoginitiveServiceSpeechHypothesis, ICoginitiveServiceSpeechResult } from '../contracts';
 
 class SpeechRecognitionResult extends Array<ISpeechRecoginitionAlternative> implements ISpeechRecoginitionResult {
     isFinal: boolean = false;

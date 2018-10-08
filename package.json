@@ -1,6 +1,6 @@
 {
   "name": "speech-polyfill",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "This is a Polyfill for the HTML5 Speech Recognition API. It uses Microsoft's Cognitive Services as a backend. All Browsers supporting WebRTC will be supported by this Polyfill.",
   "main": "index.js",
   "types": "types/src/SpeechRecognition.d.ts",
@@ -12,10 +12,13 @@
     "webpack": "webpack",
     "webpack:prod": "webpack -p --config webpack.config.prod.js"
   },
+  "dependencies": {
+    "microsoft-speech-browser-sdk": "^0.0.12"
+  },
   "devDependencies": {
-    "microsoft-speech-browser-sdk": "^0.0.5",
-    "typescript": "^2.5.3",
-    "uglifyjs-webpack-plugin": "^0.4.6",
-    "webpack": "^3.5.5"
+    "typescript": "^3.0.3",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.1"
   }
 }
