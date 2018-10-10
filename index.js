@@ -1,5 +1,7 @@
 import { SpeechRecognition } from './js/src/SpeechRecognition';
-export default SpeechRecognition;
+
+export * from './js/src/SpeechRecognition';
+
 if (Promise === undefined) {
     throw new Error('Promises are not supported in this browser. Use this polyfill: https://www.npmjs.com/package/es6-promise');
 }
