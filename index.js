@@ -1,4 +1,7 @@
-export { SpeechRecognition } from './js/src/SpeechRecognition';
+import { SpeechRecognition } from './js/src/SpeechRecognition';
+
+export * from './js/src/SpeechRecognition';
+
 if (Promise === undefined) {
     throw new Error('Promises are not supported in this browser. Use this polyfill: https://www.npmjs.com/package/es6-promise');
 }
@@ -6,7 +9,7 @@ if (Promise === undefined) {
 if (!navigator.mediaDevices) navigator.mediaDevices = {};
 navigator.mediaDevices.getUserMedia = navigator.mediaDevices.getUserMedia || (function () {
     // returns a getUserMedia function
-    var getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+    let getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
     return function (constraints) {
         if (!getUserMedia) {
             return Promise.reject(new Error('getUserMedia is not implemented in this browser'));
@@ -18,5 +21,5 @@ navigator.mediaDevices.getUserMedia = navigator.mediaDevices.getUserMedia || (fu
 })();
 // polyfill speechRecognition
 (function (speechRecognition) {
-    window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition || SpeechRecognition;
+    window.SpeechRecognition = speechRecognition || SpeechRecognition;
 })(window.SpeechRecognition || window.webkitSpeechRecognition);
